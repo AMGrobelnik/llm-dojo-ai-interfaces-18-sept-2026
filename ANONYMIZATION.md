@@ -175,3 +175,13 @@ private repo which were never published — they were already dangling before
 this pass and are not artifacts of any rename. Intra-tree links, including
 every reference to the renamed skill directory and to the removed slide
 template, all resolve.
+
+A third reviewer then read every new hook page in full, prose included, rather
+than by regex, specifically for identifiers a pattern cannot see: names in
+review attributions, line-split repo names, institute/course/grant wording,
+private hostnames, ports, tokens and absolute paths. One class needed fixing —
+the private monorepo's name left truncated mid-word at a line break inside a
+quoted container-build line, which no whole-word pattern matched; it now reads
+`research-monorepo`. Everything else read clean: roles appear only as generic
+nouns ("the owner", "a peer", "a different agent"), paths as `/home/<user>`,
+and hosts only as loopback or public vendor endpoints.

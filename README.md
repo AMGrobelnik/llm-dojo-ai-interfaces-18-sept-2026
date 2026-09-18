@@ -14,7 +14,7 @@ presets, the libraries, and the pre-commit hooks with what is switched on where.
 | [`skills/third-party/`](skills/third-party) | Vendored skills by others (Anthropic document skills, Playwright, ...) |
 | [`prompts/`](prompts/README.md) | Claude Code prompts: global instructions, agent presets, slash commands, hooks, settings |
 | [`libraries/`](libraries/README.md) | Libraries and tools in use, one file per language or tool class |
-| [`hooks/`](hooks/README.md) | Every pre-commit hook lane, its rule, and which of the two repos runs it |
+| [`hooks/`](hooks/README.md) | Every pre-commit hook lane the research monorepo runs, with its rule and on/off state |
 | [`ANONYMIZATION.md`](ANONYMIZATION.md) | What was removed or replaced before publishing |
 
 ## How it fits together
@@ -26,7 +26,7 @@ presets, the libraries, and the pre-commit hooks with what is switched on where.
   `agent-presets/` fix model and effort per subagent type, and `slash-commands/` are
   reusable prompts invoked by name.
 - **Hooks** are the commit-time layer: a shared lefthook repo, vendored as a submodule,
-  gates every commit in two repos (a research monorepo and a notes & config repo).
+  gates every commit in the research monorepo.
 - **Libraries** lists what all of the above depends on.
 
 ## Anonymization

@@ -1,30 +1,27 @@
 # JavaScript / TypeScript
 
-- **next** — React web framework used for the frontend app (research monorepo)
-- **react / react-dom** — UI library (research monorepo)
-- **typescript** — typed JavaScript (research monorepo, notes repo)
-- **zustand** — client-side state management (research monorepo)
-- **zod** — runtime schema validation (research monorepo)
-- **tailwindcss** — utility-first CSS framework (research monorepo)
-- **@tanstack/react-query** — async server-state management (research monorepo)
-- **radix-ui** — accessible unstyled UI primitives (research monorepo)
-- **react-hook-form** — form state management (research monorepo)
-- **echarts** — charting library (research monorepo)
-- **ai (Vercel AI SDK)** — streaming LLM UI/response helpers (research monorepo)
-- **nuqs** — URL search-param state management (research monorepo)
-- **sonner** — toast notifications (research monorepo)
-- **storybook** — component development/documentation environment (research monorepo)
-- **vitest** — unit/component test runner (research monorepo)
-- **playwright** — browser automation and end-to-end testing (research monorepo, notes repo)
-- **oxlint** — fast Rust-based JS/TS linter (research monorepo)
-- **oxfmt** — fast Rust-based JS/TS formatter (research monorepo)
-- **eslint** — JS/TS linter (research monorepo)
-- **vite** — frontend build tool used by test/storybook tooling (research monorepo)
-- **bun** — JS runtime/package manager used for the frontend (research monorepo)
-- **fastify** — Node web framework for a bridge/control server (notes repo)
-- **tsx** — TypeScript execution runtime for Node scripts (notes repo)
-- **web-push** — Web Push notification delivery (notes repo)
-- **pptxgenjs** — generates PowerPoint files from JavaScript (research monorepo)
-- **sharp** — image processing (research monorepo)
-- **json-schema-to-typescript** — generates TS types from JSON Schema (research monorepo)
-- **@hey-api/openapi-ts** — generates a typed API client from an OpenAPI spec (research monorepo)
+- **next** — React web framework used for the frontend app
+- **react / react-dom** — UI library
+- **typescript** — typed JavaScript
+- **zustand** — client-side state management
+- **zod** — runtime schema validation
+- **tailwindcss** — utility-first CSS framework
+- **@tanstack/react-query** — async server-state management
+- **radix-ui** — accessible unstyled UI primitives
+- **react-hook-form** — form state management
+- **echarts** — charting library
+- **ai (Vercel AI SDK)** — streaming LLM UI/response helpers
+- **nuqs** — URL search-param state management
+- **sonner** — toast notifications
+- **storybook** — component development/documentation environment
+- **vitest** — unit/component test runner
+- **playwright** — browser automation and end-to-end testing
+- **oxlint** — fast Rust-based JS/TS linter
+- **oxfmt** — fast Rust-based JS/TS formatter
+- **eslint** — JS/TS linter
+- **vite** — frontend build tool used by test/storybook tooling
+- **bun** — JS runtime/package manager used for the frontend
+- **pptxgenjs** — generates PowerPoint files from JavaScript
+- **sharp** — image processing
+- **json-schema-to-typescript** — generates TS types from JSON Schema
+- **@hey-api/openapi-ts** — generates a typed API client from an OpenAPI spec

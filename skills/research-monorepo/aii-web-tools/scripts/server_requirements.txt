@@ -1,0 +1,5 @@
+requests
+html2text
+pymupdf
+python-dotenv
+ddgs

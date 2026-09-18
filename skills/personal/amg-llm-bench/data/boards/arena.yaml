@@ -1,0 +1,2975 @@
+# arena.ai public leaderboard capture (scripts/capture_arena.py owns this file).
+#
+# Vote counts live in a `votes:` map, a sibling of each score board's
+# `values:` map (the Agent board has no comparable counter to record).
+# `style_control` is recorded per board from what the live page actually
+# showed at capture time, not carried over from any earlier capture. The
+# capture turns the toggle ON when a board offers one, so every board with
+# a toggle is `true`; `style_control: null` means the board's page has no
+# style-control toggle at all (observed for the five arena_agent_* metric
+# boards, and possibly arena_webdev_elo/arena_search_elo/arena_document_elo
+# depending on what the live page actually offers at capture time).
+aliases:
+  Claude Fable 5 (High): anthropic/claude-fable-5
+  Claude Fable 5.1 (Max): anthropic/claude-fable-5.1@max
+  Claude Opus 4.8 (High): anthropic/claude-opus-4.8
+  Claude Opus 5 (High): anthropic/claude-opus-5
+  Claude Opus 5 (Max): anthropic/claude-opus-5@max
+  Claude Sonnet 4.6: anthropic/claude-sonnet-4.6
+  Claude Sonnet 5 (High): anthropic/claude-sonnet-5
+  DeepSeek V4 Pro: deepseek/deepseek-v4-pro
+  DeepSeek V4 Pro (High) (0813): deepseek/deepseek-v4-pro@high
+  Deepseek V4 Flash (High) (20260731): deepseek/deepseek-v4-flash
+  Deepseek V4.1 Flash (Max): deepseek/deepseek-v4.1-flash
+  GLM 5.2 (Max): z-ai/glm-5.2
+  GLM 5.3 (Max): z-ai/glm-5.3
+  GLM 5.3 Flash: z-ai/glm-5.3-flash
+  GPT 5.4 (High): openai/gpt-5.4
+  GPT 5.5: openai/gpt-5.5
+  GPT 5.5 (xHigh): openai/gpt-5.5@xhigh
+  GPT 5.6 Luna (xHigh): openai/gpt-5.6-luna
+  GPT 5.6 Sol (xHigh): openai/gpt-5.6-sol
+  GPT 5.6 Terra (xHigh): openai/gpt-5.6-terra
+  GPT 6 Astra (Max): openai/gpt-6-astra
+  Gemini 3.1 Pro Preview: google/gemini-3.1-pro-preview
+  Gemini 3.5 Flash Lite: google/gemini-3.5-flash-lite
+  Gemini 3.6 Flash (High): google/gemini-3.6-flash
+  Gemini 3.7 Flash (High): google/gemini-3.7-flash
+  Gemini 3.8 Flash (High): google/gemini-3.8-flash
+  Grok 4.5: x-ai/grok-4.5
+  Grok 4.6 (xHigh): x-ai/grok-4.6@xhigh
+  Hy3: tencent/hy3
+  Hy4 preview: tencent/hy4-preview
+  Inkling: thinkingmachines/inkling
+  Inkling Small: thinkingmachines/inkling-small
+  Kimi K3 (Max): moonshotai/kimi-k3
+  Mimo V2.5 Pro: xiaomi/mimo-v2.5-pro
+  Minimax M2.7: minimax/minimax-m2.7
+  Minimax M3: minimax/minimax-m3
+  Mistral Medium 3.5: mistralai/mistral-medium-3-5
+  Muse Spark 1.1: meta/muse-spark-1.1
+  Muse Spark 1.2 (xHigh): meta/muse-spark-1.2
+  Muse Spark 1.3 (Max): meta/muse-spark-1.3
+  Qwen 3.8 27B: qwen/qwen3.8-27b
+  Qwen3.7 Max: qwen/qwen3.7-max
+  Qwen3.7 Plus: qwen/qwen3.7-plus
+  Solar Pro 4: upstage/solar-pro4
+  claude-fable-5-high: anthropic/claude-fable-5
+  claude-fable-5.1-max: anthropic/claude-fable-5.1@max
+  claude-opus-4-6: anthropic/claude-opus-4.6
+  claude-opus-4-6-high: anthropic/claude-opus-4.6
+  claude-opus-4-7: anthropic/claude-opus-4.7
+  claude-opus-4-7-high: anthropic/claude-opus-4.7
+  claude-opus-4-8: anthropic/claude-opus-4.8
+  claude-opus-4-8-high: anthropic/claude-opus-4.8
+  claude-opus-5-high: anthropic/claude-opus-5
+  claude-opus-5-max: anthropic/claude-opus-5@max
+  claude-sonnet-4-6: anthropic/claude-sonnet-4.6
+  claude-sonnet-5-high: anthropic/claude-sonnet-5
+  command-r-08-2024: cohere/command-r-08-2024
+  command-r-plus-08-2024: cohere/command-r-plus-08-2024
+  deepseek-r1: deepseek/deepseek-r1
+  deepseek-r1-0528: deepseek/deepseek-r1-0528
+  deepseek-v3.1-terminus: deepseek/deepseek-v3.1-terminus
+  deepseek-v3.2: deepseek/deepseek-v3.2
+  deepseek-v3.2-exp: deepseek/deepseek-v3.2-exp
+  deepseek-v4-flash: deepseek/deepseek-v4-flash
+  deepseek-v4-flash-high: deepseek/deepseek-v4-flash
+  deepseek-v4-pro: deepseek/deepseek-v4-pro
+  deepseek-v4.1-flash-max: deepseek/deepseek-v4.1-flash
+  ernie-5.1: baidu/ernie-5.1
+  gemini-2.5-flash: google/gemini-2.5-flash
+  gemini-2.5-pro: google/gemini-2.5-pro
+  gemini-3-flash: google/gemini-3-flash-preview
+  gemini-3.1-pro-preview: google/gemini-3.1-pro-preview
+  gemini-3.5-flash-high: google/gemini-3.5-flash
+  gemini-3.5-flash-lite: google/gemini-3.5-flash-lite
+  gemini-3.5-flash-medium: google/gemini-3.5-flash@medium
+  gemini-3.6-flash-high: google/gemini-3.6-flash
+  gemini-3.7-flash-high: google/gemini-3.7-flash
+  gemini-3.8-flash-high: google/gemini-3.8-flash
+  gemma-3-12b-it: google/gemma-3-12b-it
+  gemma-3-27b-it: google/gemma-3-27b-it
+  glm-4.5: z-ai/glm-4.5
+  glm-4.5-air: z-ai/glm-4.5-air
+  glm-4.5v: z-ai/glm-4.5v
+  glm-4.6: z-ai/glm-4.6
+  glm-4.6v: z-ai/glm-4.6v
+  glm-4.7: z-ai/glm-4.7
+  glm-4.7-flash: z-ai/glm-4.7-flash
+  glm-5: z-ai/glm-5
+  glm-5.1: z-ai/glm-5.1
+  glm-5.2-max: z-ai/glm-5.2
+  glm-5.3-flash: z-ai/glm-5.3-flash
+  glm-5.3-max: z-ai/glm-5.3
+  glm-5v-turbo: z-ai/glm-5v-turbo
+  gpt-4o-2024-05-13: openai/gpt-4o-2024-05-13
+  gpt-4o-2024-08-06: openai/gpt-4o-2024-08-06
+  gpt-4o-mini-2024-07-18: openai/gpt-4o-mini-2024-07-18
+  gpt-5-high: openai/gpt-5
+  gpt-5-medium: openai/gpt-5@medium
+  gpt-5-mini-high: openai/gpt-5-mini
+  gpt-5-nano-high: openai/gpt-5-nano
+  gpt-5.1: openai/gpt-5.1
+  gpt-5.1-codex: openai/gpt-5.1-codex
+  gpt-5.1-codex-mini: openai/gpt-5.1-codex-mini
+  gpt-5.1-high: openai/gpt-5.1
+  gpt-5.1-medium: openai/gpt-5.1@medium
+  gpt-5.2: openai/gpt-5.2
+  gpt-5.2-codex: openai/gpt-5.2-codex
+  gpt-5.2-high: openai/gpt-5.2
+  gpt-5.4: openai/gpt-5.4
+  gpt-5.4-high: openai/gpt-5.4
+  gpt-5.4-mini-high: openai/gpt-5.4-mini
+  gpt-5.4-nano-high: openai/gpt-5.4-nano
+  gpt-5.5: openai/gpt-5.5
+  gpt-5.5-high: openai/gpt-5.5
+  gpt-5.6-luna-xhigh: openai/gpt-5.6-luna
+  gpt-5.6-sol-xhigh: openai/gpt-5.6-sol
+  gpt-5.6-terra-xhigh: openai/gpt-5.6-terra
+  gpt-6-astra-max: openai/gpt-6-astra
+  gpt-oss-120b: openai/gpt-oss-120b
+  gpt-oss-20b: openai/gpt-oss-20b
+  granite-4.2-8b: ibm-granite/granite-4.2-8b
+  grok-4.1: x-ai/grok-4.1
+  grok-4.3: x-ai/grok-4.3
+  grok-4.5: x-ai/grok-4.5
+  grok-4.6-high: x-ai/grok-4.6
+  hy3: tencent/hy3
+  hy4-preview: tencent/hy4-preview
+  inkling: thinkingmachines/inkling
+  kimi-k2.6: moonshotai/kimi-k2.6
+  kimi-k2.7-code: moonshotai/kimi-k2.7-code
+  kimi-k3-max: moonshotai/kimi-k3
+  llama-3.1-70b-instruct: meta/llama-3.1-70b-instruct
+  llama-3.1-8b-instruct: meta/llama-3.1-8b-instruct
+  llama-3.3-70b-instruct: meta/llama-3.3-70b-instruct
+  mercury-2: inception/mercury-2
+  mimo-v2-pro: xiaomi/mimo-v2-pro
+  mimo-v2.5: xiaomi/mimo-v2.5
+  mimo-v2.5-pro: xiaomi/mimo-v2.5-pro
+  minimax-m1: minimax/minimax-m1
+  minimax-m2: minimax/minimax-m2
+  minimax-m2.5: minimax/minimax-m2.5
+  minimax-m2.7: minimax/minimax-m2.7
+  minimax-m3: minimax/minimax-m3
+  mistral-large-2407: mistralai/mistral-large-2407
+  mistral-medium-3.5: mistralai/mistral-medium-3-5
+  muse-spark-1.1: meta/muse-spark-1.1
+  muse-spark-1.2 (xHigh): meta/muse-spark-1.2
+  muse-spark-1.3 (xHigh): meta/muse-spark-1.3@xhigh
+  muse-spark-1.3-max: meta/muse-spark-1.3
+  o3-mini: openai/o3-mini
+  o3-mini-high: openai/o3-mini@high
+  qwen2.5-72b-instruct: qwen/qwen-2.5-72b-instruct
+  qwen3-235b-a22b: qwen/qwen3-235b-a22b
+  qwen3-30b-a3b: qwen/qwen3-30b-a3b
+  qwen3-32b: qwen/qwen3-32b
+  qwen3.5-122b-a10b: qwen/qwen3.5-122b-a10b
+  qwen3.5-27b: qwen/qwen3.5-27b
+  qwen3.5-35b-a3b: qwen/qwen3.5-35b-a3b
+  qwen3.5-397b-a17b: qwen/qwen3.5-397b-a17b
+  qwen3.6-max-preview: qwen/qwen3.6-max-preview
+  qwen3.6-plus: qwen/qwen3.6-plus
+  qwen3.7-plus: qwen/qwen3.7-plus
+  qwen3.8-27b: qwen/qwen3.8-27b
+  qwen3.8-max-0902: qwen/qwen3.8-max-0902
+  solar-pro4: upstage/solar-pro4
+  step-3.5-flash: stepfun/step-3.5-flash
+  trinity-large-thinking: arcee-ai/trinity-large-thinking
+boards:
+  arena_agent_bash_recovery:
+    higher_is_better: true
+    style_control: null
+    title: 'Arena Agent leaderboard: bash recovery'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5: 9.06
+      anthropic/claude-fable-5.1@max: 12.62
+      anthropic/claude-opus-4.8: 7.49
+      anthropic/claude-opus-5: 11.98
+      anthropic/claude-opus-5@max: 13.08
+      anthropic/claude-sonnet-4.6: 5.04
+      anthropic/claude-sonnet-5: 7.36
+      deepseek/deepseek-v4-flash: 1.45
+      deepseek/deepseek-v4-pro: 3.16
+      deepseek/deepseek-v4-pro@high: 6.22
+      deepseek/deepseek-v4.1-flash: 7.63
+      google/gemini-3.1-pro-preview: -20.4
+      google/gemini-3.5-flash-lite: -28.71
+      google/gemini-3.6-flash: -12.38
+      google/gemini-3.7-flash: -2.08
+      google/gemini-3.8-flash: 1.91
+      meta/muse-spark-1.1: -0.58
+      meta/muse-spark-1.2: 7.34
+      meta/muse-spark-1.3: 5.91
+      minimax/minimax-m2.7: -26.31
+      minimax/minimax-m3: 1.64
+      mistralai/mistral-medium-3-5: -15.8
+      moonshotai/kimi-k3: 5.03
+      openai/gpt-5.4: 4.62
+      openai/gpt-5.5: 6.36
+      openai/gpt-5.5@xhigh: 9.63
+      openai/gpt-5.6-luna: 3.7
+      openai/gpt-5.6-sol: 4.3
+      openai/gpt-5.6-terra: 3.05
+      openai/gpt-6-astra: 7.28
+      qwen/qwen3.7-max: -0.83
+      qwen/qwen3.7-plus: -4.36
+      qwen/qwen3.8-27b: -5.2
+      tencent/hy3: -3.93
+      tencent/hy4-preview: 7.44
+      thinkingmachines/inkling: 1.96
+      thinkingmachines/inkling-small: 6.88
+      upstage/solar-pro4: -24.21
+      x-ai/grok-4.5: 6.59
+      x-ai/grok-4.6@xhigh: 6.59
+      xiaomi/mimo-v2.5-pro: -4.93
+      z-ai/glm-5.2: 1.93
+      z-ai/glm-5.3: -0.99
+      z-ai/glm-5.3-flash: -4.63
+  arena_agent_net_impr:
+    higher_is_better: true
+    style_control: null
+    title: 'Arena Agent leaderboard: net improvement'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5: 8.81
+      anthropic/claude-fable-5.1@max: 13.71
+      anthropic/claude-opus-4.8: 8.19
+      anthropic/claude-opus-5: 10.25
+      anthropic/claude-opus-5@max: 10.16
+      anthropic/claude-sonnet-4.6: -1.52
+      anthropic/claude-sonnet-5: 5.97
+      deepseek/deepseek-v4-flash: 1.8
+      deepseek/deepseek-v4-pro: -0.71
+      deepseek/deepseek-v4-pro@high: 4.14
+      deepseek/deepseek-v4.1-flash: 4.88
+      google/gemini-3.1-pro-preview: -5.81
+      google/gemini-3.5-flash-lite: -15.35
+      google/gemini-3.6-flash: -5.94
+      google/gemini-3.7-flash: -0.6
+      google/gemini-3.8-flash: 4.71
+      meta/muse-spark-1.1: -2.98
+      meta/muse-spark-1.2: -1.77
+      meta/muse-spark-1.3: 4.2
+      minimax/minimax-m2.7: -14.02
+      minimax/minimax-m3: -5.76
+      mistralai/mistral-medium-3-5: -10.88
+      moonshotai/kimi-k3: 6.22
+      openai/gpt-5.4: 1.26
+      openai/gpt-5.5: 2.67
+      openai/gpt-5.5@xhigh: 5.03
+      openai/gpt-5.6-luna: -0.44
+      openai/gpt-5.6-sol: 7.1
+      openai/gpt-5.6-terra: 1.44
+      openai/gpt-6-astra: 11.54
+      qwen/qwen3.7-max: -3.63
+      qwen/qwen3.7-plus: -6.08
+      qwen/qwen3.8-27b: -0.64
+      tencent/hy3: -5.23
+      tencent/hy4-preview: 5.01
+      thinkingmachines/inkling: -10.02
+      thinkingmachines/inkling-small: -9.16
+      upstage/solar-pro4: -15.52
+      x-ai/grok-4.5: 2.92
+      x-ai/grok-4.6@xhigh: 2.01
+      xiaomi/mimo-v2.5-pro: -5.73
+      z-ai/glm-5.2: 4.37
+      z-ai/glm-5.3: 3.05
+      z-ai/glm-5.3-flash: 1.15
+  arena_agent_steer:
+    higher_is_better: true
+    style_control: null
+    title: 'Arena Agent leaderboard: steerability'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5: 10.6
+      anthropic/claude-fable-5.1@max: 3.88
+      anthropic/claude-opus-4.8: 11.06
+      anthropic/claude-opus-5: 11.04
+      anthropic/claude-opus-5@max: 6.83
+      anthropic/claude-sonnet-4.6: -5.01
+      anthropic/claude-sonnet-5: 8.39
+      deepseek/deepseek-v4-flash: 0.41
+      deepseek/deepseek-v4-pro: -2.13
+      deepseek/deepseek-v4-pro@high: 1.37
+      deepseek/deepseek-v4.1-flash: -1.63
+      google/gemini-3.1-pro-preview: -3.55
+      google/gemini-3.5-flash-lite: -12.76
+      google/gemini-3.6-flash: -3.37
+      google/gemini-3.7-flash: -0.28
+      google/gemini-3.8-flash: -1.22
+      meta/muse-spark-1.1: -4.22
+      meta/muse-spark-1.2: -4.58
+      meta/muse-spark-1.3: 1.47
+      minimax/minimax-m2.7: -6.58
+      minimax/minimax-m3: -6.58
+      mistralai/mistral-medium-3-5: -6.01
+      moonshotai/kimi-k3: 1.99
+      openai/gpt-5.4: 2.55
+      openai/gpt-5.5: 3.2
+      openai/gpt-5.5@xhigh: 6.61
+      openai/gpt-5.6-luna: 2.12
+      openai/gpt-5.6-sol: 6.62
+      openai/gpt-5.6-terra: 4.93
+      openai/gpt-6-astra: -0.47
+      qwen/qwen3.7-max: -2.75
+      qwen/qwen3.7-plus: -5.38
+      qwen/qwen3.8-27b: 0.08
+      tencent/hy3: -1.77
+      tencent/hy4-preview: -1.23
+      thinkingmachines/inkling: -10.51
+      thinkingmachines/inkling-small: -11.82
+      upstage/solar-pro4: -10.11
+      x-ai/grok-4.5: 5.86
+      x-ai/grok-4.6@xhigh: 4.74
+      xiaomi/mimo-v2.5-pro: -3.99
+      z-ai/glm-5.2: 4.88
+      z-ai/glm-5.3: 1.86
+      z-ai/glm-5.3-flash: 0.15
+  arena_agent_success:
+    higher_is_better: true
+    style_control: null
+    title: 'Arena Agent leaderboard: confirmed success'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5: 5.97
+      anthropic/claude-fable-5.1@max: 19.83
+      anthropic/claude-opus-4.8: 6.28
+      anthropic/claude-opus-5: 9.24
+      anthropic/claude-opus-5@max: 12.41
+      anthropic/claude-sonnet-4.6: -5.78
+      anthropic/claude-sonnet-5: 2.88
+      deepseek/deepseek-v4-flash: 3.25
+      deepseek/deepseek-v4-pro: -1.71
+      deepseek/deepseek-v4-pro@high: 6.81
+      deepseek/deepseek-v4.1-flash: 13.35
+      google/gemini-3.1-pro-preview: -5.51
+      google/gemini-3.5-flash-lite: -17.63
+      google/gemini-3.6-flash: -6.83
+      google/gemini-3.7-flash: 2.88
+      google/gemini-3.8-flash: 9.3
+      meta/muse-spark-1.1: 0.01
+      meta/muse-spark-1.2: -1.95
+      meta/muse-spark-1.3: 10.31
+      minimax/minimax-m2.7: -18.02
+      minimax/minimax-m3: -12.04
+      mistralai/mistral-medium-3-5: -15.08
+      moonshotai/kimi-k3: 11.91
+      openai/gpt-5.4: -1.63
+      openai/gpt-5.5: -2.01
+      openai/gpt-5.5@xhigh: -0.61
+      openai/gpt-5.6-luna: -4.99
+      openai/gpt-5.6-sol: 3.74
+      openai/gpt-5.6-terra: -4.44
+      openai/gpt-6-astra: 17.7
+      qwen/qwen3.7-max: -6.41
+      qwen/qwen3.7-plus: -7.15
+      qwen/qwen3.8-27b: 4.31
+      tencent/hy3: -10.6
+      tencent/hy4-preview: 9.85
+      thinkingmachines/inkling: -19.32
+      thinkingmachines/inkling-small: -20.37
+      upstage/solar-pro4: -20.07
+      x-ai/grok-4.5: 1.88
+      x-ai/grok-4.6@xhigh: -2.55
+      xiaomi/mimo-v2.5-pro: -9.0
+      z-ai/glm-5.2: 4.9
+      z-ai/glm-5.3: 8.48
+      z-ai/glm-5.3-flash: 8.24
+  arena_agent_tool_halluc:
+    higher_is_better: true
+    style_control: null
+    title: 'Arena Agent leaderboard: tool hallucination (negated: higher is fewer)'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5: -0.37
+      anthropic/claude-fable-5.1@max: -0.37
+      anthropic/claude-opus-4.8: 0.12
+      anthropic/claude-opus-5: -0.33
+      anthropic/claude-opus-5@max: -0.35
+      anthropic/claude-sonnet-4.6: -0.33
+      anthropic/claude-sonnet-5: -0.18
+      deepseek/deepseek-v4-flash: -0.34
+      deepseek/deepseek-v4-pro: 0.15
+      deepseek/deepseek-v4-pro@high: -0.36
+      deepseek/deepseek-v4.1-flash: -0.29
+      google/gemini-3.1-pro-preview: -0.03
+      google/gemini-3.5-flash-lite: 1.5
+      google/gemini-3.6-flash: -0.32
+      google/gemini-3.7-flash: 0.03
+      google/gemini-3.8-flash: -0.22
+      meta/muse-spark-1.1: -0.36
+      meta/muse-spark-1.2: -0.37
+      meta/muse-spark-1.3: -0.37
+      minimax/minimax-m2.7: -0.18
+      minimax/minimax-m3: 0.01
+      mistralai/mistral-medium-3-5: 2.23
+      moonshotai/kimi-k3: -0.37
+      openai/gpt-5.4: -0.37
+      openai/gpt-5.5: -0.37
+      openai/gpt-5.5@xhigh: -0.37
+      openai/gpt-5.6-luna: -0.37
+      openai/gpt-5.6-sol: -0.37
+      openai/gpt-5.6-terra: -0.37
+      openai/gpt-6-astra: -0.37
+      qwen/qwen3.7-max: 0.21
+      qwen/qwen3.7-plus: 1.03
+      qwen/qwen3.8-27b: 0.3
+      tencent/hy3: 3.09
+      tencent/hy4-preview: -0.23
+      thinkingmachines/inkling: 0.03
+      thinkingmachines/inkling-small: 0.46
+      upstage/solar-pro4: 1.83
+      x-ai/grok-4.5: -0.37
+      x-ai/grok-4.6@xhigh: -0.37
+      xiaomi/mimo-v2.5-pro: 0.78
+      z-ai/glm-5.2: -0.37
+      z-ai/glm-5.3: -0.37
+      z-ai/glm-5.3-flash: -0.37
+  arena_coding_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, coding category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1552.0
+      anthropic/claude-fable-5.1@max: 1519.0
+      anthropic/claude-opus-4.6: 1551.0
+      anthropic/claude-opus-4.7: 1552.0
+      anthropic/claude-opus-4.8: 1533.0
+      anthropic/claude-opus-5: 1533.0
+      anthropic/claude-opus-5@max: 1526.0
+      anthropic/claude-sonnet-4.6: 1528.0
+      anthropic/claude-sonnet-5: 1520.0
+      arcee-ai/trinity-large-thinking: 1414.0
+      baidu/ernie-5.1: 1514.0
+      cohere/command-r-08-2024: 1282.0
+      cohere/command-r-plus-08-2024: 1280.0
+      deepseek/deepseek-r1: 1444.0
+      deepseek/deepseek-r1-0528: 1464.0
+      deepseek/deepseek-v3.1-terminus: 1440.0
+      deepseek/deepseek-v3.2: 1469.0
+      deepseek/deepseek-v3.2-exp: 1465.0
+      deepseek/deepseek-v4-flash: 1483.0
+      deepseek/deepseek-v4-pro: 1501.0
+      google/gemini-2.5-flash: 1424.0
+      google/gemini-2.5-pro: 1465.0
+      google/gemini-3-flash-preview: 1507.0
+      google/gemini-3.1-pro-preview: 1520.0
+      google/gemini-3.5-flash: 1506.0
+      google/gemini-3.5-flash-lite: 1504.0
+      google/gemini-3.5-flash@medium: 1502.0
+      google/gemini-3.6-flash: 1517.0
+      google/gemini-3.7-flash: 1521.0
+      google/gemini-3.8-flash: 1535.0
+      google/gemma-3-12b-it: 1316.0
+      google/gemma-3-27b-it: 1358.0
+      ibm-granite/granite-4.2-8b: 1362.0
+      inception/mercury-2: 1393.0
+      meta/llama-3.1-70b-instruct: 1333.0
+      meta/llama-3.1-8b-instruct: 1260.0
+      meta/llama-3.3-70b-instruct: 1346.0
+      meta/muse-spark-1.1: 1531.0
+      meta/muse-spark-1.2: 1536.0
+      meta/muse-spark-1.3: 1537.0
+      minimax/minimax-m1: 1416.0
+      minimax/minimax-m2: 1383.0
+      minimax/minimax-m2.5: 1444.0
+      minimax/minimax-m2.7: 1481.0
+      minimax/minimax-m3: 1496.0
+      mistralai/mistral-large-2407: 1354.0
+      mistralai/mistral-medium-3-5: 1479.0
+      moonshotai/kimi-k2.6: 1514.0
+      moonshotai/kimi-k3: 1538.0
+      openai/gpt-4o-2024-05-13: 1369.0
+      openai/gpt-4o-2024-08-06: 1360.0
+      openai/gpt-4o-mini-2024-07-18: 1348.0
+      openai/gpt-5: 1470.0
+      openai/gpt-5-mini: 1431.0
+      openai/gpt-5-nano: 1384.0
+      openai/gpt-5.1: 1492.0
+      openai/gpt-5.2: 1489.0
+      openai/gpt-5.4: 1520.0
+      openai/gpt-5.4-mini: 1496.0
+      openai/gpt-5.4-nano: 1460.0
+      openai/gpt-5.5: 1520.0
+      openai/gpt-5.6-luna: 1498.0
+      openai/gpt-5.6-sol: 1528.0
+      openai/gpt-5.6-terra: 1518.0
+      openai/gpt-6-astra: 1543.0
+      openai/gpt-oss-120b: 1391.0
+      openai/gpt-oss-20b: 1369.0
+      openai/o3-mini: 1417.0
+      openai/o3-mini@high: 1435.0
+      qwen/qwen-2.5-72b-instruct: 1355.0
+      qwen/qwen3-235b-a22b: 1432.0
+      qwen/qwen3-30b-a3b: 1386.0
+      qwen/qwen3-32b: 1407.0
+      qwen/qwen3.5-122b-a10b: 1459.0
+      qwen/qwen3.5-27b: 1450.0
+      qwen/qwen3.5-35b-a3b: 1435.0
+      qwen/qwen3.5-397b-a17b: 1491.0
+      qwen/qwen3.6-max-preview: 1509.0
+      qwen/qwen3.6-plus: 1495.0
+      qwen/qwen3.7-plus: 1501.0
+      qwen/qwen3.8-27b: 1499.0
+      stepfun/step-3.5-flash: 1450.0
+      tencent/hy3: 1503.0
+      thinkingmachines/inkling: 1492.0
+      thinkingmachines/inkling-small: 1474.0
+      upstage/solar-pro4: 1449.0
+      x-ai/grok-4.1: 1492.0
+      x-ai/grok-4.3: 1488.0
+      x-ai/grok-4.5: 1518.0
+      x-ai/grok-4.6: 1506.0
+      xiaomi/mimo-v2-pro: 1503.0
+      xiaomi/mimo-v2.5: 1491.0
+      xiaomi/mimo-v2.5-pro: 1521.0
+      z-ai/glm-4.5: 1455.0
+      z-ai/glm-4.5-air: 1427.0
+      z-ai/glm-4.5v: 1404.0
+      z-ai/glm-4.6: 1458.0
+      z-ai/glm-4.6v: 1416.0
+      z-ai/glm-4.7: 1485.0
+      z-ai/glm-4.7-flash: 1425.0
+      z-ai/glm-5: 1498.0
+      z-ai/glm-5.1: 1513.0
+      z-ai/glm-5.2: 1510.0
+      z-ai/glm-5.3: 1524.0
+      z-ai/glm-5.3-flash: 1525.0
+      z-ai/glm-5v-turbo: 1489.0
+    votes:
+      anthropic/claude-fable-5: 8040
+      anthropic/claude-fable-5.1@max: 1184
+      anthropic/claude-opus-4.6: 18766
+      anthropic/claude-opus-4.7: 17149
+      anthropic/claude-opus-4.8: 14473
+      anthropic/claude-opus-5: 11403
+      anthropic/claude-opus-5@max: 5404
+      anthropic/claude-sonnet-4.6: 18320
+      anthropic/claude-sonnet-5: 9725
+      arcee-ai/trinity-large-thinking: 8116
+      baidu/ernie-5.1: 10269
+      cohere/command-r-08-2024: 1783
+      cohere/command-r-plus-08-2024: 1675
+      deepseek/deepseek-r1: 2317
+      deepseek/deepseek-r1-0528: 2686
+      deepseek/deepseek-v3.1-terminus: 771
+      deepseek/deepseek-v3.2: 10510
+      deepseek/deepseek-v3.2-exp: 2471
+      deepseek/deepseek-v4-flash: 14310
+      deepseek/deepseek-v4-pro: 16143
+      google/gemini-2.5-flash: 25656
+      google/gemini-2.5-pro: 26265
+      google/gemini-3-flash-preview: 6328
+      google/gemini-3.1-pro-preview: 29544
+      google/gemini-3.5-flash: 11109
+      google/gemini-3.5-flash-lite: 7325
+      google/gemini-3.5-flash@medium: 10711
+      google/gemini-3.6-flash: 7795
+      google/gemini-3.7-flash: 1730
+      google/gemini-3.8-flash: 1434
+      google/gemma-3-12b-it: 543
+      google/gemma-3-27b-it: 7963
+      ibm-granite/granite-4.2-8b: 791
+      inception/mercury-2: 758
+      meta/llama-3.1-70b-instruct: 9389
+      meta/llama-3.1-8b-instruct: 8582
+      meta/llama-3.3-70b-instruct: 8718
+      meta/muse-spark-1.1: 7958
+      meta/muse-spark-1.2: 928
+      meta/muse-spark-1.3: 1346
+      minimax/minimax-m1: 6333
+      minimax/minimax-m2: 1517
+      minimax/minimax-m2.5: 10806
+      minimax/minimax-m2.7: 19870
+      minimax/minimax-m3: 14110
+      mistralai/mistral-large-2407: 7589
+      mistralai/mistral-medium-3-5: 3070
+      moonshotai/kimi-k2.6: 10398
+      moonshotai/kimi-k3: 5507
+      openai/gpt-4o-2024-05-13: 19526
+      openai/gpt-4o-2024-08-06: 7318
+      openai/gpt-4o-mini-2024-07-18: 10926
+      openai/gpt-5: 6306
+      openai/gpt-5-mini: 5439
+      openai/gpt-5-nano: 1662
+      openai/gpt-5.1: 8106
+      openai/gpt-5.2: 11674
+      openai/gpt-5.4: 16395
+      openai/gpt-5.4-mini: 16192
+      openai/gpt-5.4-nano: 16530
+      openai/gpt-5.5: 18031
+      openai/gpt-5.6-luna: 7986
+      openai/gpt-5.6-sol: 7547
+      openai/gpt-5.6-terra: 7783
+      openai/gpt-6-astra: 645
+      openai/gpt-oss-120b: 6335
+      openai/gpt-oss-20b: 2109
+      openai/o3-mini: 9385
+      openai/o3-mini@high: 2596
+      qwen/qwen-2.5-72b-instruct: 6688
+      qwen/qwen3-235b-a22b: 4307
+      qwen/qwen3-30b-a3b: 4494
+      qwen/qwen3-32b: 513
+      qwen/qwen3.5-122b-a10b: 7777
+      qwen/qwen3.5-27b: 7496
+      qwen/qwen3.5-35b-a3b: 7962
+      qwen/qwen3.5-397b-a17b: 22136
+      qwen/qwen3.6-max-preview: 1547
+      qwen/qwen3.6-plus: 13758
+      qwen/qwen3.7-plus: 11416
+      qwen/qwen3.8-27b: 3135
+      stepfun/step-3.5-flash: 14294
+      tencent/hy3: 2259
+      thinkingmachines/inkling: 7414
+      thinkingmachines/inkling-small: 5384
+      upstage/solar-pro4: 682
+      x-ai/grok-4.1: 15425
+      x-ai/grok-4.3: 18716
+      x-ai/grok-4.5: 8472
+      x-ai/grok-4.6: 4012
+      xiaomi/mimo-v2-pro: 6913
+      xiaomi/mimo-v2.5: 12829
+      xiaomi/mimo-v2.5-pro: 16683
+      z-ai/glm-4.5: 4713
+      z-ai/glm-4.5-air: 6004
+      z-ai/glm-4.5v: 968
+      z-ai/glm-4.6: 7391
+      z-ai/glm-4.6v: 535
+      z-ai/glm-4.7: 2389
+      z-ai/glm-4.7-flash: 2655
+      z-ai/glm-5: 7179
+      z-ai/glm-5.1: 13597
+      z-ai/glm-5.2: 10311
+      z-ai/glm-5.3: 2846
+      z-ai/glm-5.3-flash: 2755
+      z-ai/glm-5v-turbo: 2612
+  arena_creative_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, creative writing category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1504.0
+      anthropic/claude-fable-5.1@max: 1486.0
+      anthropic/claude-opus-4.6: 1500.0
+      anthropic/claude-opus-4.7: 1488.0
+      anthropic/claude-opus-4.8: 1465.0
+      anthropic/claude-opus-5: 1474.0
+      anthropic/claude-opus-5@max: 1472.0
+      anthropic/claude-sonnet-4.6: 1450.0
+      anthropic/claude-sonnet-5: 1437.0
+      arcee-ai/trinity-large-thinking: 1333.0
+      baidu/ernie-5.1: 1428.0
+      cohere/command-r-08-2024: 1209.0
+      cohere/command-r-plus-08-2024: 1263.0
+      deepseek/deepseek-r1: 1374.0
+      deepseek/deepseek-r1-0528: 1390.0
+      deepseek/deepseek-v3.1-terminus: 1404.0
+      deepseek/deepseek-v3.2: 1401.0
+      deepseek/deepseek-v3.2-exp: 1408.0
+      deepseek/deepseek-v4-flash: 1408.0
+      deepseek/deepseek-v4-pro: 1444.0
+      google/gemini-2.5-flash: 1396.0
+      google/gemini-2.5-pro: 1443.0
+      google/gemini-3-flash-preview: 1459.0
+      google/gemini-3.1-pro-preview: 1480.0
+      google/gemini-3.5-flash: 1465.0
+      google/gemini-3.5-flash-lite: 1436.0
+      google/gemini-3.5-flash@medium: 1466.0
+      google/gemini-3.6-flash: 1470.0
+      google/gemini-3.7-flash: 1495.0
+      google/gemini-3.8-flash: 1496.0
+      google/gemma-3-12b-it: 1333.0
+      google/gemma-3-27b-it: 1348.0
+      ibm-granite/granite-4.2-8b: 1206.0
+      inception/mercury-2: 1300.0
+      meta/llama-3.1-70b-instruct: 1257.0
+      meta/llama-3.1-8b-instruct: 1177.0
+      meta/llama-3.3-70b-instruct: 1285.0
+      meta/muse-spark-1.1: 1451.0
+      meta/muse-spark-1.2: 1452.0
+      meta/muse-spark-1.3: 1453.0
+      minimax/minimax-m1: 1319.0
+      minimax/minimax-m2: 1287.0
+      minimax/minimax-m2.5: 1358.0
+      minimax/minimax-m2.7: 1361.0
+      minimax/minimax-m3: 1406.0
+      mistralai/mistral-large-2407: 1287.0
+      mistralai/mistral-medium-3-5: 1396.0
+      moonshotai/kimi-k2.6: 1431.0
+      moonshotai/kimi-k3: 1458.0
+      openai/gpt-4o-2024-05-13: 1337.0
+      openai/gpt-4o-2024-08-06: 1327.0
+      openai/gpt-4o-mini-2024-07-18: 1294.0
+      openai/gpt-5: 1374.0
+      openai/gpt-5-mini: 1323.0
+      openai/gpt-5-nano: 1247.0
+      openai/gpt-5.1: 1429.0
+      openai/gpt-5.2: 1392.0
+      openai/gpt-5.4: 1444.0
+      openai/gpt-5.4-mini: 1404.0
+      openai/gpt-5.4-nano: 1338.0
+      openai/gpt-5.5: 1451.0
+      openai/gpt-5.6-luna: 1411.0
+      openai/gpt-5.6-sol: 1473.0
+      openai/gpt-5.6-terra: 1426.0
+      openai/gpt-6-astra: 1461.0
+      openai/gpt-oss-120b: 1277.0
+      openai/gpt-oss-20b: 1240.0
+      openai/o3-mini: 1301.0
+      openai/o3-mini@high: 1311.0
+      qwen/qwen-2.5-72b-instruct: 1254.0
+      qwen/qwen3-235b-a22b: 1323.0
+      qwen/qwen3-30b-a3b: 1283.0
+      qwen/qwen3-32b: 1304.0
+      qwen/qwen3.5-122b-a10b: 1366.0
+      qwen/qwen3.5-27b: 1356.0
+      qwen/qwen3.5-35b-a3b: 1343.0
+      qwen/qwen3.5-397b-a17b: 1406.0
+      qwen/qwen3.6-max-preview: 1438.0
+      qwen/qwen3.6-plus: 1408.0
+      qwen/qwen3.7-plus: 1432.0
+      qwen/qwen3.8-27b: 1361.0
+      stepfun/step-3.5-flash: 1345.0
+      tencent/hy3: 1419.0
+      thinkingmachines/inkling: 1382.0
+      thinkingmachines/inkling-small: 1309.0
+      upstage/solar-pro4: 1284.0
+      x-ai/grok-4.1: 1431.0
+      x-ai/grok-4.3: 1425.0
+      x-ai/grok-4.5: 1450.0
+      x-ai/grok-4.6: 1451.0
+      xiaomi/mimo-v2-pro: 1426.0
+      xiaomi/mimo-v2.5: 1393.0
+      xiaomi/mimo-v2.5-pro: 1435.0
+      z-ai/glm-4.5: 1373.0
+      z-ai/glm-4.5-air: 1327.0
+      z-ai/glm-4.5v: 1308.0
+      z-ai/glm-4.6: 1401.0
+      z-ai/glm-4.6v: 1349.0
+      z-ai/glm-4.7: 1403.0
+      z-ai/glm-4.7-flash: 1306.0
+      z-ai/glm-5: 1447.0
+      z-ai/glm-5.1: 1447.0
+      z-ai/glm-5.2: 1451.0
+      z-ai/glm-5.3: 1462.0
+      z-ai/glm-5.3-flash: 1435.0
+      z-ai/glm-5v-turbo: 1401.0
+    votes:
+      anthropic/claude-fable-5: 6073
+      anthropic/claude-fable-5.1@max: 1233
+      anthropic/claude-opus-4.6: 12646
+      anthropic/claude-opus-4.7: 10511
+      anthropic/claude-opus-4.8: 10012
+      anthropic/claude-opus-5: 9196
+      anthropic/claude-opus-5@max: 4529
+      anthropic/claude-sonnet-4.6: 11259
+      anthropic/claude-sonnet-5: 6914
+      arcee-ai/trinity-large-thinking: 4498
+      baidu/ernie-5.1: 5907
+      cohere/command-r-08-2024: 1421
+      cohere/command-r-plus-08-2024: 1474
+      deepseek/deepseek-r1: 3289
+      deepseek/deepseek-r1-0528: 2391
+      deepseek/deepseek-v3.1-terminus: 450
+      deepseek/deepseek-v3.2: 6610
+      deepseek/deepseek-v3.2-exp: 1618
+      deepseek/deepseek-v4-flash: 7953
+      deepseek/deepseek-v4-pro: 8998
+      google/gemini-2.5-flash: 17148
+      google/gemini-2.5-pro: 17131
+      google/gemini-3-flash-preview: 4619
+      google/gemini-3.1-pro-preview: 18759
+      google/gemini-3.5-flash: 7107
+      google/gemini-3.5-flash-lite: 5305
+      google/gemini-3.5-flash@medium: 6997
+      google/gemini-3.6-flash: 5352
+      google/gemini-3.7-flash: 1185
+      google/gemini-3.8-flash: 1072
+      google/gemma-3-12b-it: 600
+      google/gemma-3-27b-it: 6272
+      ibm-granite/granite-4.2-8b: 585
+      inception/mercury-2: 514
+      meta/llama-3.1-70b-instruct: 8250
+      meta/llama-3.1-8b-instruct: 7346
+      meta/llama-3.3-70b-instruct: 8024
+      meta/muse-spark-1.1: 5458
+      meta/muse-spark-1.2: 615
+      meta/muse-spark-1.3: 902
+      minimax/minimax-m1: 4448
+      minimax/minimax-m2: 887
+      minimax/minimax-m2.5: 6319
+      minimax/minimax-m2.7: 11370
+      minimax/minimax-m3: 8529
+      mistralai/mistral-large-2407: 6692
+      mistralai/mistral-medium-3-5: 1860
+      moonshotai/kimi-k2.6: 5821
+      moonshotai/kimi-k3: 4133
+      openai/gpt-4o-2024-05-13: 16599
+      openai/gpt-4o-2024-08-06: 6756
+      openai/gpt-4o-mini-2024-07-18: 10484
+      openai/gpt-5: 4192
+      openai/gpt-5-mini: 3494
+      openai/gpt-5-nano: 911
+      openai/gpt-5.1: 5967
+      openai/gpt-5.2: 12860
+      openai/gpt-5.4: 10081
+      openai/gpt-5.4-mini: 9804
+      openai/gpt-5.4-nano: 9445
+      openai/gpt-5.5: 11868
+      openai/gpt-5.6-luna: 5652
+      openai/gpt-5.6-sol: 5344
+      openai/gpt-5.6-terra: 5723
+      openai/gpt-6-astra: 572
+      openai/gpt-oss-120b: 3872
+      openai/gpt-oss-20b: 1227
+      openai/o3-mini: 8138
+      openai/o3-mini@high: 3065
+      qwen/qwen-2.5-72b-instruct: 5684
+      qwen/qwen3-235b-a22b: 3544
+      qwen/qwen3-30b-a3b: 3328
+      qwen/qwen3-32b: 616
+      qwen/qwen3.5-122b-a10b: 4295
+      qwen/qwen3.5-27b: 4050
+      qwen/qwen3.5-35b-a3b: 4432
+      qwen/qwen3.5-397b-a17b: 12803
+      qwen/qwen3.6-max-preview: 717
+      qwen/qwen3.6-plus: 6671
+      qwen/qwen3.7-plus: 7224
+      qwen/qwen3.8-27b: 2059
+      stepfun/step-3.5-flash: 9159
+      tencent/hy3: 1533
+      thinkingmachines/inkling: 5269
+      thinkingmachines/inkling-small: 3859
+      upstage/solar-pro4: 523
+      x-ai/grok-4.1: 9641
+      x-ai/grok-4.3: 11969
+      x-ai/grok-4.5: 5946
+      x-ai/grok-4.6: 3222
+      xiaomi/mimo-v2-pro: 3565
+      xiaomi/mimo-v2.5: 7315
+      xiaomi/mimo-v2.5-pro: 10955
+      z-ai/glm-4.5: 3075
+      z-ai/glm-4.5-air: 3938
+      z-ai/glm-4.5v: 613
+      z-ai/glm-4.6: 5013
+      z-ai/glm-4.6v: 406
+      z-ai/glm-4.7: 1890
+      z-ai/glm-4.7-flash: 1772
+      z-ai/glm-5: 4490
+      z-ai/glm-5.1: 9114
+      z-ai/glm-5.2: 7046
+      z-ai/glm-5.3: 2436
+      z-ai/glm-5.3-flash: 2138
+      z-ai/glm-5v-turbo: 1653
+  arena_document_elo:
+    higher_is_better: true
+    style_control: null
+    title: Arena Document leaderboard
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1496.0
+      anthropic/claude-fable-5.1@max: 1513.0
+      anthropic/claude-opus-4.6: 1507.0
+      anthropic/claude-opus-4.7: 1495.0
+      anthropic/claude-opus-4.8: 1475.0
+      anthropic/claude-opus-5: 1516.0
+      anthropic/claude-sonnet-4.6: 1482.0
+      anthropic/claude-sonnet-5: 1466.0
+      google/gemini-2.5-pro: 1421.0
+      google/gemini-3-flash-preview: 1413.0
+      google/gemini-3.1-pro-preview: 1444.0
+      google/gemini-3.5-flash: 1461.0
+      google/gemini-3.5-flash@medium: 1463.0
+      google/gemini-3.6-flash: 1456.0
+      meta/muse-spark-1.1: 1465.0
+      meta/muse-spark-1.3: 1471.0
+      minimax/minimax-m3: 1435.0
+      moonshotai/kimi-k2.6: 1451.0
+      openai/gpt-5.1: 1403.0
+      openai/gpt-5.2: 1405.0
+      openai/gpt-5.4: 1471.0
+      openai/gpt-5.5: 1486.0
+      openai/gpt-5.6-luna: 1457.0
+      openai/gpt-5.6-sol: 1483.0
+      openai/gpt-5.6-terra: 1472.0
+      openai/gpt-6-astra: 1468.0
+      qwen/qwen3.7-plus: 1444.0
+      x-ai/grok-4.5: 1452.0
+      x-ai/grok-4.6: 1452.0
+      z-ai/glm-5v-turbo: 1416.0
+    votes:
+      anthropic/claude-fable-5: 8497
+      anthropic/claude-fable-5.1@max: 1403
+      anthropic/claude-opus-4.6: 27929
+      anthropic/claude-opus-4.7: 22192
+      anthropic/claude-opus-4.8: 11551
+      anthropic/claude-opus-5: 8794
+      anthropic/claude-sonnet-4.6: 57813
+      anthropic/claude-sonnet-5: 7411
+      google/gemini-2.5-pro: 25110
+      google/gemini-3-flash-preview: 7158
+      google/gemini-3.1-pro-preview: 49457
+      google/gemini-3.5-flash: 4061
+      google/gemini-3.5-flash@medium: 6500
+      google/gemini-3.6-flash: 2975
+      meta/muse-spark-1.1: 4885
+      meta/muse-spark-1.3: 1006
+      minimax/minimax-m3: 6314
+      moonshotai/kimi-k2.6: 11291
+      openai/gpt-5.1: 8244
+      openai/gpt-5.2: 7108
+      openai/gpt-5.4: 33331
+      openai/gpt-5.5: 21279
+      openai/gpt-5.6-luna: 5766
+      openai/gpt-5.6-sol: 4818
+      openai/gpt-5.6-terra: 5787
+      openai/gpt-6-astra: 1621
+      qwen/qwen3.7-plus: 4591
+      x-ai/grok-4.5: 4965
+      x-ai/grok-4.6: 2258
+      z-ai/glm-5v-turbo: 6995
+  arena_expert_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, expert category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1548.0
+      anthropic/claude-fable-5.1@max: 1532.0
+      anthropic/claude-opus-4.6: 1546.0
+      anthropic/claude-opus-4.7: 1534.0
+      anthropic/claude-opus-4.8: 1524.0
+      anthropic/claude-opus-5: 1542.0
+      anthropic/claude-opus-5@max: 1520.0
+      anthropic/claude-sonnet-4.6: 1508.0
+      anthropic/claude-sonnet-5: 1510.0
+      arcee-ai/trinity-large-thinking: 1402.0
+      baidu/ernie-5.1: 1494.0
+      cohere/command-r-08-2024: 1231.0
+      cohere/command-r-plus-08-2024: 1249.0
+      deepseek/deepseek-r1: 1401.0
+      deepseek/deepseek-r1-0528: 1416.0
+      deepseek/deepseek-v3.2: 1448.0
+      deepseek/deepseek-v3.2-exp: 1419.0
+      deepseek/deepseek-v4-flash: 1458.0
+      deepseek/deepseek-v4-pro: 1481.0
+      google/gemini-2.5-flash: 1423.0
+      google/gemini-2.5-pro: 1460.0
+      google/gemini-3-flash-preview: 1495.0
+      google/gemini-3.1-pro-preview: 1509.0
+      google/gemini-3.5-flash: 1489.0
+      google/gemini-3.5-flash-lite: 1469.0
+      google/gemini-3.5-flash@medium: 1487.0
+      google/gemini-3.6-flash: 1502.0
+      google/gemini-3.7-flash: 1515.0
+      google/gemini-3.8-flash: 1502.0
+      google/gemma-3-12b-it: 1273.0
+      google/gemma-3-27b-it: 1336.0
+      ibm-granite/granite-4.2-8b: 1364.0
+      inception/mercury-2: 1347.0
+      meta/llama-3.1-70b-instruct: 1275.0
+      meta/llama-3.1-8b-instruct: 1197.0
+      meta/llama-3.3-70b-instruct: 1297.0
+      meta/muse-spark-1.1: 1504.0
+      meta/muse-spark-1.2: 1504.0
+      meta/muse-spark-1.3: 1533.0
+      minimax/minimax-m1: 1363.0
+      minimax/minimax-m2: 1345.0
+      minimax/minimax-m2.5: 1421.0
+      minimax/minimax-m2.7: 1449.0
+      minimax/minimax-m3: 1472.0
+      mistralai/mistral-large-2407: 1301.0
+      mistralai/mistral-medium-3-5: 1437.0
+      moonshotai/kimi-k2.6: 1502.0
+      moonshotai/kimi-k3: 1527.0
+      openai/gpt-4o-2024-05-13: 1311.0
+      openai/gpt-4o-2024-08-06: 1311.0
+      openai/gpt-4o-mini-2024-07-18: 1285.0
+      openai/gpt-5: 1460.0
+      openai/gpt-5-mini: 1401.0
+      openai/gpt-5-nano: 1353.0
+      openai/gpt-5.1: 1483.0
+      openai/gpt-5.2: 1476.0
+      openai/gpt-5.4: 1516.0
+      openai/gpt-5.4-mini: 1481.0
+      openai/gpt-5.4-nano: 1436.0
+      openai/gpt-5.5: 1512.0
+      openai/gpt-5.6-luna: 1489.0
+      openai/gpt-5.6-sol: 1532.0
+      openai/gpt-5.6-terra: 1506.0
+      openai/gpt-6-astra: 1472.0
+      openai/gpt-oss-120b: 1354.0
+      openai/gpt-oss-20b: 1314.0
+      openai/o3-mini: 1366.0
+      openai/o3-mini@high: 1398.0
+      qwen/qwen-2.5-72b-instruct: 1295.0
+      qwen/qwen3-235b-a22b: 1385.0
+      qwen/qwen3-30b-a3b: 1343.0
+      qwen/qwen3-32b: 1397.0
+      qwen/qwen3.5-122b-a10b: 1445.0
+      qwen/qwen3.5-27b: 1439.0
+      qwen/qwen3.5-35b-a3b: 1420.0
+      qwen/qwen3.5-397b-a17b: 1480.0
+      qwen/qwen3.6-max-preview: 1499.0
+      qwen/qwen3.6-plus: 1477.0
+      qwen/qwen3.7-plus: 1487.0
+      qwen/qwen3.8-27b: 1487.0
+      stepfun/step-3.5-flash: 1430.0
+      tencent/hy3: 1485.0
+      thinkingmachines/inkling: 1471.0
+      thinkingmachines/inkling-small: 1446.0
+      upstage/solar-pro4: 1412.0
+      x-ai/grok-4.1: 1454.0
+      x-ai/grok-4.3: 1452.0
+      x-ai/grok-4.5: 1491.0
+      x-ai/grok-4.6: 1488.0
+      xiaomi/mimo-v2-pro: 1491.0
+      xiaomi/mimo-v2.5: 1474.0
+      xiaomi/mimo-v2.5-pro: 1508.0
+      z-ai/glm-4.5: 1440.0
+      z-ai/glm-4.5-air: 1390.0
+      z-ai/glm-4.5v: 1401.0
+      z-ai/glm-4.6: 1441.0
+      z-ai/glm-4.6v: 1402.0
+      z-ai/glm-4.7: 1444.0
+      z-ai/glm-4.7-flash: 1390.0
+      z-ai/glm-5: 1482.0
+      z-ai/glm-5.1: 1495.0
+      z-ai/glm-5.2: 1494.0
+      z-ai/glm-5.3: 1522.0
+      z-ai/glm-5.3-flash: 1513.0
+      z-ai/glm-5v-turbo: 1462.0
+    votes:
+      anthropic/claude-fable-5: 3257
+      anthropic/claude-fable-5.1@max: 468
+      anthropic/claude-opus-4.6: 6399
+      anthropic/claude-opus-4.7: 6434
+      anthropic/claude-opus-4.8: 5635
+      anthropic/claude-opus-5: 4711
+      anthropic/claude-opus-5@max: 2212
+      anthropic/claude-sonnet-4.6: 6684
+      anthropic/claude-sonnet-5: 3850
+      arcee-ai/trinity-large-thinking: 2681
+      baidu/ernie-5.1: 3414
+      cohere/command-r-08-2024: 604
+      cohere/command-r-plus-08-2024: 524
+      deepseek/deepseek-r1: 848
+      deepseek/deepseek-r1-0528: 881
+      deepseek/deepseek-v3.2: 3191
+      deepseek/deepseek-v3.2-exp: 644
+      deepseek/deepseek-v4-flash: 4896
+      deepseek/deepseek-v4-pro: 5440
+      google/gemini-2.5-flash: 7988
+      google/gemini-2.5-pro: 7917
+      google/gemini-3-flash-preview: 2014
+      google/gemini-3.1-pro-preview: 10668
+      google/gemini-3.5-flash: 4263
+      google/gemini-3.5-flash-lite: 2946
+      google/gemini-3.5-flash@medium: 4146
+      google/gemini-3.6-flash: 3029
+      google/gemini-3.7-flash: 649
+      google/gemini-3.8-flash: 586
+      google/gemma-3-12b-it: 186
+      google/gemma-3-27b-it: 2224
+      ibm-granite/granite-4.2-8b: 287
+      inception/mercury-2: 233
+      meta/llama-3.1-70b-instruct: 2924
+      meta/llama-3.1-8b-instruct: 2589
+      meta/llama-3.3-70b-instruct: 2909
+      meta/muse-spark-1.1: 3117
+      meta/muse-spark-1.2: 348
+      meta/muse-spark-1.3: 512
+      minimax/minimax-m1: 1586
+      minimax/minimax-m2: 277
+      minimax/minimax-m2.5: 3553
+      minimax/minimax-m2.7: 6619
+      minimax/minimax-m3: 5154
+      mistralai/mistral-large-2407: 2505
+      mistralai/mistral-medium-3-5: 1106
+      moonshotai/kimi-k2.6: 3505
+      moonshotai/kimi-k3: 1863
+      openai/gpt-4o-2024-05-13: 5887
+      openai/gpt-4o-2024-08-06: 2349
+      openai/gpt-4o-mini-2024-07-18: 3549
+      openai/gpt-5: 1639
+      openai/gpt-5-mini: 1176
+      openai/gpt-5-nano: 336
+      openai/gpt-5.1: 2419
+      openai/gpt-5.2: 3741
+      openai/gpt-5.4: 5741
+      openai/gpt-5.4-mini: 5775
+      openai/gpt-5.4-nano: 5824
+      openai/gpt-5.5: 6732
+      openai/gpt-5.6-luna: 3152
+      openai/gpt-5.6-sol: 2954
+      openai/gpt-5.6-terra: 3169
+      openai/gpt-6-astra: 247
+      openai/gpt-oss-120b: 1341
+      openai/gpt-oss-20b: 505
+      openai/o3-mini: 2871
+      openai/o3-mini@high: 847
+      qwen/qwen-2.5-72b-instruct: 2397
+      qwen/qwen3-235b-a22b: 1330
+      qwen/qwen3-30b-a3b: 1333
+      qwen/qwen3-32b: 236
+      qwen/qwen3.5-122b-a10b: 2528
+      qwen/qwen3.5-27b: 2440
+      qwen/qwen3.5-35b-a3b: 2600
+      qwen/qwen3.5-397b-a17b: 7981
+      qwen/qwen3.6-max-preview: 520
+      qwen/qwen3.6-plus: 4491
+      qwen/qwen3.7-plus: 4330
+      qwen/qwen3.8-27b: 1111
+      stepfun/step-3.5-flash: 4948
+      tencent/hy3: 838
+      thinkingmachines/inkling: 2971
+      thinkingmachines/inkling-small: 2168
+      upstage/solar-pro4: 257
+      x-ai/grok-4.1: 4760
+      x-ai/grok-4.3: 6901
+      x-ai/grok-4.5: 3399
+      x-ai/grok-4.6: 1758
+      xiaomi/mimo-v2-pro: 2087
+      xiaomi/mimo-v2.5: 4395
+      xiaomi/mimo-v2.5-pro: 5796
+      z-ai/glm-4.5: 1129
+      z-ai/glm-4.5-air: 1409
+      z-ai/glm-4.5v: 193
+      z-ai/glm-4.6: 1949
+      z-ai/glm-4.6v: 180
+      z-ai/glm-4.7: 747
+      z-ai/glm-4.7-flash: 806
+      z-ai/glm-5: 2390
+      z-ai/glm-5.1: 5065
+      z-ai/glm-5.2: 3869
+      z-ai/glm-5.3: 1151
+      z-ai/glm-5.3-flash: 1068
+      z-ai/glm-5v-turbo: 1033
+  arena_hard_prompts:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, hard prompts category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1532.0
+      anthropic/claude-fable-5.1@max: 1517.0
+      anthropic/claude-opus-4.6: 1533.0
+      anthropic/claude-opus-4.7: 1526.0
+      anthropic/claude-opus-4.8: 1513.0
+      anthropic/claude-opus-5: 1517.0
+      anthropic/claude-opus-5@max: 1512.0
+      anthropic/claude-sonnet-4.6: 1504.0
+      anthropic/claude-sonnet-5: 1489.0
+      arcee-ai/trinity-large-thinking: 1386.0
+      baidu/ernie-5.1: 1488.0
+      cohere/command-r-08-2024: 1256.0
+      cohere/command-r-plus-08-2024: 1261.0
+      deepseek/deepseek-r1: 1419.0
+      deepseek/deepseek-r1-0528: 1433.0
+      deepseek/deepseek-v3.1-terminus: 1423.0
+      deepseek/deepseek-v3.2: 1447.0
+      deepseek/deepseek-v3.2-exp: 1446.0
+      deepseek/deepseek-v4-flash: 1459.0
+      deepseek/deepseek-v4-pro: 1480.0
+      google/gemini-2.5-flash: 1420.0
+      google/gemini-2.5-pro: 1458.0
+      google/gemini-3-flash-preview: 1493.0
+      google/gemini-3.1-pro-preview: 1507.0
+      google/gemini-3.5-flash: 1495.0
+      google/gemini-3.5-flash-lite: 1474.0
+      google/gemini-3.5-flash@medium: 1493.0
+      google/gemini-3.6-flash: 1500.0
+      google/gemini-3.7-flash: 1507.0
+      google/gemini-3.8-flash: 1517.0
+      google/gemma-3-12b-it: 1332.0
+      google/gemma-3-27b-it: 1366.0
+      ibm-granite/granite-4.2-8b: 1300.0
+      inception/mercury-2: 1360.0
+      meta/llama-3.1-70b-instruct: 1298.0
+      meta/llama-3.1-8b-instruct: 1222.0
+      meta/llama-3.3-70b-instruct: 1321.0
+      meta/muse-spark-1.1: 1513.0
+      meta/muse-spark-1.2: 1513.0
+      meta/muse-spark-1.3: 1516.0
+      minimax/minimax-m1: 1381.0
+      minimax/minimax-m2: 1369.0
+      minimax/minimax-m2.5: 1416.0
+      minimax/minimax-m2.7: 1441.0
+      minimax/minimax-m3: 1463.0
+      mistralai/mistral-large-2407: 1320.0
+      mistralai/mistral-medium-3-5: 1445.0
+      moonshotai/kimi-k2.6: 1485.0
+      moonshotai/kimi-k3: 1514.0
+      openai/gpt-4o-2024-05-13: 1337.0
+      openai/gpt-4o-2024-08-06: 1327.0
+      openai/gpt-4o-mini-2024-07-18: 1311.0
+      openai/gpt-5: 1448.0
+      openai/gpt-5-mini: 1403.0
+      openai/gpt-5-nano: 1356.0
+      openai/gpt-5.1: 1476.0
+      openai/gpt-5.2: 1461.0
+      openai/gpt-5.4: 1498.0
+      openai/gpt-5.4-mini: 1470.0
+      openai/gpt-5.4-nano: 1421.0
+      openai/gpt-5.5: 1502.0
+      openai/gpt-5.6-luna: 1473.0
+      openai/gpt-5.6-sol: 1509.0
+      openai/gpt-5.6-terra: 1489.0
+      openai/gpt-6-astra: 1497.0
+      openai/gpt-oss-120b: 1362.0
+      openai/gpt-oss-20b: 1322.0
+      openai/o3-mini: 1371.0
+      openai/o3-mini@high: 1401.0
+      qwen/qwen-2.5-72b-instruct: 1317.0
+      qwen/qwen3-235b-a22b: 1391.0
+      qwen/qwen3-30b-a3b: 1344.0
+      qwen/qwen3-32b: 1367.0
+      qwen/qwen3.5-122b-a10b: 1433.0
+      qwen/qwen3.5-27b: 1427.0
+      qwen/qwen3.5-35b-a3b: 1413.0
+      qwen/qwen3.5-397b-a17b: 1464.0
+      qwen/qwen3.6-max-preview: 1482.0
+      qwen/qwen3.6-plus: 1467.0
+      qwen/qwen3.7-plus: 1473.0
+      qwen/qwen3.8-27b: 1459.0
+      stepfun/step-3.5-flash: 1413.0
+      tencent/hy3: 1476.0
+      thinkingmachines/inkling: 1459.0
+      thinkingmachines/inkling-small: 1427.0
+      upstage/solar-pro4: 1405.0
+      x-ai/grok-4.1: 1475.0
+      x-ai/grok-4.3: 1457.0
+      x-ai/grok-4.5: 1492.0
+      x-ai/grok-4.6: 1479.0
+      xiaomi/mimo-v2-pro: 1476.0
+      xiaomi/mimo-v2.5: 1462.0
+      xiaomi/mimo-v2.5-pro: 1496.0
+      z-ai/glm-4.5: 1433.0
+      z-ai/glm-4.5-air: 1390.0
+      z-ai/glm-4.5v: 1374.0
+      z-ai/glm-4.6: 1442.0
+      z-ai/glm-4.6v: 1383.0
+      z-ai/glm-4.7: 1462.0
+      z-ai/glm-4.7-flash: 1385.0
+      z-ai/glm-5: 1478.0
+      z-ai/glm-5.1: 1488.0
+      z-ai/glm-5.2: 1493.0
+      z-ai/glm-5.3: 1507.0
+      z-ai/glm-5.3-flash: 1498.0
+      z-ai/glm-5v-turbo: 1452.0
+    votes:
+      anthropic/claude-fable-5: 19784
+      anthropic/claude-fable-5.1@max: 3437
+      anthropic/claude-opus-4.6: 45675
+      anthropic/claude-opus-4.7: 40148
+      anthropic/claude-opus-4.8: 34925
+      anthropic/claude-opus-5: 28129
+      anthropic/claude-opus-5@max: 13534
+      anthropic/claude-sonnet-4.6: 42987
+      anthropic/claude-sonnet-5: 23409
+      arcee-ai/trinity-large-thinking: 19073
+      baidu/ernie-5.1: 23977
+      cohere/command-r-08-2024: 2976
+      cohere/command-r-plus-08-2024: 2822
+      deepseek/deepseek-r1: 4116
+      deepseek/deepseek-r1-0528: 6863
+      deepseek/deepseek-v3.1-terminus: 1905
+      deepseek/deepseek-v3.2: 26034
+      deepseek/deepseek-v3.2-exp: 6418
+      deepseek/deepseek-v4-flash: 32523
+      deepseek/deepseek-v4-pro: 36039
+      google/gemini-2.5-flash: 63405
+      google/gemini-2.5-pro: 64149
+      google/gemini-3-flash-preview: 16475
+      google/gemini-3.1-pro-preview: 69408
+      google/gemini-3.5-flash: 25628
+      google/gemini-3.5-flash-lite: 17512
+      google/gemini-3.5-flash@medium: 24642
+      google/gemini-3.6-flash: 17865
+      google/gemini-3.7-flash: 3793
+      google/gemini-3.8-flash: 3426
+      google/gemma-3-12b-it: 977
+      google/gemma-3-27b-it: 17611
+      ibm-granite/granite-4.2-8b: 1974
+      inception/mercury-2: 1744
+      meta/llama-3.1-70b-instruct: 14981
+      meta/llama-3.1-8b-instruct: 13535
+      meta/llama-3.3-70b-instruct: 16935
+      meta/muse-spark-1.1: 18494
+      meta/muse-spark-1.2: 2115
+      meta/muse-spark-1.3: 3162
+      minimax/minimax-m1: 15490
+      minimax/minimax-m2: 3667
+      minimax/minimax-m2.5: 25523
+      minimax/minimax-m2.7: 45013
+      minimax/minimax-m3: 32377
+      mistralai/mistral-large-2407: 12682
+      mistralai/mistral-medium-3-5: 7137
+      moonshotai/kimi-k2.6: 24291
+      moonshotai/kimi-k3: 13581
+      openai/gpt-4o-2024-05-13: 32416
+      openai/gpt-4o-2024-08-06: 12655
+      openai/gpt-4o-mini-2024-07-18: 18256
+      openai/gpt-5: 14910
+      openai/gpt-5-mini: 12707
+      openai/gpt-5-nano: 3780
+      openai/gpt-5.1: 21596
+      openai/gpt-5.2: 49874
+      openai/gpt-5.4: 39229
+      openai/gpt-5.4-mini: 38889
+      openai/gpt-5.4-nano: 38567
+      openai/gpt-5.5: 42573
+      openai/gpt-5.6-luna: 18947
+      openai/gpt-5.6-sol: 17808
+      openai/gpt-5.6-terra: 18588
+      openai/gpt-6-astra: 1678
+      openai/gpt-oss-120b: 14537
+      openai/gpt-oss-20b: 4722
+      openai/o3-mini: 19983
+      openai/o3-mini@high: 4386
+      qwen/qwen-2.5-72b-instruct: 10545
+      qwen/qwen3-235b-a22b: 10402
+      qwen/qwen3-30b-a3b: 10621
+      qwen/qwen3-32b: 1207
+      qwen/qwen3.5-122b-a10b: 17837
+      qwen/qwen3.5-27b: 17060
+      qwen/qwen3.5-35b-a3b: 18332
+      qwen/qwen3.5-397b-a17b: 50784
+      qwen/qwen3.6-max-preview: 3401
+      qwen/qwen3.6-plus: 30478
+      qwen/qwen3.7-plus: 26363
+      qwen/qwen3.8-27b: 7078
+      stepfun/step-3.5-flash: 35344
+      tencent/hy3: 5376
+      thinkingmachines/inkling: 17277
+      thinkingmachines/inkling-small: 12511
+      upstage/solar-pro4: 1610
+      x-ai/grok-4.1: 37970
+      x-ai/grok-4.3: 44555
+      x-ai/grok-4.5: 20145
+      x-ai/grok-4.6: 10261
+      xiaomi/mimo-v2-pro: 15730
+      xiaomi/mimo-v2.5: 29754
+      xiaomi/mimo-v2.5-pro: 39891
+      z-ai/glm-4.5: 11065
+      z-ai/glm-4.5-air: 14713
+      z-ai/glm-4.5v: 2348
+      z-ai/glm-4.6: 18966
+      z-ai/glm-4.6v: 1495
+      z-ai/glm-4.7: 6576
+      z-ai/glm-4.7-flash: 6439
+      z-ai/glm-5: 17117
+      z-ai/glm-5.1: 32274
+      z-ai/glm-5.2: 24262
+      z-ai/glm-5.3: 7161
+      z-ai/glm-5.3-flash: 6610
+      z-ai/glm-5v-turbo: 6180
+  arena_instr_follow:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, instruction following category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1511.0
+      anthropic/claude-fable-5.1@max: 1496.0
+      anthropic/claude-opus-4.6: 1513.0
+      anthropic/claude-opus-4.7: 1503.0
+      anthropic/claude-opus-4.8: 1491.0
+      anthropic/claude-opus-5: 1499.0
+      anthropic/claude-opus-5@max: 1493.0
+      anthropic/claude-sonnet-4.6: 1476.0
+      anthropic/claude-sonnet-5: 1465.0
+      arcee-ai/trinity-large-thinking: 1358.0
+      baidu/ernie-5.1: 1453.0
+      cohere/command-r-08-2024: 1236.0
+      cohere/command-r-plus-08-2024: 1254.0
+      deepseek/deepseek-r1: 1397.0
+      deepseek/deepseek-r1-0528: 1391.0
+      deepseek/deepseek-v3.1-terminus: 1394.0
+      deepseek/deepseek-v3.2: 1420.0
+      deepseek/deepseek-v3.2-exp: 1415.0
+      deepseek/deepseek-v4-flash: 1428.0
+      deepseek/deepseek-v4-pro: 1453.0
+      google/gemini-2.5-flash: 1400.0
+      google/gemini-2.5-pro: 1438.0
+      google/gemini-3-flash-preview: 1459.0
+      google/gemini-3.1-pro-preview: 1481.0
+      google/gemini-3.5-flash: 1465.0
+      google/gemini-3.5-flash-lite: 1442.0
+      google/gemini-3.5-flash@medium: 1463.0
+      google/gemini-3.6-flash: 1473.0
+      google/gemini-3.7-flash: 1484.0
+      google/gemini-3.8-flash: 1492.0
+      google/gemma-3-12b-it: 1321.0
+      google/gemma-3-27b-it: 1344.0
+      ibm-granite/granite-4.2-8b: 1275.0
+      inception/mercury-2: 1324.0
+      meta/llama-3.1-70b-instruct: 1273.0
+      meta/llama-3.1-8b-instruct: 1191.0
+      meta/llama-3.3-70b-instruct: 1293.0
+      meta/muse-spark-1.1: 1471.0
+      meta/muse-spark-1.2: 1480.0
+      meta/muse-spark-1.3: 1483.0
+      minimax/minimax-m1: 1346.0
+      minimax/minimax-m2: 1337.0
+      minimax/minimax-m2.5: 1380.0
+      minimax/minimax-m2.7: 1407.0
+      minimax/minimax-m3: 1434.0
+      mistralai/mistral-large-2407: 1299.0
+      mistralai/mistral-medium-3-5: 1421.0
+      moonshotai/kimi-k2.6: 1454.0
+      moonshotai/kimi-k3: 1484.0
+      openai/gpt-4o-2024-05-13: 1325.0
+      openai/gpt-4o-2024-08-06: 1319.0
+      openai/gpt-4o-mini-2024-07-18: 1293.0
+      openai/gpt-5: 1411.0
+      openai/gpt-5-mini: 1372.0
+      openai/gpt-5-nano: 1327.0
+      openai/gpt-5.1: 1450.0
+      openai/gpt-5.2: 1427.0
+      openai/gpt-5.4: 1472.0
+      openai/gpt-5.4-mini: 1434.0
+      openai/gpt-5.4-nano: 1387.0
+      openai/gpt-5.5: 1478.0
+      openai/gpt-5.6-luna: 1442.0
+      openai/gpt-5.6-sol: 1487.0
+      openai/gpt-5.6-terra: 1462.0
+      openai/gpt-6-astra: 1461.0
+      openai/gpt-oss-120b: 1324.0
+      openai/gpt-oss-20b: 1281.0
+      openai/o3-mini: 1344.0
+      openai/o3-mini@high: 1366.0
+      qwen/qwen-2.5-72b-instruct: 1292.0
+      qwen/qwen3-235b-a22b: 1357.0
+      qwen/qwen3-30b-a3b: 1310.0
+      qwen/qwen3-32b: 1331.0
+      qwen/qwen3.5-122b-a10b: 1407.0
+      qwen/qwen3.5-27b: 1400.0
+      qwen/qwen3.5-35b-a3b: 1388.0
+      qwen/qwen3.5-397b-a17b: 1435.0
+      qwen/qwen3.6-max-preview: 1449.0
+      qwen/qwen3.6-plus: 1436.0
+      qwen/qwen3.7-plus: 1447.0
+      qwen/qwen3.8-27b: 1424.0
+      stepfun/step-3.5-flash: 1385.0
+      tencent/hy3: 1444.0
+      thinkingmachines/inkling: 1421.0
+      thinkingmachines/inkling-small: 1393.0
+      upstage/solar-pro4: 1361.0
+      x-ai/grok-4.1: 1431.0
+      x-ai/grok-4.3: 1415.0
+      x-ai/grok-4.5: 1466.0
+      x-ai/grok-4.6: 1453.0
+      xiaomi/mimo-v2-pro: 1444.0
+      xiaomi/mimo-v2.5: 1431.0
+      xiaomi/mimo-v2.5-pro: 1470.0
+      z-ai/glm-4.5: 1404.0
+      z-ai/glm-4.5-air: 1361.0
+      z-ai/glm-4.5v: 1340.0
+      z-ai/glm-4.6: 1414.0
+      z-ai/glm-4.6v: 1370.0
+      z-ai/glm-4.7: 1427.0
+      z-ai/glm-4.7-flash: 1349.0
+      z-ai/glm-5: 1446.0
+      z-ai/glm-5.1: 1461.0
+      z-ai/glm-5.2: 1466.0
+      z-ai/glm-5.3: 1480.0
+      z-ai/glm-5.3-flash: 1471.0
+      z-ai/glm-5v-turbo: 1422.0
+    votes:
+      anthropic/claude-fable-5: 10641
+      anthropic/claude-fable-5.1@max: 1773
+      anthropic/claude-opus-4.6: 22942
+      anthropic/claude-opus-4.7: 20821
+      anthropic/claude-opus-4.8: 18394
+      anthropic/claude-opus-5: 15145
+      anthropic/claude-opus-5@max: 7148
+      anthropic/claude-sonnet-4.6: 22010
+      anthropic/claude-sonnet-5: 12431
+      arcee-ai/trinity-large-thinking: 9819
+      baidu/ernie-5.1: 11716
+      cohere/command-r-08-2024: 4153
+      cohere/command-r-plus-08-2024: 4024
+      deepseek/deepseek-r1: 6426
+      deepseek/deepseek-r1-0528: 3997
+      deepseek/deepseek-v3.1-terminus: 1020
+      deepseek/deepseek-v3.2: 12970
+      deepseek/deepseek-v3.2-exp: 3319
+      deepseek/deepseek-v4-flash: 16752
+      deepseek/deepseek-v4-pro: 18649
+      google/gemini-2.5-flash: 33886
+      google/gemini-2.5-pro: 34174
+      google/gemini-3-flash-preview: 8117
+      google/gemini-3.1-pro-preview: 36184
+      google/gemini-3.5-flash: 13634
+      google/gemini-3.5-flash-lite: 9372
+      google/gemini-3.5-flash@medium: 13218
+      google/gemini-3.6-flash: 9558
+      google/gemini-3.7-flash: 2035
+      google/gemini-3.8-flash: 1804
+      google/gemma-3-12b-it: 1145
+      google/gemma-3-27b-it: 12426
+      ibm-granite/granite-4.2-8b: 1074
+      inception/mercury-2: 839
+      meta/llama-3.1-70b-instruct: 21910
+      meta/llama-3.1-8b-instruct: 19781
+      meta/llama-3.3-70b-instruct: 18759
+      meta/muse-spark-1.1: 9923
+      meta/muse-spark-1.2: 1174
+      meta/muse-spark-1.3: 1693
+      minimax/minimax-m1: 8545
+      minimax/minimax-m2: 1980
+      minimax/minimax-m2.5: 13058
+      minimax/minimax-m2.7: 22853
+      minimax/minimax-m3: 16812
+      mistralai/mistral-large-2407: 18321
+      mistralai/mistral-medium-3-5: 3549
+      moonshotai/kimi-k2.6: 12215
+      moonshotai/kimi-k3: 6985
+      openai/gpt-4o-2024-05-13: 43766
+      openai/gpt-4o-2024-08-06: 18305
+      openai/gpt-4o-mini-2024-07-18: 26705
+      openai/gpt-5: 8259
+      openai/gpt-5-mini: 6905
+      openai/gpt-5-nano: 2023
+      openai/gpt-5.1: 10718
+      openai/gpt-5.2: 14524
+      openai/gpt-5.4: 20257
+      openai/gpt-5.4-mini: 20176
+      openai/gpt-5.4-nano: 19974
+      openai/gpt-5.5: 22336
+      openai/gpt-5.6-luna: 10129
+      openai/gpt-5.6-sol: 9363
+      openai/gpt-5.6-terra: 9959
+      openai/gpt-6-astra: 846
+      openai/gpt-oss-120b: 7745
+      openai/gpt-oss-20b: 2537
+      openai/o3-mini: 16922
+      openai/o3-mini@high: 6681
+      qwen/qwen-2.5-72b-instruct: 16363
+      qwen/qwen3-235b-a22b: 6159
+      qwen/qwen3-30b-a3b: 6113
+      qwen/qwen3-32b: 858
+      qwen/qwen3.5-122b-a10b: 9070
+      qwen/qwen3.5-27b: 8654
+      qwen/qwen3.5-35b-a3b: 9370
+      qwen/qwen3.5-397b-a17b: 25939
+      qwen/qwen3.6-max-preview: 1782
+      qwen/qwen3.6-plus: 15410
+      qwen/qwen3.7-plus: 13902
+      qwen/qwen3.8-27b: 3778
+      stepfun/step-3.5-flash: 18175
+      tencent/hy3: 2839
+      thinkingmachines/inkling: 9291
+      thinkingmachines/inkling-small: 6904
+      upstage/solar-pro4: 873
+      x-ai/grok-4.1: 18647
+      x-ai/grok-4.3: 23367
+      x-ai/grok-4.5: 10848
+      x-ai/grok-4.6: 5549
+      xiaomi/mimo-v2-pro: 8027
+      xiaomi/mimo-v2.5: 14956
+      xiaomi/mimo-v2.5-pro: 20161
+      z-ai/glm-4.5: 6116
+      z-ai/glm-4.5-air: 8062
+      z-ai/glm-4.5v: 1292
+      z-ai/glm-4.6: 10003
+      z-ai/glm-4.6v: 737
+      z-ai/glm-4.7: 3207
+      z-ai/glm-4.7-flash: 3143
+      z-ai/glm-5: 8967
+      z-ai/glm-5.1: 17018
+      z-ai/glm-5.2: 12822
+      z-ai/glm-5.3: 3825
+      z-ai/glm-5.3-flash: 3554
+      z-ai/glm-5v-turbo: 3244
+  arena_longer_query:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, longer query category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1521.0
+      anthropic/claude-fable-5.1@max: 1511.0
+      anthropic/claude-opus-4.6: 1524.0
+      anthropic/claude-opus-4.7: 1514.0
+      anthropic/claude-opus-4.8: 1501.0
+      anthropic/claude-opus-5: 1507.0
+      anthropic/claude-opus-5@max: 1500.0
+      anthropic/claude-sonnet-4.6: 1494.0
+      anthropic/claude-sonnet-5: 1482.0
+      arcee-ai/trinity-large-thinking: 1366.0
+      baidu/ernie-5.1: 1466.0
+      cohere/command-r-08-2024: 1264.0
+      cohere/command-r-plus-08-2024: 1282.0
+      deepseek/deepseek-r1: 1399.0
+      deepseek/deepseek-r1-0528: 1407.0
+      deepseek/deepseek-v3.1-terminus: 1419.0
+      deepseek/deepseek-v3.2: 1441.0
+      deepseek/deepseek-v3.2-exp: 1440.0
+      deepseek/deepseek-v4-flash: 1448.0
+      deepseek/deepseek-v4-pro: 1472.0
+      google/gemini-2.5-flash: 1418.0
+      google/gemini-2.5-pro: 1456.0
+      google/gemini-3-flash-preview: 1477.0
+      google/gemini-3.1-pro-preview: 1500.0
+      google/gemini-3.5-flash: 1481.0
+      google/gemini-3.5-flash-lite: 1462.0
+      google/gemini-3.5-flash@medium: 1478.0
+      google/gemini-3.6-flash: 1487.0
+      google/gemini-3.7-flash: 1498.0
+      google/gemini-3.8-flash: 1509.0
+      google/gemma-3-12b-it: 1346.0
+      google/gemma-3-27b-it: 1364.0
+      ibm-granite/granite-4.2-8b: 1301.0
+      inception/mercury-2: 1327.0
+      meta/llama-3.1-70b-instruct: 1295.0
+      meta/llama-3.1-8b-instruct: 1224.0
+      meta/llama-3.3-70b-instruct: 1313.0
+      meta/muse-spark-1.1: 1481.0
+      meta/muse-spark-1.2: 1502.0
+      meta/muse-spark-1.3: 1506.0
+      minimax/minimax-m1: 1363.0
+      minimax/minimax-m2: 1343.0
+      minimax/minimax-m2.5: 1404.0
+      minimax/minimax-m2.7: 1432.0
+      minimax/minimax-m3: 1453.0
+      mistralai/mistral-large-2407: 1304.0
+      mistralai/mistral-medium-3-5: 1430.0
+      moonshotai/kimi-k2.6: 1476.0
+      moonshotai/kimi-k3: 1500.0
+      openai/gpt-4o-2024-05-13: 1332.0
+      openai/gpt-4o-2024-08-06: 1339.0
+      openai/gpt-4o-mini-2024-07-18: 1326.0
+      openai/gpt-5: 1414.0
+      openai/gpt-5-mini: 1369.0
+      openai/gpt-5-nano: 1331.0
+      openai/gpt-5.1: 1460.0
+      openai/gpt-5.2: 1442.0
+      openai/gpt-5.4: 1483.0
+      openai/gpt-5.4-mini: 1448.0
+      openai/gpt-5.4-nano: 1403.0
+      openai/gpt-5.5: 1488.0
+      openai/gpt-5.6-luna: 1450.0
+      openai/gpt-5.6-sol: 1498.0
+      openai/gpt-5.6-terra: 1468.0
+      openai/gpt-6-astra: 1481.0
+      openai/gpt-oss-120b: 1325.0
+      openai/gpt-oss-20b: 1302.0
+      openai/o3-mini: 1359.0
+      openai/o3-mini@high: 1373.0
+      qwen/qwen-2.5-72b-instruct: 1317.0
+      qwen/qwen3-235b-a22b: 1378.0
+      qwen/qwen3-30b-a3b: 1339.0
+      qwen/qwen3-32b: 1355.0
+      qwen/qwen3.5-122b-a10b: 1418.0
+      qwen/qwen3.5-27b: 1422.0
+      qwen/qwen3.5-35b-a3b: 1401.0
+      qwen/qwen3.5-397b-a17b: 1454.0
+      qwen/qwen3.6-max-preview: 1474.0
+      qwen/qwen3.6-plus: 1454.0
+      qwen/qwen3.7-plus: 1465.0
+      qwen/qwen3.8-27b: 1448.0
+      stepfun/step-3.5-flash: 1405.0
+      tencent/hy3: 1466.0
+      thinkingmachines/inkling: 1438.0
+      thinkingmachines/inkling-small: 1397.0
+      upstage/solar-pro4: 1383.0
+      x-ai/grok-4.1: 1450.0
+      x-ai/grok-4.3: 1444.0
+      x-ai/grok-4.5: 1483.0
+      x-ai/grok-4.6: 1471.0
+      xiaomi/mimo-v2-pro: 1467.0
+      xiaomi/mimo-v2.5: 1452.0
+      xiaomi/mimo-v2.5-pro: 1487.0
+      z-ai/glm-4.5: 1417.0
+      z-ai/glm-4.5-air: 1379.0
+      z-ai/glm-4.5v: 1340.0
+      z-ai/glm-4.6: 1431.0
+      z-ai/glm-4.6v: 1379.0
+      z-ai/glm-4.7: 1449.0
+      z-ai/glm-4.7-flash: 1372.0
+      z-ai/glm-5: 1469.0
+      z-ai/glm-5.1: 1480.0
+      z-ai/glm-5.2: 1483.0
+      z-ai/glm-5.3: 1492.0
+      z-ai/glm-5.3-flash: 1476.0
+      z-ai/glm-5v-turbo: 1443.0
+    votes:
+      anthropic/claude-fable-5: 13819
+      anthropic/claude-fable-5.1@max: 2413
+      anthropic/claude-opus-4.6: 29738
+      anthropic/claude-opus-4.7: 27145
+      anthropic/claude-opus-4.8: 24417
+      anthropic/claude-opus-5: 20232
+      anthropic/claude-opus-5@max: 9770
+      anthropic/claude-sonnet-4.6: 28350
+      anthropic/claude-sonnet-5: 16276
+      arcee-ai/trinity-large-thinking: 12330
+      baidu/ernie-5.1: 15363
+      cohere/command-r-08-2024: 1421
+      cohere/command-r-plus-08-2024: 1369
+      deepseek/deepseek-r1: 2303
+      deepseek/deepseek-r1-0528: 3115
+      deepseek/deepseek-v3.1-terminus: 843
+      deepseek/deepseek-v3.2: 13016
+      deepseek/deepseek-v3.2-exp: 2978
+      deepseek/deepseek-v4-flash: 21502
+      deepseek/deepseek-v4-pro: 23898
+      google/gemini-2.5-flash: 32105
+      google/gemini-2.5-pro: 32764
+      google/gemini-3-flash-preview: 7966
+      google/gemini-3.1-pro-preview: 45996
+      google/gemini-3.5-flash: 17719
+      google/gemini-3.5-flash-lite: 12487
+      google/gemini-3.5-flash@medium: 17436
+      google/gemini-3.6-flash: 12561
+      google/gemini-3.7-flash: 2680
+      google/gemini-3.8-flash: 2538
+      google/gemma-3-12b-it: 371
+      google/gemma-3-27b-it: 6620
+      ibm-granite/granite-4.2-8b: 1281
+      inception/mercury-2: 844
+      meta/llama-3.1-70b-instruct: 7622
+      meta/llama-3.1-8b-instruct: 6736
+      meta/llama-3.3-70b-instruct: 8319
+      meta/muse-spark-1.1: 12747
+      meta/muse-spark-1.2: 1487
+      meta/muse-spark-1.3: 2151
+      minimax/minimax-m1: 6916
+      minimax/minimax-m2: 1612
+      minimax/minimax-m2.5: 15268
+      minimax/minimax-m2.7: 28952
+      minimax/minimax-m3: 21742
+      mistralai/mistral-large-2407: 5885
+      mistralai/mistral-medium-3-5: 4644
+      moonshotai/kimi-k2.6: 15529
+      moonshotai/kimi-k3: 9244
+      openai/gpt-4o-2024-05-13: 14922
+      openai/gpt-4o-2024-08-06: 6160
+      openai/gpt-4o-mini-2024-07-18: 8986
+      openai/gpt-5: 6910
+      openai/gpt-5-mini: 5823
+      openai/gpt-5-nano: 1628
+      openai/gpt-5.1: 10373
+      openai/gpt-5.2: 31246
+      openai/gpt-5.4: 25968
+      openai/gpt-5.4-mini: 25406
+      openai/gpt-5.4-nano: 25378
+      openai/gpt-5.5: 29404
+      openai/gpt-5.6-luna: 13400
+      openai/gpt-5.6-sol: 12438
+      openai/gpt-5.6-terra: 13080
+      openai/gpt-6-astra: 1177
+      openai/gpt-oss-120b: 6487
+      openai/gpt-oss-20b: 2114
+      openai/o3-mini: 9246
+      openai/o3-mini@high: 2160
+      qwen/qwen-2.5-72b-instruct: 6008
+      qwen/qwen3-235b-a22b: 4594
+      qwen/qwen3-30b-a3b: 4476
+      qwen/qwen3-32b: 504
+      qwen/qwen3.5-122b-a10b: 11006
+      qwen/qwen3.5-27b: 10344
+      qwen/qwen3.5-35b-a3b: 11176
+      qwen/qwen3.5-397b-a17b: 33206
+      qwen/qwen3.6-max-preview: 2147
+      qwen/qwen3.6-plus: 19477
+      qwen/qwen3.7-plus: 17911
+      qwen/qwen3.8-27b: 4876
+      stepfun/step-3.5-flash: 21164
+      tencent/hy3: 3659
+      thinkingmachines/inkling: 12221
+      thinkingmachines/inkling-small: 9108
+      upstage/solar-pro4: 1164
+      x-ai/grok-4.1: 20068
+      x-ai/grok-4.3: 30526
+      x-ai/grok-4.5: 14426
+      x-ai/grok-4.6: 7372
+      xiaomi/mimo-v2-pro: 9443
+      xiaomi/mimo-v2.5: 19657
+      xiaomi/mimo-v2.5-pro: 26794
+      z-ai/glm-4.5: 5068
+      z-ai/glm-4.5-air: 6666
+      z-ai/glm-4.5v: 1065
+      z-ai/glm-4.6: 8849
+      z-ai/glm-4.6v: 672
+      z-ai/glm-4.7: 3112
+      z-ai/glm-4.7-flash: 3170
+      z-ai/glm-5: 10267
+      z-ai/glm-5.1: 21963
+      z-ai/glm-5.2: 16836
+      z-ai/glm-5.3: 5257
+      z-ai/glm-5.3-flash: 4663
+      z-ai/glm-5v-turbo: 4205
+  arena_math_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, math category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1526.0
+      anthropic/claude-fable-5.1@max: 1522.0
+      anthropic/claude-opus-4.6: 1516.0
+      anthropic/claude-opus-4.7: 1503.0
+      anthropic/claude-opus-4.8: 1494.0
+      anthropic/claude-opus-5: 1525.0
+      anthropic/claude-opus-5@max: 1523.0
+      anthropic/claude-sonnet-4.6: 1463.0
+      anthropic/claude-sonnet-5: 1476.0
+      arcee-ai/trinity-large-thinking: 1385.0
+      baidu/ernie-5.1: 1476.0
+      cohere/command-r-08-2024: 1207.0
+      cohere/command-r-plus-08-2024: 1231.0
+      deepseek/deepseek-r1: 1412.0
+      deepseek/deepseek-r1-0528: 1393.0
+      deepseek/deepseek-v3.1-terminus: 1397.0
+      deepseek/deepseek-v3.2: 1429.0
+      deepseek/deepseek-v3.2-exp: 1414.0
+      deepseek/deepseek-v4-flash: 1425.0
+      deepseek/deepseek-v4-pro: 1445.0
+      google/gemini-2.5-flash: 1406.0
+      google/gemini-2.5-pro: 1441.0
+      google/gemini-3-flash-preview: 1476.0
+      google/gemini-3.1-pro-preview: 1489.0
+      google/gemini-3.5-flash: 1499.0
+      google/gemini-3.5-flash-lite: 1444.0
+      google/gemini-3.5-flash@medium: 1478.0
+      google/gemini-3.6-flash: 1504.0
+      google/gemini-3.7-flash: 1522.0
+      google/gemma-3-12b-it: 1318.0
+      google/gemma-3-27b-it: 1322.0
+      meta/llama-3.1-70b-instruct: 1269.0
+      meta/llama-3.1-8b-instruct: 1189.0
+      meta/llama-3.3-70b-instruct: 1296.0
+      meta/muse-spark-1.1: 1485.0
+      meta/muse-spark-1.3: 1496.0
+      minimax/minimax-m1: 1370.0
+      minimax/minimax-m2: 1355.0
+      minimax/minimax-m2.5: 1396.0
+      minimax/minimax-m2.7: 1422.0
+      minimax/minimax-m3: 1434.0
+      mistralai/mistral-large-2407: 1288.0
+      mistralai/mistral-medium-3-5: 1429.0
+      moonshotai/kimi-k2.6: 1478.0
+      moonshotai/kimi-k3: 1501.0
+      openai/gpt-4o-2024-05-13: 1305.0
+      openai/gpt-4o-2024-08-06: 1309.0
+      openai/gpt-4o-mini-2024-07-18: 1275.0
+      openai/gpt-5: 1434.0
+      openai/gpt-5-mini: 1405.0
+      openai/gpt-5-nano: 1346.0
+      openai/gpt-5.1: 1456.0
+      openai/gpt-5.2: 1458.0
+      openai/gpt-5.4: 1494.0
+      openai/gpt-5.4-mini: 1440.0
+      openai/gpt-5.4-nano: 1424.0
+      openai/gpt-5.5: 1500.0
+      openai/gpt-5.6-luna: 1477.0
+      openai/gpt-5.6-sol: 1488.0
+      openai/gpt-5.6-terra: 1475.0
+      openai/gpt-oss-120b: 1380.0
+      openai/gpt-oss-20b: 1335.0
+      openai/o3-mini: 1381.0
+      openai/o3-mini@high: 1405.0
+      qwen/qwen-2.5-72b-instruct: 1296.0
+      qwen/qwen3-235b-a22b: 1392.0
+      qwen/qwen3-30b-a3b: 1351.0
+      qwen/qwen3-32b: 1398.0
+      qwen/qwen3.5-122b-a10b: 1424.0
+      qwen/qwen3.5-27b: 1428.0
+      qwen/qwen3.5-35b-a3b: 1400.0
+      qwen/qwen3.5-397b-a17b: 1449.0
+      qwen/qwen3.6-max-preview: 1475.0
+      qwen/qwen3.6-plus: 1455.0
+      qwen/qwen3.7-plus: 1466.0
+      qwen/qwen3.8-27b: 1466.0
+      stepfun/step-3.5-flash: 1406.0
+      tencent/hy3: 1480.0
+      thinkingmachines/inkling: 1477.0
+      thinkingmachines/inkling-small: 1445.0
+      x-ai/grok-4.1: 1427.0
+      x-ai/grok-4.3: 1419.0
+      x-ai/grok-4.5: 1477.0
+      x-ai/grok-4.6: 1441.0
+      xiaomi/mimo-v2-pro: 1452.0
+      xiaomi/mimo-v2.5: 1440.0
+      xiaomi/mimo-v2.5-pro: 1476.0
+      z-ai/glm-4.5: 1413.0
+      z-ai/glm-4.5-air: 1388.0
+      z-ai/glm-4.5v: 1362.0
+      z-ai/glm-4.6: 1417.0
+      z-ai/glm-4.7: 1429.0
+      z-ai/glm-4.7-flash: 1366.0
+      z-ai/glm-5: 1443.0
+      z-ai/glm-5.1: 1476.0
+      z-ai/glm-5.2: 1479.0
+      z-ai/glm-5.3: 1504.0
+      z-ai/glm-5.3-flash: 1513.0
+      z-ai/glm-5v-turbo: 1441.0
+    votes:
+      anthropic/claude-fable-5: 1467
+      anthropic/claude-fable-5.1@max: 243
+      anthropic/claude-opus-4.6: 3695
+      anthropic/claude-opus-4.7: 3030
+      anthropic/claude-opus-4.8: 2444
+      anthropic/claude-opus-5: 1866
+      anthropic/claude-opus-5@max: 904
+      anthropic/claude-sonnet-4.6: 3551
+      anthropic/claude-sonnet-5: 1519
+      arcee-ai/trinity-large-thinking: 1611
+      baidu/ernie-5.1: 1886
+      cohere/command-r-08-2024: 1601
+      cohere/command-r-plus-08-2024: 1467
+      deepseek/deepseek-r1: 1606
+      deepseek/deepseek-r1-0528: 854
+      deepseek/deepseek-v3.1-terminus: 216
+      deepseek/deepseek-v3.2: 2957
+      deepseek/deepseek-v3.2-exp: 771
+      deepseek/deepseek-v4-flash: 2514
+      deepseek/deepseek-v4-pro: 2868
+      google/gemini-2.5-flash: 7772
+      google/gemini-2.5-pro: 7555
+      google/gemini-3-flash-preview: 1957
+      google/gemini-3.1-pro-preview: 5569
+      google/gemini-3.5-flash: 1867
+      google/gemini-3.5-flash-lite: 1140
+      google/gemini-3.5-flash@medium: 1667
+      google/gemini-3.6-flash: 1242
+      google/gemini-3.7-flash: 310
+      google/gemma-3-12b-it: 389
+      google/gemma-3-27b-it: 3552
+      meta/llama-3.1-70b-instruct: 7677
+      meta/llama-3.1-8b-instruct: 7135
+      meta/llama-3.3-70b-instruct: 5767
+      meta/muse-spark-1.1: 1164
+      meta/muse-spark-1.3: 207
+      minimax/minimax-m1: 1761
+      minimax/minimax-m2: 318
+      minimax/minimax-m2.5: 2420
+      minimax/minimax-m2.7: 3454
+      minimax/minimax-m3: 2301
+      mistralai/mistral-large-2407: 6664
+      mistralai/mistral-medium-3-5: 539
+      moonshotai/kimi-k2.6: 1931
+      moonshotai/kimi-k3: 884
+      openai/gpt-4o-2024-05-13: 15103
+      openai/gpt-4o-2024-08-06: 6826
+      openai/gpt-4o-mini-2024-07-18: 9319
+      openai/gpt-5: 1857
+      openai/gpt-5-mini: 1438
+      openai/gpt-5-nano: 492
+      openai/gpt-5.1: 2453
+      openai/gpt-5.2: 2950
+      openai/gpt-5.4: 3179
+      openai/gpt-5.4-mini: 3161
+      openai/gpt-5.4-nano: 3072
+      openai/gpt-5.5: 3301
+      openai/gpt-5.6-luna: 1273
+      openai/gpt-5.6-sol: 1220
+      openai/gpt-5.6-terra: 1186
+      openai/gpt-oss-120b: 1763
+      openai/gpt-oss-20b: 672
+      openai/o3-mini: 4692
+      openai/o3-mini@high: 1909
+      qwen/qwen-2.5-72b-instruct: 5415
+      qwen/qwen3-235b-a22b: 1597
+      qwen/qwen3-30b-a3b: 1692
+      qwen/qwen3-32b: 316
+      qwen/qwen3.5-122b-a10b: 1764
+      qwen/qwen3.5-27b: 1640
+      qwen/qwen3.5-35b-a3b: 1751
+      qwen/qwen3.5-397b-a17b: 4244
+      qwen/qwen3.6-max-preview: 360
+      qwen/qwen3.6-plus: 2523
+      qwen/qwen3.7-plus: 1767
+      qwen/qwen3.8-27b: 468
+      stepfun/step-3.5-flash: 3224
+      tencent/hy3: 413
+      thinkingmachines/inkling: 1120
+      thinkingmachines/inkling-small: 722
+      x-ai/grok-4.1: 4165
+      x-ai/grok-4.3: 3178
+      x-ai/grok-4.5: 1232
+      x-ai/grok-4.6: 719
+      xiaomi/mimo-v2-pro: 1608
+      xiaomi/mimo-v2.5: 2327
+      xiaomi/mimo-v2.5-pro: 2879
+      z-ai/glm-4.5: 1408
+      z-ai/glm-4.5-air: 1511
+      z-ai/glm-4.5v: 271
+      z-ai/glm-4.6: 2058
+      z-ai/glm-4.7: 673
+      z-ai/glm-4.7-flash: 704
+      z-ai/glm-5: 1602
+      z-ai/glm-5.1: 2373
+      z-ai/glm-5.2: 1662
+      z-ai/glm-5.3: 430
+      z-ai/glm-5.3-flash: 441
+      z-ai/glm-5v-turbo: 442
+  arena_multiturn_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, multi-turn category (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1518.0
+      anthropic/claude-fable-5.1@max: 1488.0
+      anthropic/claude-opus-4.6: 1517.0
+      anthropic/claude-opus-4.7: 1516.0
+      anthropic/claude-opus-4.8: 1496.0
+      anthropic/claude-opus-5: 1484.0
+      anthropic/claude-opus-5@max: 1485.0
+      anthropic/claude-sonnet-4.6: 1481.0
+      anthropic/claude-sonnet-5: 1473.0
+      arcee-ai/trinity-large-thinking: 1348.0
+      baidu/ernie-5.1: 1473.0
+      cohere/command-r-08-2024: 1212.0
+      cohere/command-r-plus-08-2024: 1250.0
+      deepseek/deepseek-r1: 1410.0
+      deepseek/deepseek-r1-0528: 1404.0
+      deepseek/deepseek-v3.1-terminus: 1395.0
+      deepseek/deepseek-v3.2: 1428.0
+      deepseek/deepseek-v3.2-exp: 1429.0
+      deepseek/deepseek-v4-flash: 1452.0
+      deepseek/deepseek-v4-pro: 1475.0
+      google/gemini-2.5-flash: 1403.0
+      google/gemini-2.5-pro: 1448.0
+      google/gemini-3-flash-preview: 1483.0
+      google/gemini-3.1-pro-preview: 1495.0
+      google/gemini-3.5-flash: 1483.0
+      google/gemini-3.5-flash-lite: 1464.0
+      google/gemini-3.5-flash@medium: 1476.0
+      google/gemini-3.6-flash: 1485.0
+      google/gemini-3.7-flash: 1498.0
+      google/gemini-3.8-flash: 1513.0
+      google/gemma-3-12b-it: 1344.0
+      google/gemma-3-27b-it: 1358.0
+      ibm-granite/granite-4.2-8b: 1265.0
+      inception/mercury-2: 1343.0
+      meta/llama-3.1-70b-instruct: 1289.0
+      meta/llama-3.1-8b-instruct: 1199.0
+      meta/llama-3.3-70b-instruct: 1317.0
+      meta/muse-spark-1.1: 1497.0
+      meta/muse-spark-1.2: 1520.0
+      meta/muse-spark-1.3: 1493.0
+      minimax/minimax-m1: 1357.0
+      minimax/minimax-m2: 1362.0
+      minimax/minimax-m2.5: 1395.0
+      minimax/minimax-m2.7: 1426.0
+      minimax/minimax-m3: 1451.0
+      mistralai/mistral-large-2407: 1297.0
+      mistralai/mistral-medium-3-5: 1431.0
+      moonshotai/kimi-k2.6: 1459.0
+      moonshotai/kimi-k3: 1496.0
+      openai/gpt-4o-2024-05-13: 1341.0
+      openai/gpt-4o-2024-08-06: 1327.0
+      openai/gpt-4o-mini-2024-07-18: 1311.0
+      openai/gpt-5: 1421.0
+      openai/gpt-5-mini: 1372.0
+      openai/gpt-5-nano: 1324.0
+      openai/gpt-5.1: 1462.0
+      openai/gpt-5.2: 1444.0
+      openai/gpt-5.4: 1494.0
+      openai/gpt-5.4-mini: 1468.0
+      openai/gpt-5.4-nano: 1413.0
+      openai/gpt-5.5: 1489.0
+      openai/gpt-5.6-luna: 1458.0
+      openai/gpt-5.6-sol: 1487.0
+      openai/gpt-5.6-terra: 1473.0
+      openai/gpt-6-astra: 1499.0
+      openai/gpt-oss-120b: 1327.0
+      openai/gpt-oss-20b: 1289.0
+      openai/o3-mini: 1340.0
+      openai/o3-mini@high: 1345.0
+      qwen/qwen-2.5-72b-instruct: 1299.0
+      qwen/qwen3-235b-a22b: 1370.0
+      qwen/qwen3-30b-a3b: 1320.0
+      qwen/qwen3-32b: 1338.0
+      qwen/qwen3.5-122b-a10b: 1417.0
+      qwen/qwen3.5-27b: 1414.0
+      qwen/qwen3.5-35b-a3b: 1393.0
+      qwen/qwen3.5-397b-a17b: 1452.0
+      qwen/qwen3.6-max-preview: 1469.0
+      qwen/qwen3.6-plus: 1447.0
+      qwen/qwen3.7-plus: 1465.0
+      qwen/qwen3.8-27b: 1441.0
+      stepfun/step-3.5-flash: 1396.0
+      tencent/hy3: 1455.0
+      thinkingmachines/inkling: 1440.0
+      thinkingmachines/inkling-small: 1422.0
+      upstage/solar-pro4: 1394.0
+      x-ai/grok-4.1: 1460.0
+      x-ai/grok-4.3: 1446.0
+      x-ai/grok-4.5: 1476.0
+      x-ai/grok-4.6: 1441.0
+      xiaomi/mimo-v2-pro: 1469.0
+      xiaomi/mimo-v2.5: 1450.0
+      xiaomi/mimo-v2.5-pro: 1478.0
+      z-ai/glm-4.5: 1405.0
+      z-ai/glm-4.5-air: 1367.0
+      z-ai/glm-4.5v: 1356.0
+      z-ai/glm-4.6: 1421.0
+      z-ai/glm-4.6v: 1369.0
+      z-ai/glm-4.7: 1458.0
+      z-ai/glm-4.7-flash: 1362.0
+      z-ai/glm-5: 1473.0
+      z-ai/glm-5.1: 1477.0
+      z-ai/glm-5.2: 1469.0
+      z-ai/glm-5.3: 1493.0
+      z-ai/glm-5.3-flash: 1475.0
+      z-ai/glm-5v-turbo: 1433.0
+    votes:
+      anthropic/claude-fable-5: 5048
+      anthropic/claude-fable-5.1@max: 807
+      anthropic/claude-opus-4.6: 12295
+      anthropic/claude-opus-4.7: 10589
+      anthropic/claude-opus-4.8: 9353
+      anthropic/claude-opus-5: 6842
+      anthropic/claude-opus-5@max: 3196
+      anthropic/claude-sonnet-4.6: 11962
+      anthropic/claude-sonnet-5: 6132
+      arcee-ai/trinity-large-thinking: 5379
+      baidu/ernie-5.1: 6412
+      cohere/command-r-08-2024: 1851
+      cohere/command-r-plus-08-2024: 1826
+      deepseek/deepseek-r1: 2418
+      deepseek/deepseek-r1-0528: 2850
+      deepseek/deepseek-v3.1-terminus: 662
+      deepseek/deepseek-v3.2: 8038
+      deepseek/deepseek-v3.2-exp: 1938
+      deepseek/deepseek-v4-flash: 8822
+      deepseek/deepseek-v4-pro: 9800
+      google/gemini-2.5-flash: 21242
+      google/gemini-2.5-pro: 20747
+      google/gemini-3-flash-preview: 5217
+      google/gemini-3.1-pro-preview: 18519
+      google/gemini-3.5-flash: 6491
+      google/gemini-3.5-flash-lite: 4360
+      google/gemini-3.5-flash@medium: 6091
+      google/gemini-3.6-flash: 4357
+      google/gemini-3.7-flash: 883
+      google/gemini-3.8-flash: 784
+      google/gemma-3-12b-it: 471
+      google/gemma-3-27b-it: 6726
+      ibm-granite/granite-4.2-8b: 500
+      inception/mercury-2: 519
+      meta/llama-3.1-70b-instruct: 10405
+      meta/llama-3.1-8b-instruct: 8930
+      meta/llama-3.3-70b-instruct: 9065
+      meta/muse-spark-1.1: 4320
+      meta/muse-spark-1.2: 512
+      meta/muse-spark-1.3: 760
+      minimax/minimax-m1: 5425
+      minimax/minimax-m2: 1088
+      minimax/minimax-m2.5: 7336
+      minimax/minimax-m2.7: 12145
+      minimax/minimax-m3: 8605
+      mistralai/mistral-large-2407: 8296
+      mistralai/mistral-medium-3-5: 1801
+      moonshotai/kimi-k2.6: 6553
+      moonshotai/kimi-k3: 3311
+      openai/gpt-4o-2024-05-13: 20434
+      openai/gpt-4o-2024-08-06: 8201
+      openai/gpt-4o-mini-2024-07-18: 12279
+      openai/gpt-5: 4939
+      openai/gpt-5-mini: 4382
+      openai/gpt-5-nano: 1427
+      openai/gpt-5.1: 6994
+      openai/gpt-5.2: 15027
+      openai/gpt-5.4: 11259
+      openai/gpt-5.4-mini: 11168
+      openai/gpt-5.4-nano: 11127
+      openai/gpt-5.5: 11169
+      openai/gpt-5.6-luna: 4712
+      openai/gpt-5.6-sol: 4537
+      openai/gpt-5.6-terra: 4702
+      openai/gpt-6-astra: 373
+      openai/gpt-oss-120b: 4862
+      openai/gpt-oss-20b: 1785
+      openai/o3-mini: 9312
+      openai/o3-mini@high: 2535
+      qwen/qwen-2.5-72b-instruct: 7250
+      qwen/qwen3-235b-a22b: 4191
+      qwen/qwen3-30b-a3b: 4406
+      qwen/qwen3-32b: 590
+      qwen/qwen3.5-122b-a10b: 4948
+      qwen/qwen3.5-27b: 4613
+      qwen/qwen3.5-35b-a3b: 5209
+      qwen/qwen3.5-397b-a17b: 12773
+      qwen/qwen3.6-max-preview: 903
+      qwen/qwen3.6-plus: 8019
+      qwen/qwen3.7-plus: 6534
+      qwen/qwen3.8-27b: 1812
+      stepfun/step-3.5-flash: 9880
+      tencent/hy3: 1349
+      thinkingmachines/inkling: 4205
+      thinkingmachines/inkling-small: 3067
+      upstage/solar-pro4: 373
+      x-ai/grok-4.1: 11983
+      x-ai/grok-4.3: 12101
+      x-ai/grok-4.5: 5131
+      x-ai/grok-4.6: 2407
+      xiaomi/mimo-v2-pro: 4416
+      xiaomi/mimo-v2.5: 7902
+      xiaomi/mimo-v2.5-pro: 10597
+      z-ai/glm-4.5: 3720
+      z-ai/glm-4.5-air: 4973
+      z-ai/glm-4.5v: 855
+      z-ai/glm-4.6: 5470
+      z-ai/glm-4.6v: 475
+      z-ai/glm-4.7: 1866
+      z-ai/glm-4.7-flash: 2057
+      z-ai/glm-5: 4417
+      z-ai/glm-5.1: 7905
+      z-ai/glm-5.2: 6003
+      z-ai/glm-5.3: 1684
+      z-ai/glm-5.3-flash: 1530
+      z-ai/glm-5v-turbo: 1557
+  arena_search_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Search leaderboard
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1229.0
+      anthropic/claude-opus-4.7: 1212.0
+      anthropic/claude-opus-4.8: 1195.0
+      baidu/ernie-5.1: 1193.0
+      openai/gpt-5.6-sol: 1256.0
+      x-ai/grok-4.3: 1193.0
+      x-ai/grok-4.5: 1202.0
+    votes:
+      anthropic/claude-fable-5: 41795
+      anthropic/claude-opus-4.7: 91394
+      anthropic/claude-opus-4.8: 70998
+      baidu/ernie-5.1: 3788
+      openai/gpt-5.6-sol: 29663
+      x-ai/grok-4.3: 91483
+      x-ai/grok-4.5: 31505
+  arena_text_elo:
+    higher_is_better: true
+    style_control: true
+    title: Arena Text leaderboard, overall (style control on)
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1506.0
+      anthropic/claude-fable-5.1@max: 1498.0
+      anthropic/claude-opus-4.6: 1505.0
+      anthropic/claude-opus-4.7: 1502.0
+      anthropic/claude-opus-4.8: 1481.0
+      anthropic/claude-opus-5: 1493.0
+      anthropic/claude-opus-5@max: 1487.0
+      anthropic/claude-sonnet-4.6: 1473.0
+      anthropic/claude-sonnet-5: 1461.0
+      arcee-ai/trinity-large-thinking: 1369.0
+      baidu/ernie-5.1: 1468.0
+      cohere/command-r-08-2024: 1250.0
+      cohere/command-r-plus-08-2024: 1276.0
+      deepseek/deepseek-r1: 1398.0
+      deepseek/deepseek-r1-0528: 1421.0
+      deepseek/deepseek-v3.1-terminus: 1415.0
+      deepseek/deepseek-v3.2: 1425.0
+      deepseek/deepseek-v3.2-exp: 1422.0
+      deepseek/deepseek-v4-flash: 1436.0
+      deepseek/deepseek-v4-pro: 1457.0
+      google/gemini-2.5-flash: 1410.0
+      google/gemini-2.5-pro: 1445.0
+      google/gemini-3-flash-preview: 1474.0
+      google/gemini-3.1-pro-preview: 1487.0
+      google/gemini-3.5-flash: 1478.0
+      google/gemini-3.5-flash-lite: 1456.0
+      google/gemini-3.5-flash@medium: 1474.0
+      google/gemini-3.6-flash: 1480.0
+      google/gemini-3.7-flash: 1490.0
+      google/gemini-3.8-flash: 1493.0
+      google/gemma-3-12b-it: 1342.0
+      google/gemma-3-27b-it: 1365.0
+      ibm-granite/granite-4.2-8b: 1287.0
+      inception/mercury-2: 1346.0
+      meta/llama-3.1-70b-instruct: 1293.0
+      meta/llama-3.1-8b-instruct: 1211.0
+      meta/llama-3.3-70b-instruct: 1318.0
+      meta/muse-spark-1.1: 1493.0
+      meta/muse-spark-1.2: 1500.0
+      meta/muse-spark-1.3: 1493.0
+      minimax/minimax-m1: 1364.0
+      minimax/minimax-m2: 1346.0
+      minimax/minimax-m2.5: 1390.0
+      minimax/minimax-m2.7: 1415.0
+      minimax/minimax-m3: 1441.0
+      mistralai/mistral-large-2407: 1314.0
+      mistralai/mistral-medium-3-5: 1426.0
+      moonshotai/kimi-k2.6: 1460.0
+      moonshotai/kimi-k3: 1485.0
+      openai/gpt-4o-2024-05-13: 1346.0
+      openai/gpt-4o-2024-08-06: 1335.0
+      openai/gpt-4o-mini-2024-07-18: 1318.0
+      openai/gpt-5: 1435.0
+      openai/gpt-5-mini: 1390.0
+      openai/gpt-5-nano: 1337.0
+      openai/gpt-5.1: 1455.0
+      openai/gpt-5.2: 1438.0
+      openai/gpt-5.4: 1476.0
+      openai/gpt-5.4-mini: 1448.0
+      openai/gpt-5.4-nano: 1402.0
+      openai/gpt-5.5: 1482.0
+      openai/gpt-5.6-luna: 1452.0
+      openai/gpt-5.6-sol: 1483.0
+      openai/gpt-5.6-terra: 1466.0
+      openai/gpt-6-astra: 1480.0
+      openai/gpt-oss-120b: 1352.0
+      openai/gpt-oss-20b: 1317.0
+      openai/o3-mini: 1348.0
+      openai/o3-mini@high: 1363.0
+      qwen/qwen-2.5-72b-instruct: 1303.0
+      qwen/qwen3-235b-a22b: 1375.0
+      qwen/qwen3-30b-a3b: 1327.0
+      qwen/qwen3-32b: 1347.0
+      qwen/qwen3.5-122b-a10b: 1417.0
+      qwen/qwen3.5-27b: 1408.0
+      qwen/qwen3.5-35b-a3b: 1395.0
+      qwen/qwen3.5-397b-a17b: 1442.0
+      qwen/qwen3.6-max-preview: 1460.0
+      qwen/qwen3.6-plus: 1443.0
+      qwen/qwen3.7-plus: 1456.0
+      qwen/qwen3.8-27b: 1437.0
+      stepfun/step-3.5-flash: 1394.0
+      tencent/hy3: 1456.0
+      thinkingmachines/inkling: 1440.0
+      thinkingmachines/inkling-small: 1405.0
+      upstage/solar-pro4: 1376.0
+      x-ai/grok-4.1: 1459.0
+      x-ai/grok-4.3: 1443.0
+      x-ai/grok-4.5: 1468.0
+      x-ai/grok-4.6: 1456.0
+      xiaomi/mimo-v2-pro: 1448.0
+      xiaomi/mimo-v2.5: 1434.0
+      xiaomi/mimo-v2.5-pro: 1467.0
+      z-ai/glm-4.5: 1411.0
+      z-ai/glm-4.5-air: 1373.0
+      z-ai/glm-4.5v: 1353.0
+      z-ai/glm-4.6: 1425.0
+      z-ai/glm-4.6v: 1378.0
+      z-ai/glm-4.7: 1442.0
+      z-ai/glm-4.7-flash: 1366.0
+      z-ai/glm-5: 1458.0
+      z-ai/glm-5.1: 1466.0
+      z-ai/glm-5.2: 1472.0
+      z-ai/glm-5.3: 1483.0
+      z-ai/glm-5.3-flash: 1475.0
+      z-ai/glm-5v-turbo: 1433.0
+    votes:
+      anthropic/claude-fable-5: 30057
+      anthropic/claude-fable-5.1@max: 5783
+      anthropic/claude-opus-4.6: 71993
+      anthropic/claude-opus-4.7: 60002
+      anthropic/claude-opus-4.8: 52535
+      anthropic/claude-opus-5: 42617
+      anthropic/claude-opus-5@max: 20706
+      anthropic/claude-sonnet-4.6: 66208
+      anthropic/claude-sonnet-5: 35301
+      arcee-ai/trinity-large-thinking: 28967
+      baidu/ernie-5.1: 37058
+      cohere/command-r-08-2024: 10140
+      cohere/command-r-plus-08-2024: 9866
+      deepseek/deepseek-r1: 18524
+      deepseek/deepseek-r1-0528: 18091
+      deepseek/deepseek-v3.1-terminus: 3611
+      deepseek/deepseek-v3.2: 46458
+      deepseek/deepseek-v3.2-exp: 11760
+      deepseek/deepseek-v4-flash: 48887
+      deepseek/deepseek-v4-pro: 54130
+      google/gemini-2.5-flash: 122732
+      google/gemini-2.5-pro: 122554
+      google/gemini-3-flash-preview: 30225
+      google/gemini-3.1-pro-preview: 106951
+      google/gemini-3.5-flash: 38257
+      google/gemini-3.5-flash-lite: 26165
+      google/gemini-3.5-flash@medium: 36627
+      google/gemini-3.6-flash: 26445
+      google/gemini-3.7-flash: 5640
+      google/gemini-3.8-flash: 5076
+      google/gemma-3-12b-it: 3829
+      google/gemma-3-27b-it: 46422
+      ibm-granite/granite-4.2-8b: 3087
+      inception/mercury-2: 3042
+      meta/llama-3.1-70b-instruct: 55240
+      meta/llama-3.1-8b-instruct: 49605
+      meta/llama-3.3-70b-instruct: 54412
+      meta/muse-spark-1.1: 27615
+      meta/muse-spark-1.2: 3227
+      meta/muse-spark-1.3: 4723
+      minimax/minimax-m1: 34030
+      minimax/minimax-m2: 6753
+      minimax/minimax-m2.5: 40843
+      minimax/minimax-m2.7: 69169
+      minimax/minimax-m3: 48540
+      mistralai/mistral-large-2407: 45459
+      mistralai/mistral-medium-3-5: 10996
+      moonshotai/kimi-k2.6: 37502
+      moonshotai/kimi-k3: 20987
+      openai/gpt-4o-2024-05-13: 112881
+      openai/gpt-4o-2024-08-06: 45499
+      openai/gpt-4o-mini-2024-07-18: 68697
+      openai/gpt-5: 31428
+      openai/gpt-5-mini: 26569
+      openai/gpt-5-nano: 8128
+      openai/gpt-5.1: 40284
+      openai/gpt-5.2: 47538
+      openai/gpt-5.4: 60537
+      openai/gpt-5.4-mini: 59387
+      openai/gpt-5.4-nano: 58424
+      openai/gpt-5.5: 64924
+      openai/gpt-5.6-luna: 28547
+      openai/gpt-5.6-sol: 27069
+      openai/gpt-5.6-terra: 28119
+      openai/gpt-6-astra: 2693
+      openai/gpt-oss-120b: 29955
+      openai/gpt-oss-20b: 10393
+      openai/o3-mini: 56655
+      openai/o3-mini@high: 18589
+      qwen/qwen-2.5-72b-instruct: 39406
+      qwen/qwen3-235b-a22b: 25865
+      qwen/qwen3-30b-a3b: 26089
+      qwen/qwen3-32b: 3926
+      qwen/qwen3.5-122b-a10b: 28359
+      qwen/qwen3.5-27b: 27227
+      qwen/qwen3.5-35b-a3b: 29043
+      qwen/qwen3.5-397b-a17b: 77007
+      qwen/qwen3.6-max-preview: 5186
+      qwen/qwen3.6-plus: 45319
+      qwen/qwen3.7-plus: 39334
+      qwen/qwen3.8-27b: 10697
+      stepfun/step-3.5-flash: 57137
+      tencent/hy3: 8047
+      thinkingmachines/inkling: 25922
+      thinkingmachines/inkling-small: 18844
+      upstage/solar-pro4: 2420
+      x-ai/grok-4.1: 66340
+      x-ai/grok-4.3: 66801
+      x-ai/grok-4.5: 30103
+      x-ai/grok-4.6: 15521
+      xiaomi/mimo-v2-pro: 24365
+      xiaomi/mimo-v2.5: 44466
+      xiaomi/mimo-v2.5-pro: 60919
+      z-ai/glm-4.5: 23712
+      z-ai/glm-4.5-air: 30367
+      z-ai/glm-4.5v: 4817
+      z-ai/glm-4.6: 35061
+      z-ai/glm-4.6v: 2762
+      z-ai/glm-4.7: 11893
+      z-ai/glm-4.7-flash: 11491
+      z-ai/glm-5: 27605
+      z-ai/glm-5.1: 48901
+      z-ai/glm-5.2: 36798
+      z-ai/glm-5.3: 10960
+      z-ai/glm-5.3-flash: 10038
+      z-ai/glm-5v-turbo: 9361
+  arena_webdev_elo:
+    higher_is_better: true
+    style_control: null
+    title: Arena WebDev leaderboard, own Elo scale
+    unit: elo
+    values:
+      anthropic/claude-fable-5: 1628.0
+      anthropic/claude-fable-5.1@max: 1758.0
+      anthropic/claude-opus-4.6: 1547.0
+      anthropic/claude-opus-4.7: 1557.0
+      anthropic/claude-opus-4.8: 1559.0
+      anthropic/claude-opus-5: 1660.0
+      anthropic/claude-opus-5@max: 1687.0
+      anthropic/claude-sonnet-4.6: 1521.0
+      anthropic/claude-sonnet-5: 1537.0
+      arcee-ai/trinity-large-thinking: 1237.0
+      deepseek/deepseek-v3.2: 1325.0
+      deepseek/deepseek-v3.2-exp: 1272.0
+      deepseek/deepseek-v4-flash: 1580.0
+      deepseek/deepseek-v4-pro: 1446.0
+      deepseek/deepseek-v4.1-flash: 1614.0
+      google/gemini-2.5-pro: 1226.0
+      google/gemini-3-flash-preview: 1438.0
+      google/gemini-3.1-pro-preview: 1447.0
+      google/gemini-3.5-flash: 1500.0
+      google/gemini-3.5-flash-lite: 1447.0
+      google/gemini-3.5-flash@medium: 1492.0
+      google/gemini-3.6-flash: 1537.0
+      google/gemini-3.7-flash: 1587.0
+      google/gemini-3.8-flash: 1568.0
+      inception/mercury-2: 1167.0
+      meta/muse-spark-1.1: 1542.0
+      meta/muse-spark-1.2: 1534.0
+      meta/muse-spark-1.3: 1652.0
+      meta/muse-spark-1.3@xhigh: 1623.0
+      minimax/minimax-m2: 1298.0
+      minimax/minimax-m2.5: 1384.0
+      minimax/minimax-m2.7: 1398.0
+      minimax/minimax-m3: 1487.0
+      mistralai/mistral-medium-3-5: 1265.0
+      moonshotai/kimi-k2.6: 1509.0
+      moonshotai/kimi-k2.7-code: 1473.0
+      moonshotai/kimi-k3: 1674.0
+      openai/gpt-5.1: 1341.0
+      openai/gpt-5.1-codex: 1336.0
+      openai/gpt-5.1-codex-mini: 1244.0
+      openai/gpt-5.1@medium: 1392.0
+      openai/gpt-5.2: 1417.0
+      openai/gpt-5.2-codex: 1339.0
+      openai/gpt-5.4: 1387.0
+      openai/gpt-5.4-mini: 1397.0
+      openai/gpt-5@medium: 1420.0
+      openai/gpt-6-astra: 1800.0
+      qwen/qwen3.5-122b-a10b: 1358.0
+      qwen/qwen3.5-27b: 1357.0
+      qwen/qwen3.5-35b-a3b: 1250.0
+      qwen/qwen3.5-397b-a17b: 1399.0
+      qwen/qwen3.6-max-preview: 1479.0
+      qwen/qwen3.6-plus: 1461.0
+      qwen/qwen3.8-27b: 1593.0
+      qwen/qwen3.8-max-0902: 1681.0
+      tencent/hy3: 1513.0
+      tencent/hy4-preview: 1624.0
+      thinkingmachines/inkling: 1410.0
+      thinkingmachines/inkling-small: 1407.0
+      upstage/solar-pro4: 1371.0
+      x-ai/grok-4.3: 1357.0
+      x-ai/grok-4.5: 1555.0
+      x-ai/grok-4.6: 1618.0
+      xiaomi/mimo-v2-pro: 1433.0
+      xiaomi/mimo-v2.5: 1437.0
+      xiaomi/mimo-v2.5-pro: 1475.0
+      z-ai/glm-4.6: 1341.0
+      z-ai/glm-4.7: 1435.0
+      z-ai/glm-5: 1436.0
+      z-ai/glm-5.1: 1508.0
+      z-ai/glm-5.2: 1592.0
+      z-ai/glm-5.3: 1614.0
+      z-ai/glm-5.3-flash: 1607.0
+      z-ai/glm-5v-turbo: 1401.0
+    votes:
+      anthropic/claude-fable-5: 10081
+      anthropic/claude-fable-5.1@max: 3036
+      anthropic/claude-opus-4.6: 18332
+      anthropic/claude-opus-4.7: 15914
+      anthropic/claude-opus-4.8: 13787
+      anthropic/claude-opus-5: 12566
+      anthropic/claude-opus-5@max: 12087
+      anthropic/claude-sonnet-4.6: 21642
+      anthropic/claude-sonnet-5: 9296
+      arcee-ai/trinity-large-thinking: 1303
+      deepseek/deepseek-v3.2: 8966
+      deepseek/deepseek-v3.2-exp: 3865
+      deepseek/deepseek-v4-flash: 4723
+      deepseek/deepseek-v4-pro: 13183
+      deepseek/deepseek-v4.1-flash: 1361
+      google/gemini-2.5-pro: 2667
+      google/gemini-3-flash-preview: 10453
+      google/gemini-3.1-pro-preview: 22891
+      google/gemini-3.5-flash: 8931
+      google/gemini-3.5-flash-lite: 228
+      google/gemini-3.5-flash@medium: 11412
+      google/gemini-3.6-flash: 8259
+      google/gemini-3.7-flash: 3007
+      google/gemini-3.8-flash: 2732
+      inception/mercury-2: 904
+      meta/muse-spark-1.1: 7549
+      meta/muse-spark-1.2: 2065
+      meta/muse-spark-1.3: 2972
+      meta/muse-spark-1.3@xhigh: 2123
+      minimax/minimax-m2: 6539
+      minimax/minimax-m2.5: 7186
+      minimax/minimax-m2.7: 15194
+      minimax/minimax-m3: 12686
+      mistralai/mistral-medium-3-5: 2154
+      moonshotai/kimi-k2.6: 9585
+      moonshotai/kimi-k2.7-code: 4683
+      moonshotai/kimi-k3: 4547
+      openai/gpt-5.1: 10326
+      openai/gpt-5.1-codex: 4861
+      openai/gpt-5.1-codex-mini: 1133
+      openai/gpt-5.1@medium: 4751
+      openai/gpt-5.2: 1055
+      openai/gpt-5.2-codex: 6402
+      openai/gpt-5.4: 2493
+      openai/gpt-5.4-mini: 11279
+      openai/gpt-5@medium: 3032
+      openai/gpt-6-astra: 2281
+      qwen/qwen3.5-122b-a10b: 7831
+      qwen/qwen3.5-27b: 7427
+      qwen/qwen3.5-35b-a3b: 1535
+      qwen/qwen3.5-397b-a17b: 19922
+      qwen/qwen3.6-max-preview: 2601
+      qwen/qwen3.6-plus: 17562
+      qwen/qwen3.8-27b: 4913
+      qwen/qwen3.8-max-0902: 2262
+      tencent/hy3: 3586
+      tencent/hy4-preview: 2321
+      thinkingmachines/inkling: 8970
+      thinkingmachines/inkling-small: 5058
+      upstage/solar-pro4: 1403
+      x-ai/grok-4.3: 14192
+      x-ai/grok-4.5: 8133
+      x-ai/grok-4.6: 4282
+      xiaomi/mimo-v2-pro: 6963
+      xiaomi/mimo-v2.5: 14117
+      xiaomi/mimo-v2.5-pro: 15843
+      z-ai/glm-4.6: 6600
+      z-ai/glm-4.7: 3811
+      z-ai/glm-5: 7056
+      z-ai/glm-5.1: 10220
+      z-ai/glm-5.2: 10516
+      z-ai/glm-5.3: 3725
+      z-ai/glm-5.3-flash: 2925
+      z-ai/glm-5v-turbo: 2185
+notes:
+- Vote counts are stored as a `votes:` map, a sibling of `values:`, on every score
+  board (the Agent board has no comparable counter).
+- arena_agent_tool_halluc is stored negated from its on-screen percentage (the page
+  shows an unsigned number plus an up/down trend icon; a 'Down' icon means the true
+  value is negative) so that, consistent with the other four Agent metrics, higher
+  stays better.
+source:
+  captured: '2026-09-18'
+  method: playwright scrape
+  title: arena.ai public leaderboards
+  url: https://arena.ai/leaderboard
+unmatched:
+- KAT-Coder-Pro-V1
+- Qwen3.8 Flash Next
+- Qwen3.8 Max
+- RWKV-4-Raven-14B
+- alpaca-13b
+- amazon-nova-experimental-chat-10-09
+- amazon-nova-experimental-chat-10-20
+- amazon-nova-experimental-chat-11-10
+- amazon-nova-experimental-chat-12-10
+- amazon-nova-experimental-chat-26-01-10
+- amazon-nova-experimental-chat-26-02-10
+- amazon-nova-lite-v1.0
+- amazon-nova-micro-v1.0
+- amazon-nova-pro-v1.0
+- api-gpt-4o-search
+- athene-70b-0725
+- athene-v2-chat
+- c4ai-aya-expanse-32b
+- c4ai-aya-expanse-8b
+- chatglm-6b
+- chatglm2-6b
+- chatglm3-6b
+- chatgpt-4o-latest-20250326
+- claude-3-5-haiku-20241022
+- claude-3-5-sonnet-20240620
+- claude-3-5-sonnet-20241022
+- claude-3-7-sonnet-20250219
+- claude-3-7-sonnet-20250219-thinking-32k
+- claude-3-haiku-20240307
+- claude-3-opus-20240229
+- claude-3-sonnet-20240229
+- claude-haiku-4-5-20251001
+- claude-opus-4-1-20250805
+- claude-opus-4-1-20250805-thinking-16k
+- claude-opus-4-1-search
+- claude-opus-4-20250514
+- claude-opus-4-20250514-thinking-16k
+- claude-opus-4-5-20251101
+- claude-opus-4-5-20251101-high-32k
+- claude-opus-4-5-search
+- claude-opus-4-6-search
+- claude-opus-4-search
+- claude-sonnet-4-20250514
+- claude-sonnet-4-20250514-thinking-32k
+- claude-sonnet-4-5-20250929
+- claude-sonnet-4-5-20250929-high-32k
+- claude-sonnet-4-5-search
+- claude-sonnet-4-6-search
+- claude-sonnet-5-search
+- codellama-34b-instruct
+- codellama-70b-instruct
+- command-a-03-2025
+- command-r
+- command-r-plus
+- dbrx-instruct-preview
+- deepseek-coder-v2
+- deepseek-llm-67b-chat
+- deepseek-v2.5
+- deepseek-v2.5-1210
+- deepseek-v3
+- deepseek-v3-0324
+- deepseek-v3.1
+- deepseek-v3.1-terminus-thinking
+- deepseek-v3.1-thinking
+- deepseek-v3.2-exp-thinking
+- deepseek-v3.2-thinking
+- deepseek-v4-flash-high-preview
+- deepseek-v4-pro-high-20260813
+- deepseek-v4-pro-high-preview
+- devstral-2
+- devstral-medium-2507
+- diffbot-small-xl
+- dola-seed-2.0-pro
+- dolly-v2-12b
+- dolphin-2.2.1-mistral-7b
+- ernie-5.0-0110
+- ernie-5.0-preview-1022
+- ernie-5.0-preview-1203
+- falcon-180b-chat
+- fastchat-t5-3b
+- gemini-1.5-flash-001
+- gemini-1.5-flash-002
+- gemini-1.5-flash-8b-001
+- gemini-1.5-pro-001
+- gemini-1.5-pro-002
+- gemini-2.0-flash-001
+- gemini-2.0-flash-lite-preview-02-05
+- gemini-2.5-flash-lite-preview-06-17-thinking
+- gemini-2.5-flash-lite-preview-09-2025-no-thinking
+- gemini-2.5-flash-preview-09-2025
+- gemini-2.5-pro-grounding
+- gemini-3-flash (thinking-minimal)
+- gemini-3-flash-grounding
+- gemini-3-pro
+- gemini-3-pro-grounding
+- gemini-3.1-flash-lite-preview
+- gemini-3.1-pro-grounding
+- gemini-advanced-0514
+- gemini-pro
+- gemini-pro-dev-api
+- gemma-1.1-2b-it
+- gemma-1.1-7b-it
+- gemma-2-27b-it
+- gemma-2-2b-it
+- gemma-2-9b-it
+- gemma-2-9b-it-simpo
+- gemma-2b-it
+- gemma-3-4b-it
+- gemma-3n-e4b-it
+- gemma-4-26b-a4b
+- gemma-4-31b
+- gemma-7b-it
+- glm-4-0520
+- glm-4-plus
+- glm-4-plus-0111
+- gpt-3.5-turbo-0125
+- gpt-3.5-turbo-1106
+- gpt-4-0125-preview
+- gpt-4-0314
+- gpt-4-0613
+- gpt-4-1106-preview
+- gpt-4-turbo-2024-04-09
+- gpt-4.1-2025-04-14
+- gpt-4.1-mini-2025-04-14
+- gpt-4.1-nano-2025-04-14
+- gpt-4.5-preview-2025-02-27
+- gpt-5-chat
+- gpt-5-search
+- gpt-5.1-search
+- gpt-5.2-chat-latest-20260210
+- gpt-5.2-search
+- gpt-5.2-search-non-reasoning
+- gpt-5.3-chat-latest
+- gpt-5.3-codex (codex-harness)
+- gpt-5.4-high (codex-harness)
+- gpt-5.4-medium (codex-harness)
+- gpt-5.4-search
+- gpt-5.5 (codex-harness)
+- gpt-5.5-high (codex-harness)
+- gpt-5.5-instant
+- gpt-5.5-search
+- gpt-5.5-xhigh (codex-harness)
+- gpt-5.6-luna-xhigh (codex-harness)
+- gpt-5.6-sol-xhigh (codex-harness)
+- gpt-5.6-terra-xhigh (codex-harness)
+- gpt4all-13b-snoozy
+- granite-3.0-2b-instruct
+- granite-3.0-8b-instruct
+- granite-3.1-2b-instruct
+- granite-3.1-8b-instruct
+- granite-4.1-8b
+- granite-4.2-30b
+- granite-4.2-3b
+- grok-2-2024-08-13
+- grok-2-mini-2024-08-13
+- grok-3-mini-beta
+- grok-3-mini-high
+- grok-3-preview-02-24
+- grok-4-0709
+- grok-4-1-fast-reasoning
+- grok-4-1-fast-search
+- grok-4-fast-chat
+- grok-4-fast-reasoning
+- grok-4-fast-search
+- grok-4-search
+- grok-4.1-thinking
+- grok-4.20-beta-0309-reasoning
+- grok-4.20-beta1
+- grok-4.20-multi-agent-beta-0309
+- grok-code-fast-1
+- guanaco-33b
+- hunyuan-hy3-preview
+- hunyuan-large-2025-02-10
+- hunyuan-large-vision
+- hunyuan-standard-2025-02-10
+- hunyuan-standard-256k
+- hunyuan-t1-20250711
+- hunyuan-turbo-0110
+- hunyuan-turbos-20250226
+- hunyuan-turbos-20250416
+- hunyuan-vision-1.5-thinking
+- ibm-granite-h-small
+- intellect-3
+- internlm2_5-20b-chat
+- jamba-1.5-large
+- jamba-1.5-mini
+- kimi-k2-0711-preview
+- kimi-k2-0905-preview
+- kimi-k2-thinking-turbo
+- kimi-k2.5-instant
+- kimi-k2.5-thinking
+- koala-13b
+- laguna-m.1
+- laguna-xs.2
+- ling-flash-2.0
+- llama-13b
+- llama-2-13b-chat
+- llama-2-70b-chat
+- llama-2-7b-chat
+- llama-3-70b-instruct
+- llama-3-8b-instruct
+- llama-3.1-405b-instruct-bf16
+- llama-3.1-405b-instruct-fp8
+- llama-3.1-nemotron-51b-instruct
+- llama-3.1-nemotron-70b-instruct
+- llama-3.1-nemotron-ultra-253b-v1
+- llama-3.1-tulu-3-70b
+- llama-3.1-tulu-3-8b
+- llama-3.2-1b-instruct
+- llama-3.2-3b-instruct
+- llama-3.3-nemotron-49b-super-v1
+- llama-4-maverick-17b-128e-instruct
+- llama-4-scout-17b-16e-instruct
+- llama2-70b-steerlm-chat
+- longcat-flash-chat
+- longcat-flash-chat-2602-exp
+- magistral-medium-2506
+- mercury
+- mimo-v2-flash (non-thinking)
+- mimo-v2-flash (thinking)
+- mimo-v2-omni
+- minimax-m2.1-preview
+- ministral-8b-2410
+- mistral-7b-instruct
+- mistral-7b-instruct-v0.2
+- mistral-large-2402
+- mistral-large-2411
+- mistral-large-3
+- mistral-medium
+- mistral-medium-2505
+- mistral-medium-2508
+- mistral-small-24b-instruct-2501
+- mistral-small-2506
+- mistral-small-3.1-24b-instruct-2503
+- mixtral-8x22b-instruct-v0.1
+- mixtral-8x7b-instruct-v0.1
+- molmo-2-8b
+- mpt-30b-chat
+- mpt-7b-chat
+- muse-glimmer
+- muse-spark
+- nemotron-4-340b-instruct
+- nous-hermes-2-mixtral-8x7b-dpo
+- nova-2-lite
+- nvidia-llama-3.3-nemotron-super-49b-v1.5
+- nvidia-nemotron-3-nano-30b-a3b-bf16
+- nvidia-nemotron-3-super-120b-a12b
+- nvidia-nemotron-3-ultra-550b-a55b-nvfp4
+- nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
+- o1-2024-12-17
+- o1-mini
+- o1-preview
+- o3-2025-04-16
+- o3-search
+- o4-mini-2025-04-16
+- oasst-pythia-12b
+- olmo-2-0325-32b-instruct
+- olmo-3-32b-think
+- olmo-3.1-32b-instruct
+- olmo-3.1-32b-think
+- olmo-7b-instruct
+- openchat-3.5
+- openchat-3.5-0106
+- openhermes-2.5-mistral-7b
+- palm-2
+- phi-3-medium-4k-instruct
+- phi-3-mini-128k-instruct
+- phi-3-mini-4k-instruct
+- phi-3-mini-4k-instruct-june-2024
+- phi-3-small-8k-instruct
+- phi-4
+- ppl-sonar-pro-high
+- ppl-sonar-reasoning-pro-high
+- qwen-14b-chat
+- qwen-max-0919
+- qwen-plus-0125
+- qwen1.5-110b-chat
+- qwen1.5-14b-chat
+- qwen1.5-32b-chat
+- qwen1.5-4b-chat
+- qwen1.5-72b-chat
+- qwen1.5-7b-chat
+- qwen2-72b-instruct
+- qwen2.5-coder-32b-instruct
+- qwen2.5-max
+- qwen2.5-plus-1127
+- qwen3-235b-a22b-instruct-2507
+- qwen3-235b-a22b-no-thinking
+- qwen3-235b-a22b-thinking-2507
+- qwen3-30b-a3b-instruct-2507
+- qwen3-coder-480b-a35b-instruct
+- qwen3-max-2025-09-23
+- qwen3-max-preview
+- qwen3-next-80b-a3b-instruct
+- qwen3-next-80b-a3b-thinking
+- qwen3-vl-235b-a22b-instruct
+- qwen3-vl-235b-a22b-thinking
+- qwen3.5-flash
+- qwen3.5-max-preview
+- qwen3.7-max-20260517
+- qwen3.7-max-preview
+- qwen3.8-flash-next
+- qwen3.8-max
+- qwq-32b
+- qwq-32b-preview
+- reka-core-20240904
+- reka-flash-20240904
+- reka-flash-21b-20240226
+- reka-flash-21b-20240226-online
+- ring-flash-2.0
+- seed-2.1-pro-preview
+- smollm2-1.7b-instruct
+- snowflake-arctic-instruct
+- solar-10.7b-instruct-v1.0
+- stablelm-tuned-alpha-7b
+- starling-lm-7b-alpha
+- starling-lm-7b-beta
+- step-1o-turbo-202506
+- step-2-16k-exp-202412
+- step-3
+- stripedhyena-nous-7b
+- trinity-large-preview
+- tulu-2-dpo-70b
+- vicuna-13b
+- vicuna-33b
+- vicuna-7b
+- wizardlm-13b
+- wizardlm-70b
+- yi-1.5-34b-chat
+- yi-34b-chat
+- yi-lightning
+- zephyr-7b-alpha
+- zephyr-7b-beta
+- zephyr-orpo-141b-A35b-v0.1

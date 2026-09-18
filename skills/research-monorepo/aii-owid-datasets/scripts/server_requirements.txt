@@ -1,0 +1,20 @@
+# Deps for aii-owid-datasets skill.
+# Usage: uv venv .venv --python=3.12 && uv pip install -r server_requirements.txt
+# Also requires: uv pip install -e <project_root>/aii_lib
+# >=1.1.0 is the first release in the 1.x line to (re)declare ``pandas<3``.
+# owid-catalog reads the catalog index with ``pd.read_feather`` and hands cells
+# straight to pydantic (api/tables.py:609), and ``TableResult.description`` is
+# ``str | None``. Under pandas 3 a missing string arrives as ``float('nan')``
+# rather than ``None``, so every catalog row lacking a description fails
+# validation and the ability's worker_init dies — taking `search_datasets` down
+# for the whole life of that worker.
+#
+# The floor is the fix, not a pandas cap of our own: an unbounded floor let pip
+# resolve 1.0.1 (no cap) alongside pandas 3.0.3, which is exactly the pair
+# upstream forbids. Stating it here duplicates nothing — upstream owns the
+# constraint, we just have to stay above the release that declares it.
+owid-catalog>=1.1.0
+pandas>=2.0.0
+pyarrow>=15.0.0
+httpx
+pyyaml

@@ -1,0 +1,1201 @@
+{
+ "boards": {
+  "arena_text_elo": {
+   "url": "https://arena.ai/leaderboard/text",
+   "kind": "score",
+   "style_control": true,
+   "headers": [
+    "Rank",
+    "Rank Spread",
+    "Model",
+    "Score",
+    "Votes",
+    "Price $/M",
+    "Context"
+   ],
+   "rows": [
+    [
+     {
+      "text": "1",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5-high",
+      "direction": null
+     },
+     {
+      "text": "1506\u00b15",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "30,057",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "5",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "115",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5.1-maxAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5.1-max",
+      "direction": null
+     },
+     {
+      "text": "1498\u00b18",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "5,783",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "9",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "124",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gemini-3.8-flash-highGoogle \u00b7 Proprietary",
+      "title": "gemini-3.8-flash-high",
+      "direction": null
+     },
+     {
+      "text": "1493\u00b19Preliminary",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "5,076",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$0.75 / $3.75",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "10",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "419",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-5-high",
+      "direction": null
+     },
+     {
+      "text": "1493\u00b14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "42,617",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "527",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-5-maxAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-5-max",
+      "direction": null
+     },
+     {
+      "text": "1487\u00b15",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "20,706",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "19",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "737",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "glm-5.3-maxZ.ai \u00b7 MIT",
+      "title": "glm-5.3-max",
+      "direction": null
+     },
+     {
+      "text": "1483\u00b16",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "10,960",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$1.40 / $4.40",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "24",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "551",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gpt-6-astra-maxOpenAI \u00b7 Proprietary",
+      "title": "gpt-6-astra-max",
+      "direction": null
+     },
+     {
+      "text": "1480\u00b112",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "2,693",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "N/A",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "N/A",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "29",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1449",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "glm-5.3-flashZ.ai \u00b7 MIT",
+      "title": "glm-5.3-flash",
+      "direction": null
+     },
+     {
+      "text": "1475\u00b17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "10,038",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$0.07 / $0.25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "51",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "4168",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-sonnet-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-sonnet-5-high",
+      "direction": null
+     },
+     {
+      "text": "1461\u00b15",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "35,301",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$2 / $10",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "110",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "90130",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "deepseek-v3.2-exp-thinkingDeepSeek \u00b7 MIT",
+      "title": "deepseek-v3.2-exp-thinking",
+      "direction": null
+     },
+     {
+      "text": "1425\u00b17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "8,905",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$0.27 / $0.41",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "163.8K",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "126",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "111139",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "minimax-m2.7MiniMax \u00b7 Modified MIT",
+      "title": "minimax-m2.7",
+      "direction": null
+     },
+     {
+      "text": "1415\u00b14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "69,169",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$0.30 / $1.20",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "204.8K",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "201",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "192221",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gpt-oss-120bOpenAI \u00b7 Apache 2.0",
+      "title": "gpt-oss-120b",
+      "direction": null
+     },
+     {
+      "text": "1352\u00b14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "29,955",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$0.15 / $0.60",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "131.1K",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "202",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "190223",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4Nvidia \u00b7 OpenMDW-1.1",
+      "title": "nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4",
+      "direction": null
+     },
+     {
+      "text": "1351\u00b17Preliminary",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "8,338",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "N/A",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "N/A",
+      "title": null,
+      "direction": null
+     }
+    ]
+   ]
+  },
+  "arena_webdev_elo": {
+   "url": "https://arena.ai/leaderboard/code/webdev",
+   "kind": "score",
+   "style_control": null,
+   "headers": [
+    "Rank",
+    "Rank Spread",
+    "Model",
+    "Score",
+    "Votes",
+    "Price $/M",
+    "Context"
+   ],
+   "rows": [
+    [
+     {
+      "text": "1",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "11",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gpt-6-astra-maxOpenAI \u00b7 Proprietary",
+      "title": "gpt-6-astra-max",
+      "direction": null
+     },
+     {
+      "text": "1800+16/-16",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "2,281",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1.1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "2",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "22",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5.1-maxAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5.1-max",
+      "direction": null
+     },
+     {
+      "text": "1758+14/-14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "3,036",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "3",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "36",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-5-maxAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-5-max",
+      "direction": null
+     },
+     {
+      "text": "1687+7/-7",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "12,087",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "7",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "48",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-5-high",
+      "direction": null
+     },
+     {
+      "text": "1660+7/-7",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "12,566",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "10",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "916",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5-high",
+      "direction": null
+     },
+     {
+      "text": "1628+7/-7",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "10,081",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ]
+   ]
+  },
+  "arena_search_elo": {
+   "url": "https://arena.ai/leaderboard/search",
+   "kind": "score",
+   "style_control": true,
+   "headers": [
+    "Rank",
+    "Rank Spread",
+    "Model",
+    "Score",
+    "Votes",
+    "Price $/M",
+    "Context"
+   ],
+   "rows": [
+    [
+     {
+      "text": "1",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "12",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gpt-5.6-sol-xhighOpenAI \u00b7 Proprietary",
+      "title": "gpt-5.6-sol-xhigh",
+      "direction": null
+     },
+     {
+      "text": "1257\u00b17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "29,663",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$4 / $20",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1.1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "2",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "12",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-4-6-searchAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-4-6-search",
+      "direction": null
+     },
+     {
+      "text": "1253\u00b15",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "134,699",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "3",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "35",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "gpt-5.5-searchOpenAI \u00b7 Proprietary",
+      "title": "gpt-5.5-search",
+      "direction": null
+     },
+     {
+      "text": "1242\u00b15",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "89,873",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $30",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1.1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "5",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "37",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5-high",
+      "direction": null
+     },
+     {
+      "text": "1230\u00b18",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "41,795",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ]
+   ]
+  },
+  "arena_document_elo": {
+   "url": "https://arena.ai/leaderboard/document",
+   "kind": "score",
+   "style_control": null,
+   "headers": [
+    "Rank",
+    "Rank Spread",
+    "Model",
+    "Score",
+    "Votes",
+    "Price $/M",
+    "Context"
+   ],
+   "rows": [
+    [
+     {
+      "text": "1",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "14",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-opus-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-opus-5-high",
+      "direction": null
+     },
+     {
+      "text": "1516\u00b17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "8,794",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "2",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "17",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5.1-maxAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5.1-max",
+      "direction": null
+     },
+     {
+      "text": "1513\u00b115",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1,403",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "5",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "211",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "Anthropicclaude-fable-5-highAnthropic \u00b7 Proprietary",
+      "title": "claude-fable-5-high",
+      "direction": null
+     },
+     {
+      "text": "1496\u00b18",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "8,497",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "1M",
+      "title": null,
+      "direction": null
+     }
+    ]
+   ]
+  },
+  "arena_agent": {
+   "url": "https://arena.ai/leaderboard/agent",
+   "kind": "agent",
+   "style_control": null,
+   "headers": [
+    "Rank",
+    "Model",
+    "Net Improvement",
+    "Confirmed Success",
+    "Praise vs Complaint",
+    "Steerability",
+    "Bash Recovery",
+    "Tool Hallucination",
+    "Sessions",
+    "Cost/Task (P50)",
+    "Output Tokens/Task (P50)",
+    "Price $/M"
+   ],
+   "rows": [
+    [
+     {
+      "text": "112",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "AnthropicClaude Fable 5.1 (Max)Anthropic \u00b7 Proprietary",
+      "title": "Claude Fable 5.1 (Max)",
+      "direction": null
+     },
+     {
+      "text": "13.71%\u00b11.72%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "19.83%\u00b12.75%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "31.83%\u00b16.86%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "3.88%\u00b13.61%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "12.62%\u00b10.76%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "0.37%\u00b10.03%",
+      "title": null,
+      "direction": "Down"
+     },
+     {
+      "text": "13,320",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$4.42",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "54K",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "216",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "GPT 6 Astra (Max)OpenAI \u00b7 Proprietary",
+      "title": "GPT 6 Astra (Max)",
+      "direction": null
+     },
+     {
+      "text": "11.54%\u00b12.10%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "17.70%\u00b13.26%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "32.79%\u00b18.37%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "0.47%\u00b14.67%",
+      "title": null,
+      "direction": "Down"
+     },
+     {
+      "text": "7.28%\u00b11.11%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "0.37%\u00b10.03%",
+      "title": null,
+      "direction": "Down"
+     },
+     {
+      "text": "10,372",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$3.92",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "32.4K",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$10 / $50",
+      "title": null,
+      "direction": null
+     }
+    ],
+    [
+     {
+      "text": "326",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "AnthropicClaude Opus 5 (High)Anthropic \u00b7 Proprietary",
+      "title": "Claude Opus 5 (High)",
+      "direction": null
+     },
+     {
+      "text": "10.25%\u00b11.41%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "9.24%\u00b12.94%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "18.66%\u00b15.22%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "11.04%\u00b12.75%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "11.98%\u00b10.77%",
+      "title": null,
+      "direction": "Up"
+     },
+     {
+      "text": "0.33%\u00b10.04%",
+      "title": null,
+      "direction": "Down"
+     },
+     {
+      "text": "24,794",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$1.99",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "26.7K",
+      "title": null,
+      "direction": null
+     },
+     {
+      "text": "$5 / $25",
+      "title": null,
+      "direction": null
+     }
+    ]
+   ]
+  }
+ },
+ "errors": {}
+}

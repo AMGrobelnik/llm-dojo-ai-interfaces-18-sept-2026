@@ -1,0 +1,4391 @@
+aliases:
+  Claude 3 Haiku: anthropic/claude-3-haiku
+  Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback): anthropic/claude-fable-5@max
+  Claude Fable 5.1 (Adaptive Reasoning, High Effort, Default Fallback): anthropic/claude-fable-5.1@high
+  Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback): anthropic/claude-fable-5.1@low
+  Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback): anthropic/claude-fable-5.1@max
+  Claude Fable 5.1 (Adaptive Reasoning, Medium Effort, Default Fallback): anthropic/claude-fable-5.1@medium
+  Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback): anthropic/claude-fable-5.1@xhigh
+  Claude Opus 4.5 (Non-reasoning): anthropic/claude-opus-4.5@non-reasoning
+  Claude Opus 4.5 (Reasoning): anthropic/claude-opus-4.5@reasoning
+  Claude Opus 4.6 (Adaptive Reasoning, Max Effort): anthropic/claude-opus-4.6@max
+  Claude Opus 4.6 (Non-reasoning, High Effort): anthropic/claude-opus-4.6@high
+  Claude Opus 4.7 (Adaptive Reasoning, Max Effort): anthropic/claude-opus-4.7@max
+  Claude Opus 4.7 (Non-reasoning, High Effort): anthropic/claude-opus-4.7@high
+  Claude Opus 4.8 (Adaptive Reasoning, Max Effort): anthropic/claude-opus-4.8@max
+  Claude Opus 5 (Adaptive Reasoning, High Effort): anthropic/claude-opus-5@high
+  Claude Opus 5 (Adaptive Reasoning, Low Effort): anthropic/claude-opus-5@low
+  Claude Opus 5 (Adaptive Reasoning, Max Effort): anthropic/claude-opus-5@max
+  Claude Opus 5 (Adaptive Reasoning, Medium Effort): anthropic/claude-opus-5@medium
+  Claude Opus 5 (Adaptive Reasoning, Xhigh Effort): anthropic/claude-opus-5@xhigh
+  Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort): anthropic/claude-sonnet-4.6@max
+  Claude Sonnet 4.6 (Non-reasoning, High Effort): anthropic/claude-sonnet-4.6@high
+  Claude Sonnet 4.6 (Non-reasoning, Low Effort): anthropic/claude-sonnet-4.6@low
+  Claude Sonnet 5 (Adaptive Reasoning, High Effort): anthropic/claude-sonnet-5@high
+  Claude Sonnet 5 (Adaptive Reasoning, Low Effort): anthropic/claude-sonnet-5@low
+  Claude Sonnet 5 (Adaptive Reasoning, Max Effort): anthropic/claude-sonnet-5@max
+  Claude Sonnet 5 (Adaptive Reasoning, Medium Effort): anthropic/claude-sonnet-5@medium
+  Claude Sonnet 5 (Adaptive Reasoning, Xhigh Effort): anthropic/claude-sonnet-5@xhigh
+  Claude Sonnet 5 (Non-reasoning, High Effort): anthropic/claude-sonnet-5@high
+  DeepSeek R1 (Jan '25): deepseek/deepseek-r1-0528
+  DeepSeek R1 0528 (May '25): deepseek/deepseek-r1-0528
+  DeepSeek V3.1 Terminus (Non-reasoning): deepseek/deepseek-v3.1-terminus@non-reasoning
+  DeepSeek V3.1 Terminus (Reasoning): deepseek/deepseek-v3.1-terminus@reasoning
+  DeepSeek V3.2 (Non-reasoning): deepseek/deepseek-v3.2@non-reasoning
+  DeepSeek V3.2 (Reasoning): deepseek/deepseek-v3.2@reasoning
+  DeepSeek V3.2 Exp (Non-reasoning): deepseek/deepseek-v3.2-exp@non-reasoning
+  DeepSeek V3.2 Exp (Reasoning): deepseek/deepseek-v3.2-exp@reasoning
+  DeepSeek V4 Flash 0731 (Reasoning, Max Effort): deepseek/deepseek-v4-flash-0731@max
+  DeepSeek V4 Pro 0813 (Reasoning, Max Effort): deepseek/deepseek-v4-pro-0813@max
+  DeepSeek V4.1 Flash (Reasoning, Max Effort): deepseek/deepseek-v4.1-flash@max
+  GLM 5.3 Flash: z-ai/glm-5.3-flash
+  GLM 5V Turbo (Reasoning): z-ai/glm-5v-turbo@reasoning
+  GLM-4.5 (Reasoning): z-ai/glm-4.5@reasoning
+  GLM-4.5-Air: z-ai/glm-4.5-air
+  GLM-4.5V (Non-reasoning): z-ai/glm-4.5v@non-reasoning
+  GLM-4.5V (Reasoning): z-ai/glm-4.5v@reasoning
+  GLM-4.6 (Non-reasoning): z-ai/glm-4.6@non-reasoning
+  GLM-4.6 (Reasoning): z-ai/glm-4.6@reasoning
+  GLM-4.6V (Non-reasoning): z-ai/glm-4.6v@non-reasoning
+  GLM-4.6V (Reasoning): z-ai/glm-4.6v@reasoning
+  GLM-4.7 (Non-reasoning): z-ai/glm-4.7@non-reasoning
+  GLM-4.7 (Reasoning): z-ai/glm-4.7@reasoning
+  GLM-4.7-Flash (Non-reasoning): z-ai/glm-4.7-flash@non-reasoning
+  GLM-4.7-Flash (Reasoning): z-ai/glm-4.7-flash@reasoning
+  GLM-5 (Non-reasoning): z-ai/glm-5@non-reasoning
+  GLM-5 (Reasoning): z-ai/glm-5@reasoning
+  GLM-5-Turbo: z-ai/glm-5-turbo
+  GLM-5.1 (Non-reasoning): z-ai/glm-5.1@non-reasoning
+  GLM-5.1 (Reasoning): z-ai/glm-5.1@reasoning
+  GLM-5.2 (Non-reasoning): z-ai/glm-5.2@non-reasoning
+  GLM-5.2 (max): z-ai/glm-5.2@max
+  GLM-5.3 (max): z-ai/glm-5.3@max
+  GPT-4 Turbo: openai/gpt-4-turbo
+  GPT-4.1: openai/gpt-4.1
+  GPT-4.1 mini: openai/gpt-4.1-mini
+  GPT-4.1 nano: openai/gpt-4.1-nano
+  GPT-4o (Aug '24): openai/gpt-4o
+  GPT-4o (ChatGPT): openai/gpt-4o
+  GPT-4o (March 2025, chatgpt-4o-latest): openai/gpt-4o
+  GPT-4o (May '24): openai/gpt-4o
+  GPT-4o (Nov '24): openai/gpt-4o
+  GPT-4o mini: openai/gpt-4o-mini
+  GPT-5 (ChatGPT): openai/gpt-5
+  GPT-5 (high): openai/gpt-5@high
+  GPT-5 (low): openai/gpt-5@low
+  GPT-5 (medium): openai/gpt-5@medium
+  GPT-5 (minimal): openai/gpt-5@minimal
+  GPT-5 mini (high): openai/gpt-5-mini@high
+  GPT-5 mini (medium): openai/gpt-5-mini@medium
+  GPT-5 mini (minimal): openai/gpt-5-mini@minimal
+  GPT-5 nano (high): openai/gpt-5-nano@high
+  GPT-5 nano (medium): openai/gpt-5-nano@medium
+  GPT-5 nano (minimal): openai/gpt-5-nano@minimal
+  GPT-5.1 (Non-reasoning): openai/gpt-5.1@non-reasoning
+  GPT-5.1 (high): openai/gpt-5.1@high
+  GPT-5.1 Codex (high): openai/gpt-5.1-codex@high
+  GPT-5.1 Codex mini (high): openai/gpt-5.1-codex-mini@high
+  GPT-5.2 (Non-reasoning): openai/gpt-5.2@non-reasoning
+  GPT-5.2 (medium): openai/gpt-5.2@medium
+  GPT-5.2 (xhigh): openai/gpt-5.2@xhigh
+  GPT-5.2 Codex (xhigh): openai/gpt-5.2-codex@xhigh
+  GPT-5.3 Codex (xhigh): openai/gpt-5.3-codex@xhigh
+  GPT-5.4 (Non-reasoning): openai/gpt-5.4@non-reasoning
+  GPT-5.4 (low): openai/gpt-5.4@low
+  GPT-5.4 (xhigh): openai/gpt-5.4@xhigh
+  GPT-5.4 Pro (xhigh): openai/gpt-5.4-pro@xhigh
+  GPT-5.4 mini (Non-Reasoning): openai/gpt-5.4-mini@non-reasoning
+  GPT-5.4 mini (medium): openai/gpt-5.4-mini@medium
+  GPT-5.4 mini (xhigh): openai/gpt-5.4-mini@xhigh
+  GPT-5.4 nano (Non-Reasoning): openai/gpt-5.4-nano@non-reasoning
+  GPT-5.4 nano (medium): openai/gpt-5.4-nano@medium
+  GPT-5.4 nano (xhigh): openai/gpt-5.4-nano@xhigh
+  GPT-5.5 (Non-reasoning): openai/gpt-5.5@non-reasoning
+  GPT-5.5 (high): openai/gpt-5.5@high
+  GPT-5.5 (low): openai/gpt-5.5@low
+  GPT-5.5 (medium): openai/gpt-5.5@medium
+  GPT-5.5 (xhigh): openai/gpt-5.5@xhigh
+  GPT-5.5 Pro (xhigh): openai/gpt-5.5-pro@xhigh
+  GPT-5.6 Luna (Non-reasoning): openai/gpt-5.6-luna@non-reasoning
+  GPT-5.6 Luna (high): openai/gpt-5.6-luna@high
+  GPT-5.6 Luna (low): openai/gpt-5.6-luna@low
+  GPT-5.6 Luna (max): openai/gpt-5.6-luna@max
+  GPT-5.6 Luna (medium): openai/gpt-5.6-luna@medium
+  GPT-5.6 Luna (xhigh): openai/gpt-5.6-luna@xhigh
+  GPT-5.6 Sol (Non-reasoning): openai/gpt-5.6-sol@non-reasoning
+  GPT-5.6 Sol (high): openai/gpt-5.6-sol@high
+  GPT-5.6 Sol (low): openai/gpt-5.6-sol@low
+  GPT-5.6 Sol (max): openai/gpt-5.6-sol@max
+  GPT-5.6 Sol (medium): openai/gpt-5.6-sol@medium
+  GPT-5.6 Sol (xhigh): openai/gpt-5.6-sol@xhigh
+  GPT-5.6 Terra (Non-reasoning): openai/gpt-5.6-terra@non-reasoning
+  GPT-5.6 Terra (high): openai/gpt-5.6-terra@high
+  GPT-5.6 Terra (low): openai/gpt-5.6-terra@low
+  GPT-5.6 Terra (max): openai/gpt-5.6-terra@max
+  GPT-5.6 Terra (medium): openai/gpt-5.6-terra@medium
+  GPT-5.6 Terra (xhigh): openai/gpt-5.6-terra@xhigh
+  GPT-6 Astra (high): openai/gpt-6-astra@high
+  GPT-6 Astra (low): openai/gpt-6-astra@low
+  GPT-6 Astra (max): openai/gpt-6-astra@max
+  GPT-6 Astra (medium): openai/gpt-6-astra@medium
+  GPT-6 Astra (xhigh): openai/gpt-6-astra@xhigh
+  Gemini 2.5 Flash (Non-reasoning): google/gemini-2.5-flash@non-reasoning
+  Gemini 2.5 Flash (Reasoning): google/gemini-2.5-flash@reasoning
+  Gemini 2.5 Flash-Lite (Non-reasoning): google/gemini-2.5-flash-lite@non-reasoning
+  Gemini 2.5 Flash-Lite (Reasoning): google/gemini-2.5-flash-lite@reasoning
+  Gemini 2.5 Pro: google/gemini-2.5-pro
+  Gemini 2.5 Pro Preview (Mar' 25): google/gemini-2.5-pro-preview
+  Gemini 2.5 Pro Preview (May' 25): google/gemini-2.5-pro-preview
+  Gemini 3 Flash Preview (Non-reasoning): google/gemini-3-flash-preview@non-reasoning
+  Gemini 3 Flash Preview (Reasoning): google/gemini-3-flash-preview@reasoning
+  Gemini 3.1 Flash-Lite: google/gemini-3.1-flash-lite
+  Gemini 3.1 Pro Preview: google/gemini-3.1-pro-preview
+  Gemini 3.5 Flash (high): google/gemini-3.5-flash@high
+  Gemini 3.5 Flash (medium): google/gemini-3.5-flash@medium
+  Gemini 3.5 Flash (minimal): google/gemini-3.5-flash@minimal
+  Gemini 3.5 Flash-Lite: google/gemini-3.5-flash-lite
+  Gemini 3.6 Flash (high): google/gemini-3.6-flash@high
+  Gemini 3.7 Flash (high): google/gemini-3.7-flash@high
+  Gemini 3.7 Flash (low): google/gemini-3.7-flash@low
+  Gemini 3.7 Flash (medium): google/gemini-3.7-flash@medium
+  Gemini 3.8 Flash (high): google/gemini-3.8-flash@high
+  Gemini 3.8 Flash (low): google/gemini-3.8-flash@low
+  Gemini 3.8 Flash (medium): google/gemini-3.8-flash@medium
+  Granite 4.2 8B: ibm-granite/granite-4.2-8b
+  Grok 4.1 Fast (Non-reasoning): x-ai/grok-4.1-fast@non-reasoning
+  Grok 4.1 Fast (Reasoning): x-ai/grok-4.1-fast@reasoning
+  Grok 4.3 (Non-reasoning): x-ai/grok-4.3@non-reasoning
+  Grok 4.3 (high): x-ai/grok-4.3@high
+  Grok 4.3 (low): x-ai/grok-4.3@low
+  Grok 4.3 (medium): x-ai/grok-4.3@medium
+  Grok 4.5 (high): x-ai/grok-4.5@high
+  Grok 4.6 (high): x-ai/grok-4.6@high
+  Grok 4.6 (low): x-ai/grok-4.6@low
+  Grok 4.6 (medium): x-ai/grok-4.6@medium
+  Grok 4.6 (xhigh): x-ai/grok-4.6@xhigh
+  Hy3: tencent/hy3
+  Hy3-preview (Non-reasoning): tencent/hy3-preview@non-reasoning
+  Hy3-preview (Reasoning): tencent/hy3-preview@reasoning
+  Inkling (xhigh): thinkingmachines/inkling@xhigh
+  Inkling Small: thinkingmachines/inkling-small
+  KAT Coder Pro V2: kwaipilot/kat-coder-pro-v2
+  Kimi K2: moonshotai/kimi-k2-0905
+  Kimi K2 0905: moonshotai/kimi-k2-0905
+  Kimi K2 Thinking: moonshotai/kimi-k2-thinking
+  Kimi K2.5 (Non-reasoning): moonshotai/kimi-k2.5@non-reasoning
+  Kimi K2.5 (Reasoning): moonshotai/kimi-k2.5@reasoning
+  Kimi K2.6: moonshotai/kimi-k2.6
+  Kimi K2.6 (Non-reasoning): moonshotai/kimi-k2.6@non-reasoning
+  Kimi K2.7 Code: moonshotai/kimi-k2.7-code
+  Kimi K3 (low): moonshotai/kimi-k3@low
+  Kimi K3 (max): moonshotai/kimi-k3@max
+  Ling 3.0 Flash: inclusionai/ling-3.0-flash
+  Ling-3.0-flash-Fin: inclusionai/ling-3.0-flash-fin
+  Ling-3.0-flash-VL: inclusionai/ling-3.0-flash-vl
+  Llama 4 Maverick: meta/llama-4-maverick
+  Llama 4 Scout: meta/llama-4-scout
+  LongCat 2.0: meituan/longcat-2.0
+  Mercury 2: inception/mercury-2
+  MiMo-V2-Pro: xiaomi/mimo-v2-pro
+  MiMo-V2.5: xiaomi/mimo-v2.5
+  MiMo-V2.5-Pro: xiaomi/mimo-v2.5-pro
+  MiMo-V2.5-Pro (Non-reasoning): xiaomi/mimo-v2.5-pro@non-reasoning
+  MiniMax-M2: minimax/minimax-m2
+  MiniMax-M2.1: minimax/minimax-m2.1
+  MiniMax-M2.5: minimax/minimax-m2.5
+  MiniMax-M2.7: minimax/minimax-m2.7
+  MiniMax-M3: minimax/minimax-m3
+  Mistral Large (Feb '24): mistralai/mistral-large-2407
+  Mistral Medium 3: mistralai/mistral-medium-3
+  Mistral Medium 3.1: mistralai/mistral-medium-3.1
+  Mistral Medium 3.5: mistralai/mistral-medium-3-5
+  Mistral Saba: mistralai/mistral-saba
+  Mixtral 8x22B Instruct: mistralai/mixtral-8x22b-instruct
+  Muse Spark 1.1 (xhigh): meta/muse-spark-1.1@xhigh
+  Muse Spark 1.2 (xhigh): meta/muse-spark-1.2@xhigh
+  Muse Spark 1.3 (max): meta/muse-spark-1.3@max
+  Muse Spark 1.3 (xhigh): meta/muse-spark-1.3@xhigh
+  Nemotron 3 Super 120B A12B (Reasoning): nvidia/nemotron-3-super-120b-a12b@reasoning
+  Nemotron 3 Ultra 550B A55B (Reasoning): nvidia/nemotron-3-ultra-550b-a55b@reasoning
+  Nemotron 3.5 Lightning: nvidia/nemotron-3.5-lightning
+  Qwen3 14B (Non-reasoning): qwen/qwen3-14b@non-reasoning
+  Qwen3 14B (Reasoning): qwen/qwen3-14b@reasoning
+  Qwen3 235B A22B (Non-reasoning): qwen/qwen3-235b-a22b@non-reasoning
+  Qwen3 235B A22B (Reasoning): qwen/qwen3-235b-a22b@reasoning
+  Qwen3 235B A22B 2507 (Reasoning): qwen/qwen3-235b-a22b-2507@reasoning
+  Qwen3 30B A3B (Non-reasoning): qwen/qwen3-30b-a3b@non-reasoning
+  Qwen3 30B A3B (Reasoning): qwen/qwen3-30b-a3b@reasoning
+  Qwen3 32B (Non-reasoning): qwen/qwen3-32b@non-reasoning
+  Qwen3 32B (Reasoning): qwen/qwen3-32b@reasoning
+  Qwen3 8B (Non-reasoning): qwen/qwen3-8b@non-reasoning
+  Qwen3 8B (Reasoning): qwen/qwen3-8b@reasoning
+  Qwen3 Coder Next: qwen/qwen3-coder-next
+  Qwen3 Max: qwen/qwen3-max
+  Qwen3 Max (Preview): qwen/qwen3-max
+  Qwen3 Max Thinking: qwen/qwen3-max-thinking
+  Qwen3 Max Thinking (Preview): qwen/qwen3-max-thinking
+  Qwen3 VL 30B A3B (Reasoning): qwen/qwen3-vl-30b-a3b-thinking
+  Qwen3 VL 30B A3B Instruct: qwen/qwen3-vl-30b-a3b-instruct
+  Qwen3 VL 32B Instruct: qwen/qwen3-vl-32b-instruct
+  Qwen3 VL 8B (Reasoning): qwen/qwen3-vl-8b-thinking
+  Qwen3 VL 8B Instruct: qwen/qwen3-vl-8b-instruct
+  Qwen3.5 122B A10B (Non-reasoning): qwen/qwen3.5-122b-a10b@non-reasoning
+  Qwen3.5 122B A10B (Reasoning): qwen/qwen3.5-122b-a10b@reasoning
+  Qwen3.5 27B (Non-reasoning): qwen/qwen3.5-27b@non-reasoning
+  Qwen3.5 27B (Reasoning): qwen/qwen3.5-27b@reasoning
+  Qwen3.5 35B A3B (Non-reasoning): qwen/qwen3.5-35b-a3b@non-reasoning
+  Qwen3.5 35B A3B (Reasoning): qwen/qwen3.5-35b-a3b@reasoning
+  Qwen3.5 397B A17B (Non-reasoning): qwen/qwen3.5-397b-a17b@non-reasoning
+  Qwen3.5 397B A17B (Reasoning): qwen/qwen3.5-397b-a17b@reasoning
+  Qwen3.5 9B (Non-reasoning): qwen/qwen3.5-9b@non-reasoning
+  Qwen3.5 9B (Reasoning): qwen/qwen3.5-9b@reasoning
+  Qwen3.6 27B (Non-reasoning): qwen/qwen3.6-27b@non-reasoning
+  Qwen3.6 27B (Reasoning): qwen/qwen3.6-27b@reasoning
+  Qwen3.6 35B A3B (Non-reasoning): qwen/qwen3.6-35b-a3b@non-reasoning
+  Qwen3.6 35B A3B (Reasoning): qwen/qwen3.6-35b-a3b@reasoning
+  Qwen3.6 Max Preview: qwen/qwen3.6-max-preview
+  Qwen3.6 Plus: qwen/qwen3.6-plus
+  Qwen3.7 Max: qwen/qwen3.7-max
+  Qwen3.7 Plus: qwen/qwen3.7-plus
+  Qwen3.8 2.4T A95B: qwen/qwen3.8-2.4t-a95b
+  Qwen3.8 27B (Non-reasoning): qwen/qwen3.8-27b@non-reasoning
+  Qwen3.8 27B (low): qwen/qwen3.8-27b@low
+  Qwen3.8 27B (medium): qwen/qwen3.8-27b@medium
+  Qwen3.8 27B (xhigh): qwen/qwen3.8-27b@xhigh
+  Solar Pro 3: upstage/solar-pro-3
+  Solar Pro 4: upstage/solar-pro4
+  Step 3.5 Flash: stepfun/step-3.5-flash
+  Step 3.7 Flash: stepfun/step-3.7-flash
+  Trinity Large Thinking: arcee-ai/trinity-large-thinking
+  gpt-oss-120b (high): openai/gpt-oss-120b@high
+  gpt-oss-120b (low): openai/gpt-oss-120b@low
+  gpt-oss-20b (high): openai/gpt-oss-20b@high
+  gpt-oss-20b (low): openai/gpt-oss-20b@low
+  o1: openai/o1
+  o3: openai/o3
+  o3-mini: openai/o3-mini
+  o3-mini (high): openai/o3-mini@high
+  o3-pro: openai/o3-pro
+  o4-mini (high): openai/o4-mini@high
+boards:
+  aa_api_aime:
+    higher_is_better: true
+    title: 'Artificial Analysis API: aime'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.01
+      deepseek/deepseek-r1-0528: 0.893333
+      google/gemini-2.5-flash-lite@non-reasoning: 0.5
+      google/gemini-2.5-flash-lite@reasoning: 0.703333
+      google/gemini-2.5-flash@non-reasoning: 0.5
+      google/gemini-2.5-flash@reasoning: 0.823333
+      google/gemini-2.5-pro: 0.886667
+      google/gemini-2.5-pro-preview: 0.87
+      meta/llama-4-maverick: 0.39
+      meta/llama-4-scout: 0.283333
+      mistralai/mistral-large-2407: 0.0
+      mistralai/mistral-medium-3: 0.44
+      mistralai/mistral-saba: 0.13
+      mistralai/mixtral-8x22b-instruct: 0.0
+      moonshotai/kimi-k2-0905: 0.693333
+      openai/gpt-4-turbo: 0.15
+      openai/gpt-4.1: 0.436667
+      openai/gpt-4.1-mini: 0.43
+      openai/gpt-4.1-nano: 0.236667
+      openai/gpt-4o: 0.326667
+      openai/gpt-4o-mini: 0.116667
+      openai/gpt-5@high: 0.956667
+      openai/gpt-5@low: 0.83
+      openai/gpt-5@medium: 0.916667
+      openai/gpt-5@minimal: 0.366667
+      openai/o1: 0.723333
+      openai/o3: 0.903333
+      openai/o3-mini: 0.77
+      openai/o3-mini@high: 0.86
+      openai/o4-mini@high: 0.94
+      qwen/qwen3-14b@non-reasoning: 0.28
+      qwen/qwen3-14b@reasoning: 0.763333
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.94
+      qwen/qwen3-235b-a22b@non-reasoning: 0.326667
+      qwen/qwen3-235b-a22b@reasoning: 0.84
+      qwen/qwen3-30b-a3b@non-reasoning: 0.26
+      qwen/qwen3-30b-a3b@reasoning: 0.753333
+      qwen/qwen3-32b@non-reasoning: 0.303333
+      qwen/qwen3-32b@reasoning: 0.806667
+      qwen/qwen3-8b@non-reasoning: 0.243333
+      qwen/qwen3-8b@reasoning: 0.746667
+      z-ai/glm-4.5-air: 0.673333
+      z-ai/glm-4.5@reasoning: 0.873333
+  aa_api_aime_25:
+    higher_is_better: true
+    title: 'Artificial Analysis API: aime_25'
+    unit: fraction
+    values:
+      anthropic/claude-opus-4.5@non-reasoning: 0.626667
+      anthropic/claude-opus-4.5@reasoning: 0.913333
+      deepseek/deepseek-r1-0528: 0.76
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.536667
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.896667
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.576667
+      deepseek/deepseek-v3.2-exp@reasoning: 0.876667
+      deepseek/deepseek-v3.2@non-reasoning: 0.59
+      deepseek/deepseek-v3.2@reasoning: 0.92
+      google/gemini-2.5-flash-lite@non-reasoning: 0.353333
+      google/gemini-2.5-flash-lite@reasoning: 0.533333
+      google/gemini-2.5-flash@non-reasoning: 0.603333
+      google/gemini-2.5-flash@reasoning: 0.733333
+      google/gemini-2.5-pro: 0.876667
+      google/gemini-3-flash-preview@non-reasoning: 0.556667
+      google/gemini-3-flash-preview@reasoning: 0.97
+      meta/llama-4-maverick: 0.193333
+      meta/llama-4-scout: 0.14
+      minimax/minimax-m2: 0.783333
+      minimax/minimax-m2.1: 0.826667
+      mistralai/mistral-medium-3: 0.303333
+      mistralai/mistral-medium-3.1: 0.383333
+      moonshotai/kimi-k2-0905: 0.573333
+      moonshotai/kimi-k2-thinking: 0.946667
+      openai/gpt-4.1: 0.346667
+      openai/gpt-4.1-mini: 0.463333
+      openai/gpt-4.1-nano: 0.24
+      openai/gpt-4o: 0.256667
+      openai/gpt-4o-mini: 0.146667
+      openai/gpt-5: 0.483333
+      openai/gpt-5-mini@high: 0.906667
+      openai/gpt-5-mini@medium: 0.85
+      openai/gpt-5-mini@minimal: 0.466667
+      openai/gpt-5-nano@high: 0.836667
+      openai/gpt-5-nano@medium: 0.783333
+      openai/gpt-5-nano@minimal: 0.273333
+      openai/gpt-5.1-codex-mini@high: 0.916667
+      openai/gpt-5.1-codex@high: 0.956667
+      openai/gpt-5.1@high: 0.94
+      openai/gpt-5.1@non-reasoning: 0.38
+      openai/gpt-5.2@medium: 0.966667
+      openai/gpt-5.2@non-reasoning: 0.51
+      openai/gpt-5.2@xhigh: 0.99
+      openai/gpt-5@high: 0.943333
+      openai/gpt-5@low: 0.83
+      openai/gpt-5@medium: 0.916667
+      openai/gpt-5@minimal: 0.316667
+      openai/gpt-oss-120b@high: 0.934417
+      openai/gpt-oss-120b@low: 0.666667
+      openai/gpt-oss-20b@high: 0.893333
+      openai/gpt-oss-20b@low: 0.623333
+      openai/o3: 0.883333
+      openai/o4-mini@high: 0.906667
+      qwen/qwen3-14b@non-reasoning: 0.58
+      qwen/qwen3-14b@reasoning: 0.556667
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.91
+      qwen/qwen3-235b-a22b@non-reasoning: 0.236667
+      qwen/qwen3-235b-a22b@reasoning: 0.82
+      qwen/qwen3-30b-a3b@non-reasoning: 0.216667
+      qwen/qwen3-30b-a3b@reasoning: 0.723333
+      qwen/qwen3-32b@non-reasoning: 0.196667
+      qwen/qwen3-32b@reasoning: 0.73
+      qwen/qwen3-8b@non-reasoning: 0.243333
+      qwen/qwen3-8b@reasoning: 0.19
+      qwen/qwen3-max: 0.806667
+      qwen/qwen3-max-thinking: 0.823333
+      qwen/qwen3-vl-30b-a3b-instruct: 0.723333
+      qwen/qwen3-vl-30b-a3b-thinking: 0.823333
+      qwen/qwen3-vl-32b-instruct: 0.683333
+      qwen/qwen3-vl-8b-instruct: 0.273333
+      qwen/qwen3-vl-8b-thinking: 0.306667
+      x-ai/grok-4.1-fast@non-reasoning: 0.343333
+      x-ai/grok-4.1-fast@reasoning: 0.893333
+      z-ai/glm-4.5-air: 0.806667
+      z-ai/glm-4.5@reasoning: 0.736667
+      z-ai/glm-4.5v@non-reasoning: 0.153333
+      z-ai/glm-4.5v@reasoning: 0.73
+      z-ai/glm-4.6@non-reasoning: 0.443333
+      z-ai/glm-4.6@reasoning: 0.86
+      z-ai/glm-4.6v@non-reasoning: 0.263333
+      z-ai/glm-4.6v@reasoning: 0.853333
+      z-ai/glm-4.7@non-reasoning: 0.48
+      z-ai/glm-4.7@reasoning: 0.95
+  aa_api_coding_index:
+    higher_is_better: true
+    title: 'Artificial Analysis API: coding_index'
+    unit: index
+    values:
+      anthropic/claude-fable-5.1@high: 79.1
+      anthropic/claude-fable-5.1@low: 75.2
+      anthropic/claude-fable-5.1@max: 81.6
+      anthropic/claude-fable-5.1@medium: 77.1
+      anthropic/claude-fable-5.1@xhigh: 80.7
+      anthropic/claude-fable-5@max: 76.5
+      anthropic/claude-opus-4.7@max: 73.6
+      anthropic/claude-opus-4.8@max: 74.3
+      anthropic/claude-opus-5@high: 76.5
+      anthropic/claude-opus-5@low: 66.9
+      anthropic/claude-opus-5@max: 78.0
+      anthropic/claude-opus-5@medium: 74.3
+      anthropic/claude-opus-5@xhigh: 77.0
+      anthropic/claude-sonnet-4.6@max: 63.0
+      anthropic/claude-sonnet-5@high: 66.4
+      anthropic/claude-sonnet-5@max: 71.5
+      arcee-ai/trinity-large-thinking: 25.8
+      deepseek/deepseek-r1-0528: 24.6
+      deepseek/deepseek-v3.1-terminus@reasoning: 43.5
+      deepseek/deepseek-v3.2@reasoning: 44.2
+      deepseek/deepseek-v4-flash-0731@max: 69.1
+      deepseek/deepseek-v4-pro-0813@max: 68.8
+      google/gemini-2.5-pro: 33.3
+      google/gemini-2.5-pro-preview: 46.7
+      google/gemini-3.1-flash-lite: 34.7
+      google/gemini-3.1-pro-preview: 68.8
+      google/gemini-3.5-flash-lite: 49.3
+      google/gemini-3.5-flash@high: 70.1
+      google/gemini-3.6-flash@high: 69.2
+      google/gemini-3.7-flash@high: 76.1
+      google/gemini-3.7-flash@low: 71.0
+      google/gemini-3.7-flash@medium: 71.5
+      google/gemini-3.8-flash@high: 76.3
+      google/gemini-3.8-flash@low: 73.5
+      google/gemini-3.8-flash@medium: 74.1
+      ibm-granite/granite-4.2-8b: 22.4
+      inception/mercury-2: 31.1
+      inclusionai/ling-3.0-flash: 50.6
+      inclusionai/ling-3.0-flash-fin: 55.6
+      inclusionai/ling-3.0-flash-vl: 57.0
+      kwaipilot/kat-coder-pro-v2: 59.5
+      meituan/longcat-2.0: 45.3
+      meta/llama-4-maverick: 16.3
+      meta/llama-4-scout: 8.2
+      meta/muse-spark-1.1@xhigh: 71.3
+      meta/muse-spark-1.2@xhigh: 72.2
+      meta/muse-spark-1.3@max: 75.8
+      meta/muse-spark-1.3@xhigh: 76.5
+      minimax/minimax-m2.7: 52.6
+      minimax/minimax-m3: 58.6
+      mistralai/mistral-medium-3-5: 46.9
+      mistralai/mistral-medium-3.1: 20.5
+      moonshotai/kimi-k2.5@reasoning: 46.8
+      moonshotai/kimi-k2.6: 61.8
+      moonshotai/kimi-k2.7-code: 60.8
+      moonshotai/kimi-k3@low: 72.0
+      moonshotai/kimi-k3@max: 76.2
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 37.7
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 49.3
+      nvidia/nemotron-3.5-lightning: 26.8
+      openai/gpt-4-turbo: 21.5
+      openai/gpt-4.1-mini: 20.2
+      openai/gpt-4.1-nano: 11.1
+      openai/gpt-4o: 24.2
+      openai/gpt-4o-mini: 11.4
+      openai/gpt-5-mini@high: 15.6
+      openai/gpt-5.1@high: 49.4
+      openai/gpt-5.4-mini@xhigh: 56.1
+      openai/gpt-5.4-nano@xhigh: 56.1
+      openai/gpt-5.4@xhigh: 71.1
+      openai/gpt-5.5@high: 71.6
+      openai/gpt-5.5@low: 60.9
+      openai/gpt-5.5@medium: 71.5
+      openai/gpt-5.5@non-reasoning: 56.5
+      openai/gpt-5.5@xhigh: 74.9
+      openai/gpt-5.6-luna@high: 63.3
+      openai/gpt-5.6-luna@low: 44.2
+      openai/gpt-5.6-luna@max: 71.4
+      openai/gpt-5.6-luna@medium: 50.7
+      openai/gpt-5.6-luna@non-reasoning: 39.3
+      openai/gpt-5.6-luna@xhigh: 68.6
+      openai/gpt-5.6-sol@high: 77.2
+      openai/gpt-5.6-sol@low: 69.7
+      openai/gpt-5.6-sol@max: 77.4
+      openai/gpt-5.6-sol@medium: 76.3
+      openai/gpt-5.6-sol@non-reasoning: 65.1
+      openai/gpt-5.6-sol@xhigh: 78.3
+      openai/gpt-5.6-terra@high: 67.1
+      openai/gpt-5.6-terra@low: 58.1
+      openai/gpt-5.6-terra@max: 76.7
+      openai/gpt-5.6-terra@medium: 64.7
+      openai/gpt-5.6-terra@non-reasoning: 52.3
+      openai/gpt-5.6-terra@xhigh: 70.6
+      openai/gpt-5@high: 37.8
+      openai/gpt-6-astra@high: 77.1
+      openai/gpt-6-astra@low: 75.7
+      openai/gpt-6-astra@max: 76.9
+      openai/gpt-6-astra@medium: 76.7
+      openai/gpt-6-astra@xhigh: 75.9
+      openai/gpt-oss-120b@high: 30.4
+      openai/gpt-oss-120b@low: 21.2
+      openai/gpt-oss-20b@high: 20.7
+      openai/o1: 39.7
+      openai/o3-mini@high: 16.3
+      qwen/qwen3-14b@reasoning: 13.8
+      qwen/qwen3-235b-a22b-2507@reasoning: 22.1
+      qwen/qwen3-32b@reasoning: 15.3
+      qwen/qwen3-8b@reasoning: 9.0
+      qwen/qwen3-coder-next: 36.2
+      qwen/qwen3.5-122b-a10b@non-reasoning: 43.3
+      qwen/qwen3.5-122b-a10b@reasoning: 45.7
+      qwen/qwen3.5-35b-a3b@non-reasoning: 37.0
+      qwen/qwen3.5-397b-a17b@reasoning: 48.2
+      qwen/qwen3.5-9b@non-reasoning: 23.5
+      qwen/qwen3.5-9b@reasoning: 28.7
+      qwen/qwen3.6-27b@non-reasoning: 46.6
+      qwen/qwen3.6-27b@reasoning: 53.7
+      qwen/qwen3.6-35b-a3b@non-reasoning: 28.1
+      qwen/qwen3.6-35b-a3b@reasoning: 41.9
+      qwen/qwen3.6-plus: 54.5
+      qwen/qwen3.7-max: 66.0
+      qwen/qwen3.7-plus: 55.9
+      qwen/qwen3.8-2.4t-a95b: 71.9
+      qwen/qwen3.8-27b@low: 58.2
+      qwen/qwen3.8-27b@medium: 56.1
+      qwen/qwen3.8-27b@non-reasoning: 44.6
+      qwen/qwen3.8-27b@xhigh: 68.1
+      stepfun/step-3.7-flash: 39.6
+      tencent/hy3: 58.8
+      thinkingmachines/inkling-small: 52.9
+      thinkingmachines/inkling@xhigh: 52.1
+      upstage/solar-pro-3: 16.2
+      upstage/solar-pro4: 52.7
+      x-ai/grok-4.3@high: 42.2
+      x-ai/grok-4.3@non-reasoning: 35.2
+      x-ai/grok-4.5@high: 72.4
+      x-ai/grok-4.6@high: 76.8
+      x-ai/grok-4.6@low: 66.3
+      x-ai/grok-4.6@medium: 74.4
+      x-ai/grok-4.6@xhigh: 75.9
+      xiaomi/mimo-v2.5: 56.8
+      xiaomi/mimo-v2.5-pro: 60.2
+      z-ai/glm-4.6@reasoning: 45.8
+      z-ai/glm-4.7@reasoning: 45.3
+      z-ai/glm-5.1@reasoning: 55.8
+      z-ai/glm-5.2@max: 68.8
+      z-ai/glm-5.2@non-reasoning: 46.5
+      z-ai/glm-5.3-flash: 71.5
+      z-ai/glm-5.3@max: 74.8
+  aa_api_gpqa:
+    higher_is_better: true
+    title: 'Artificial Analysis API: gpqa'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.374
+      anthropic/claude-fable-5.1@high: 0.906
+      anthropic/claude-fable-5.1@low: 0.881
+      anthropic/claude-fable-5.1@max: 0.937
+      anthropic/claude-fable-5.1@medium: 0.886
+      anthropic/claude-fable-5.1@xhigh: 0.934
+      anthropic/claude-fable-5@max: 0.926
+      anthropic/claude-opus-4.5@non-reasoning: 0.81
+      anthropic/claude-opus-4.5@reasoning: 0.866
+      anthropic/claude-opus-4.6@high: 0.84
+      anthropic/claude-opus-4.6@max: 0.896
+      anthropic/claude-opus-4.7@high: 0.885
+      anthropic/claude-opus-4.7@max: 0.914
+      anthropic/claude-opus-4.8@max: 0.92
+      anthropic/claude-opus-5@high: 0.937
+      anthropic/claude-opus-5@low: 0.889
+      anthropic/claude-opus-5@max: 0.932
+      anthropic/claude-opus-5@medium: 0.919
+      anthropic/claude-opus-5@xhigh: 0.937
+      anthropic/claude-sonnet-4.6@high: 0.799
+      anthropic/claude-sonnet-4.6@low: 0.797
+      anthropic/claude-sonnet-4.6@max: 0.875
+      anthropic/claude-sonnet-5@high: 0.8
+      anthropic/claude-sonnet-5@max: 0.911
+      arcee-ai/trinity-large-thinking: 0.752
+      deepseek/deepseek-r1-0528: 0.813
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.751
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.792
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.738
+      deepseek/deepseek-v3.2-exp@reasoning: 0.797
+      deepseek/deepseek-v3.2@non-reasoning: 0.751
+      deepseek/deepseek-v3.2@reasoning: 0.84
+      deepseek/deepseek-v4-flash-0731@max: 0.908
+      deepseek/deepseek-v4-pro-0813@max: 0.928
+      google/gemini-2.5-flash-lite@non-reasoning: 0.474
+      google/gemini-2.5-flash-lite@reasoning: 0.625
+      google/gemini-2.5-flash@non-reasoning: 0.683
+      google/gemini-2.5-flash@reasoning: 0.79
+      google/gemini-2.5-pro: 0.844
+      google/gemini-2.5-pro-preview: 0.836
+      google/gemini-3-flash-preview@non-reasoning: 0.812
+      google/gemini-3-flash-preview@reasoning: 0.898
+      google/gemini-3.1-flash-lite: 0.822
+      google/gemini-3.1-pro-preview: 0.941
+      google/gemini-3.5-flash-lite: 0.838
+      google/gemini-3.5-flash@high: 0.922
+      google/gemini-3.5-flash@medium: 0.921
+      google/gemini-3.5-flash@minimal: 0.828
+      google/gemini-3.6-flash@high: 0.928
+      google/gemini-3.7-flash@high: 0.945
+      google/gemini-3.7-flash@low: 0.901
+      google/gemini-3.7-flash@medium: 0.921
+      google/gemini-3.8-flash@high: 0.953
+      google/gemini-3.8-flash@low: 0.92
+      google/gemini-3.8-flash@medium: 0.935
+      ibm-granite/granite-4.2-8b: 0.631
+      inception/mercury-2: 0.77
+      inclusionai/ling-3.0-flash: 0.855
+      inclusionai/ling-3.0-flash-vl: 0.862
+      kwaipilot/kat-coder-pro-v2: 0.855
+      meituan/longcat-2.0: 0.78
+      meta/llama-4-maverick: 0.671
+      meta/llama-4-scout: 0.587
+      meta/muse-spark-1.1@xhigh: 0.898
+      meta/muse-spark-1.2@xhigh: 0.904
+      meta/muse-spark-1.3@max: 0.935
+      meta/muse-spark-1.3@xhigh: 0.941
+      minimax/minimax-m2: 0.777
+      minimax/minimax-m2.1: 0.83
+      minimax/minimax-m2.5: 0.848
+      minimax/minimax-m2.7: 0.874
+      minimax/minimax-m3: 0.929
+      mistralai/mistral-large-2407: 0.351
+      mistralai/mistral-medium-3: 0.578
+      mistralai/mistral-medium-3-5: 0.748
+      mistralai/mistral-medium-3.1: 0.588
+      mistralai/mistral-saba: 0.424
+      mistralai/mixtral-8x22b-instruct: 0.332
+      moonshotai/kimi-k2-0905: 0.767
+      moonshotai/kimi-k2-thinking: 0.838
+      moonshotai/kimi-k2.5@non-reasoning: 0.789
+      moonshotai/kimi-k2.5@reasoning: 0.879
+      moonshotai/kimi-k2.6: 0.911
+      moonshotai/kimi-k2.6@non-reasoning: 0.788
+      moonshotai/kimi-k2.7-code: 0.896
+      moonshotai/kimi-k3@low: 0.842
+      moonshotai/kimi-k3@max: 0.935
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.8
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.867
+      nvidia/nemotron-3.5-lightning: 0.743
+      openai/gpt-4.1: 0.666
+      openai/gpt-4.1-mini: 0.664
+      openai/gpt-4.1-nano: 0.512
+      openai/gpt-4o: 0.655
+      openai/gpt-4o-mini: 0.426
+      openai/gpt-5: 0.686
+      openai/gpt-5-mini@high: 0.828
+      openai/gpt-5-mini@medium: 0.803
+      openai/gpt-5-mini@minimal: 0.687
+      openai/gpt-5-nano@high: 0.676
+      openai/gpt-5-nano@medium: 0.67
+      openai/gpt-5-nano@minimal: 0.428
+      openai/gpt-5.1-codex-mini@high: 0.813
+      openai/gpt-5.1-codex@high: 0.86
+      openai/gpt-5.1@high: 0.873
+      openai/gpt-5.1@non-reasoning: 0.643
+      openai/gpt-5.2-codex@xhigh: 0.899
+      openai/gpt-5.2@medium: 0.864
+      openai/gpt-5.2@non-reasoning: 0.712
+      openai/gpt-5.2@xhigh: 0.903
+      openai/gpt-5.3-codex@xhigh: 0.915
+      openai/gpt-5.4-mini@medium: 0.823
+      openai/gpt-5.4-mini@non-reasoning: 0.606
+      openai/gpt-5.4-mini@xhigh: 0.875
+      openai/gpt-5.4-nano@medium: 0.761
+      openai/gpt-5.4-nano@non-reasoning: 0.558
+      openai/gpt-5.4-nano@xhigh: 0.817
+      openai/gpt-5.4@low: 0.871
+      openai/gpt-5.4@non-reasoning: 0.748
+      openai/gpt-5.4@xhigh: 0.92
+      openai/gpt-5.5@high: 0.932
+      openai/gpt-5.5@low: 0.91
+      openai/gpt-5.5@medium: 0.926
+      openai/gpt-5.5@non-reasoning: 0.768
+      openai/gpt-5.5@xhigh: 0.935
+      openai/gpt-5.6-luna@high: 0.892
+      openai/gpt-5.6-luna@low: 0.835
+      openai/gpt-5.6-luna@max: 0.911
+      openai/gpt-5.6-luna@medium: 0.859
+      openai/gpt-5.6-luna@non-reasoning: 0.645
+      openai/gpt-5.6-luna@xhigh: 0.895
+      openai/gpt-5.6-sol@high: 0.928
+      openai/gpt-5.6-sol@low: 0.898
+      openai/gpt-5.6-sol@max: 0.941
+      openai/gpt-5.6-sol@medium: 0.926
+      openai/gpt-5.6-sol@non-reasoning: 0.79
+      openai/gpt-5.6-sol@xhigh: 0.931
+      openai/gpt-5.6-terra@high: 0.896
+      openai/gpt-5.6-terra@low: 0.843
+      openai/gpt-5.6-terra@max: 0.925
+      openai/gpt-5.6-terra@medium: 0.872
+      openai/gpt-5.6-terra@non-reasoning: 0.746
+      openai/gpt-5.6-terra@xhigh: 0.908
+      openai/gpt-5@high: 0.854
+      openai/gpt-5@low: 0.808
+      openai/gpt-5@medium: 0.842
+      openai/gpt-5@minimal: 0.673
+      openai/gpt-6-astra@high: 0.949
+      openai/gpt-6-astra@low: 0.931
+      openai/gpt-6-astra@max: 0.961
+      openai/gpt-6-astra@medium: 0.939
+      openai/gpt-6-astra@xhigh: 0.963
+      openai/gpt-oss-120b@high: 0.782
+      openai/gpt-oss-120b@low: 0.672
+      openai/gpt-oss-20b@high: 0.688
+      openai/gpt-oss-20b@low: 0.611
+      openai/o1: 0.747
+      openai/o3: 0.827
+      openai/o3-mini: 0.748
+      openai/o3-mini@high: 0.773
+      openai/o3-pro: 0.845
+      openai/o4-mini@high: 0.784
+      qwen/qwen3-14b@non-reasoning: 0.47
+      qwen/qwen3-14b@reasoning: 0.604
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.79
+      qwen/qwen3-235b-a22b@non-reasoning: 0.613
+      qwen/qwen3-235b-a22b@reasoning: 0.7
+      qwen/qwen3-30b-a3b@non-reasoning: 0.515
+      qwen/qwen3-30b-a3b@reasoning: 0.616
+      qwen/qwen3-32b@non-reasoning: 0.535
+      qwen/qwen3-32b@reasoning: 0.668
+      qwen/qwen3-8b@non-reasoning: 0.452
+      qwen/qwen3-8b@reasoning: 0.589
+      qwen/qwen3-coder-next: 0.737
+      qwen/qwen3-max: 0.764
+      qwen/qwen3-max-thinking: 0.861
+      qwen/qwen3-vl-30b-a3b-instruct: 0.695
+      qwen/qwen3-vl-30b-a3b-thinking: 0.72
+      qwen/qwen3-vl-32b-instruct: 0.671
+      qwen/qwen3-vl-8b-instruct: 0.427
+      qwen/qwen3-vl-8b-thinking: 0.579
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.827
+      qwen/qwen3.5-122b-a10b@reasoning: 0.857
+      qwen/qwen3.5-27b@non-reasoning: 0.842
+      qwen/qwen3.5-27b@reasoning: 0.858
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.819
+      qwen/qwen3.5-35b-a3b@reasoning: 0.845
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.861
+      qwen/qwen3.5-397b-a17b@reasoning: 0.893
+      qwen/qwen3.5-9b@non-reasoning: 0.786
+      qwen/qwen3.5-9b@reasoning: 0.806
+      qwen/qwen3.6-27b@non-reasoning: 0.829
+      qwen/qwen3.6-27b@reasoning: 0.842
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.817
+      qwen/qwen3.6-35b-a3b@reasoning: 0.841
+      qwen/qwen3.6-max-preview: 0.888
+      qwen/qwen3.6-plus: 0.882
+      qwen/qwen3.7-max: 0.923
+      qwen/qwen3.7-plus: 0.9
+      qwen/qwen3.8-2.4t-a95b: 0.935
+      qwen/qwen3.8-27b@low: 0.845
+      qwen/qwen3.8-27b@medium: 0.845
+      qwen/qwen3.8-27b@non-reasoning: 0.818
+      qwen/qwen3.8-27b@xhigh: 0.905
+      stepfun/step-3.5-flash: 0.831
+      stepfun/step-3.7-flash: 0.809
+      tencent/hy3: 0.897
+      tencent/hy3-preview@non-reasoning: 0.732
+      tencent/hy3-preview@reasoning: 0.867
+      thinkingmachines/inkling-small: 0.895
+      thinkingmachines/inkling@xhigh: 0.872
+      upstage/solar-pro-3: 0.724
+      upstage/solar-pro4: 0.891
+      x-ai/grok-4.1-fast@non-reasoning: 0.637
+      x-ai/grok-4.1-fast@reasoning: 0.853
+      x-ai/grok-4.3@high: 0.901
+      x-ai/grok-4.3@low: 0.843
+      x-ai/grok-4.3@medium: 0.89
+      x-ai/grok-4.3@non-reasoning: 0.658
+      x-ai/grok-4.5@high: 0.931
+      x-ai/grok-4.6@high: 0.949
+      x-ai/grok-4.6@low: 0.879
+      x-ai/grok-4.6@medium: 0.935
+      x-ai/grok-4.6@xhigh: 0.935
+      xiaomi/mimo-v2-pro: 0.87
+      xiaomi/mimo-v2.5: 0.849
+      xiaomi/mimo-v2.5-pro: 0.866
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.762
+      z-ai/glm-4.5-air: 0.733
+      z-ai/glm-4.5@reasoning: 0.782
+      z-ai/glm-4.5v@non-reasoning: 0.573
+      z-ai/glm-4.5v@reasoning: 0.684
+      z-ai/glm-4.6@non-reasoning: 0.632
+      z-ai/glm-4.6@reasoning: 0.78
+      z-ai/glm-4.6v@non-reasoning: 0.566
+      z-ai/glm-4.6v@reasoning: 0.719
+      z-ai/glm-4.7-flash@non-reasoning: 0.452
+      z-ai/glm-4.7-flash@reasoning: 0.581
+      z-ai/glm-4.7@non-reasoning: 0.664
+      z-ai/glm-4.7@reasoning: 0.859
+      z-ai/glm-5-turbo: 0.847
+      z-ai/glm-5.1@non-reasoning: 0.839
+      z-ai/glm-5.1@reasoning: 0.868
+      z-ai/glm-5.2@max: 0.895
+      z-ai/glm-5.2@non-reasoning: 0.686
+      z-ai/glm-5.3-flash: 0.912
+      z-ai/glm-5.3@max: 0.917
+      z-ai/glm-5@non-reasoning: 0.666
+      z-ai/glm-5@reasoning: 0.82
+      z-ai/glm-5v-turbo@reasoning: 0.809
+  aa_api_hle:
+    higher_is_better: true
+    title: 'Artificial Analysis API: hle'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.041
+      anthropic/claude-fable-5.1@high: 0.559
+      anthropic/claude-fable-5.1@low: 0.489
+      anthropic/claude-fable-5.1@max: 0.591
+      anthropic/claude-fable-5.1@medium: 0.538
+      anthropic/claude-fable-5.1@xhigh: 0.587
+      anthropic/claude-fable-5@max: 0.555
+      anthropic/claude-opus-4.5@non-reasoning: 0.132
+      anthropic/claude-opus-4.5@reasoning: 0.301
+      anthropic/claude-opus-4.6@high: 0.191
+      anthropic/claude-opus-4.6@max: 0.399
+      anthropic/claude-opus-4.7@high: 0.333
+      anthropic/claude-opus-4.7@max: 0.423
+      anthropic/claude-opus-4.8@max: 0.487
+      anthropic/claude-opus-5@high: 0.528
+      anthropic/claude-opus-5@low: 0.434
+      anthropic/claude-opus-5@max: 0.549
+      anthropic/claude-opus-5@medium: 0.513
+      anthropic/claude-opus-5@xhigh: 0.544
+      anthropic/claude-sonnet-4.6@high: 0.133
+      anthropic/claude-sonnet-4.6@low: 0.112
+      anthropic/claude-sonnet-4.6@max: 0.336
+      anthropic/claude-sonnet-5@high: 0.357
+      anthropic/claude-sonnet-5@low: 0.219
+      anthropic/claude-sonnet-5@max: 0.413
+      anthropic/claude-sonnet-5@medium: 0.3
+      anthropic/claude-sonnet-5@xhigh: 0.39
+      arcee-ai/trinity-large-thinking: 0.158
+      deepseek/deepseek-r1-0528: 0.158
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.087
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.164
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.09
+      deepseek/deepseek-v3.2-exp@reasoning: 0.149
+      deepseek/deepseek-v3.2@non-reasoning: 0.112
+      deepseek/deepseek-v3.2@reasoning: 0.246
+      deepseek/deepseek-v4-flash-0731@max: 0.386
+      deepseek/deepseek-v4-pro-0813@max: 0.41
+      deepseek/deepseek-v4.1-flash@max: 0.392
+      google/gemini-2.5-flash-lite@non-reasoning: 0.037
+      google/gemini-2.5-flash-lite@reasoning: 0.068
+      google/gemini-2.5-flash@non-reasoning: 0.047
+      google/gemini-2.5-flash@reasoning: 0.121
+      google/gemini-2.5-pro: 0.225
+      google/gemini-2.5-pro-preview: 0.18
+      google/gemini-3-flash-preview@non-reasoning: 0.15
+      google/gemini-3-flash-preview@reasoning: 0.366
+      google/gemini-3.1-flash-lite: 0.172
+      google/gemini-3.1-pro-preview: 0.47
+      google/gemini-3.5-flash-lite: 0.188
+      google/gemini-3.5-flash@high: 0.427
+      google/gemini-3.5-flash@medium: 0.413
+      google/gemini-3.5-flash@minimal: 0.241
+      google/gemini-3.6-flash@high: 0.408
+      google/gemini-3.7-flash@high: 0.479
+      google/gemini-3.7-flash@low: 0.351
+      google/gemini-3.7-flash@medium: 0.39
+      google/gemini-3.8-flash@high: 0.478
+      google/gemini-3.8-flash@low: 0.371
+      google/gemini-3.8-flash@medium: 0.421
+      ibm-granite/granite-4.2-8b: 0.097
+      inception/mercury-2: 0.171
+      inclusionai/ling-3.0-flash: 0.237
+      inclusionai/ling-3.0-flash-fin: 0.226
+      inclusionai/ling-3.0-flash-vl: 0.22
+      kwaipilot/kat-coder-pro-v2: 0.161
+      meituan/longcat-2.0: 0.337
+      meta/llama-4-maverick: 0.049
+      meta/llama-4-scout: 0.038
+      meta/muse-spark-1.1@xhigh: 0.462
+      meta/muse-spark-1.2@xhigh: 0.455
+      meta/muse-spark-1.3@max: 0.487
+      meta/muse-spark-1.3@xhigh: 0.475
+      minimax/minimax-m2: 0.137
+      minimax/minimax-m2.1: 0.232
+      minimax/minimax-m2.5: 0.205
+      minimax/minimax-m2.7: 0.296
+      minimax/minimax-m3: 0.39
+      mistralai/mistral-large-2407: 0.035
+      mistralai/mistral-medium-3: 0.041
+      mistralai/mistral-medium-3-5: 0.138
+      mistralai/mistral-medium-3.1: 0.047
+      mistralai/mistral-saba: 0.043
+      mistralai/mixtral-8x22b-instruct: 0.04
+      moonshotai/kimi-k2-0905: 0.064
+      moonshotai/kimi-k2-thinking: 0.238
+      moonshotai/kimi-k2.5@non-reasoning: 0.132
+      moonshotai/kimi-k2.5@reasoning: 0.307
+      moonshotai/kimi-k2.6: 0.375
+      moonshotai/kimi-k2.6@non-reasoning: 0.196
+      moonshotai/kimi-k2.7-code: 0.35
+      moonshotai/kimi-k3@low: 0.25
+      moonshotai/kimi-k3@max: 0.469
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.208
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.284
+      nvidia/nemotron-3.5-lightning: 0.106
+      openai/gpt-4-turbo: 0.031
+      openai/gpt-4.1: 0.042
+      openai/gpt-4.1-mini: 0.05
+      openai/gpt-4.1-nano: 0.038
+      openai/gpt-4o: 0.04
+      openai/gpt-4o-mini: 0.042
+      openai/gpt-5: 0.066
+      openai/gpt-5-mini@high: 0.215
+      openai/gpt-5-mini@medium: 0.159
+      openai/gpt-5-mini@minimal: 0.051
+      openai/gpt-5-nano@high: 0.095
+      openai/gpt-5-nano@medium: 0.087
+      openai/gpt-5-nano@minimal: 0.04
+      openai/gpt-5.1-codex-mini@high: 0.185
+      openai/gpt-5.1-codex@high: 0.257
+      openai/gpt-5.1@high: 0.285
+      openai/gpt-5.1@non-reasoning: 0.053
+      openai/gpt-5.2-codex@xhigh: 0.357
+      openai/gpt-5.2@medium: 0.267
+      openai/gpt-5.2@non-reasoning: 0.08
+      openai/gpt-5.2@xhigh: 0.377
+      openai/gpt-5.3-codex@xhigh: 0.425
+      openai/gpt-5.4-mini@medium: 0.186
+      openai/gpt-5.4-mini@non-reasoning: 0.059
+      openai/gpt-5.4-mini@xhigh: 0.281
+      openai/gpt-5.4-nano@medium: 0.159
+      openai/gpt-5.4-nano@non-reasoning: 0.041
+      openai/gpt-5.4-nano@xhigh: 0.283
+      openai/gpt-5.4@low: 0.308
+      openai/gpt-5.4@non-reasoning: 0.113
+      openai/gpt-5.4@xhigh: 0.437
+      openai/gpt-5.5@high: 0.45
+      openai/gpt-5.5@low: 0.327
+      openai/gpt-5.5@medium: 0.424
+      openai/gpt-5.5@non-reasoning: 0.137
+      openai/gpt-5.5@xhigh: 0.458
+      openai/gpt-5.6-luna@high: 0.334
+      openai/gpt-5.6-luna@low: 0.198
+      openai/gpt-5.6-luna@max: 0.395
+      openai/gpt-5.6-luna@medium: 0.258
+      openai/gpt-5.6-luna@non-reasoning: 0.072
+      openai/gpt-5.6-luna@xhigh: 0.37
+      openai/gpt-5.6-sol@high: 0.46
+      openai/gpt-5.6-sol@low: 0.394
+      openai/gpt-5.6-sol@max: 0.495
+      openai/gpt-5.6-sol@medium: 0.422
+      openai/gpt-5.6-sol@non-reasoning: 0.167
+      openai/gpt-5.6-sol@xhigh: 0.473
+      openai/gpt-5.6-terra@high: 0.385
+      openai/gpt-5.6-terra@low: 0.292
+      openai/gpt-5.6-terra@max: 0.429
+      openai/gpt-5.6-terra@medium: 0.333
+      openai/gpt-5.6-terra@non-reasoning: 0.114
+      openai/gpt-5.6-terra@xhigh: 0.419
+      openai/gpt-5@high: 0.285
+      openai/gpt-5@low: 0.196
+      openai/gpt-5@medium: 0.254
+      openai/gpt-5@minimal: 0.06
+      openai/gpt-6-astra@high: 0.531
+      openai/gpt-6-astra@low: 0.492
+      openai/gpt-6-astra@max: 0.547
+      openai/gpt-6-astra@medium: 0.527
+      openai/gpt-6-astra@xhigh: 0.546
+      openai/gpt-oss-120b@high: 0.196
+      openai/gpt-oss-120b@low: 0.059
+      openai/gpt-oss-20b@high: 0.11
+      openai/gpt-oss-20b@low: 0.053
+      openai/o1: 0.07
+      openai/o3: 0.201
+      openai/o3-mini: 0.079
+      openai/o3-mini@high: 0.12
+      openai/o4-mini@high: 0.165
+      qwen/qwen3-14b@non-reasoning: 0.041
+      qwen/qwen3-14b@reasoning: 0.045
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.159
+      qwen/qwen3-235b-a22b@non-reasoning: 0.042
+      qwen/qwen3-235b-a22b@reasoning: 0.11
+      qwen/qwen3-30b-a3b@non-reasoning: 0.046
+      qwen/qwen3-30b-a3b@reasoning: 0.062
+      qwen/qwen3-32b@non-reasoning: 0.041
+      qwen/qwen3-32b@reasoning: 0.074
+      qwen/qwen3-8b@non-reasoning: 0.019
+      qwen/qwen3-8b@reasoning: 0.039
+      qwen/qwen3-coder-next: 0.101
+      qwen/qwen3-max: 0.119
+      qwen/qwen3-max-thinking: 0.28
+      qwen/qwen3-vl-30b-a3b-instruct: 0.063
+      qwen/qwen3-vl-30b-a3b-thinking: 0.089
+      qwen/qwen3-vl-32b-instruct: 0.068
+      qwen/qwen3-vl-8b-instruct: 0.027
+      qwen/qwen3-vl-8b-thinking: 0.038
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.159
+      qwen/qwen3.5-122b-a10b@reasoning: 0.252
+      qwen/qwen3.5-27b@non-reasoning: 0.139
+      qwen/qwen3.5-27b@reasoning: 0.239
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.134
+      qwen/qwen3.5-35b-a3b@reasoning: 0.21
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.198
+      qwen/qwen3.5-397b-a17b@reasoning: 0.29
+      qwen/qwen3.5-9b@non-reasoning: 0.094
+      qwen/qwen3.5-9b@reasoning: 0.149
+      qwen/qwen3.6-27b@non-reasoning: 0.151
+      qwen/qwen3.6-27b@reasoning: 0.231
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.139
+      qwen/qwen3.6-35b-a3b@reasoning: 0.222
+      qwen/qwen3.6-max-preview: 0.308
+      qwen/qwen3.6-plus: 0.278
+      qwen/qwen3.7-max: 0.405
+      qwen/qwen3.7-plus: 0.356
+      qwen/qwen3.8-2.4t-a95b: 0.424
+      qwen/qwen3.8-27b@low: 0.14
+      qwen/qwen3.8-27b@medium: 0.141
+      qwen/qwen3.8-27b@non-reasoning: 0.121
+      qwen/qwen3.8-27b@xhigh: 0.339
+      stepfun/step-3.5-flash: 0.211
+      stepfun/step-3.7-flash: 0.214
+      tencent/hy3: 0.335
+      tencent/hy3-preview@non-reasoning: 0.07
+      tencent/hy3-preview@reasoning: 0.278
+      thinkingmachines/inkling-small: 0.333
+      thinkingmachines/inkling@xhigh: 0.319
+      upstage/solar-pro-3: 0.103
+      upstage/solar-pro4: 0.292
+      x-ai/grok-4.1-fast@non-reasoning: 0.051
+      x-ai/grok-4.1-fast@reasoning: 0.193
+      x-ai/grok-4.3@high: 0.372
+      x-ai/grok-4.3@low: 0.184
+      x-ai/grok-4.3@medium: 0.3
+      x-ai/grok-4.3@non-reasoning: 0.068
+      x-ai/grok-4.5@high: 0.427
+      x-ai/grok-4.6@high: 0.429
+      x-ai/grok-4.6@low: 0.276
+      x-ai/grok-4.6@medium: 0.421
+      x-ai/grok-4.6@xhigh: 0.441
+      xiaomi/mimo-v2-pro: 0.304
+      xiaomi/mimo-v2.5: 0.272
+      xiaomi/mimo-v2.5-pro: 0.357
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.148
+      z-ai/glm-4.5-air: 0.07
+      z-ai/glm-4.5@reasoning: 0.13
+      z-ai/glm-4.5v@non-reasoning: 0.035
+      z-ai/glm-4.5v@reasoning: 0.063
+      z-ai/glm-4.6@non-reasoning: 0.055
+      z-ai/glm-4.6@reasoning: 0.145
+      z-ai/glm-4.6v@non-reasoning: 0.037
+      z-ai/glm-4.6v@reasoning: 0.096
+      z-ai/glm-4.7-flash@non-reasoning: 0.05
+      z-ai/glm-4.7-flash@reasoning: 0.076
+      z-ai/glm-4.7@non-reasoning: 0.064
+      z-ai/glm-4.7@reasoning: 0.274
+      z-ai/glm-5-turbo: 0.278
+      z-ai/glm-5.1@non-reasoning: 0.279
+      z-ai/glm-5.1@reasoning: 0.301
+      z-ai/glm-5.2@max: 0.411
+      z-ai/glm-5.2@non-reasoning: 0.098
+      z-ai/glm-5.3-flash: 0.399
+      z-ai/glm-5.3@max: 0.423
+      z-ai/glm-5@non-reasoning: 0.076
+      z-ai/glm-5@reasoning: 0.293
+      z-ai/glm-5v-turbo@reasoning: 0.171
+  aa_api_ifbench:
+    higher_is_better: true
+    title: 'Artificial Analysis API: ifbench'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.361224
+      anthropic/claude-fable-5@max: 0.634694
+      anthropic/claude-opus-4.5@non-reasoning: 0.429932
+      anthropic/claude-opus-4.5@reasoning: 0.579592
+      anthropic/claude-opus-4.6@high: 0.446259
+      anthropic/claude-opus-4.6@max: 0.531293
+      anthropic/claude-opus-4.7@high: 0.436054
+      anthropic/claude-opus-4.7@max: 0.586395
+      anthropic/claude-opus-4.8@max: 0.622449
+      anthropic/claude-sonnet-4.6@high: 0.411565
+      anthropic/claude-sonnet-4.6@low: 0.42381
+      anthropic/claude-sonnet-4.6@max: 0.565986
+      arcee-ai/trinity-large-thinking: 0.562585
+      deepseek/deepseek-r1-0528: 0.395918
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.412245
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.570068
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.431293
+      deepseek/deepseek-v3.2-exp@reasoning: 0.541497
+      deepseek/deepseek-v3.2@non-reasoning: 0.490476
+      deepseek/deepseek-v3.2@reasoning: 0.606803
+      google/gemini-2.5-flash-lite@non-reasoning: 0.314966
+      google/gemini-2.5-flash-lite@reasoning: 0.498639
+      google/gemini-2.5-flash@non-reasoning: 0.389796
+      google/gemini-2.5-flash@reasoning: 0.502721
+      google/gemini-2.5-pro: 0.487075
+      google/gemini-3-flash-preview@non-reasoning: 0.55102
+      google/gemini-3-flash-preview@reasoning: 0.779592
+      google/gemini-3.1-flash-lite: 0.772109
+      google/gemini-3.1-pro-preview: 0.771429
+      google/gemini-3.5-flash@high: 0.763265
+      google/gemini-3.5-flash@medium: 0.745578
+      google/gemini-3.5-flash@minimal: 0.472789
+      inception/mercury-2: 0.697959
+      kwaipilot/kat-coder-pro-v2: 0.666667
+      meta/llama-4-maverick: 0.429932
+      meta/llama-4-scout: 0.395238
+      minimax/minimax-m2: 0.723129
+      minimax/minimax-m2.1: 0.698639
+      minimax/minimax-m2.5: 0.716327
+      minimax/minimax-m2.7: 0.757143
+      minimax/minimax-m3: 0.828571
+      mistralai/mistral-medium-3: 0.392517
+      mistralai/mistral-medium-3-5: 0.687755
+      mistralai/mistral-medium-3.1: 0.397959
+      moonshotai/kimi-k2-0905: 0.417007
+      moonshotai/kimi-k2-thinking: 0.680952
+      moonshotai/kimi-k2.5@non-reasoning: 0.436735
+      moonshotai/kimi-k2.5@reasoning: 0.702041
+      moonshotai/kimi-k2.6: 0.759864
+      moonshotai/kimi-k2.6@non-reasoning: 0.442857
+      moonshotai/kimi-k2.7-code: 0.631293
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.714966
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.813605
+      openai/gpt-4.1: 0.429932
+      openai/gpt-4.1-mini: 0.382993
+      openai/gpt-4.1-nano: 0.320408
+      openai/gpt-4o: 0.342857
+      openai/gpt-4o-mini: 0.309524
+      openai/gpt-5: 0.45034
+      openai/gpt-5-mini@high: 0.754422
+      openai/gpt-5-mini@medium: 0.711565
+      openai/gpt-5-mini@minimal: 0.455782
+      openai/gpt-5-nano@high: 0.67551
+      openai/gpt-5-nano@medium: 0.659184
+      openai/gpt-5-nano@minimal: 0.32517
+      openai/gpt-5.1-codex-mini@high: 0.678912
+      openai/gpt-5.1-codex@high: 0.7
+      openai/gpt-5.1@high: 0.728571
+      openai/gpt-5.1@non-reasoning: 0.431973
+      openai/gpt-5.2-codex@xhigh: 0.77619
+      openai/gpt-5.2@medium: 0.652381
+      openai/gpt-5.2@non-reasoning: 0.47415
+      openai/gpt-5.2@xhigh: 0.754422
+      openai/gpt-5.3-codex@xhigh: 0.753741
+      openai/gpt-5.4-mini@medium: 0.647619
+      openai/gpt-5.4-mini@non-reasoning: 0.388435
+      openai/gpt-5.4-mini@xhigh: 0.732653
+      openai/gpt-5.4-nano@medium: 0.644218
+      openai/gpt-5.4-nano@non-reasoning: 0.327211
+      openai/gpt-5.4-nano@xhigh: 0.759184
+      openai/gpt-5.4@low: 0.659184
+      openai/gpt-5.4@non-reasoning: 0.484354
+      openai/gpt-5.4@xhigh: 0.739456
+      openai/gpt-5.5@high: 0.716327
+      openai/gpt-5.5@low: 0.643537
+      openai/gpt-5.5@medium: 0.709524
+      openai/gpt-5.5@non-reasoning: 0.461224
+      openai/gpt-5.5@xhigh: 0.758503
+      openai/gpt-5.6-sol@high: 0.691837
+      openai/gpt-5.6-sol@low: 0.665306
+      openai/gpt-5.6-sol@max: 0.726531
+      openai/gpt-5.6-sol@medium: 0.695918
+      openai/gpt-5.6-sol@xhigh: 0.710204
+      openai/gpt-5.6-terra@high: 0.644218
+      openai/gpt-5.6-terra@low: 0.596599
+      openai/gpt-5.6-terra@max: 0.712245
+      openai/gpt-5.6-terra@medium: 0.621769
+      openai/gpt-5.6-terra@xhigh: 0.662585
+      openai/gpt-5@high: 0.730612
+      openai/gpt-5@low: 0.665986
+      openai/gpt-5@medium: 0.706122
+      openai/gpt-5@minimal: 0.455782
+      openai/gpt-oss-120b@high: 0.689796
+      openai/gpt-oss-120b@low: 0.582993
+      openai/gpt-oss-20b@high: 0.65102
+      openai/gpt-oss-20b@low: 0.578231
+      openai/o1: 0.703401
+      openai/o3: 0.714286
+      openai/o3-mini@high: 0.671429
+      openai/o4-mini@high: 0.687075
+      qwen/qwen3-14b@non-reasoning: 0.239456
+      qwen/qwen3-14b@reasoning: 0.405442
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.512245
+      qwen/qwen3-235b-a22b@non-reasoning: 0.365986
+      qwen/qwen3-235b-a22b@reasoning: 0.387075
+      qwen/qwen3-30b-a3b@non-reasoning: 0.319048
+      qwen/qwen3-30b-a3b@reasoning: 0.414966
+      qwen/qwen3-32b@non-reasoning: 0.314966
+      qwen/qwen3-32b@reasoning: 0.363265
+      qwen/qwen3-8b@non-reasoning: 0.285714
+      qwen/qwen3-8b@reasoning: 0.334694
+      qwen/qwen3-coder-next: 0.352381
+      qwen/qwen3-max: 0.441497
+      qwen/qwen3-max-thinking: 0.707483
+      qwen/qwen3-vl-30b-a3b-instruct: 0.331293
+      qwen/qwen3-vl-30b-a3b-thinking: 0.45102
+      qwen/qwen3-vl-32b-instruct: 0.391837
+      qwen/qwen3-vl-8b-instruct: 0.323129
+      qwen/qwen3-vl-8b-thinking: 0.398639
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.508163
+      qwen/qwen3.5-122b-a10b@reasoning: 0.757143
+      qwen/qwen3.5-27b@non-reasoning: 0.469388
+      qwen/qwen3.5-27b@reasoning: 0.755782
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.444898
+      qwen/qwen3.5-35b-a3b@reasoning: 0.72517
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.516327
+      qwen/qwen3.5-397b-a17b@reasoning: 0.787755
+      qwen/qwen3.5-9b@non-reasoning: 0.378231
+      qwen/qwen3.5-9b@reasoning: 0.667347
+      qwen/qwen3.6-27b@non-reasoning: 0.457143
+      qwen/qwen3.6-27b@reasoning: 0.67551
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.361905
+      qwen/qwen3.6-35b-a3b@reasoning: 0.643537
+      qwen/qwen3.6-max-preview: 0.765986
+      qwen/qwen3.6-plus: 0.751701
+      qwen/qwen3.7-max: 0.805442
+      qwen/qwen3.7-plus: 0.779592
+      stepfun/step-3.5-flash: 0.645578
+      stepfun/step-3.7-flash: 0.672789
+      tencent/hy3-preview@non-reasoning: 0.479592
+      tencent/hy3-preview@reasoning: 0.631293
+      upstage/solar-pro-3: 0.712018
+      x-ai/grok-4.1-fast@non-reasoning: 0.364626
+      x-ai/grok-4.1-fast@reasoning: 0.527211
+      x-ai/grok-4.3@high: 0.812925
+      x-ai/grok-4.3@low: 0.809524
+      x-ai/grok-4.3@medium: 0.833333
+      x-ai/grok-4.3@non-reasoning: 0.47619
+      xiaomi/mimo-v2-pro: 0.688435
+      xiaomi/mimo-v2.5: 0.671429
+      xiaomi/mimo-v2.5-pro: 0.798639
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.427211
+      z-ai/glm-4.5-air: 0.37551
+      z-ai/glm-4.5@reasoning: 0.440816
+      z-ai/glm-4.5v@non-reasoning: 0.286395
+      z-ai/glm-4.5v@reasoning: 0.342177
+      z-ai/glm-4.6@non-reasoning: 0.367347
+      z-ai/glm-4.6@reasoning: 0.434014
+      z-ai/glm-4.6v@non-reasoning: 0.278912
+      z-ai/glm-4.6v@reasoning: 0.30068
+      z-ai/glm-4.7-flash@non-reasoning: 0.462585
+      z-ai/glm-4.7-flash@reasoning: 0.608163
+      z-ai/glm-4.7@non-reasoning: 0.546259
+      z-ai/glm-4.7@reasoning: 0.678912
+      z-ai/glm-5-turbo: 0.731973
+      z-ai/glm-5.1@non-reasoning: 0.519728
+      z-ai/glm-5.1@reasoning: 0.762585
+      z-ai/glm-5.2@max: 0.733333
+      z-ai/glm-5@non-reasoning: 0.551701
+      z-ai/glm-5@reasoning: 0.723129
+      z-ai/glm-5v-turbo@reasoning: 0.610884
+  aa_api_intelligence_index:
+    higher_is_better: true
+    title: 'Artificial Analysis API: intelligence_index'
+    unit: index
+    values:
+      anthropic/claude-3-haiku: 5.6
+      anthropic/claude-fable-5.1@high: 51.2
+      anthropic/claude-fable-5.1@low: 47.0
+      anthropic/claude-fable-5.1@max: 53.4
+      anthropic/claude-fable-5.1@medium: 49.1
+      anthropic/claude-fable-5.1@xhigh: 53.2
+      anthropic/claude-fable-5@max: 49.7
+      anthropic/claude-opus-4.5@non-reasoning: 23.7
+      anthropic/claude-opus-4.5@reasoning: 29.1
+      anthropic/claude-opus-4.6@high: 26.4
+      anthropic/claude-opus-4.6@max: 31.9
+      anthropic/claude-opus-4.7@high: 30.9
+      anthropic/claude-opus-4.7@max: 40.7
+      anthropic/claude-opus-4.8@max: 42.0
+      anthropic/claude-opus-5@high: 48.2
+      anthropic/claude-opus-5@low: 39.8
+      anthropic/claude-opus-5@max: 50.7
+      anthropic/claude-opus-5@medium: 45.1
+      anthropic/claude-opus-5@xhigh: 49.7
+      anthropic/claude-sonnet-4.6@high: 24.7
+      anthropic/claude-sonnet-4.6@low: 23.3
+      anthropic/claude-sonnet-4.6@max: 30.5
+      anthropic/claude-sonnet-5@high: 32.0
+      anthropic/claude-sonnet-5@low: 24.7
+      anthropic/claude-sonnet-5@max: 38.4
+      anthropic/claude-sonnet-5@medium: 28.4
+      anthropic/claude-sonnet-5@xhigh: 34.7
+      arcee-ai/trinity-large-thinking: 10.9
+      deepseek/deepseek-r1-0528: 13.1
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 13.9
+      deepseek/deepseek-v3.1-terminus@reasoning: 15.4
+      deepseek/deepseek-v3.2-exp@non-reasoning: 13.9
+      deepseek/deepseek-v3.2-exp@reasoning: 16.6
+      deepseek/deepseek-v3.2@non-reasoning: 16.0
+      deepseek/deepseek-v3.2@reasoning: 21.5
+      deepseek/deepseek-v4-flash-0731@max: 34.5
+      deepseek/deepseek-v4-pro-0813@max: 36.3
+      deepseek/deepseek-v4.1-flash@max: 39.5
+      google/gemini-2.5-flash-lite@non-reasoning: 6.7
+      google/gemini-2.5-flash-lite@reasoning: 8.5
+      google/gemini-2.5-flash@non-reasoning: 9.9
+      google/gemini-2.5-flash@reasoning: 13.1
+      google/gemini-2.5-pro: 16.7
+      google/gemini-2.5-pro-preview: 15.0
+      google/gemini-3-flash-preview@non-reasoning: 17.9
+      google/gemini-3-flash-preview@reasoning: 26.3
+      google/gemini-3.1-flash-lite: 16.0
+      google/gemini-3.1-pro-preview: 30.4
+      google/gemini-3.5-flash-lite: 22.7
+      google/gemini-3.5-flash@high: 33.0
+      google/gemini-3.5-flash@medium: 33.6
+      google/gemini-3.5-flash@minimal: 23.8
+      google/gemini-3.6-flash@high: 34.3
+      google/gemini-3.7-flash@high: 39.4
+      google/gemini-3.7-flash@low: 36.9
+      google/gemini-3.7-flash@medium: 39.6
+      google/gemini-3.8-flash@high: 41.2
+      google/gemini-3.8-flash@low: 33.8
+      google/gemini-3.8-flash@medium: 40.0
+      ibm-granite/granite-4.2-8b: 11.8
+      inception/mercury-2: 11.5
+      inclusionai/ling-3.0-flash: 20.6
+      inclusionai/ling-3.0-flash-fin: 23.0
+      inclusionai/ling-3.0-flash-vl: 25.0
+      kwaipilot/kat-coder-pro-v2: 21.7
+      meituan/longcat-2.0: 19.7
+      meta/llama-4-maverick: 9.3
+      meta/llama-4-scout: 6.5
+      meta/muse-spark-1.1@xhigh: 34.3
+      meta/muse-spark-1.2@xhigh: 39.8
+      meta/muse-spark-1.3@max: 48.2
+      meta/muse-spark-1.3@xhigh: 45.2
+      minimax/minimax-m2: 18.6
+      minimax/minimax-m2.1: 20.9
+      minimax/minimax-m2.5: 22.8
+      minimax/minimax-m2.7: 23.2
+      minimax/minimax-m3: 29.6
+      mistralai/mistral-large-2407: 5.8
+      mistralai/mistral-medium-3: 9.0
+      mistralai/mistral-medium-3-5: 14.9
+      mistralai/mistral-medium-3.1: 9.5
+      mistralai/mistral-saba: 6.5
+      mistralai/mixtral-8x22b-instruct: 5.7
+      moonshotai/kimi-k2-0905: 15.3
+      moonshotai/kimi-k2-thinking: 22.0
+      moonshotai/kimi-k2.5@non-reasoning: 19.4
+      moonshotai/kimi-k2.5@reasoning: 23.5
+      moonshotai/kimi-k2.6: 27.5
+      moonshotai/kimi-k2.6@non-reasoning: 23.6
+      moonshotai/kimi-k2.7-code: 26.3
+      moonshotai/kimi-k3@low: 30.5
+      moonshotai/kimi-k3@max: 43.8
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 13.6
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 23.4
+      nvidia/nemotron-3.5-lightning: 13.6
+      openai/gpt-4-turbo: 7.0
+      openai/gpt-4.1: 12.7
+      openai/gpt-4.1-mini: 10.2
+      openai/gpt-4.1-nano: 7.8
+      openai/gpt-4o: 9.0
+      openai/gpt-4o-mini: 6.7
+      openai/gpt-5: 10.4
+      openai/gpt-5-mini@high: 17.4
+      openai/gpt-5-mini@medium: 20.6
+      openai/gpt-5-mini@minimal: 9.9
+      openai/gpt-5-nano@high: 13.0
+      openai/gpt-5-nano@medium: 12.5
+      openai/gpt-5-nano@minimal: 7.1
+      openai/gpt-5.1-codex-mini@high: 20.4
+      openai/gpt-5.1-codex@high: 23.7
+      openai/gpt-5.1@high: 24.7
+      openai/gpt-5.1@non-reasoning: 13.3
+      openai/gpt-5.2-codex@xhigh: 28.5
+      openai/gpt-5.2@medium: 26.5
+      openai/gpt-5.2@non-reasoning: 17.0
+      openai/gpt-5.2@xhigh: 30.4
+      openai/gpt-5.3-codex@xhigh: 32.5
+      openai/gpt-5.4-mini@medium: 19.7
+      openai/gpt-5.4-mini@non-reasoning: 11.1
+      openai/gpt-5.4-mini@xhigh: 24.6
+      openai/gpt-5.4-nano@medium: 20.0
+      openai/gpt-5.4-nano@non-reasoning: 11.7
+      openai/gpt-5.4-nano@xhigh: 21.2
+      openai/gpt-5.4@low: 27.6
+      openai/gpt-5.4@non-reasoning: 18.2
+      openai/gpt-5.4@xhigh: 39.0
+      openai/gpt-5.5@high: 37.3
+      openai/gpt-5.5@low: 30.7
+      openai/gpt-5.5@medium: 34.2
+      openai/gpt-5.5@non-reasoning: 23.2
+      openai/gpt-5.5@xhigh: 38.6
+      openai/gpt-5.6-luna@high: 32.4
+      openai/gpt-5.6-luna@low: 21.5
+      openai/gpt-5.6-luna@max: 37.5
+      openai/gpt-5.6-luna@medium: 25.5
+      openai/gpt-5.6-luna@non-reasoning: 16.1
+      openai/gpt-5.6-luna@xhigh: 34.8
+      openai/gpt-5.6-sol@high: 42.5
+      openai/gpt-5.6-sol@low: 33.8
+      openai/gpt-5.6-sol@max: 47.1
+      openai/gpt-5.6-sol@medium: 39.5
+      openai/gpt-5.6-sol@non-reasoning: 28.3
+      openai/gpt-5.6-sol@xhigh: 44.1
+      openai/gpt-5.6-terra@high: 34.5
+      openai/gpt-5.6-terra@low: 27.9
+      openai/gpt-5.6-terra@max: 42.3
+      openai/gpt-5.6-terra@medium: 30.4
+      openai/gpt-5.6-terra@non-reasoning: 21.2
+      openai/gpt-5.6-terra@xhigh: 38.2
+      openai/gpt-5@high: 23.0
+      openai/gpt-5@low: 20.8
+      openai/gpt-5@medium: 22.9
+      openai/gpt-5@minimal: 11.4
+      openai/gpt-6-astra@high: 51.0
+      openai/gpt-6-astra@low: 46.0
+      openai/gpt-6-astra@max: 52.8
+      openai/gpt-6-astra@medium: 49.7
+      openai/gpt-6-astra@xhigh: 52.5
+      openai/gpt-oss-120b@high: 12.3
+      openai/gpt-oss-120b@low: 10.2
+      openai/gpt-oss-20b@high: 9.0
+      openai/gpt-oss-20b@low: 10.0
+      openai/o1: 15.2
+      openai/o3: 20.2
+      openai/o3-mini: 12.5
+      openai/o3-mini@high: 11.0
+      openai/o3-pro: 21.9
+      openai/o4-mini@high: 16.7
+      qwen/qwen3-14b@non-reasoning: 6.7
+      qwen/qwen3-14b@reasoning: 6.4
+      qwen/qwen3-235b-a22b-2507@reasoning: 12.7
+      qwen/qwen3-235b-a22b@non-reasoning: 8.3
+      qwen/qwen3-235b-a22b@reasoning: 9.5
+      qwen/qwen3-30b-a3b@non-reasoning: 6.6
+      qwen/qwen3-30b-a3b@reasoning: 7.6
+      qwen/qwen3-32b@non-reasoning: 7.3
+      qwen/qwen3-32b@reasoning: 7.2
+      qwen/qwen3-8b@non-reasoning: 6.0
+      qwen/qwen3-8b@reasoning: 5.2
+      qwen/qwen3-coder-next: 10.1
+      qwen/qwen3-max: 15.6
+      qwen/qwen3-max-thinking: 21.3
+      qwen/qwen3-vl-30b-a3b-instruct: 7.9
+      qwen/qwen3-vl-30b-a3b-thinking: 9.5
+      qwen/qwen3-vl-32b-instruct: 8.4
+      qwen/qwen3-vl-8b-instruct: 7.3
+      qwen/qwen3-vl-8b-thinking: 8.2
+      qwen/qwen3.5-122b-a10b@non-reasoning: 17.7
+      qwen/qwen3.5-122b-a10b@reasoning: 16.2
+      qwen/qwen3.5-27b@non-reasoning: 19.4
+      qwen/qwen3.5-27b@reasoning: 22.9
+      qwen/qwen3.5-35b-a3b@non-reasoning: 15.1
+      qwen/qwen3.5-35b-a3b@reasoning: 19.3
+      qwen/qwen3.5-397b-a17b@non-reasoning: 21.4
+      qwen/qwen3.5-397b-a17b@reasoning: 19.1
+      qwen/qwen3.5-9b@non-reasoning: 13.3
+      qwen/qwen3.5-9b@reasoning: 13.7
+      qwen/qwen3.6-27b@non-reasoning: 19.8
+      qwen/qwen3.6-27b@reasoning: 21.9
+      qwen/qwen3.6-35b-a3b@non-reasoning: 15.2
+      qwen/qwen3.6-35b-a3b@reasoning: 18.8
+      qwen/qwen3.6-max-preview: 28.4
+      qwen/qwen3.6-plus: 27.0
+      qwen/qwen3.7-max: 29.9
+      qwen/qwen3.7-plus: 25.8
+      qwen/qwen3.8-2.4t-a95b: 40.0
+      qwen/qwen3.8-27b@low: 26.5
+      qwen/qwen3.8-27b@medium: 27.8
+      qwen/qwen3.8-27b@non-reasoning: 22.4
+      qwen/qwen3.8-27b@xhigh: 33.9
+      stepfun/step-3.5-flash: 16.6
+      stepfun/step-3.7-flash: 19.5
+      tencent/hy3: 25.8
+      tencent/hy3-preview@non-reasoning: 17.0
+      tencent/hy3-preview@reasoning: 22.7
+      thinkingmachines/inkling-small: 26.1
+      thinkingmachines/inkling@xhigh: 25.5
+      upstage/solar-pro-3: 7.8
+      upstage/solar-pro4: 28.2
+      x-ai/grok-4.1-fast@non-reasoning: 11.3
+      x-ai/grok-4.1-fast@reasoning: 20.4
+      x-ai/grok-4.3@high: 25.4
+      x-ai/grok-4.3@low: 24.3
+      x-ai/grok-4.3@medium: 24.8
+      x-ai/grok-4.3@non-reasoning: 14.5
+      x-ai/grok-4.5@high: 39.1
+      x-ai/grok-4.6@high: 44.4
+      x-ai/grok-4.6@low: 35.4
+      x-ai/grok-4.6@medium: 43.0
+      x-ai/grok-4.6@xhigh: 44.3
+      xiaomi/mimo-v2-pro: 28.6
+      xiaomi/mimo-v2.5: 22.3
+      xiaomi/mimo-v2.5-pro: 26.4
+      xiaomi/mimo-v2.5-pro@non-reasoning: 18.3
+      z-ai/glm-4.5-air: 11.1
+      z-ai/glm-4.5@reasoning: 12.8
+      z-ai/glm-4.5v@non-reasoning: 6.7
+      z-ai/glm-4.5v@reasoning: 7.6
+      z-ai/glm-4.6@non-reasoning: 14.9
+      z-ai/glm-4.6@reasoning: 18.5
+      z-ai/glm-4.6v@non-reasoning: 8.4
+      z-ai/glm-4.6v@reasoning: 11.2
+      z-ai/glm-4.7-flash@non-reasoning: 10.6
+      z-ai/glm-4.7-flash@reasoning: 14.9
+      z-ai/glm-4.7@non-reasoning: 17.4
+      z-ai/glm-4.7@reasoning: 22.2
+      z-ai/glm-5-turbo: 26.6
+      z-ai/glm-5.1@non-reasoning: 24.2
+      z-ai/glm-5.1@reasoning: 26.4
+      z-ai/glm-5.2@max: 34.0
+      z-ai/glm-5.2@non-reasoning: 22.4
+      z-ai/glm-5.3-flash: 41.9
+      z-ai/glm-5.3@max: 44.9
+      z-ai/glm-5@non-reasoning: 21.8
+      z-ai/glm-5@reasoning: 27.9
+      z-ai/glm-5v-turbo@reasoning: 23.5
+  aa_api_lcr:
+    higher_is_better: true
+    title: 'Artificial Analysis API: lcr'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.276667
+      anthropic/claude-fable-5.1@high: 0.836667
+      anthropic/claude-fable-5.1@low: 0.823333
+      anthropic/claude-fable-5.1@max: 0.853333
+      anthropic/claude-fable-5.1@medium: 0.846667
+      anthropic/claude-fable-5.1@xhigh: 0.83
+      anthropic/claude-fable-5@max: 0.823333
+      anthropic/claude-opus-4.5@non-reasoning: 0.706667
+      anthropic/claude-opus-4.5@reasoning: 0.773333
+      anthropic/claude-opus-4.6@high: 0.67
+      anthropic/claude-opus-4.6@max: 0.78
+      anthropic/claude-opus-4.7@high: 0.756667
+      anthropic/claude-opus-4.7@max: 0.786667
+      anthropic/claude-opus-4.8@max: 0.776667
+      anthropic/claude-opus-5@high: 0.79
+      anthropic/claude-opus-5@low: 0.813333
+      anthropic/claude-opus-5@max: 0.793333
+      anthropic/claude-opus-5@medium: 0.82
+      anthropic/claude-opus-5@xhigh: 0.803333
+      anthropic/claude-sonnet-4.6@high: 0.683333
+      anthropic/claude-sonnet-4.6@low: 0.693333
+      anthropic/claude-sonnet-4.6@max: 0.8
+      anthropic/claude-sonnet-5@high: 0.766667
+      anthropic/claude-sonnet-5@low: 0.673333
+      anthropic/claude-sonnet-5@max: 0.82
+      anthropic/claude-sonnet-5@medium: 0.736667
+      anthropic/claude-sonnet-5@xhigh: 0.766667
+      arcee-ai/trinity-large-thinking: 0.38
+      deepseek/deepseek-r1-0528: 0.556667
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.453333
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.693333
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.446667
+      deepseek/deepseek-v3.2-exp@reasoning: 0.723333
+      deepseek/deepseek-v3.2@non-reasoning: 0.456667
+      deepseek/deepseek-v3.2@reasoning: 0.733333
+      deepseek/deepseek-v4-flash-0731@max: 0.796667
+      deepseek/deepseek-v4-pro-0813@max: 0.803333
+      deepseek/deepseek-v4.1-flash@max: 0.84
+      google/gemini-2.5-flash-lite@non-reasoning: 0.32
+      google/gemini-2.5-flash-lite@reasoning: 0.556667
+      google/gemini-2.5-flash@non-reasoning: 0.499
+      google/gemini-2.5-flash@reasoning: 0.653333
+      google/gemini-2.5-pro: 0.69
+      google/gemini-3-flash-preview@non-reasoning: 0.553333
+      google/gemini-3-flash-preview@reasoning: 0.78
+      google/gemini-3.1-flash-lite: 0.743333
+      google/gemini-3.1-pro-preview: 0.82
+      google/gemini-3.5-flash-lite: 0.76
+      google/gemini-3.5-flash@high: 0.733333
+      google/gemini-3.5-flash@medium: 0.743333
+      google/gemini-3.5-flash@minimal: 0.613333
+      google/gemini-3.6-flash@high: 0.8
+      google/gemini-3.7-flash@high: 0.816667
+      google/gemini-3.7-flash@low: 0.786667
+      google/gemini-3.7-flash@medium: 0.83
+      google/gemini-3.8-flash@high: 0.813333
+      google/gemini-3.8-flash@low: 0.806667
+      google/gemini-3.8-flash@medium: 0.84
+      ibm-granite/granite-4.2-8b: 0.45
+      inception/mercury-2: 0.436667
+      inclusionai/ling-3.0-flash: 0.73
+      inclusionai/ling-3.0-flash-fin: 0.736667
+      inclusionai/ling-3.0-flash-vl: 0.783333
+      kwaipilot/kat-coder-pro-v2: 0.73
+      meituan/longcat-2.0: 0.65
+      meta/llama-4-maverick: 0.5
+      meta/llama-4-scout: 0.277
+      meta/muse-spark-1.1@xhigh: 0.776667
+      meta/muse-spark-1.2@xhigh: 0.79
+      meta/muse-spark-1.3@max: 0.83
+      meta/muse-spark-1.3@xhigh: 0.83
+      minimax/minimax-m2: 0.643333
+      minimax/minimax-m2.1: 0.676667
+      minimax/minimax-m2.5: 0.733333
+      minimax/minimax-m2.7: 0.783333
+      minimax/minimax-m3: 0.83
+      mistralai/mistral-medium-3: 0.313333
+      mistralai/mistral-medium-3-5: 0.693333
+      mistralai/mistral-medium-3.1: 0.426667
+      moonshotai/kimi-k2-0905: 0.53
+      moonshotai/kimi-k2-thinking: 0.72
+      moonshotai/kimi-k2.5@non-reasoning: 0.673333
+      moonshotai/kimi-k2.5@reasoning: 0.78
+      moonshotai/kimi-k2.6: 0.81
+      moonshotai/kimi-k2.6@non-reasoning: 0.696667
+      moonshotai/kimi-k2.7-code: 0.793333
+      moonshotai/kimi-k3@low: 0.793333
+      moonshotai/kimi-k3@max: 0.886667
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.656667
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.793333
+      nvidia/nemotron-3.5-lightning: 0.603333
+      openai/gpt-4.1: 0.683333
+      openai/gpt-4.1-mini: 0.44
+      openai/gpt-4.1-nano: 0.203333
+      openai/gpt-4o: 0.493333
+      openai/gpt-5: 0.65
+      openai/gpt-5-mini@high: 0.723333
+      openai/gpt-5-mini@medium: 0.723333
+      openai/gpt-5-mini@minimal: 0.393333
+      openai/gpt-5-nano@high: 0.45
+      openai/gpt-5-nano@medium: 0.436667
+      openai/gpt-5-nano@minimal: 0.2
+      openai/gpt-5.1-codex-mini@high: 0.666667
+      openai/gpt-5.1-codex@high: 0.693333
+      openai/gpt-5.1@high: 0.8
+      openai/gpt-5.1@non-reasoning: 0.45
+      openai/gpt-5.2-codex@xhigh: 0.823333
+      openai/gpt-5.2@medium: 0.703333
+      openai/gpt-5.2@non-reasoning: 0.456667
+      openai/gpt-5.2@xhigh: 0.826667
+      openai/gpt-5.3-codex@xhigh: 0.833333
+      openai/gpt-5.4-mini@medium: 0.67
+      openai/gpt-5.4-mini@non-reasoning: 0.37
+      openai/gpt-5.4-mini@xhigh: 0.77
+      openai/gpt-5.4-nano@medium: 0.673333
+      openai/gpt-5.4-nano@non-reasoning: 0.296667
+      openai/gpt-5.4-nano@xhigh: 0.766667
+      openai/gpt-5.4@low: 0.766667
+      openai/gpt-5.4@non-reasoning: 0.583333
+      openai/gpt-5.4@xhigh: 0.82
+      openai/gpt-5.5@high: 0.843333
+      openai/gpt-5.5@low: 0.81
+      openai/gpt-5.5@medium: 0.83
+      openai/gpt-5.5@non-reasoning: 0.64
+      openai/gpt-5.5@xhigh: 0.843333
+      openai/gpt-5.6-luna@high: 0.803333
+      openai/gpt-5.6-luna@low: 0.7
+      openai/gpt-5.6-luna@max: 0.836667
+      openai/gpt-5.6-luna@medium: 0.75
+      openai/gpt-5.6-luna@non-reasoning: 0.426667
+      openai/gpt-5.6-luna@xhigh: 0.816667
+      openai/gpt-5.6-sol@high: 0.816667
+      openai/gpt-5.6-sol@low: 0.78
+      openai/gpt-5.6-sol@max: 0.84
+      openai/gpt-5.6-sol@medium: 0.803333
+      openai/gpt-5.6-sol@non-reasoning: 0.623333
+      openai/gpt-5.6-sol@xhigh: 0.823333
+      openai/gpt-5.6-terra@high: 0.776667
+      openai/gpt-5.6-terra@low: 0.713333
+      openai/gpt-5.6-terra@max: 0.83
+      openai/gpt-5.6-terra@medium: 0.74
+      openai/gpt-5.6-terra@non-reasoning: 0.586667
+      openai/gpt-5.6-terra@xhigh: 0.79
+      openai/gpt-5@high: 0.782
+      openai/gpt-5@medium: 0.76
+      openai/gpt-6-astra@high: 0.8
+      openai/gpt-6-astra@low: 0.8
+      openai/gpt-6-astra@max: 0.806667
+      openai/gpt-6-astra@medium: 0.796667
+      openai/gpt-6-astra@xhigh: 0.8
+      openai/gpt-oss-120b@high: 0.52
+      openai/gpt-oss-120b@low: 0.46
+      openai/gpt-oss-20b@high: 0.346667
+      openai/gpt-oss-20b@low: 0.31
+      openai/o1: 0.65
+      openai/o3: 0.746667
+      openai/o3-mini@high: 0.43
+      openai/o4-mini@high: 0.61
+      qwen/qwen3-14b@non-reasoning: 0.0
+      qwen/qwen3-14b@reasoning: 0.0
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.72
+      qwen/qwen3-235b-a22b@non-reasoning: 0.0
+      qwen/qwen3-235b-a22b@reasoning: 0.0
+      qwen/qwen3-30b-a3b@non-reasoning: 0.0
+      qwen/qwen3-30b-a3b@reasoning: 0.0
+      qwen/qwen3-32b@non-reasoning: 0.0
+      qwen/qwen3-32b@reasoning: 0.0
+      qwen/qwen3-8b@non-reasoning: 0.0
+      qwen/qwen3-8b@reasoning: 0.0
+      qwen/qwen3-coder-next: 0.47
+      qwen/qwen3-max: 0.5
+      qwen/qwen3-max-thinking: 0.743333
+      qwen/qwen3-vl-8b-instruct: 0.166667
+      qwen/qwen3-vl-8b-thinking: 0.333333
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.613333
+      qwen/qwen3.5-122b-a10b@reasoning: 0.763333
+      qwen/qwen3.5-27b@non-reasoning: 0.64
+      qwen/qwen3.5-27b@reasoning: 0.776667
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.63
+      qwen/qwen3.5-35b-a3b@reasoning: 0.72
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.643333
+      qwen/qwen3.5-397b-a17b@reasoning: 0.773333
+      qwen/qwen3.5-9b@non-reasoning: 0.46
+      qwen/qwen3.5-9b@reasoning: 0.7
+      qwen/qwen3.6-27b@non-reasoning: 0.666667
+      qwen/qwen3.6-27b@reasoning: 0.773333
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.643333
+      qwen/qwen3.6-35b-a3b@reasoning: 0.716667
+      qwen/qwen3.6-max-preview: 0.806667
+      qwen/qwen3.6-plus: 0.783333
+      qwen/qwen3.7-max: 0.79
+      qwen/qwen3.7-plus: 0.73
+      qwen/qwen3.8-2.4t-a95b: 0.803333
+      qwen/qwen3.8-27b@low: 0.773333
+      qwen/qwen3.8-27b@medium: 0.796667
+      qwen/qwen3.8-27b@non-reasoning: 0.693333
+      qwen/qwen3.8-27b@xhigh: 0.82
+      stepfun/step-3.5-flash: 0.5
+      stepfun/step-3.7-flash: 0.736667
+      tencent/hy3: 0.79
+      tencent/hy3-preview@non-reasoning: 0.42
+      tencent/hy3-preview@reasoning: 0.646667
+      thinkingmachines/inkling-small: 0.756667
+      thinkingmachines/inkling@xhigh: 0.773333
+      upstage/solar-pro-3: 0.323333
+      upstage/solar-pro4: 0.74
+      x-ai/grok-4.1-fast@non-reasoning: 0.313333
+      x-ai/grok-4.1-fast@reasoning: 0.74
+      x-ai/grok-4.3@high: 0.73
+      x-ai/grok-4.3@low: 0.74
+      x-ai/grok-4.3@medium: 0.75
+      x-ai/grok-4.3@non-reasoning: 0.323333
+      x-ai/grok-4.5@high: 0.793333
+      x-ai/grok-4.6@high: 0.803333
+      x-ai/grok-4.6@low: 0.806667
+      x-ai/grok-4.6@medium: 0.81
+      x-ai/grok-4.6@xhigh: 0.81
+      xiaomi/mimo-v2-pro: 0.683333
+      xiaomi/mimo-v2.5: 0.73
+      xiaomi/mimo-v2.5-pro: 0.796667
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.416667
+      z-ai/glm-4.5-air: 0.466667
+      z-ai/glm-4.5@reasoning: 0.526667
+      z-ai/glm-4.5v@non-reasoning: 0.0
+      z-ai/glm-4.5v@reasoning: 0.0
+      z-ai/glm-4.6@non-reasoning: 0.263333
+      z-ai/glm-4.6@reasoning: 0.54
+      z-ai/glm-4.6v@non-reasoning: 0.17
+      z-ai/glm-4.6v@reasoning: 0.486667
+      z-ai/glm-4.7-flash@non-reasoning: 0.203333
+      z-ai/glm-4.7-flash@reasoning: 0.416667
+      z-ai/glm-4.7@non-reasoning: 0.406667
+      z-ai/glm-4.7@reasoning: 0.71
+      z-ai/glm-5-turbo: 0.716667
+      z-ai/glm-5.1@non-reasoning: 0.533333
+      z-ai/glm-5.1@reasoning: 0.736667
+      z-ai/glm-5.2@max: 0.783333
+      z-ai/glm-5.2@non-reasoning: 0.423333
+      z-ai/glm-5.3-flash: 0.8
+      z-ai/glm-5.3@max: 0.796667
+      z-ai/glm-5@non-reasoning: 0.436667
+      z-ai/glm-5@reasoning: 0.756667
+      z-ai/glm-5v-turbo@reasoning: 0.703333
+  aa_api_livecodebench:
+    higher_is_better: true
+    title: 'Artificial Analysis API: livecodebench'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.154
+      anthropic/claude-opus-4.5@non-reasoning: 0.738
+      anthropic/claude-opus-4.5@reasoning: 0.871
+      deepseek/deepseek-r1-0528: 0.77
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.529
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.798
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.554
+      deepseek/deepseek-v3.2-exp@reasoning: 0.789
+      deepseek/deepseek-v3.2@non-reasoning: 0.593
+      deepseek/deepseek-v3.2@reasoning: 0.862
+      google/gemini-2.5-flash-lite@non-reasoning: 0.4
+      google/gemini-2.5-flash-lite@reasoning: 0.593
+      google/gemini-2.5-flash@non-reasoning: 0.495
+      google/gemini-2.5-flash@reasoning: 0.695
+      google/gemini-2.5-pro: 0.801
+      google/gemini-2.5-pro-preview: 0.778
+      google/gemini-3-flash-preview@non-reasoning: 0.797
+      google/gemini-3-flash-preview@reasoning: 0.908
+      meta/llama-4-maverick: 0.397
+      meta/llama-4-scout: 0.299
+      minimax/minimax-m2: 0.826
+      minimax/minimax-m2.1: 0.81
+      mistralai/mistral-large-2407: 0.178
+      mistralai/mistral-medium-3: 0.4
+      mistralai/mistral-medium-3.1: 0.406
+      mistralai/mixtral-8x22b-instruct: 0.148
+      moonshotai/kimi-k2-0905: 0.61
+      moonshotai/kimi-k2-thinking: 0.853
+      openai/gpt-4-turbo: 0.291
+      openai/gpt-4.1: 0.457
+      openai/gpt-4.1-mini: 0.483
+      openai/gpt-4.1-nano: 0.326
+      openai/gpt-4o: 0.425
+      openai/gpt-4o-mini: 0.234
+      openai/gpt-5: 0.543
+      openai/gpt-5-mini@high: 0.838
+      openai/gpt-5-mini@medium: 0.692
+      openai/gpt-5-mini@minimal: 0.545
+      openai/gpt-5-nano@high: 0.789
+      openai/gpt-5-nano@medium: 0.763
+      openai/gpt-5-nano@minimal: 0.47
+      openai/gpt-5.1-codex-mini@high: 0.836
+      openai/gpt-5.1-codex@high: 0.849
+      openai/gpt-5.1@high: 0.868
+      openai/gpt-5.1@non-reasoning: 0.494
+      openai/gpt-5.2@medium: 0.894
+      openai/gpt-5.2@non-reasoning: 0.669
+      openai/gpt-5.2@xhigh: 0.889
+      openai/gpt-5@high: 0.846
+      openai/gpt-5@low: 0.763
+      openai/gpt-5@medium: 0.703
+      openai/gpt-5@minimal: 0.558
+      openai/gpt-oss-120b@high: 0.878
+      openai/gpt-oss-120b@low: 0.707
+      openai/gpt-oss-20b@high: 0.777
+      openai/gpt-oss-20b@low: 0.652
+      openai/o1: 0.679
+      openai/o3: 0.808
+      openai/o3-mini: 0.717
+      openai/o3-mini@high: 0.734
+      openai/o4-mini@high: 0.859
+      qwen/qwen3-14b@non-reasoning: 0.28
+      qwen/qwen3-14b@reasoning: 0.523
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.788
+      qwen/qwen3-235b-a22b@non-reasoning: 0.343
+      qwen/qwen3-235b-a22b@reasoning: 0.622
+      qwen/qwen3-30b-a3b@non-reasoning: 0.322
+      qwen/qwen3-30b-a3b@reasoning: 0.506
+      qwen/qwen3-32b@non-reasoning: 0.288
+      qwen/qwen3-32b@reasoning: 0.546
+      qwen/qwen3-8b@non-reasoning: 0.202
+      qwen/qwen3-8b@reasoning: 0.406
+      qwen/qwen3-max: 0.767
+      qwen/qwen3-max-thinking: 0.535
+      qwen/qwen3-vl-30b-a3b-instruct: 0.476
+      qwen/qwen3-vl-30b-a3b-thinking: 0.697
+      qwen/qwen3-vl-32b-instruct: 0.514
+      qwen/qwen3-vl-8b-instruct: 0.332
+      qwen/qwen3-vl-8b-thinking: 0.353
+      x-ai/grok-4.1-fast@non-reasoning: 0.399
+      x-ai/grok-4.1-fast@reasoning: 0.822
+      z-ai/glm-4.5-air: 0.684
+      z-ai/glm-4.5@reasoning: 0.738
+      z-ai/glm-4.5v@non-reasoning: 0.352
+      z-ai/glm-4.5v@reasoning: 0.604
+      z-ai/glm-4.6@non-reasoning: 0.561
+      z-ai/glm-4.6@reasoning: 0.695
+      z-ai/glm-4.6v@non-reasoning: 0.411
+      z-ai/glm-4.6v@reasoning: 0.16
+      z-ai/glm-4.7@non-reasoning: 0.562
+      z-ai/glm-4.7@reasoning: 0.894
+  aa_api_math_500:
+    higher_is_better: true
+    title: 'Artificial Analysis API: math_500'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.394
+      deepseek/deepseek-r1-0528: 0.982667
+      google/gemini-2.5-flash-lite@non-reasoning: 0.926
+      google/gemini-2.5-flash-lite@reasoning: 0.968667
+      google/gemini-2.5-flash@non-reasoning: 0.932
+      google/gemini-2.5-flash@reasoning: 0.981333
+      google/gemini-2.5-pro: 0.967333
+      google/gemini-2.5-pro-preview: 0.98
+      meta/llama-4-maverick: 0.888667
+      meta/llama-4-scout: 0.844
+      mistralai/mistral-large-2407: 0.526667
+      mistralai/mistral-medium-3: 0.906667
+      mistralai/mistral-saba: 0.676667
+      mistralai/mixtral-8x22b-instruct: 0.544667
+      moonshotai/kimi-k2-0905: 0.971333
+      openai/gpt-4-turbo: 0.736667
+      openai/gpt-4.1: 0.912667
+      openai/gpt-4.1-mini: 0.925333
+      openai/gpt-4.1-nano: 0.848
+      openai/gpt-4o: 0.892667
+      openai/gpt-4o-mini: 0.788667
+      openai/gpt-5@high: 0.994
+      openai/gpt-5@low: 0.987333
+      openai/gpt-5@medium: 0.991333
+      openai/gpt-5@minimal: 0.861333
+      openai/o1: 0.97
+      openai/o3: 0.992
+      openai/o3-mini: 0.973333
+      openai/o3-mini@high: 0.984667
+      openai/o4-mini@high: 0.988667
+      qwen/qwen3-14b@non-reasoning: 0.871333
+      qwen/qwen3-14b@reasoning: 0.961333
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.984
+      qwen/qwen3-235b-a22b@non-reasoning: 0.902
+      qwen/qwen3-235b-a22b@reasoning: 0.93
+      qwen/qwen3-30b-a3b@non-reasoning: 0.862667
+      qwen/qwen3-30b-a3b@reasoning: 0.959333
+      qwen/qwen3-32b@non-reasoning: 0.868667
+      qwen/qwen3-32b@reasoning: 0.960667
+      qwen/qwen3-8b@non-reasoning: 0.828
+      qwen/qwen3-8b@reasoning: 0.904
+      z-ai/glm-4.5-air: 0.965333
+      z-ai/glm-4.5@reasoning: 0.978667
+  aa_api_math_index:
+    higher_is_better: true
+    title: 'Artificial Analysis API: math_index'
+    unit: index
+    values:
+      anthropic/claude-opus-4.5@non-reasoning: 62.7
+      anthropic/claude-opus-4.5@reasoning: 91.3
+      deepseek/deepseek-r1-0528: 76.0
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 53.7
+      deepseek/deepseek-v3.1-terminus@reasoning: 89.7
+      deepseek/deepseek-v3.2-exp@non-reasoning: 57.7
+      deepseek/deepseek-v3.2-exp@reasoning: 87.7
+      deepseek/deepseek-v3.2@non-reasoning: 59.0
+      deepseek/deepseek-v3.2@reasoning: 92.0
+      google/gemini-2.5-flash-lite@non-reasoning: 35.3
+      google/gemini-2.5-flash-lite@reasoning: 53.3
+      google/gemini-2.5-flash@non-reasoning: 60.3
+      google/gemini-2.5-flash@reasoning: 73.3
+      google/gemini-2.5-pro: 87.7
+      google/gemini-3-flash-preview@non-reasoning: 55.7
+      google/gemini-3-flash-preview@reasoning: 97.0
+      meta/llama-4-maverick: 19.3
+      meta/llama-4-scout: 14.0
+      minimax/minimax-m2: 78.3
+      minimax/minimax-m2.1: 82.7
+      mistralai/mistral-medium-3: 30.3
+      mistralai/mistral-medium-3.1: 38.3
+      moonshotai/kimi-k2-0905: 57.3
+      moonshotai/kimi-k2-thinking: 94.7
+      openai/gpt-4.1: 34.7
+      openai/gpt-4.1-mini: 46.3
+      openai/gpt-4.1-nano: 24.0
+      openai/gpt-4o: 25.7
+      openai/gpt-4o-mini: 14.7
+      openai/gpt-5: 48.3
+      openai/gpt-5-mini@high: 90.7
+      openai/gpt-5-mini@medium: 85.0
+      openai/gpt-5-mini@minimal: 46.7
+      openai/gpt-5-nano@high: 83.7
+      openai/gpt-5-nano@medium: 78.3
+      openai/gpt-5-nano@minimal: 27.3
+      openai/gpt-5.1-codex-mini@high: 91.7
+      openai/gpt-5.1-codex@high: 95.7
+      openai/gpt-5.1@high: 94.0
+      openai/gpt-5.1@non-reasoning: 38.0
+      openai/gpt-5.2@medium: 96.7
+      openai/gpt-5.2@non-reasoning: 51.0
+      openai/gpt-5.2@xhigh: 99.0
+      openai/gpt-5@high: 94.3
+      openai/gpt-5@low: 83.0
+      openai/gpt-5@medium: 91.7
+      openai/gpt-5@minimal: 31.7
+      openai/gpt-oss-120b@high: 93.4
+      openai/gpt-oss-120b@low: 66.7
+      openai/gpt-oss-20b@high: 89.3
+      openai/gpt-oss-20b@low: 62.3
+      openai/o3: 88.3
+      openai/o4-mini@high: 90.7
+      qwen/qwen3-14b@non-reasoning: 58.0
+      qwen/qwen3-14b@reasoning: 55.7
+      qwen/qwen3-235b-a22b-2507@reasoning: 91.0
+      qwen/qwen3-235b-a22b@non-reasoning: 23.7
+      qwen/qwen3-235b-a22b@reasoning: 82.0
+      qwen/qwen3-30b-a3b@non-reasoning: 21.7
+      qwen/qwen3-30b-a3b@reasoning: 72.3
+      qwen/qwen3-32b@non-reasoning: 19.7
+      qwen/qwen3-32b@reasoning: 73.0
+      qwen/qwen3-8b@non-reasoning: 24.3
+      qwen/qwen3-8b@reasoning: 19.0
+      qwen/qwen3-max: 80.7
+      qwen/qwen3-max-thinking: 82.3
+      qwen/qwen3-vl-30b-a3b-instruct: 72.3
+      qwen/qwen3-vl-30b-a3b-thinking: 82.3
+      qwen/qwen3-vl-32b-instruct: 68.3
+      qwen/qwen3-vl-8b-instruct: 27.3
+      qwen/qwen3-vl-8b-thinking: 30.7
+      x-ai/grok-4.1-fast@non-reasoning: 34.3
+      x-ai/grok-4.1-fast@reasoning: 89.3
+      z-ai/glm-4.5-air: 80.7
+      z-ai/glm-4.5@reasoning: 73.7
+      z-ai/glm-4.5v@non-reasoning: 15.3
+      z-ai/glm-4.5v@reasoning: 73.0
+      z-ai/glm-4.6@non-reasoning: 44.3
+      z-ai/glm-4.6@reasoning: 86.0
+      z-ai/glm-4.6v@non-reasoning: 26.3
+      z-ai/glm-4.6v@reasoning: 85.3
+      z-ai/glm-4.7@non-reasoning: 48.0
+      z-ai/glm-4.7@reasoning: 95.0
+  aa_api_mmlu_pro:
+    higher_is_better: true
+    title: 'Artificial Analysis API: mmlu_pro'
+    unit: fraction
+    values:
+      anthropic/claude-opus-4.5@non-reasoning: 0.889
+      anthropic/claude-opus-4.5@reasoning: 0.895
+      deepseek/deepseek-r1-0528: 0.849
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.836
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.851
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.836
+      deepseek/deepseek-v3.2-exp@reasoning: 0.85
+      deepseek/deepseek-v3.2@non-reasoning: 0.837
+      deepseek/deepseek-v3.2@reasoning: 0.862
+      google/gemini-2.5-flash-lite@non-reasoning: 0.724
+      google/gemini-2.5-flash-lite@reasoning: 0.759
+      google/gemini-2.5-flash@non-reasoning: 0.809
+      google/gemini-2.5-flash@reasoning: 0.832
+      google/gemini-2.5-pro: 0.862
+      google/gemini-2.5-pro-preview: 0.858
+      google/gemini-3-flash-preview@non-reasoning: 0.882
+      google/gemini-3-flash-preview@reasoning: 0.89
+      meta/llama-4-maverick: 0.809
+      meta/llama-4-scout: 0.752
+      minimax/minimax-m2: 0.82
+      minimax/minimax-m2.1: 0.875
+      mistralai/mistral-large-2407: 0.515
+      mistralai/mistral-medium-3: 0.76
+      mistralai/mistral-medium-3.1: 0.683
+      mistralai/mistral-saba: 0.611
+      mistralai/mixtral-8x22b-instruct: 0.537
+      moonshotai/kimi-k2-0905: 0.819
+      moonshotai/kimi-k2-thinking: 0.848
+      openai/gpt-4-turbo: 0.694
+      openai/gpt-4.1: 0.806
+      openai/gpt-4.1-mini: 0.781
+      openai/gpt-4.1-nano: 0.657
+      openai/gpt-4o: 0.803
+      openai/gpt-4o-mini: 0.648
+      openai/gpt-5: 0.82
+      openai/gpt-5-mini@high: 0.837
+      openai/gpt-5-mini@medium: 0.828
+      openai/gpt-5-mini@minimal: 0.775
+      openai/gpt-5-nano@high: 0.78
+      openai/gpt-5-nano@medium: 0.772
+      openai/gpt-5-nano@minimal: 0.556
+      openai/gpt-5.1-codex-mini@high: 0.82
+      openai/gpt-5.1-codex@high: 0.86
+      openai/gpt-5.1@high: 0.87
+      openai/gpt-5.1@non-reasoning: 0.801
+      openai/gpt-5.2@medium: 0.859
+      openai/gpt-5.2@non-reasoning: 0.814
+      openai/gpt-5.2@xhigh: 0.874
+      openai/gpt-5@high: 0.871
+      openai/gpt-5@low: 0.86
+      openai/gpt-5@medium: 0.867
+      openai/gpt-5@minimal: 0.806
+      openai/gpt-oss-120b@high: 0.808
+      openai/gpt-oss-120b@low: 0.775
+      openai/gpt-oss-20b@high: 0.748
+      openai/gpt-oss-20b@low: 0.718
+      openai/o1: 0.841
+      openai/o3: 0.853
+      openai/o3-mini: 0.791
+      openai/o3-mini@high: 0.802
+      openai/o4-mini@high: 0.832
+      qwen/qwen3-14b@non-reasoning: 0.675
+      qwen/qwen3-14b@reasoning: 0.774
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.843
+      qwen/qwen3-235b-a22b@non-reasoning: 0.762
+      qwen/qwen3-235b-a22b@reasoning: 0.828
+      qwen/qwen3-30b-a3b@non-reasoning: 0.71
+      qwen/qwen3-30b-a3b@reasoning: 0.777
+      qwen/qwen3-32b@non-reasoning: 0.727
+      qwen/qwen3-32b@reasoning: 0.798
+      qwen/qwen3-8b@non-reasoning: 0.643
+      qwen/qwen3-8b@reasoning: 0.743
+      qwen/qwen3-max: 0.841
+      qwen/qwen3-max-thinking: 0.824
+      qwen/qwen3-vl-30b-a3b-instruct: 0.764
+      qwen/qwen3-vl-30b-a3b-thinking: 0.807
+      qwen/qwen3-vl-32b-instruct: 0.791
+      qwen/qwen3-vl-8b-instruct: 0.686
+      qwen/qwen3-vl-8b-thinking: 0.749
+      x-ai/grok-4.1-fast@non-reasoning: 0.743
+      x-ai/grok-4.1-fast@reasoning: 0.854
+      z-ai/glm-4.5-air: 0.815
+      z-ai/glm-4.5@reasoning: 0.835
+      z-ai/glm-4.5v@non-reasoning: 0.751
+      z-ai/glm-4.5v@reasoning: 0.788
+      z-ai/glm-4.6@non-reasoning: 0.784
+      z-ai/glm-4.6@reasoning: 0.829
+      z-ai/glm-4.6v@non-reasoning: 0.752
+      z-ai/glm-4.6v@reasoning: 0.799
+      z-ai/glm-4.7@non-reasoning: 0.794
+      z-ai/glm-4.7@reasoning: 0.856
+  aa_api_scicode:
+    higher_is_better: true
+    title: 'Artificial Analysis API: scicode'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5.1@high: 0.587
+      anthropic/claude-fable-5.1@low: 0.567
+      anthropic/claude-fable-5.1@max: 0.631
+      anthropic/claude-fable-5.1@medium: 0.564
+      anthropic/claude-fable-5.1@xhigh: 0.609
+      anthropic/claude-fable-5@max: 0.61
+      anthropic/claude-opus-4.8@max: 0.544
+      anthropic/claude-opus-5@high: 0.554
+      anthropic/claude-opus-5@low: 0.492
+      anthropic/claude-opus-5@max: 0.564
+      anthropic/claude-opus-5@medium: 0.515
+      anthropic/claude-opus-5@xhigh: 0.557
+      anthropic/claude-sonnet-4.6@max: 0.501
+      anthropic/claude-sonnet-5@high: 0.543
+      anthropic/claude-sonnet-5@low: 0.501
+      anthropic/claude-sonnet-5@max: 0.543
+      anthropic/claude-sonnet-5@medium: 0.516
+      anthropic/claude-sonnet-5@xhigh: 0.541
+      arcee-ai/trinity-large-thinking: 0.406
+      deepseek/deepseek-r1-0528: 0.383
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.38
+      deepseek/deepseek-v4-flash-0731@max: 0.503
+      deepseek/deepseek-v4-pro-0813@max: 0.51
+      deepseek/deepseek-v4.1-flash@max: 0.519
+      google/gemini-2.5-pro: 0.463
+      google/gemini-3.1-flash-lite: 0.434
+      google/gemini-3.1-pro-preview: 0.587
+      google/gemini-3.5-flash-lite: 0.413
+      google/gemini-3.5-flash@high: 0.539
+      google/gemini-3.6-flash@high: 0.534
+      google/gemini-3.7-flash@high: 0.572
+      google/gemini-3.7-flash@low: 0.557
+      google/gemini-3.7-flash@medium: 0.598
+      google/gemini-3.8-flash@high: 0.566
+      google/gemini-3.8-flash@low: 0.55
+      google/gemini-3.8-flash@medium: 0.551
+      ibm-granite/granite-4.2-8b: 0.315
+      inception/mercury-2: 0.377
+      inclusionai/ling-3.0-flash: 0.42
+      inclusionai/ling-3.0-flash-fin: 0.424
+      inclusionai/ling-3.0-flash-vl: 0.442
+      meituan/longcat-2.0: 0.363
+      meta/llama-4-maverick: 0.317
+      meta/llama-4-scout: 0.213
+      meta/muse-spark-1.1@xhigh: 0.588
+      meta/muse-spark-1.2@xhigh: 0.574
+      meta/muse-spark-1.3@max: 0.588
+      meta/muse-spark-1.3@xhigh: 0.597
+      minimax/minimax-m2.7: 0.501
+      minimax/minimax-m3: 0.471
+      mistralai/mistral-medium-3-5: 0.402
+      mistralai/mistral-medium-3.1: 0.324
+      moonshotai/kimi-k2.6: 0.515
+      moonshotai/kimi-k2.7-code: 0.478
+      moonshotai/kimi-k3@low: 0.527
+      moonshotai/kimi-k3@max: 0.595
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.362
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.403
+      nvidia/nemotron-3.5-lightning: 0.321
+      openai/gpt-5-mini@high: 0.39
+      openai/gpt-5.4-mini@xhigh: 0.521
+      openai/gpt-5.4-nano@xhigh: 0.472
+      openai/gpt-5.5@high: 0.561
+      openai/gpt-5.5@medium: 0.545
+      openai/gpt-5.5@xhigh: 0.558
+      openai/gpt-5.6-luna@high: 0.516
+      openai/gpt-5.6-luna@low: 0.461
+      openai/gpt-5.6-luna@max: 0.536
+      openai/gpt-5.6-luna@medium: 0.468
+      openai/gpt-5.6-luna@non-reasoning: 0.404
+      openai/gpt-5.6-luna@xhigh: 0.505
+      openai/gpt-5.6-sol@high: 0.578
+      openai/gpt-5.6-sol@low: 0.564
+      openai/gpt-5.6-sol@max: 0.571
+      openai/gpt-5.6-sol@medium: 0.574
+      openai/gpt-5.6-sol@non-reasoning: 0.477
+      openai/gpt-5.6-sol@xhigh: 0.571
+      openai/gpt-5.6-terra@high: 0.524
+      openai/gpt-5.6-terra@low: 0.499
+      openai/gpt-5.6-terra@max: 0.55
+      openai/gpt-5.6-terra@medium: 0.505
+      openai/gpt-5.6-terra@non-reasoning: 0.451
+      openai/gpt-5.6-terra@xhigh: 0.523
+      openai/gpt-6-astra@high: 0.554
+      openai/gpt-6-astra@low: 0.541
+      openai/gpt-6-astra@max: 0.565
+      openai/gpt-6-astra@medium: 0.542
+      openai/gpt-6-astra@xhigh: 0.557
+      openai/gpt-oss-120b@high: 0.34
+      openai/gpt-oss-20b@high: 0.389
+      openai/o3-mini@high: 0.428
+      qwen/qwen3-14b@reasoning: 0.307
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.414
+      qwen/qwen3-32b@reasoning: 0.36
+      qwen/qwen3-8b@reasoning: 0.279
+      qwen/qwen3-coder-next: 0.362
+      qwen/qwen3.5-122b-a10b@reasoning: 0.397
+      qwen/qwen3.5-397b-a17b@reasoning: 0.448
+      qwen/qwen3.6-27b@reasoning: 0.428
+      qwen/qwen3.6-35b-a3b@reasoning: 0.366
+      qwen/qwen3.7-max: 0.495
+      qwen/qwen3.7-plus: 0.461
+      qwen/qwen3.8-2.4t-a95b: 0.541
+      qwen/qwen3.8-27b@low: 0.4
+      qwen/qwen3.8-27b@medium: 0.39
+      qwen/qwen3.8-27b@non-reasoning: 0.362
+      qwen/qwen3.8-27b@xhigh: 0.466
+      stepfun/step-3.7-flash: 0.439
+      tencent/hy3: 0.486
+      thinkingmachines/inkling-small: 0.497
+      thinkingmachines/inkling@xhigh: 0.47
+      upstage/solar-pro-3: 0.255
+      upstage/solar-pro4: 0.446
+      x-ai/grok-4.3@high: 0.483
+      x-ai/grok-4.3@non-reasoning: 0.394
+      x-ai/grok-4.5@high: 0.55
+      x-ai/grok-4.6@high: 0.565
+      x-ai/grok-4.6@low: 0.494
+      x-ai/grok-4.6@medium: 0.559
+      x-ai/grok-4.6@xhigh: 0.53
+      xiaomi/mimo-v2.5: 0.439
+      xiaomi/mimo-v2.5-pro: 0.506
+      z-ai/glm-5.1@reasoning: 0.448
+      z-ai/glm-5.2@max: 0.512
+      z-ai/glm-5.3-flash: 0.516
+      z-ai/glm-5.3@max: 0.59
+  aa_api_tau2:
+    higher_is_better: true
+    title: 'Artificial Analysis API: tau2'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.210526
+      anthropic/claude-fable-5@max: 0.98538
+      anthropic/claude-opus-4.5@non-reasoning: 0.862573
+      anthropic/claude-opus-4.5@reasoning: 0.894737
+      anthropic/claude-opus-4.6@high: 0.847953
+      anthropic/claude-opus-4.6@max: 0.921053
+      anthropic/claude-opus-4.7@high: 0.739766
+      anthropic/claude-opus-4.7@max: 0.885965
+      anthropic/claude-opus-4.8@max: 0.944444
+      anthropic/claude-sonnet-4.6@high: 0.795322
+      anthropic/claude-sonnet-4.6@low: 0.789474
+      anthropic/claude-sonnet-4.6@max: 0.75731
+      arcee-ai/trinity-large-thinking: 0.900585
+      deepseek/deepseek-r1-0528: 0.365497
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.371345
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.371345
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.339181
+      deepseek/deepseek-v3.2-exp@reasoning: 0.339181
+      deepseek/deepseek-v3.2@non-reasoning: 0.789474
+      deepseek/deepseek-v3.2@reasoning: 0.906433
+      google/gemini-2.5-flash-lite@non-reasoning: 0.190058
+      google/gemini-2.5-flash-lite@reasoning: 0.184211
+      google/gemini-2.5-flash@non-reasoning: 0.149123
+      google/gemini-2.5-flash@reasoning: 0.315789
+      google/gemini-2.5-pro: 0.540936
+      google/gemini-3-flash-preview@non-reasoning: 0.432749
+      google/gemini-3-flash-preview@reasoning: 0.804094
+      google/gemini-3.1-flash-lite: 0.312865
+      google/gemini-3.1-pro-preview: 0.95614
+      google/gemini-3.5-flash@high: 0.953216
+      google/gemini-3.5-flash@medium: 0.95614
+      google/gemini-3.5-flash@minimal: 0.587719
+      inception/mercury-2: 0.707602
+      kwaipilot/kat-coder-pro-v2: 0.894737
+      meta/llama-4-maverick: 0.178363
+      meta/llama-4-scout: 0.154971
+      minimax/minimax-m2: 0.868421
+      minimax/minimax-m2.1: 0.853801
+      minimax/minimax-m2.5: 0.953216
+      minimax/minimax-m2.7: 0.847953
+      minimax/minimax-m3: 0.888889
+      mistralai/mistral-medium-3: 0.24269
+      mistralai/mistral-medium-3-5: 0.94152
+      mistralai/mistral-medium-3.1: 0.406433
+      moonshotai/kimi-k2-0905: 0.733918
+      moonshotai/kimi-k2-thinking: 0.929825
+      moonshotai/kimi-k2.5@non-reasoning: 0.812865
+      moonshotai/kimi-k2.5@reasoning: 0.959064
+      moonshotai/kimi-k2.6: 0.959064
+      moonshotai/kimi-k2.6@non-reasoning: 0.938596
+      moonshotai/kimi-k2.7-code: 0.900585
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.678363
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.833333
+      openai/gpt-4.1: 0.47076
+      openai/gpt-4.1-mini: 0.52924
+      openai/gpt-4.1-nano: 0.172515
+      openai/gpt-4o: 0.251462
+      openai/gpt-5: 0.0
+      openai/gpt-5-mini@high: 0.684211
+      openai/gpt-5-mini@medium: 0.710526
+      openai/gpt-5-mini@minimal: 0.318713
+      openai/gpt-5-nano@high: 0.365497
+      openai/gpt-5-nano@medium: 0.304094
+      openai/gpt-5-nano@minimal: 0.25731
+      openai/gpt-5.1-codex-mini@high: 0.628655
+      openai/gpt-5.1-codex@high: 0.830409
+      openai/gpt-5.1@high: 0.818713
+      openai/gpt-5.1@non-reasoning: 0.464912
+      openai/gpt-5.2-codex@xhigh: 0.921053
+      openai/gpt-5.2@medium: 0.74269
+      openai/gpt-5.2@non-reasoning: 0.464912
+      openai/gpt-5.2@xhigh: 0.847953
+      openai/gpt-5.3-codex@xhigh: 0.859649
+      openai/gpt-5.4-mini@medium: 0.365497
+      openai/gpt-5.4-mini@non-reasoning: 0.233918
+      openai/gpt-5.4-mini@xhigh: 0.833333
+      openai/gpt-5.4-nano@medium: 0.526316
+      openai/gpt-5.4-nano@non-reasoning: 0.347953
+      openai/gpt-5.4-nano@xhigh: 0.760234
+      openai/gpt-5.4@low: 0.745614
+      openai/gpt-5.4@non-reasoning: 0.359649
+      openai/gpt-5.4@xhigh: 0.871345
+      openai/gpt-5.5@high: 0.929825
+      openai/gpt-5.5@low: 0.839181
+      openai/gpt-5.5@medium: 0.918129
+      openai/gpt-5.5@non-reasoning: 0.692982
+      openai/gpt-5.5@xhigh: 0.938596
+      openai/gpt-5.6-sol@high: 0.833333
+      openai/gpt-5.6-sol@low: 0.760234
+      openai/gpt-5.6-sol@max: 0.850877
+      openai/gpt-5.6-sol@medium: 0.809942
+      openai/gpt-5.6-sol@xhigh: 0.847953
+      openai/gpt-5.6-terra@high: 0.783626
+      openai/gpt-5.6-terra@low: 0.605263
+      openai/gpt-5.6-terra@max: 0.862573
+      openai/gpt-5.6-terra@medium: 0.72807
+      openai/gpt-5.6-terra@xhigh: 0.804094
+      openai/gpt-5@high: 0.847953
+      openai/gpt-5@low: 0.842105
+      openai/gpt-5@medium: 0.865497
+      openai/gpt-5@minimal: 0.669591
+      openai/gpt-oss-120b@high: 0.657895
+      openai/gpt-oss-120b@low: 0.450292
+      openai/gpt-oss-20b@high: 0.602339
+      openai/gpt-oss-20b@low: 0.502924
+      openai/o1: 0.625731
+      openai/o3: 0.807018
+      openai/o3-mini: 0.28655
+      openai/o3-mini@high: 0.312865
+      openai/o4-mini@high: 0.555556
+      qwen/qwen3-14b@non-reasoning: 0.321637
+      qwen/qwen3-14b@reasoning: 0.345029
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.532164
+      qwen/qwen3-235b-a22b@non-reasoning: 0.27193
+      qwen/qwen3-235b-a22b@reasoning: 0.239766
+      qwen/qwen3-30b-a3b@non-reasoning: 0.222222
+      qwen/qwen3-30b-a3b@reasoning: 0.260234
+      qwen/qwen3-32b@reasoning: 0.298246
+      qwen/qwen3-8b@non-reasoning: 0.248538
+      qwen/qwen3-8b@reasoning: 0.277778
+      qwen/qwen3-coder-next: 0.795322
+      qwen/qwen3-max: 0.74269
+      qwen/qwen3-max-thinking: 0.836257
+      qwen/qwen3-vl-30b-a3b-instruct: 0.190058
+      qwen/qwen3-vl-30b-a3b-thinking: 0.19883
+      qwen/qwen3-vl-32b-instruct: 0.292398
+      qwen/qwen3-vl-8b-instruct: 0.292398
+      qwen/qwen3-vl-8b-thinking: 0.225146
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.845029
+      qwen/qwen3.5-122b-a10b@reasoning: 0.935673
+      qwen/qwen3.5-27b@non-reasoning: 0.871345
+      qwen/qwen3.5-27b@reasoning: 0.938596
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.862573
+      qwen/qwen3.5-35b-a3b@reasoning: 0.891813
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.839181
+      qwen/qwen3.5-397b-a17b@reasoning: 0.95614
+      qwen/qwen3.5-9b@non-reasoning: 0.850877
+      qwen/qwen3.5-9b@reasoning: 0.868421
+      qwen/qwen3.6-27b@non-reasoning: 0.935673
+      qwen/qwen3.6-27b@reasoning: 0.94152
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.850877
+      qwen/qwen3.6-35b-a3b@reasoning: 0.953216
+      qwen/qwen3.6-max-preview: 0.959064
+      qwen/qwen3.6-plus: 0.976608
+      qwen/qwen3.7-max: 0.947368
+      qwen/qwen3.7-plus: 0.929825
+      stepfun/step-3.5-flash: 0.944444
+      stepfun/step-3.7-flash: 0.98538
+      tencent/hy3-preview@non-reasoning: 0.675439
+      tencent/hy3-preview@reasoning: 0.926901
+      upstage/solar-pro-3: 0.862573
+      x-ai/grok-4.1-fast@non-reasoning: 0.637427
+      x-ai/grok-4.1-fast@reasoning: 0.932749
+      x-ai/grok-4.3@high: 0.976608
+      x-ai/grok-4.3@low: 0.888889
+      x-ai/grok-4.3@medium: 0.912281
+      x-ai/grok-4.3@non-reasoning: 0.657895
+      xiaomi/mimo-v2-pro: 0.950292
+      xiaomi/mimo-v2.5: 0.906433
+      xiaomi/mimo-v2.5-pro: 0.94152
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.725146
+      z-ai/glm-4.5-air: 0.464912
+      z-ai/glm-4.5@reasoning: 0.429825
+      z-ai/glm-4.5v@non-reasoning: 0.195906
+      z-ai/glm-4.5v@reasoning: 0.225146
+      z-ai/glm-4.6@non-reasoning: 0.769006
+      z-ai/glm-4.6@reasoning: 0.704678
+      z-ai/glm-4.6v@non-reasoning: 0.307018
+      z-ai/glm-4.6v@reasoning: 0.315789
+      z-ai/glm-4.7-flash@non-reasoning: 0.918129
+      z-ai/glm-4.7-flash@reasoning: 0.988304
+      z-ai/glm-4.7@non-reasoning: 0.94152
+      z-ai/glm-4.7@reasoning: 0.959064
+      z-ai/glm-5-turbo: 0.98538
+      z-ai/glm-5.1@non-reasoning: 0.97076
+      z-ai/glm-5.1@reasoning: 0.976608
+      z-ai/glm-5.2@max: 0.991228
+      z-ai/glm-5@non-reasoning: 0.973684
+      z-ai/glm-5@reasoning: 0.982456
+      z-ai/glm-5v-turbo@reasoning: 0.98538
+  aa_api_tau_banking:
+    higher_is_better: true
+    title: 'Artificial Analysis API: tau_banking'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5.1@high: 0.430928
+      anthropic/claude-fable-5.1@low: 0.389691
+      anthropic/claude-fable-5.1@max: 0.472165
+      anthropic/claude-fable-5.1@medium: 0.410309
+      anthropic/claude-fable-5.1@xhigh: 0.457732
+      anthropic/claude-fable-5@max: 0.381443
+      anthropic/claude-opus-4.7@max: 0.346392
+      anthropic/claude-opus-4.8@max: 0.342268
+      anthropic/claude-opus-5@high: 0.447423
+      anthropic/claude-opus-5@low: 0.303093
+      anthropic/claude-opus-5@max: 0.420619
+      anthropic/claude-opus-5@medium: 0.385567
+      anthropic/claude-opus-5@xhigh: 0.43299
+      anthropic/claude-sonnet-4.6@max: 0.34433
+      anthropic/claude-sonnet-5@high: 0.156701
+      anthropic/claude-sonnet-5@max: 0.373196
+      arcee-ai/trinity-large-thinking: 0.057732
+      deepseek/deepseek-r1-0528: 0.063918
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.210309
+      deepseek/deepseek-v4-flash-0731@max: 0.393814
+      deepseek/deepseek-v4-pro-0813@max: 0.395876
+      google/gemini-2.5-pro: 0.096907
+      google/gemini-3-flash-preview@reasoning: 0.208247
+      google/gemini-3.1-flash-lite: 0.096907
+      google/gemini-3.1-pro-preview: 0.214433
+      google/gemini-3.5-flash-lite: 0.175258
+      google/gemini-3.5-flash@high: 0.321649
+      google/gemini-3.6-flash@high: 0.298969
+      google/gemini-3.7-flash@high: 0.327835
+      google/gemini-3.7-flash@low: 0.294845
+      google/gemini-3.7-flash@medium: 0.354639
+      google/gemini-3.8-flash@high: 0.449485
+      google/gemini-3.8-flash@low: 0.331959
+      google/gemini-3.8-flash@medium: 0.457732
+      ibm-granite/granite-4.2-8b: 0.076289
+      inception/mercury-2: 0.094845
+      inclusionai/ling-3.0-flash: 0.272165
+      inclusionai/ling-3.0-flash-fin: 0.385567
+      inclusionai/ling-3.0-flash-vl: 0.34433
+      kwaipilot/kat-coder-pro-v2: 0.045361
+      meituan/longcat-2.0: 0.131959
+      meta/llama-4-maverick: 0.037113
+      meta/llama-4-scout: 0.03299
+      meta/muse-spark-1.1@xhigh: 0.317526
+      meta/muse-spark-1.2@xhigh: 0.348454
+      meta/muse-spark-1.3@max: 0.505155
+      meta/muse-spark-1.3@xhigh: 0.472165
+      minimax/minimax-m2.7: 0.098969
+      minimax/minimax-m3: 0.152577
+      mistralai/mistral-medium-3-5: 0.150515
+      mistralai/mistral-medium-3.1: 0.082474
+      moonshotai/kimi-k2.5@reasoning: 0.142268
+      moonshotai/kimi-k2.6: 0.23299
+      moonshotai/kimi-k2.7-code: 0.202062
+      moonshotai/kimi-k3@low: 0.416495
+      moonshotai/kimi-k3@max: 0.459794
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.103093
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.142268
+      nvidia/nemotron-3.5-lightning: 0.08866
+      openai/gpt-4.1-mini: 0.053608
+      openai/gpt-4.1-nano: 0.035052
+      openai/gpt-4o-mini: 0.028866
+      openai/gpt-5-mini@high: 0.154639
+      openai/gpt-5.1@high: 0.158763
+      openai/gpt-5.2@non-reasoning: 0.11134
+      openai/gpt-5.4-mini@xhigh: 0.25567
+      openai/gpt-5.4-nano@xhigh: 0.274227
+      openai/gpt-5.4@xhigh: 0.395876
+      openai/gpt-5.5@high: 0.36701
+      openai/gpt-5.5@low: 0.249485
+      openai/gpt-5.5@medium: 0.298969
+      openai/gpt-5.5@non-reasoning: 0.148454
+      openai/gpt-5.5@xhigh: 0.389691
+      openai/gpt-5.6-luna@high: 0.251546
+      openai/gpt-5.6-luna@low: 0.127835
+      openai/gpt-5.6-luna@max: 0.31134
+      openai/gpt-5.6-luna@medium: 0.17732
+      openai/gpt-5.6-luna@non-reasoning: 0.096907
+      openai/gpt-5.6-luna@xhigh: 0.286598
+      openai/gpt-5.6-sol@high: 0.36701
+      openai/gpt-5.6-sol@low: 0.290722
+      openai/gpt-5.6-sol@max: 0.443299
+      openai/gpt-5.6-sol@medium: 0.364948
+      openai/gpt-5.6-sol@non-reasoning: 0.195876
+      openai/gpt-5.6-sol@xhigh: 0.381443
+      openai/gpt-5.6-terra@high: 0.286598
+      openai/gpt-5.6-terra@low: 0.187629
+      openai/gpt-5.6-terra@max: 0.402062
+      openai/gpt-5.6-terra@medium: 0.25567
+      openai/gpt-5.6-terra@non-reasoning: 0.156701
+      openai/gpt-5.6-terra@xhigh: 0.296907
+      openai/gpt-5@high: 0.220619
+      openai/gpt-6-astra@high: 0.4
+      openai/gpt-6-astra@low: 0.319588
+      openai/gpt-6-astra@max: 0.414433
+      openai/gpt-6-astra@medium: 0.354639
+      openai/gpt-6-astra@xhigh: 0.430928
+      openai/gpt-oss-120b@high: 0.127835
+      openai/gpt-oss-120b@low: 0.028866
+      openai/gpt-oss-20b@high: 0.070103
+      openai/o3-mini@high: 0.051546
+      qwen/qwen3-14b@reasoning: 0.05567
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.078351
+      qwen/qwen3-32b@reasoning: 0.053608
+      qwen/qwen3-8b@reasoning: 0.047423
+      qwen/qwen3-coder-next: 0.053608
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.103093
+      qwen/qwen3.5-122b-a10b@reasoning: 0.152577
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.049485
+      qwen/qwen3.5-397b-a17b@reasoning: 0.134021
+      qwen/qwen3.5-9b@reasoning: 0.070103
+      qwen/qwen3.6-27b@non-reasoning: 0.092784
+      qwen/qwen3.6-27b@reasoning: 0.16701
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.053608
+      qwen/qwen3.6-35b-a3b@reasoning: 0.092784
+      qwen/qwen3.6-plus: 0.208247
+      qwen/qwen3.7-max: 0.117526
+      qwen/qwen3.7-plus: 0.175258
+      qwen/qwen3.8-2.4t-a95b: 0.490722
+      qwen/qwen3.8-27b@low: 0.321649
+      qwen/qwen3.8-27b@medium: 0.474227
+      qwen/qwen3.8-27b@non-reasoning: 0.2
+      qwen/qwen3.8-27b@xhigh: 0.480412
+      stepfun/step-3.7-flash: 0.119588
+      tencent/hy3: 0.228866
+      thinkingmachines/inkling-small: 0.187629
+      thinkingmachines/inkling@xhigh: 0.290722
+      upstage/solar-pro-3: 0.086598
+      upstage/solar-pro4: 0.23299
+      x-ai/grok-4.3@high: 0.123711
+      x-ai/grok-4.3@non-reasoning: 0.080412
+      x-ai/grok-4.5@high: 0.420619
+      x-ai/grok-4.6@high: 0.507216
+      x-ai/grok-4.6@low: 0.381443
+      x-ai/grok-4.6@medium: 0.443299
+      x-ai/grok-4.6@xhigh: 0.43299
+      xiaomi/mimo-v2.5: 0.086598
+      xiaomi/mimo-v2.5-pro: 0.098969
+      z-ai/glm-4.6@reasoning: 0.134021
+      z-ai/glm-4.7@reasoning: 0.121649
+      z-ai/glm-5.1@reasoning: 0.136082
+      z-ai/glm-5.2@max: 0.346392
+      z-ai/glm-5.2@non-reasoning: 0.16701
+      z-ai/glm-5.3-flash: 0.472165
+      z-ai/glm-5.3@max: 0.503093
+  aa_api_terminalbench_hard:
+    higher_is_better: true
+    title: 'Artificial Analysis API: terminalbench_hard'
+    unit: fraction
+    values:
+      anthropic/claude-3-haiku: 0.007576
+      anthropic/claude-fable-5@max: 0.628788
+      anthropic/claude-opus-4.5@non-reasoning: 0.409091
+      anthropic/claude-opus-4.5@reasoning: 0.469697
+      anthropic/claude-opus-4.6@high: 0.484848
+      anthropic/claude-opus-4.6@max: 0.462121
+      anthropic/claude-opus-4.7@high: 0.545455
+      anthropic/claude-opus-4.7@max: 0.515152
+      anthropic/claude-opus-4.8@max: 0.583333
+      anthropic/claude-sonnet-4.6@high: 0.462121
+      anthropic/claude-sonnet-4.6@low: 0.424242
+      anthropic/claude-sonnet-4.6@max: 0.530303
+      arcee-ai/trinity-large-thinking: 0.227273
+      deepseek/deepseek-r1-0528: 0.159091
+      deepseek/deepseek-v3.1-terminus@non-reasoning: 0.318182
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.30303
+      deepseek/deepseek-v3.2-exp@non-reasoning: 0.25
+      deepseek/deepseek-v3.2-exp@reasoning: 0.310606
+      deepseek/deepseek-v3.2@non-reasoning: 0.325758
+      deepseek/deepseek-v3.2@reasoning: 0.356061
+      google/gemini-2.5-flash-lite@non-reasoning: 0.022727
+      google/gemini-2.5-flash-lite@reasoning: 0.045455
+      google/gemini-2.5-flash@non-reasoning: 0.121212
+      google/gemini-2.5-flash@reasoning: 0.136364
+      google/gemini-2.5-pro: 0.265152
+      google/gemini-3-flash-preview@non-reasoning: 0.318182
+      google/gemini-3-flash-preview@reasoning: 0.386364
+      google/gemini-3.1-flash-lite: 0.242424
+      google/gemini-3.1-pro-preview: 0.537879
+      google/gemini-3.5-flash@high: 0.409091
+      google/gemini-3.5-flash@medium: 0.393939
+      google/gemini-3.5-flash@minimal: 0.462121
+      inception/mercury-2: 0.265152
+      kwaipilot/kat-coder-pro-v2: 0.492424
+      meta/llama-4-maverick: 0.068182
+      meta/llama-4-scout: 0.015152
+      minimax/minimax-m2: 0.257576
+      minimax/minimax-m2.1: 0.287879
+      minimax/minimax-m2.5: 0.348485
+      minimax/minimax-m2.7: 0.393939
+      minimax/minimax-m3: 0.424242
+      mistralai/mistral-medium-3: 0.037879
+      mistralai/mistral-medium-3-5: 0.333333
+      mistralai/mistral-medium-3.1: 0.106061
+      moonshotai/kimi-k2-0905: 0.234848
+      moonshotai/kimi-k2-thinking: 0.310606
+      moonshotai/kimi-k2.5@non-reasoning: 0.189394
+      moonshotai/kimi-k2.5@reasoning: 0.348485
+      moonshotai/kimi-k2.6: 0.439394
+      moonshotai/kimi-k2.6@non-reasoning: 0.378788
+      moonshotai/kimi-k2.7-code: 0.44697
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.287879
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.363636
+      openai/gpt-4.1: 0.136364
+      openai/gpt-4.1-mini: 0.075758
+      openai/gpt-4.1-nano: 0.037879
+      openai/gpt-4o: 0.083333
+      openai/gpt-5: 0.128788
+      openai/gpt-5-mini@high: 0.333333
+      openai/gpt-5-mini@medium: 0.287879
+      openai/gpt-5-mini@minimal: 0.143939
+      openai/gpt-5-nano@high: 0.121212
+      openai/gpt-5-nano@medium: 0.174242
+      openai/gpt-5-nano@minimal: 0.068182
+      openai/gpt-5.1-codex-mini@high: 0.333333
+      openai/gpt-5.1-codex@high: 0.348485
+      openai/gpt-5.1@high: 0.454545
+      openai/gpt-5.1@non-reasoning: 0.227273
+      openai/gpt-5.2-codex@xhigh: 0.371212
+      openai/gpt-5.2@medium: 0.431818
+      openai/gpt-5.2@non-reasoning: 0.318182
+      openai/gpt-5.2@xhigh: 0.469697
+      openai/gpt-5.3-codex@xhigh: 0.530303
+      openai/gpt-5.4-mini@medium: 0.340909
+      openai/gpt-5.4-mini@non-reasoning: 0.181818
+      openai/gpt-5.4-mini@xhigh: 0.522727
+      openai/gpt-5.4-nano@medium: 0.333333
+      openai/gpt-5.4-nano@non-reasoning: 0.242424
+      openai/gpt-5.4-nano@xhigh: 0.424242
+      openai/gpt-5.4@low: 0.431818
+      openai/gpt-5.4@non-reasoning: 0.378788
+      openai/gpt-5.4@xhigh: 0.575758
+      openai/gpt-5.5@high: 0.598485
+      openai/gpt-5.5@low: 0.522727
+      openai/gpt-5.5@medium: 0.575758
+      openai/gpt-5.5@non-reasoning: 0.492424
+      openai/gpt-5.5@xhigh: 0.606061
+      openai/gpt-5.6-sol@high: 0.621212
+      openai/gpt-5.6-sol@low: 0.606061
+      openai/gpt-5.6-sol@max: 0.659091
+      openai/gpt-5.6-sol@medium: 0.628788
+      openai/gpt-5.6-sol@xhigh: 0.613636
+      openai/gpt-5.6-terra@high: 0.575758
+      openai/gpt-5.6-terra@low: 0.439394
+      openai/gpt-5.6-terra@max: 0.575758
+      openai/gpt-5.6-terra@xhigh: 0.628788
+      openai/gpt-5@high: 0.325758
+      openai/gpt-5@low: 0.265152
+      openai/gpt-5@medium: 0.378788
+      openai/gpt-5@minimal: 0.181818
+      openai/gpt-oss-120b@high: 0.234848
+      openai/gpt-oss-120b@low: 0.05303
+      openai/gpt-oss-20b@high: 0.106061
+      openai/gpt-oss-20b@low: 0.045455
+      openai/o1: 0.128788
+      openai/o3: 0.371212
+      openai/o3-mini: 0.068182
+      openai/o3-mini@high: 0.060606
+      openai/o4-mini@high: 0.151515
+      qwen/qwen3-14b@non-reasoning: 0.05303
+      qwen/qwen3-14b@reasoning: 0.037879
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.136364
+      qwen/qwen3-235b-a22b@non-reasoning: 0.060606
+      qwen/qwen3-235b-a22b@reasoning: 0.060606
+      qwen/qwen3-30b-a3b@non-reasoning: 0.068182
+      qwen/qwen3-30b-a3b@reasoning: 0.022727
+      qwen/qwen3-32b@reasoning: 0.030303
+      qwen/qwen3-8b@non-reasoning: 0.022727
+      qwen/qwen3-8b@reasoning: 0.022727
+      qwen/qwen3-coder-next: 0.181818
+      qwen/qwen3-max: 0.204545
+      qwen/qwen3-max-thinking: 0.242424
+      qwen/qwen3-vl-30b-a3b-instruct: 0.060606
+      qwen/qwen3-vl-30b-a3b-thinking: 0.05303
+      qwen/qwen3-vl-32b-instruct: 0.083333
+      qwen/qwen3-vl-8b-instruct: 0.022727
+      qwen/qwen3-vl-8b-thinking: 0.037879
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.295455
+      qwen/qwen3.5-122b-a10b@reasoning: 0.310606
+      qwen/qwen3.5-27b@non-reasoning: 0.318182
+      qwen/qwen3.5-27b@reasoning: 0.325758
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.106061
+      qwen/qwen3.5-35b-a3b@reasoning: 0.265152
+      qwen/qwen3.5-397b-a17b@non-reasoning: 0.356061
+      qwen/qwen3.5-397b-a17b@reasoning: 0.409091
+      qwen/qwen3.5-9b@non-reasoning: 0.181818
+      qwen/qwen3.5-9b@reasoning: 0.242424
+      qwen/qwen3.6-27b@non-reasoning: 0.212121
+      qwen/qwen3.6-27b@reasoning: 0.348485
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.257576
+      qwen/qwen3.6-35b-a3b@reasoning: 0.348485
+      qwen/qwen3.6-max-preview: 0.439394
+      qwen/qwen3.6-plus: 0.439394
+      qwen/qwen3.7-max: 0.507576
+      qwen/qwen3.7-plus: 0.469697
+      stepfun/step-3.5-flash: 0.272727
+      stepfun/step-3.7-flash: 0.356061
+      tencent/hy3-preview@non-reasoning: 0.318182
+      tencent/hy3-preview@reasoning: 0.340909
+      upstage/solar-pro-3: 0.075758
+      x-ai/grok-4.1-fast@non-reasoning: 0.143939
+      x-ai/grok-4.1-fast@reasoning: 0.242424
+      x-ai/grok-4.3@high: 0.378788
+      x-ai/grok-4.3@low: 0.265152
+      x-ai/grok-4.3@medium: 0.30303
+      x-ai/grok-4.3@non-reasoning: 0.189394
+      xiaomi/mimo-v2-pro: 0.409091
+      xiaomi/mimo-v2.5: 0.416667
+      xiaomi/mimo-v2.5-pro: 0.431818
+      xiaomi/mimo-v2.5-pro@non-reasoning: 0.356061
+      z-ai/glm-4.5-air: 0.204545
+      z-ai/glm-4.5@reasoning: 0.219697
+      z-ai/glm-4.5v@non-reasoning: 0.068182
+      z-ai/glm-4.5v@reasoning: 0.05303
+      z-ai/glm-4.6@non-reasoning: 0.287879
+      z-ai/glm-4.6@reasoning: 0.25
+      z-ai/glm-4.6v@non-reasoning: 0.030303
+      z-ai/glm-4.6v@reasoning: 0.143939
+      z-ai/glm-4.7-flash@non-reasoning: 0.037879
+      z-ai/glm-4.7-flash@reasoning: 0.219697
+      z-ai/glm-4.7@non-reasoning: 0.30303
+      z-ai/glm-4.7@reasoning: 0.318182
+      z-ai/glm-5-turbo: 0.333333
+      z-ai/glm-5.1@non-reasoning: 0.356061
+      z-ai/glm-5.1@reasoning: 0.431818
+      z-ai/glm-5.2@max: 0.507576
+      z-ai/glm-5@non-reasoning: 0.393939
+      z-ai/glm-5@reasoning: 0.431818
+      z-ai/glm-5v-turbo@reasoning: 0.325758
+  aa_api_terminalbench_v2_1:
+    higher_is_better: true
+    title: 'Artificial Analysis API: terminalbench_v2_1'
+    unit: fraction
+    values:
+      anthropic/claude-fable-5.1@high: 0.898876
+      anthropic/claude-fable-5.1@low: 0.850187
+      anthropic/claude-fable-5.1@max: 0.913858
+      anthropic/claude-fable-5.1@medium: 0.88015
+      anthropic/claude-fable-5.1@xhigh: 0.910112
+      anthropic/claude-fable-5@max: 0.846442
+      anthropic/claude-opus-4.7@max: 0.831461
+      anthropic/claude-opus-4.8@max: 0.846442
+      anthropic/claude-opus-5@high: 0.876404
+      anthropic/claude-opus-5@low: 0.764045
+      anthropic/claude-opus-5@max: 0.891386
+      anthropic/claude-opus-5@medium: 0.861423
+      anthropic/claude-opus-5@xhigh: 0.88015
+      anthropic/claude-sonnet-4.6@max: 0.71161
+      anthropic/claude-sonnet-5@high: 0.752809
+      anthropic/claude-sonnet-5@max: 0.805243
+      arcee-ai/trinity-large-thinking: 0.205993
+      deepseek/deepseek-r1-0528: 0.191011
+      deepseek/deepseek-v3.1-terminus@reasoning: 0.449438
+      deepseek/deepseek-v3.2@reasoning: 0.468165
+      deepseek/deepseek-v4-flash-0731@max: 0.786517
+      deepseek/deepseek-v4-pro-0813@max: 0.786517
+      google/gemini-2.5-pro: 0.284644
+      google/gemini-3.1-flash-lite: 0.310861
+      google/gemini-3.1-pro-preview: 0.737828
+      google/gemini-3.5-flash-lite: 0.535581
+      google/gemini-3.5-flash@high: 0.786517
+      google/gemini-3.6-flash@high: 0.775281
+      google/gemini-3.7-flash@high: 0.857678
+      google/gemini-3.7-flash@low: 0.797753
+      google/gemini-3.7-flash@medium: 0.782772
+      google/gemini-3.8-flash@high: 0.876404
+      google/gemini-3.8-flash@low: 0.831461
+      google/gemini-3.8-flash@medium: 0.838951
+      ibm-granite/granite-4.2-8b: 0.183521
+      inception/mercury-2: 0.273408
+      inclusionai/ling-3.0-flash: 0.554307
+      inclusionai/ling-3.0-flash-fin: 0.625468
+      inclusionai/ling-3.0-flash-vl: 0.644195
+      kwaipilot/kat-coder-pro-v2: 0.700375
+      meituan/longcat-2.0: 0.501873
+      meta/llama-4-maverick: 0.078652
+      meta/llama-4-scout: 0.037453
+      meta/muse-spark-1.1@xhigh: 0.779026
+      meta/muse-spark-1.2@xhigh: 0.801498
+      meta/muse-spark-1.3@max: 0.842697
+      meta/muse-spark-1.3@xhigh: 0.853933
+      minimax/minimax-m2.7: 0.554307
+      minimax/minimax-m3: 0.651685
+      mistralai/mistral-medium-3-5: 0.505618
+      mistralai/mistral-medium-3.1: 0.138577
+      moonshotai/kimi-k2.5@reasoning: 0.456929
+      moonshotai/kimi-k2.6: 0.659176
+      moonshotai/kimi-k2.7-code: 0.674157
+      moonshotai/kimi-k3@low: 0.82397
+      moonshotai/kimi-k3@max: 0.850187
+      nvidia/nemotron-3-super-120b-a12b@reasoning: 0.385768
+      nvidia/nemotron-3-ultra-550b-a55b@reasoning: 0.539326
+      nvidia/nemotron-3.5-lightning: 0.243446
+      openai/gpt-4.1-mini: 0.101124
+      openai/gpt-4.1-nano: 0.037453
+      openai/gpt-4o-mini: 0.05618
+      openai/gpt-5-mini@high: 0.037453
+      openai/gpt-5.1@high: 0.524345
+      openai/gpt-5.4-mini@xhigh: 0.59176
+      openai/gpt-5.4-nano@xhigh: 0.606742
+      openai/gpt-5.4@xhigh: 0.782772
+      openai/gpt-5.5@high: 0.794007
+      openai/gpt-5.5@low: 0.655431
+      openai/gpt-5.5@medium: 0.805243
+      openai/gpt-5.5@non-reasoning: 0.610487
+      openai/gpt-5.5@xhigh: 0.842697
+      openai/gpt-5.6-luna@high: 0.696629
+      openai/gpt-5.6-luna@low: 0.434457
+      openai/gpt-5.6-luna@max: 0.808989
+      openai/gpt-5.6-luna@medium: 0.531835
+      openai/gpt-5.6-luna@non-reasoning: 0.389513
+      openai/gpt-5.6-luna@xhigh: 0.779026
+      openai/gpt-5.6-sol@high: 0.872659
+      openai/gpt-5.6-sol@low: 0.76779
+      openai/gpt-5.6-sol@max: 0.88015
+      openai/gpt-5.6-sol@medium: 0.861423
+      openai/gpt-5.6-sol@non-reasoning: 0.741573
+      openai/gpt-5.6-sol@xhigh: 0.895131
+      openai/gpt-5.6-terra@high: 0.756554
+      openai/gpt-5.6-terra@low: 0.625468
+      openai/gpt-5.6-terra@max: 0.88015
+      openai/gpt-5.6-terra@medium: 0.722846
+      openai/gpt-5.6-terra@non-reasoning: 0.561798
+      openai/gpt-5.6-terra@xhigh: 0.801498
+      openai/gpt-5@high: 0.35206
+      openai/gpt-6-astra@high: 0.898876
+      openai/gpt-6-astra@low: 0.88015
+      openai/gpt-6-astra@max: 0.883895
+      openai/gpt-6-astra@medium: 0.895131
+      openai/gpt-6-astra@xhigh: 0.891386
+      openai/gpt-oss-120b@high: 0.262172
+      openai/gpt-oss-120b@low: 0.138577
+      openai/gpt-oss-20b@high: 0.138577
+      openai/o3-mini@high: 0.044944
+      qwen/qwen3-14b@reasoning: 0.048689
+      qwen/qwen3-235b-a22b-2507@reasoning: 0.11985
+      qwen/qwen3-32b@reasoning: 0.052434
+      qwen/qwen3-8b@reasoning: 0.022472
+      qwen/qwen3-coder-next: 0.382022
+      qwen/qwen3.5-122b-a10b@non-reasoning: 0.47191
+      qwen/qwen3.5-122b-a10b@reasoning: 0.475655
+      qwen/qwen3.5-35b-a3b@non-reasoning: 0.40824
+      qwen/qwen3.5-397b-a17b@reasoning: 0.513109
+      qwen/qwen3.5-9b@non-reasoning: 0.213483
+      qwen/qwen3.5-9b@reasoning: 0.292135
+      qwen/qwen3.6-27b@non-reasoning: 0.513109
+      qwen/qwen3.6-27b@reasoning: 0.606742
+      qwen/qwen3.6-35b-a3b@non-reasoning: 0.41573
+      qwen/qwen3.6-35b-a3b@reasoning: 0.449438
+      qwen/qwen3.6-plus: 0.614232
+      qwen/qwen3.7-max: 0.745318
+      qwen/qwen3.7-plus: 0.610487
+      qwen/qwen3.8-2.4t-a95b: 0.820225
+      qwen/qwen3.8-27b@low: 0.674157
+      qwen/qwen3.8-27b@medium: 0.651685
+      qwen/qwen3.8-27b@non-reasoning: 0.490637
+      qwen/qwen3.8-27b@xhigh: 0.797753
+      stepfun/step-3.7-flash: 0.393258
+      tencent/hy3: 0.644195
+      thinkingmachines/inkling-small: 0.550562
+      thinkingmachines/inkling@xhigh: 0.550562
+      upstage/solar-pro-3: 0.11985
+      upstage/solar-pro4: 0.573034
+      x-ai/grok-4.3@high: 0.397004
+      x-ai/grok-4.3@non-reasoning: 0.340824
+      x-ai/grok-4.5@high: 0.816479
+      x-ai/grok-4.6@high: 0.883895
+      x-ai/grok-4.6@low: 0.752809
+      x-ai/grok-4.6@medium: 0.842697
+      x-ai/grok-4.6@xhigh: 0.88015
+      xiaomi/mimo-v2.5: 0.636704
+      xiaomi/mimo-v2.5-pro: 0.651685
+      z-ai/glm-4.6@reasoning: 0.494382
+      z-ai/glm-4.7@reasoning: 0.453184
+      z-ai/glm-5.1@reasoning: 0.617978
+      z-ai/glm-5.2@max: 0.779026
+      z-ai/glm-5.2@non-reasoning: 0.516854
+      z-ai/glm-5.3-flash: 0.842697
+      z-ai/glm-5.3@max: 0.838951
+meta:
+  anthropic/claude-3-haiku:
+    input_per_m: 0.25
+    output_per_m: 1.25
+    release_date: '2024-03-04'
+  anthropic/claude-fable-5.1@high:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-01'
+  anthropic/claude-fable-5.1@low:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-01'
+  anthropic/claude-fable-5.1@max:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-01'
+  anthropic/claude-fable-5.1@medium:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-01'
+  anthropic/claude-fable-5.1@xhigh:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-01'
+  anthropic/claude-fable-5@max:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-06-09'
+  anthropic/claude-opus-4.5@non-reasoning:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2025-11-24'
+  anthropic/claude-opus-4.5@reasoning:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2025-11-24'
+  anthropic/claude-opus-4.6@high:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-02-05'
+  anthropic/claude-opus-4.6@max:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-02-05'
+  anthropic/claude-opus-4.7@high:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-04-16'
+  anthropic/claude-opus-4.7@max:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-04-16'
+  anthropic/claude-opus-4.8@max:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-05-28'
+  anthropic/claude-opus-5@high:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-07-24'
+  anthropic/claude-opus-5@low:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-07-24'
+  anthropic/claude-opus-5@max:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-07-24'
+  anthropic/claude-opus-5@medium:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-07-24'
+  anthropic/claude-opus-5@xhigh:
+    input_per_m: 5
+    output_per_m: 25
+    release_date: '2026-07-24'
+  anthropic/claude-sonnet-4.6@high:
+    input_per_m: 3
+    output_per_m: 15
+    release_date: '2026-02-17'
+  anthropic/claude-sonnet-4.6@low:
+    input_per_m: 3
+    output_per_m: 15
+    release_date: '2026-02-17'
+  anthropic/claude-sonnet-4.6@max:
+    input_per_m: 3
+    output_per_m: 15
+    release_date: '2026-02-17'
+  anthropic/claude-sonnet-5@high:
+    input_per_m: 2
+    output_per_m: 10
+    release_date: '2026-06-30'
+  anthropic/claude-sonnet-5@low:
+    input_per_m: 2
+    output_per_m: 10
+    release_date: '2026-06-30'
+  anthropic/claude-sonnet-5@max:
+    input_per_m: 2
+    output_per_m: 10
+    release_date: '2026-06-30'
+  anthropic/claude-sonnet-5@medium:
+    input_per_m: 2
+    output_per_m: 10
+    release_date: '2026-06-30'
+  anthropic/claude-sonnet-5@xhigh:
+    input_per_m: 2
+    output_per_m: 10
+    release_date: '2026-06-30'
+  arcee-ai/trinity-large-thinking:
+    input_per_m: 0.25
+    output_per_m: 0.9
+    release_date: '2026-04-01'
+  deepseek/deepseek-r1-0528:
+    input_per_m: 2
+    output_per_m: 4
+    release_date: '2025-01-20'
+  deepseek/deepseek-v3.1-terminus@non-reasoning:
+    input_per_m: 0.27
+    output_per_m: 1
+    release_date: '2025-09-22'
+  deepseek/deepseek-v3.1-terminus@reasoning:
+    input_per_m: 1.635
+    output_per_m: 2.75
+    release_date: '2025-09-22'
+  deepseek/deepseek-v3.2-exp@non-reasoning:
+    input_per_m: 0.28
+    output_per_m: 0.42
+    release_date: '2025-09-29'
+  deepseek/deepseek-v3.2-exp@reasoning:
+    input_per_m: 0.28
+    output_per_m: 0.42
+    release_date: '2025-09-29'
+  deepseek/deepseek-v3.2@non-reasoning:
+    input_per_m: 0.28
+    output_per_m: 0.42
+    release_date: '2025-12-01'
+  deepseek/deepseek-v3.2@reasoning:
+    input_per_m: 0.28
+    output_per_m: 0.42
+    release_date: '2025-12-01'
+  deepseek/deepseek-v4-flash-0731@max:
+    input_per_m: 0.44
+    output_per_m: 1.32
+    release_date: '2026-07-31'
+  deepseek/deepseek-v4-pro-0813@max:
+    input_per_m: 1.32
+    output_per_m: 3.96
+    release_date: '2026-08-13'
+  deepseek/deepseek-v4.1-flash@max:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-09-10'
+  google/gemini-2.5-flash-lite@non-reasoning:
+    input_per_m: 0.1
+    output_per_m: 0.4
+    release_date: '2025-06-17'
+  google/gemini-2.5-flash-lite@reasoning:
+    input_per_m: 0.1
+    output_per_m: 0.4
+    release_date: '2025-06-17'
+  google/gemini-2.5-flash@non-reasoning:
+    input_per_m: 0.3
+    output_per_m: 2.5
+    release_date: '2025-05-20'
+  google/gemini-2.5-flash@reasoning:
+    input_per_m: 0.3
+    output_per_m: 2.5
+    release_date: '2025-05-20'
+  google/gemini-2.5-pro:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-06-05'
+  google/gemini-2.5-pro-preview:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-05-06'
+  google/gemini-3-flash-preview@non-reasoning:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2025-12-17'
+  google/gemini-3-flash-preview@reasoning:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2025-12-17'
+  google/gemini-3.1-flash-lite:
+    input_per_m: 0.25
+    output_per_m: 1.5
+    release_date: '2026-03-03'
+  google/gemini-3.1-pro-preview:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-02-19'
+  google/gemini-3.5-flash-lite:
+    input_per_m: 0.3
+    output_per_m: 2.5
+    release_date: '2026-07-21'
+  google/gemini-3.5-flash@high:
+    input_per_m: 1.5
+    output_per_m: 9
+    release_date: '2026-05-19'
+  google/gemini-3.5-flash@medium:
+    input_per_m: 1.5
+    output_per_m: 9
+    release_date: '2026-05-19'
+  google/gemini-3.5-flash@minimal:
+    input_per_m: 1.5
+    output_per_m: 9
+    release_date: '2026-05-19'
+  google/gemini-3.6-flash@high:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-07-21'
+  google/gemini-3.7-flash@high:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-08-13'
+  google/gemini-3.7-flash@low:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-08-13'
+  google/gemini-3.7-flash@medium:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-08-13'
+  google/gemini-3.8-flash@high:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-09-02'
+  google/gemini-3.8-flash@low:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-09-02'
+  google/gemini-3.8-flash@medium:
+    input_per_m: 0.75
+    output_per_m: 3.75
+    release_date: '2026-09-02'
+  ibm-granite/granite-4.2-8b:
+    input_per_m: 0.06
+    output_per_m: 0.25
+    release_date: '2026-08-25'
+  inception/mercury-2:
+    input_per_m: 0.25
+    output_per_m: 0.75
+    release_date: '2026-02-20'
+  inclusionai/ling-3.0-flash:
+    input_per_m: 0.075
+    output_per_m: 0.22
+    release_date: '2026-08-04'
+  inclusionai/ling-3.0-flash-fin:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-09-11'
+  inclusionai/ling-3.0-flash-vl:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-09-10'
+  kwaipilot/kat-coder-pro-v2:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-03-27'
+  meituan/longcat-2.0:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-06-29'
+  meta/llama-4-maverick:
+    input_per_m: 0.26
+    output_per_m: 0.91
+    release_date: '2025-04-05'
+  meta/llama-4-scout:
+    input_per_m: 0.19
+    output_per_m: 0.68
+    release_date: '2025-04-05'
+  meta/muse-spark-1.1@xhigh:
+    input_per_m: 1.25
+    output_per_m: 4.25
+    release_date: '2026-07-09'
+  meta/muse-spark-1.2@xhigh:
+    input_per_m: 1.25
+    output_per_m: 4.25
+    release_date: '2026-08-05'
+  meta/muse-spark-1.3@max:
+    input_per_m: 1.25
+    output_per_m: 4.25
+    release_date: '2026-09-02'
+  meta/muse-spark-1.3@xhigh:
+    input_per_m: 1.25
+    output_per_m: 4.25
+    release_date: '2026-09-02'
+  minimax/minimax-m2:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2025-10-26'
+  minimax/minimax-m2.1:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2025-12-23'
+  minimax/minimax-m2.5:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-02-12'
+  minimax/minimax-m2.7:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-03-18'
+  minimax/minimax-m3:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-06-01'
+  mistralai/mistral-large-2407:
+    input_per_m: 4
+    output_per_m: 12
+    release_date: '2024-02-26'
+  mistralai/mistral-medium-3:
+    input_per_m: 0.4
+    output_per_m: 2
+    release_date: '2025-05-07'
+  mistralai/mistral-medium-3-5:
+    input_per_m: 1.5
+    output_per_m: 7.5
+    release_date: '2026-04-29'
+  mistralai/mistral-medium-3.1:
+    input_per_m: 0.4
+    output_per_m: 2
+    release_date: '2025-08-12'
+  mistralai/mistral-saba:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-02-17'
+  mistralai/mixtral-8x22b-instruct:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2024-04-17'
+  moonshotai/kimi-k2-0905:
+    input_per_m: 0.57
+    output_per_m: 2.3
+    release_date: '2025-07-11'
+  moonshotai/kimi-k2-thinking:
+    input_per_m: 0.6
+    output_per_m: 2.5
+    release_date: '2025-11-06'
+  moonshotai/kimi-k2.5@non-reasoning:
+    input_per_m: 0.6
+    output_per_m: 3
+    release_date: '2026-01-27'
+  moonshotai/kimi-k2.5@reasoning:
+    input_per_m: 0.6
+    output_per_m: 2.75
+    release_date: '2026-01-27'
+  moonshotai/kimi-k2.6:
+    input_per_m: 0.95
+    output_per_m: 4
+    release_date: '2026-04-20'
+  moonshotai/kimi-k2.6@non-reasoning:
+    input_per_m: 0.95
+    output_per_m: 4
+    release_date: '2026-04-20'
+  moonshotai/kimi-k2.7-code:
+    input_per_m: 0.95
+    output_per_m: 4
+    release_date: '2026-06-12'
+  moonshotai/kimi-k3@low:
+    input_per_m: 3
+    output_per_m: 15
+    release_date: '2026-07-16'
+  moonshotai/kimi-k3@max:
+    input_per_m: 3
+    output_per_m: 15
+    release_date: '2026-07-16'
+  nvidia/nemotron-3-super-120b-a12b@reasoning:
+    input_per_m: 0.193
+    output_per_m: 0.65
+    release_date: '2026-03-11'
+  nvidia/nemotron-3-ultra-550b-a55b@reasoning:
+    input_per_m: 0.6
+    output_per_m: 2.4
+    release_date: '2026-06-04'
+  nvidia/nemotron-3.5-lightning:
+    input_per_m: 0.06
+    output_per_m: 0.2
+    release_date: '2026-08-11'
+  openai/gpt-4-turbo:
+    input_per_m: 10
+    output_per_m: 30
+    release_date: '2023-11-06'
+  openai/gpt-4.1:
+    input_per_m: 2
+    output_per_m: 8
+    release_date: '2025-04-14'
+  openai/gpt-4.1-mini:
+    input_per_m: 0.4
+    output_per_m: 1.6
+    release_date: '2025-04-14'
+  openai/gpt-4.1-nano:
+    input_per_m: 0.1
+    output_per_m: 0.4
+    release_date: '2025-04-14'
+  openai/gpt-4o:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-02-15'
+  openai/gpt-4o-mini:
+    input_per_m: 0.15
+    output_per_m: 0.6
+    release_date: '2024-07-18'
+  openai/gpt-5:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-08-07'
+  openai/gpt-5-mini@high:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2025-08-07'
+  openai/gpt-5-mini@medium:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2025-08-07'
+  openai/gpt-5-mini@minimal:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2025-08-07'
+  openai/gpt-5-nano@high:
+    input_per_m: 0.05
+    output_per_m: 0.4
+    release_date: '2025-08-07'
+  openai/gpt-5-nano@medium:
+    input_per_m: 0.05
+    output_per_m: 0.4
+    release_date: '2025-08-07'
+  openai/gpt-5-nano@minimal:
+    input_per_m: 0.05
+    output_per_m: 0.4
+    release_date: '2025-08-07'
+  openai/gpt-5.1-codex-mini@high:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2025-11-13'
+  openai/gpt-5.1-codex@high:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-11-13'
+  openai/gpt-5.1@high:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-11-13'
+  openai/gpt-5.1@non-reasoning:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-11-13'
+  openai/gpt-5.2-codex@xhigh:
+    input_per_m: 1.75
+    output_per_m: 14
+    release_date: '2025-12-11'
+  openai/gpt-5.2@medium:
+    input_per_m: 1.75
+    output_per_m: 14
+    release_date: '2025-12-11'
+  openai/gpt-5.2@non-reasoning:
+    input_per_m: 1.75
+    output_per_m: 14
+    release_date: '2025-12-11'
+  openai/gpt-5.2@xhigh:
+    input_per_m: 1.75
+    output_per_m: 14
+    release_date: '2025-12-11'
+  openai/gpt-5.3-codex@xhigh:
+    input_per_m: 1.75
+    output_per_m: 14
+    release_date: '2026-02-05'
+  openai/gpt-5.4-mini@medium:
+    input_per_m: 0.75
+    output_per_m: 4.5
+    release_date: '2026-03-17'
+  openai/gpt-5.4-mini@non-reasoning:
+    input_per_m: 0.75
+    output_per_m: 4.5
+    release_date: '2026-03-17'
+  openai/gpt-5.4-mini@xhigh:
+    input_per_m: 0.75
+    output_per_m: 4.5
+    release_date: '2026-03-17'
+  openai/gpt-5.4-nano@medium:
+    input_per_m: 0.2
+    output_per_m: 1.25
+    release_date: '2026-03-17'
+  openai/gpt-5.4-nano@non-reasoning:
+    input_per_m: 0.2
+    output_per_m: 1.25
+    release_date: '2026-03-17'
+  openai/gpt-5.4-nano@xhigh:
+    input_per_m: 0.2
+    output_per_m: 1.25
+    release_date: '2026-03-17'
+  openai/gpt-5.4-pro@xhigh:
+    input_per_m: 30
+    output_per_m: 180
+    release_date: '2026-03-05'
+  openai/gpt-5.4@low:
+    input_per_m: 2.5
+    output_per_m: 15
+    release_date: '2026-03-05'
+  openai/gpt-5.4@non-reasoning:
+    input_per_m: 2.5
+    output_per_m: 15
+    release_date: '2026-03-05'
+  openai/gpt-5.4@xhigh:
+    input_per_m: 2.5
+    output_per_m: 15
+    release_date: '2026-03-05'
+  openai/gpt-5.5-pro@xhigh:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-04-23'
+  openai/gpt-5.5@high:
+    input_per_m: 5
+    output_per_m: 30
+    release_date: '2026-04-23'
+  openai/gpt-5.5@low:
+    input_per_m: 5
+    output_per_m: 30
+    release_date: '2026-04-23'
+  openai/gpt-5.5@medium:
+    input_per_m: 5
+    output_per_m: 30
+    release_date: '2026-04-23'
+  openai/gpt-5.5@non-reasoning:
+    input_per_m: 5
+    output_per_m: 30
+    release_date: '2026-04-23'
+  openai/gpt-5.5@xhigh:
+    input_per_m: 5
+    output_per_m: 30
+    release_date: '2026-04-23'
+  openai/gpt-5.6-luna@high:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-luna@low:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-luna@max:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-luna@medium:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-luna@non-reasoning:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-luna@xhigh:
+    input_per_m: 0.2
+    output_per_m: 1.2
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@high:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@low:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@max:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@medium:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@non-reasoning:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-sol@xhigh:
+    input_per_m: 4
+    output_per_m: 20
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@high:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@low:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@max:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@medium:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@non-reasoning:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5.6-terra@xhigh:
+    input_per_m: 2
+    output_per_m: 12
+    release_date: '2026-07-09'
+  openai/gpt-5@high:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-08-07'
+  openai/gpt-5@low:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-08-07'
+  openai/gpt-5@medium:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-08-07'
+  openai/gpt-5@minimal:
+    input_per_m: 1.25
+    output_per_m: 10
+    release_date: '2025-08-07'
+  openai/gpt-6-astra@high:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-03'
+  openai/gpt-6-astra@low:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-03'
+  openai/gpt-6-astra@max:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-03'
+  openai/gpt-6-astra@medium:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-03'
+  openai/gpt-6-astra@xhigh:
+    input_per_m: 10
+    output_per_m: 50
+    release_date: '2026-09-03'
+  openai/gpt-oss-120b@high:
+    input_per_m: 0.15
+    output_per_m: 0.595
+    release_date: '2025-08-05'
+  openai/gpt-oss-120b@low:
+    input_per_m: 0.15
+    output_per_m: 0.545
+    release_date: '2025-08-05'
+  openai/gpt-oss-20b@high:
+    input_per_m: 0.06
+    output_per_m: 0.19
+    release_date: '2025-08-05'
+  openai/gpt-oss-20b@low:
+    input_per_m: 0.07
+    output_per_m: 0.2
+    release_date: '2025-08-05'
+  openai/o1:
+    input_per_m: 15
+    output_per_m: 60
+    release_date: '2024-12-05'
+  openai/o3:
+    input_per_m: 2
+    output_per_m: 8
+    release_date: '2025-04-16'
+  openai/o3-mini:
+    input_per_m: 1.1
+    output_per_m: 4.4
+    release_date: '2025-01-31'
+  openai/o3-mini@high:
+    input_per_m: 1.1
+    output_per_m: 4.4
+    release_date: '2025-01-31'
+  openai/o3-pro:
+    input_per_m: 20
+    output_per_m: 80
+    release_date: '2025-06-10'
+  openai/o4-mini@high:
+    input_per_m: 1.1
+    output_per_m: 4.4
+    release_date: '2025-04-16'
+  qwen/qwen3-14b@non-reasoning:
+    input_per_m: 0.35
+    output_per_m: 1.4
+    release_date: '2025-04-28'
+  qwen/qwen3-14b@reasoning:
+    input_per_m: 0.35
+    output_per_m: 4.2
+    release_date: '2025-04-28'
+  qwen/qwen3-235b-a22b-2507@reasoning:
+    input_per_m: 0.23
+    output_per_m: 2.3
+    release_date: '2025-07-25'
+  qwen/qwen3-235b-a22b@non-reasoning:
+    input_per_m: 0.7
+    output_per_m: 2.8
+    release_date: '2025-04-28'
+  qwen/qwen3-235b-a22b@reasoning:
+    input_per_m: 0.7
+    output_per_m: 8.4
+    release_date: '2025-04-28'
+  qwen/qwen3-30b-a3b@non-reasoning:
+    input_per_m: 0.2
+    output_per_m: 0.8
+    release_date: '2025-04-28'
+  qwen/qwen3-30b-a3b@reasoning:
+    input_per_m: 0.2
+    output_per_m: 2.4
+    release_date: '2025-04-28'
+  qwen/qwen3-32b@non-reasoning:
+    input_per_m: 0.16
+    output_per_m: 0.64
+    release_date: '2025-04-28'
+  qwen/qwen3-32b@reasoning:
+    input_per_m: 0.16
+    output_per_m: 0.64
+    release_date: '2025-04-28'
+  qwen/qwen3-8b@non-reasoning:
+    input_per_m: 0.18
+    output_per_m: 0.7
+    release_date: '2025-04-28'
+  qwen/qwen3-8b@reasoning:
+    input_per_m: 0.18
+    output_per_m: 2.1
+    release_date: '2025-04-28'
+  qwen/qwen3-coder-next:
+    input_per_m: 0.35
+    output_per_m: 1.2
+    release_date: '2026-02-03'
+  qwen/qwen3-max:
+    input_per_m: 1.2
+    output_per_m: 6
+    release_date: '2025-09-05'
+  qwen/qwen3-max-thinking:
+    input_per_m: 1.2
+    output_per_m: 6
+    release_date: '2025-11-03'
+  qwen/qwen3-vl-30b-a3b-instruct:
+    input_per_m: 0.2
+    output_per_m: 0.8
+    release_date: '2025-10-03'
+  qwen/qwen3-vl-30b-a3b-thinking:
+    input_per_m: 0.2
+    output_per_m: 2.4
+    release_date: '2025-10-03'
+  qwen/qwen3-vl-32b-instruct:
+    input_per_m: 0.16
+    output_per_m: 0.64
+    release_date: '2025-10-21'
+  qwen/qwen3-vl-8b-instruct:
+    input_per_m: 0.18
+    output_per_m: 0.7
+    release_date: '2025-10-14'
+  qwen/qwen3-vl-8b-thinking:
+    input_per_m: 0.18
+    output_per_m: 2.1
+    release_date: '2025-10-14'
+  qwen/qwen3.5-122b-a10b@non-reasoning:
+    input_per_m: 0.4
+    output_per_m: 3.2
+    release_date: '2026-02-24'
+  qwen/qwen3.5-122b-a10b@reasoning:
+    input_per_m: 0.4
+    output_per_m: 3.2
+    release_date: '2026-02-24'
+  qwen/qwen3.5-27b@non-reasoning:
+    input_per_m: 0.3
+    output_per_m: 2.4
+    release_date: '2026-02-24'
+  qwen/qwen3.5-27b@reasoning:
+    input_per_m: 0.3
+    output_per_m: 2.4
+    release_date: '2026-02-24'
+  qwen/qwen3.5-35b-a3b@non-reasoning:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2026-02-24'
+  qwen/qwen3.5-35b-a3b@reasoning:
+    input_per_m: 0.25
+    output_per_m: 2
+    release_date: '2026-02-24'
+  qwen/qwen3.5-397b-a17b@non-reasoning:
+    input_per_m: 0.6
+    output_per_m: 3.6
+    release_date: '2026-02-16'
+  qwen/qwen3.5-397b-a17b@reasoning:
+    input_per_m: 0.6
+    output_per_m: 3.6
+    release_date: '2026-02-16'
+  qwen/qwen3.5-9b@non-reasoning:
+    input_per_m: 0.17
+    output_per_m: 0.25
+    release_date: '2026-03-02'
+  qwen/qwen3.5-9b@reasoning:
+    input_per_m: 0.135
+    output_per_m: 0.2
+    release_date: '2026-03-02'
+  qwen/qwen3.6-27b@non-reasoning:
+    input_per_m: 0.6
+    output_per_m: 3.6
+    release_date: '2026-04-22'
+  qwen/qwen3.6-27b@reasoning:
+    input_per_m: 0.6
+    output_per_m: 3.6
+    release_date: '2026-04-22'
+  qwen/qwen3.6-35b-a3b@non-reasoning:
+    input_per_m: 0.375
+    output_per_m: 2.25
+    release_date: '2026-04-16'
+  qwen/qwen3.6-35b-a3b@reasoning:
+    input_per_m: 0.375
+    output_per_m: 2.25
+    release_date: '2026-04-16'
+  qwen/qwen3.6-max-preview:
+    input_per_m: 1.3
+    output_per_m: 7.8
+    release_date: '2026-04-20'
+  qwen/qwen3.6-plus:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2026-04-02'
+  qwen/qwen3.7-max:
+    input_per_m: 2.5
+    output_per_m: 7.5
+    release_date: '2026-05-19'
+  qwen/qwen3.7-plus:
+    input_per_m: 0.4
+    output_per_m: 1.6
+    release_date: '2026-06-01'
+  qwen/qwen3.8-2.4t-a95b:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-08-12'
+  qwen/qwen3.8-27b@low:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2026-08-14'
+  qwen/qwen3.8-27b@medium:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2026-08-14'
+  qwen/qwen3.8-27b@non-reasoning:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2026-08-14'
+  qwen/qwen3.8-27b@xhigh:
+    input_per_m: 0.5
+    output_per_m: 3
+    release_date: '2026-08-14'
+  stepfun/step-3.5-flash:
+    input_per_m: 0.1
+    output_per_m: 0.3
+    release_date: '2026-02-02'
+  stepfun/step-3.7-flash:
+    input_per_m: 0.2
+    output_per_m: 1.15
+    release_date: '2026-05-29'
+  tencent/hy3:
+    input_per_m: 0.14
+    output_per_m: 0.58
+    release_date: '2026-07-06'
+  tencent/hy3-preview@non-reasoning:
+    input_per_m: 0.063
+    output_per_m: 0.21
+    release_date: '2026-04-23'
+  tencent/hy3-preview@reasoning:
+    input_per_m: 0.063
+    output_per_m: 0.21
+    release_date: '2026-04-23'
+  thinkingmachines/inkling-small:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-07-30'
+  thinkingmachines/inkling@xhigh:
+    input_per_m: 1
+    output_per_m: 4.05
+    release_date: '2026-07-15'
+  upstage/solar-pro-3:
+    input_per_m: 0.15
+    output_per_m: 0.6
+    release_date: '2026-04-06'
+  upstage/solar-pro4:
+    input_per_m: 0.3
+    output_per_m: 1.2
+    release_date: '2026-08-06'
+  x-ai/grok-4.1-fast@non-reasoning:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-11-19'
+  x-ai/grok-4.1-fast@reasoning:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-11-19'
+  x-ai/grok-4.3@high:
+    input_per_m: 1.25
+    output_per_m: 2.5
+    release_date: '2026-04-30'
+  x-ai/grok-4.3@low:
+    input_per_m: 1.25
+    output_per_m: 2.5
+    release_date: '2026-04-30'
+  x-ai/grok-4.3@medium:
+    input_per_m: 1.25
+    output_per_m: 2.5
+    release_date: '2026-04-30'
+  x-ai/grok-4.3@non-reasoning:
+    input_per_m: 1.25
+    output_per_m: 2.5
+    release_date: '2026-04-30'
+  x-ai/grok-4.5@high:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-07-08'
+  x-ai/grok-4.6@high:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-08-12'
+  x-ai/grok-4.6@low:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-08-12'
+  x-ai/grok-4.6@medium:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-08-12'
+  x-ai/grok-4.6@xhigh:
+    input_per_m: 2
+    output_per_m: 6
+    release_date: '2026-08-12'
+  xiaomi/mimo-v2-pro:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-03-18'
+  xiaomi/mimo-v2.5:
+    input_per_m: 0.14
+    output_per_m: 0.28
+    release_date: '2026-04-22'
+  xiaomi/mimo-v2.5-pro:
+    input_per_m: 0.435
+    output_per_m: 0.87
+    release_date: '2026-04-22'
+  xiaomi/mimo-v2.5-pro@non-reasoning:
+    input_per_m: 0.435
+    output_per_m: 0.87
+    release_date: '2026-04-22'
+  z-ai/glm-4.5-air:
+    input_per_m: 0.17
+    output_per_m: 0.98
+    release_date: '2025-07-28'
+  z-ai/glm-4.5@reasoning:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2025-07-28'
+  z-ai/glm-4.5v@non-reasoning:
+    input_per_m: 0.6
+    output_per_m: 1.8
+    release_date: '2025-08-11'
+  z-ai/glm-4.5v@reasoning:
+    input_per_m: 0.6
+    output_per_m: 1.8
+    release_date: '2025-08-11'
+  z-ai/glm-4.6@non-reasoning:
+    input_per_m: 0.575
+    output_per_m: 2.2
+    release_date: '2025-09-30'
+  z-ai/glm-4.6@reasoning:
+    input_per_m: 0.55
+    output_per_m: 2.2
+    release_date: '2025-09-30'
+  z-ai/glm-4.6v@non-reasoning:
+    input_per_m: 0.3
+    output_per_m: 0.9
+    release_date: '2025-12-08'
+  z-ai/glm-4.6v@reasoning:
+    input_per_m: 0.3
+    output_per_m: 0.9
+    release_date: '2025-12-08'
+  z-ai/glm-4.7-flash@non-reasoning:
+    input_per_m: 0.07
+    output_per_m: 0.4
+    release_date: '2026-01-19'
+  z-ai/glm-4.7-flash@reasoning:
+    input_per_m: 0.07
+    output_per_m: 0.4
+    release_date: '2026-01-19'
+  z-ai/glm-4.7@non-reasoning:
+    input_per_m: 0.6
+    output_per_m: 2.2
+    release_date: '2025-12-22'
+  z-ai/glm-4.7@reasoning:
+    input_per_m: 0.6
+    output_per_m: 2.2
+    release_date: '2025-12-22'
+  z-ai/glm-5-turbo:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-03-15'
+  z-ai/glm-5.1@non-reasoning:
+    input_per_m: 1.38
+    output_per_m: 4.4
+    release_date: '2026-04-07'
+  z-ai/glm-5.1@reasoning:
+    input_per_m: 1.2
+    output_per_m: 4.4
+    release_date: '2026-04-07'
+  z-ai/glm-5.2@max:
+    input_per_m: 1.4
+    output_per_m: 4.4
+    release_date: '2026-06-16'
+  z-ai/glm-5.2@non-reasoning:
+    input_per_m: 1.4
+    output_per_m: 4.4
+    release_date: '2026-06-16'
+  z-ai/glm-5.3-flash:
+    input_per_m: 0.15
+    output_per_m: 0.5
+    release_date: '2026-08-26'
+  z-ai/glm-5.3@max:
+    input_per_m: 1.4
+    output_per_m: 4.4
+    release_date: '2026-08-18'
+  z-ai/glm-5@non-reasoning:
+    input_per_m: 1
+    output_per_m: 3.2
+    release_date: '2026-02-11'
+  z-ai/glm-5@reasoning:
+    input_per_m: 1
+    output_per_m: 3.2
+    release_date: '2026-02-11'
+  z-ai/glm-5v-turbo@reasoning:
+    input_per_m: 0
+    output_per_m: 0
+    release_date: '2026-04-01'
+notes:
+- 'unmatched names that look current-generation (release_date >= 2025-06-01): A.X-K2;
+  Agnes 2.5 Pro Alpha; Agnes 2.5 Pro Beta; Agnes 3.0 Flash; Apertus 70B Instruct;
+  Apertus 8B Instruct; Apodex 1.1; Apriel-v1.5-15B-Thinker; Apriel-v1.6-15B-Thinker;
+  Celeris-1; Claude 4.1 Opus (Non-reasoning); Claude 4.1 Opus (Reasoning); Claude
+  4.5 Haiku (Non-reasoning); Claude 4.5 Haiku (Reasoning); Claude 4.5 Sonnet (Non-reasoning);
+  Claude 4.5 Sonnet (Reasoning); Cogito v2.1 (Reasoning); Command A+; DeepSeek V3.1
+  (Non-reasoning); DeepSeek V3.1 (Reasoning); DeepSeek V3.2 Speciale; DeepSeek V4
+  Flash 0420 (Non-reasoning); DeepSeek V4 Flash 0420 (Reasoning, High Effort); DeepSeek
+  V4 Flash 0420 (Reasoning, Max Effort); DeepSeek V4 Flash Vision (Reasoning, Max
+  Effort); DeepSeek V4 Pro 0424 (Non-reasoning); DeepSeek V4 Pro 0424 (Reasoning,
+  High Effort); DeepSeek V4 Pro 0424 (Reasoning, Max Effort); Devstral 2; Devstral
+  Medium; Devstral Small (Jul ''25); Devstral Small 2; DiffusionGemma 26B A4B; Doubao
+  Seed Code; ERNIE 4.5 300B A47B; ERNIE 5.0 Thinking Preview; EXAONE 4.0 32B (Non-reasoning);
+  EXAONE 4.0 32B (Reasoning); EXAONE 4.5 33B; EXAONE 4.5 33B (Non-reasoning); Exaone
+  4.0 1.2B (Non-reasoning); Exaone 4.0 1.2B (Reasoning); Falcon-H1R-7B; G9v3-39A5B;
+  G9v3-3B; GPT-5 Codex (high); GPT-5.5 Instant (June 2026); GPT-5.5 Instant (May 2026);
+  Gemini 2.5 Flash Preview (Sep ''25) (Non-reasoning); Gemini 2.5 Flash Preview (Sep
+  ''25) (Reasoning); Gemini 2.5 Flash-Lite Preview (Sep ''25) (Non-reasoning); Gemini
+  2.5 Flash-Lite Preview (Sep ''25) (Reasoning); Gemini 3 Deep Think; Gemini 3 Pro
+  Preview (high); Gemini 3 Pro Preview (low); Gemma 3 270M; Gemma 3n E2B Instruct;
+  Gemma 3n E4B Instruct; Gemma 4 12B (Non-reasoning); Gemma 4 12B (Reasoning); Gemma
+  4 26B A4B (Non-reasoning); Gemma 4 26B A4B (Reasoning); Gemma 4 31B (Non-reasoning);
+  Gemma 4 31B (Reasoning); Gemma 4 E2B (Non-reasoning); Gemma 4 E2B (Reasoning); Gemma
+  4 E4B (Non-reasoning); Gemma 4 E4B (Reasoning); Granite 4.0 1B; Granite 4.0 350M;
+  Granite 4.0 H 1B; Granite 4.0 H 350M; Granite 4.0 H Small; Granite 4.0 Micro; Granite
+  4.1 30B; Granite 4.1 3B; Granite 4.1 8B; Granite 4.2 30B; Granite 4.2 3B; Grok 4;
+  Grok 4 Fast (Non-reasoning); Grok 4 Fast (Reasoning); Grok 4.20 0309 (Non-reasoning);
+  Grok 4.20 0309 (Reasoning); Grok 4.20 0309 v2 (Non-reasoning); Grok 4.20 0309 v2
+  (Reasoning); Grok Build 0.1 0616; Grok Code Fast 1; Hermes 4 - Llama-3.1 405B (Non-reasoning);
+  Hermes 4 - Llama-3.1 405B (Reasoning); Hermes 4 - Llama-3.1 70B (Non-reasoning);
+  Hermes 4 - Llama-3.1 70B (Reasoning); HyperCLOVA X SEED Think (32B); HyperNova 60B
+  2605 (high, based on gpt-oss-120b); INTELLECT-3; JT-35B-Flash; JT-4.1 Flash 236B
+  A21B; JT-MINI; Jamba 1.7 Large; Jamba 1.7 Mini; Jamba Reasoning 3B; K-EXAONE (Non-reasoning);
+  K-EXAONE (Reasoning); K-EXAONE 2.0 0803; K2 Horizon 0.9B; K2 Horizon 3.7B; K2 Horizon
+  375B A23B; K2 Horizon 7B; K2 Horizon MoVA 36B A4B; K2 Think V2; K2-V2 (high); K2-V2
+  (low); K2-V2 (medium); KAT-Coder-Pro V1; Kimi Linear 48B A3B Instruct; LFM2 1.2B;
+  LFM2 2.6B; LFM2 24B A2B; LFM2 8B A1B; LFM2.5-1.2B-Instruct; LFM2.5-1.2B-Thinking;
+  LFM2.5-2.6B; LFM2.5-8B-A1B; LFM2.5-VL-1.6B; Ling 2.6 Flash; Ling 3.0 Tiny; Ling-1T;
+  Ling-2.6-1T; Ling-flash-2.0; Ling-mini-2.0; Llama Nemotron Super 49B v1.5 (Non-reasoning);
+  Llama Nemotron Super 49B v1.5 (Reasoning); LongCat Flash Lite; Magistral Medium
+  1; Magistral Medium 1.2; Magistral Small 1; Magistral Small 1.2; Mi:dm K 2.5 Pro;
+  Mi:dm K 2.5 Pro Preview; MiMo-V2-Flash (Feb 2026); MiMo-V2-Flash (Non-reasoning);
+  MiMo-V2-Flash (Reasoning); MiMo-V2-Omni; MiMo-V2-Omni-0327; MiniCPM-V 4.6 1.3B;
+  MiniCPM5-1B (Non-reasoning); MiniCPM5-1B (Reasoning); MiniCPM5-2B; MiniMax M1 40k;
+  MiniMax M1 80k; Ministral 3 14B; Ministral 3 3B; Ministral 3 8B; Mistral Large 3;
+  Mistral Small 3.2; Mistral Small 4 (Non-reasoning); Mistral Small 4 (Reasoning);
+  Molmo2-8B; Motif 3; Motif 3 (Beta); Motif-2-12.7B-Reasoning; Muse Glimmer (high);
+  Muse Spark; NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning); NVIDIA Nemotron 3 Nano
+  30B A3B (Reasoning); NVIDIA Nemotron 3 Nano 4B; NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning);
+  NVIDIA Nemotron Nano 12B v2 VL (Reasoning); NVIDIA Nemotron Nano 9B V2 (Non-reasoning);
+  NVIDIA Nemotron Nano 9B V2 (Reasoning); Nanbeige4.1-3B; Nemotron 3 Nano Omni 30B
+  A3B Reasoning; Nemotron Cascade 2 30B A3B; Nex-N2-Pro (based on Qwen3.5-397B-A17B);
+  North Mini Code; Nova 2.0 Lite (Non-reasoning); Nova 2.0 Lite (high); Nova 2.0 Lite
+  (low); Nova 2.0 Lite (medium); Nova 2.0 Omni (Non-reasoning); Nova 2.0 Omni (low);
+  Nova 2.0 Omni (medium); Nova 2.0 Pro Preview (Non-reasoning); Nova 2.0 Pro Preview
+  (low); Nova 2.0 Pro Preview (medium); Olmo 3 32B Think; Olmo 3 7B Instruct; Olmo
+  3 7B Think; Olmo 3.1 32B Instruct; Olmo 3.1 32B Think; Quasar 438B (max, based on
+  GLM-5.2); Qwen3 235B A22B 2507 Instruct; Qwen3 30B A3B 2507 (Reasoning); Qwen3 30B
+  A3B 2507 Instruct; Qwen3 4B 2507 (Reasoning); Qwen3 4B 2507 Instruct; Qwen3 Coder
+  30B A3B Instruct; Qwen3 Coder 480B A35B Instruct; Qwen3 Next 80B A3B (Reasoning);
+  Qwen3 Next 80B A3B Instruct; Qwen3 Omni 30B A3B (Reasoning); Qwen3 Omni 30B A3B
+  Instruct; Qwen3 VL 235B A22B (Reasoning); Qwen3 VL 235B A22B Instruct; Qwen3 VL
+  32B (Reasoning); Qwen3 VL 4B (Reasoning); Qwen3 VL 4B Instruct; Qwen3.5 0.8B (Non-reasoning);
+  Qwen3.5 0.8B (Reasoning); Qwen3.5 2B (Non-reasoning); Qwen3.5 2B (Reasoning); Qwen3.5
+  4B (Non-reasoning); Qwen3.5 4B (Reasoning); Qwen3.5 Omni Flash; Qwen3.5 Omni Plus;
+  Qwen3.8 Max; Qwen3.8 Max (0902); Qwen3.8-Flash-Next; Ring-1T; Ring-2.6-1T; Ring-flash-2.0;
+  Sarvam 105B (high); Sarvam 30B (high); Seed-OSS-36B-Instruct; Solar Open 100B (Reasoning);
+  Solar Open2 250B; Solar Pro 2 (Non-reasoning); Solar Pro 2 (Reasoning); Step 3.5
+  Flash 2603; Step3 VL 10B; Tiny Aya Global; Tri-21B-Think; Tri-21B-think Preview'
+source:
+  captured: '2026-09-17'
+  method: data api
+  title: Artificial Analysis API
+  url: https://artificialanalysis.ai/api/v2/data/llms/models
+unmatched:
+- A.X-K2
+- Agnes 2.5 Pro Alpha
+- Agnes 2.5 Pro Beta
+- Agnes 3.0 Flash
+- Apertus 70B Instruct
+- Apertus 8B Instruct
+- Apodex 1.1
+- Apriel-v1.5-15B-Thinker
+- Apriel-v1.6-15B-Thinker
+- Arctic Instruct
+- Celeris-1
+- Claude 2.0
+- Claude 2.1
+- Claude 3 Opus
+- Claude 3 Sonnet
+- Claude 3.5 Haiku
+- Claude 3.5 Sonnet (June '24)
+- Claude 3.5 Sonnet (Oct '24)
+- Claude 3.7 Sonnet (Non-reasoning)
+- Claude 3.7 Sonnet (Reasoning)
+- Claude 4 Opus (Non-reasoning)
+- Claude 4 Opus (Reasoning)
+- Claude 4 Sonnet (Non-reasoning)
+- Claude 4 Sonnet (Reasoning)
+- Claude 4.1 Opus (Non-reasoning)
+- Claude 4.1 Opus (Reasoning)
+- Claude 4.5 Haiku (Non-reasoning)
+- Claude 4.5 Haiku (Reasoning)
+- Claude 4.5 Sonnet (Non-reasoning)
+- Claude 4.5 Sonnet (Reasoning)
+- Claude Instant
+- Cogito v2.1 (Reasoning)
+- Command A
+- Command A+
+- Command-R (Mar '24)
+- Command-R+ (Apr '24)
+- DBRX Instruct
+- DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning)
+- DeepHermes 3 - Mistral 24B Preview (Non-reasoning)
+- DeepSeek Coder V2 Lite Instruct
+- DeepSeek LLM 67B Chat (V1)
+- DeepSeek R1 0528 Qwen3 8B
+- DeepSeek R1 Distill Llama 70B
+- DeepSeek R1 Distill Llama 8B
+- DeepSeek R1 Distill Qwen 1.5B
+- DeepSeek R1 Distill Qwen 14B
+- DeepSeek R1 Distill Qwen 32B
+- DeepSeek V3 (Dec '24)
+- DeepSeek V3 0324
+- DeepSeek V3.1 (Non-reasoning)
+- DeepSeek V3.1 (Reasoning)
+- DeepSeek V3.2 Speciale
+- DeepSeek V4 Flash 0420 (Non-reasoning)
+- DeepSeek V4 Flash 0420 (Reasoning, High Effort)
+- DeepSeek V4 Flash 0420 (Reasoning, Max Effort)
+- DeepSeek V4 Flash Vision (Reasoning, Max Effort)
+- DeepSeek V4 Pro 0424 (Non-reasoning)
+- DeepSeek V4 Pro 0424 (Reasoning, High Effort)
+- DeepSeek V4 Pro 0424 (Reasoning, Max Effort)
+- DeepSeek-Coder-V2
+- DeepSeek-V2-Chat
+- DeepSeek-V2.5
+- DeepSeek-V2.5 (Dec '24)
+- Devstral 2
+- Devstral Medium
+- Devstral Small (Jul '25)
+- Devstral Small (May '25)
+- Devstral Small 2
+- DiffusionGemma 26B A4B
+- Doubao Seed Code
+- ERNIE 4.5 300B A47B
+- ERNIE 5.0 Thinking Preview
+- EXAONE 4.0 32B (Non-reasoning)
+- EXAONE 4.0 32B (Reasoning)
+- EXAONE 4.5 33B
+- EXAONE 4.5 33B (Non-reasoning)
+- Exaone 4.0 1.2B (Non-reasoning)
+- Exaone 4.0 1.2B (Reasoning)
+- Falcon-H1R-7B
+- G9v3-39A5B
+- G9v3-3B
+- GPT-3.5 Turbo
+- GPT-3.5 Turbo (0613)
+- GPT-4
+- GPT-4.5 (Preview)
+- GPT-4o Realtime (Dec '24)
+- GPT-4o mini Realtime (Dec '24)
+- GPT-5 Codex (high)
+- GPT-5.5 Instant (June 2026)
+- GPT-5.5 Instant (May 2026)
+- Gemini 1.0 Pro
+- Gemini 1.0 Ultra
+- Gemini 1.5 Flash (May '24)
+- Gemini 1.5 Flash (Sep '24)
+- Gemini 1.5 Flash-8B
+- Gemini 1.5 Pro (May '24)
+- Gemini 1.5 Pro (Sep '24)
+- Gemini 2.0 Flash (Feb '25)
+- Gemini 2.0 Flash (experimental)
+- Gemini 2.0 Flash Thinking Experimental (Dec '24)
+- Gemini 2.0 Flash Thinking Experimental (Jan '25)
+- Gemini 2.0 Flash-Lite (Feb '25)
+- Gemini 2.0 Flash-Lite (Preview)
+- Gemini 2.0 Pro Experimental (Feb '25)
+- Gemini 2.5 Flash Preview (Non-reasoning)
+- Gemini 2.5 Flash Preview (Reasoning)
+- Gemini 2.5 Flash Preview (Sep '25) (Non-reasoning)
+- Gemini 2.5 Flash Preview (Sep '25) (Reasoning)
+- Gemini 2.5 Flash-Lite Preview (Sep '25) (Non-reasoning)
+- Gemini 2.5 Flash-Lite Preview (Sep '25) (Reasoning)
+- Gemini 3 Deep Think
+- Gemini 3 Pro Preview (high)
+- Gemini 3 Pro Preview (low)
+- Gemma 3 12B Instruct
+- Gemma 3 1B Instruct
+- Gemma 3 270M
+- Gemma 3 27B Instruct
+- Gemma 3 4B Instruct
+- Gemma 3n E2B Instruct
+- Gemma 3n E4B Instruct
+- Gemma 3n E4B Instruct Preview (May '25)
+- Gemma 4 12B (Non-reasoning)
+- Gemma 4 12B (Reasoning)
+- Gemma 4 26B A4B (Non-reasoning)
+- Gemma 4 26B A4B (Reasoning)
+- Gemma 4 31B (Non-reasoning)
+- Gemma 4 31B (Reasoning)
+- Gemma 4 E2B (Non-reasoning)
+- Gemma 4 E2B (Reasoning)
+- Gemma 4 E4B (Non-reasoning)
+- Gemma 4 E4B (Reasoning)
+- Granite 3.3 8B (Non-reasoning)
+- Granite 4.0 1B
+- Granite 4.0 350M
+- Granite 4.0 H 1B
+- Granite 4.0 H 350M
+- Granite 4.0 H Small
+- Granite 4.0 Micro
+- Granite 4.1 30B
+- Granite 4.1 3B
+- Granite 4.1 8B
+- Granite 4.2 30B
+- Granite 4.2 3B
+- Grok 2 (Dec '24)
+- Grok 3
+- Grok 3 Reasoning Beta
+- Grok 3 mini Reasoning (high)
+- Grok 4
+- Grok 4 Fast (Non-reasoning)
+- Grok 4 Fast (Reasoning)
+- Grok 4.20 0309 (Non-reasoning)
+- Grok 4.20 0309 (Reasoning)
+- Grok 4.20 0309 v2 (Non-reasoning)
+- Grok 4.20 0309 v2 (Reasoning)
+- Grok Beta
+- Grok Build 0.1 0616
+- Grok Code Fast 1
+- Grok-1
+- Hermes 3 - Llama-3.1 70B
+- Hermes 4 - Llama-3.1 405B (Non-reasoning)
+- Hermes 4 - Llama-3.1 405B (Reasoning)
+- Hermes 4 - Llama-3.1 70B (Non-reasoning)
+- Hermes 4 - Llama-3.1 70B (Reasoning)
+- HyperCLOVA X SEED Think (32B)
+- HyperNova 60B 2605 (high, based on gpt-oss-120b)
+- INTELLECT-3
+- JT-35B-Flash
+- JT-4.1 Flash 236B A21B
+- JT-MINI
+- Jamba 1.5 Large
+- Jamba 1.5 Mini
+- Jamba 1.6 Large
+- Jamba 1.6 Mini
+- Jamba 1.7 Large
+- Jamba 1.7 Mini
+- Jamba Reasoning 3B
+- K-EXAONE (Non-reasoning)
+- K-EXAONE (Reasoning)
+- K-EXAONE 2.0 0803
+- K2 Horizon 0.9B
+- K2 Horizon 3.7B
+- K2 Horizon 375B A23B
+- K2 Horizon 7B
+- K2 Horizon MoVA 36B A4B
+- K2 Think V2
+- K2-V2 (high)
+- K2-V2 (low)
+- K2-V2 (medium)
+- KAT-Coder-Pro V1
+- Kimi Linear 48B A3B Instruct
+- LFM 40B
+- LFM2 1.2B
+- LFM2 2.6B
+- LFM2 24B A2B
+- LFM2 8B A1B
+- LFM2.5-1.2B-Instruct
+- LFM2.5-1.2B-Thinking
+- LFM2.5-2.6B
+- LFM2.5-8B-A1B
+- LFM2.5-VL-1.6B
+- Ling 2.6 Flash
+- Ling 3.0 Tiny
+- Ling-1T
+- Ling-2.6-1T
+- Ling-flash-2.0
+- Ling-mini-2.0
+- Llama 2 Chat 13B
+- Llama 2 Chat 70B
+- Llama 2 Chat 7B
+- Llama 3 Instruct 70B
+- Llama 3 Instruct 8B
+- Llama 3.1 Instruct 405B
+- Llama 3.1 Instruct 70B
+- Llama 3.1 Instruct 8B
+- Llama 3.1 Nemotron Instruct 70B
+- Llama 3.1 Nemotron Nano 4B v1.1 (Reasoning)
+- Llama 3.1 Nemotron Ultra 253B v1 (Reasoning)
+- Llama 3.1 Tulu3 405B
+- Llama 3.2 Instruct 11B (Vision)
+- Llama 3.2 Instruct 1B
+- Llama 3.2 Instruct 3B
+- Llama 3.2 Instruct 90B (Vision)
+- Llama 3.3 Instruct 70B
+- Llama 3.3 Nemotron Super 49B v1 (Non-reasoning)
+- Llama 3.3 Nemotron Super 49B v1 (Reasoning)
+- Llama 65B
+- Llama Nemotron Super 49B v1.5 (Non-reasoning)
+- Llama Nemotron Super 49B v1.5 (Reasoning)
+- LongCat Flash Lite
+- Magistral Medium 1
+- Magistral Medium 1.2
+- Magistral Small 1
+- Magistral Small 1.2
+- Mi:dm K 2.5 Pro
+- Mi:dm K 2.5 Pro Preview
+- MiMo-V2-Flash (Feb 2026)
+- MiMo-V2-Flash (Non-reasoning)
+- MiMo-V2-Flash (Reasoning)
+- MiMo-V2-Omni
+- MiMo-V2-Omni-0327
+- MiniCPM-V 4.6 1.3B
+- MiniCPM5-1B (Non-reasoning)
+- MiniCPM5-1B (Reasoning)
+- MiniCPM5-2B
+- MiniMax M1 40k
+- MiniMax M1 80k
+- Ministral 3 14B
+- Ministral 3 3B
+- Ministral 3 8B
+- Mistral 7B Instruct
+- Mistral Large 2 (Jul '24)
+- Mistral Large 2 (Nov '24)
+- Mistral Large 3
+- Mistral Medium
+- Mistral Small (Feb '24)
+- Mistral Small (Sep '24)
+- Mistral Small 3
+- Mistral Small 3.1
+- Mistral Small 3.2
+- Mistral Small 4 (Non-reasoning)
+- Mistral Small 4 (Reasoning)
+- Mixtral 8x7B Instruct
+- Molmo 7B-D
+- Molmo2-8B
+- Motif 3
+- Motif 3 (Beta)
+- Motif-2-12.7B-Reasoning
+- Muse Glimmer (high)
+- Muse Spark
+- NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)
+- NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)
+- NVIDIA Nemotron 3 Nano 4B
+- NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)
+- NVIDIA Nemotron Nano 12B v2 VL (Reasoning)
+- NVIDIA Nemotron Nano 9B V2 (Non-reasoning)
+- NVIDIA Nemotron Nano 9B V2 (Reasoning)
+- Nanbeige4.1-3B
+- Nemotron 3 Nano Omni 30B A3B Reasoning
+- Nemotron Cascade 2 30B A3B
+- Nex-N2-Pro (based on Qwen3.5-397B-A17B)
+- North Mini Code
+- Nova 2.0 Lite (Non-reasoning)
+- Nova 2.0 Lite (high)
+- Nova 2.0 Lite (low)
+- Nova 2.0 Lite (medium)
+- Nova 2.0 Omni (Non-reasoning)
+- Nova 2.0 Omni (low)
+- Nova 2.0 Omni (medium)
+- Nova 2.0 Pro Preview (Non-reasoning)
+- Nova 2.0 Pro Preview (low)
+- Nova 2.0 Pro Preview (medium)
+- Nova Lite
+- Nova Micro
+- Nova Premier
+- Nova Pro
+- OLMo 2 32B
+- OLMo 2 7B
+- Olmo 3 32B Think
+- Olmo 3 7B Instruct
+- Olmo 3 7B Think
+- Olmo 3.1 32B Instruct
+- Olmo 3.1 32B Think
+- OpenChat 3.5 (1210)
+- PALM-2
+- Phi-3 Mini Instruct 3.8B
+- Phi-4
+- Phi-4 Mini Instruct
+- Phi-4 Multimodal Instruct
+- Pixtral Large
+- Quasar 438B (max, based on GLM-5.2)
+- QwQ 32B
+- QwQ 32B-Preview
+- Qwen Chat 14B
+- Qwen Chat 72B
+- Qwen1.5 Chat 110B
+- Qwen2 Instruct 72B
+- Qwen2.5 Coder Instruct 32B
+- Qwen2.5 Coder Instruct 7B
+- Qwen2.5 Instruct 32B
+- Qwen2.5 Instruct 72B
+- Qwen2.5 Max
+- Qwen2.5 Turbo
+- Qwen3 0.6B (Non-reasoning)
+- Qwen3 0.6B (Reasoning)
+- Qwen3 1.7B (Non-reasoning)
+- Qwen3 1.7B (Reasoning)
+- Qwen3 235B A22B 2507 Instruct
+- Qwen3 30B A3B 2507 (Reasoning)
+- Qwen3 30B A3B 2507 Instruct
+- Qwen3 4B (Non-reasoning)
+- Qwen3 4B (Reasoning)
+- Qwen3 4B 2507 (Reasoning)
+- Qwen3 4B 2507 Instruct
+- Qwen3 Coder 30B A3B Instruct
+- Qwen3 Coder 480B A35B Instruct
+- Qwen3 Next 80B A3B (Reasoning)
+- Qwen3 Next 80B A3B Instruct
+- Qwen3 Omni 30B A3B (Reasoning)
+- Qwen3 Omni 30B A3B Instruct
+- Qwen3 VL 235B A22B (Reasoning)
+- Qwen3 VL 235B A22B Instruct
+- Qwen3 VL 32B (Reasoning)
+- Qwen3 VL 4B (Reasoning)
+- Qwen3 VL 4B Instruct
+- Qwen3.5 0.8B (Non-reasoning)
+- Qwen3.5 0.8B (Reasoning)
+- Qwen3.5 2B (Non-reasoning)
+- Qwen3.5 2B (Reasoning)
+- Qwen3.5 4B (Non-reasoning)
+- Qwen3.5 4B (Reasoning)
+- Qwen3.5 Omni Flash
+- Qwen3.5 Omni Plus
+- Qwen3.8 Max
+- Qwen3.8 Max (0902)
+- Qwen3.8-Flash-Next
+- R1 1776
+- Reka Flash (Sep '24)
+- Reka Flash 3
+- Ring-1T
+- Ring-2.6-1T
+- Ring-flash-2.0
+- Sarvam 105B (high)
+- Sarvam 30B (high)
+- Sarvam M (Reasoning)
+- Seed-OSS-36B-Instruct
+- Solar Mini
+- Solar Open 100B (Reasoning)
+- Solar Open2 250B
+- Solar Pro 2 (Non-reasoning)
+- Solar Pro 2 (Preview) (Non-reasoning)
+- Solar Pro 2 (Preview) (Reasoning)
+- Solar Pro 2 (Reasoning)
+- Sonar
+- Sonar Pro
+- Sonar Reasoning
+- Sonar Reasoning Pro
+- Step 3.5 Flash 2603
+- Step3 VL 10B
+- Tiny Aya Global
+- Tri-21B-Think
+- Tri-21B-think Preview
+- o1-mini
+- o1-preview
+- o1-pro

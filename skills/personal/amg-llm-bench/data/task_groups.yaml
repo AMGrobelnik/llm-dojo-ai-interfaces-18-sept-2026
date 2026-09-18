@@ -1,0 +1,647 @@
+# Task groups for the research pipeline.
+#
+# Every group stands on two pillars, and each carries exactly half of
+# the group:
+#
+#   preference   Arena (arena.ai). Blind human pairwise A/B, live,
+#                re-scored continuously. It measures what a person picks
+#                when shown two answers, which is the closest published
+#                thing to the question this pipeline actually asks. It is
+#                also confounded by length, markdown habit and tone,
+#                which is what Arena's style control adjusts for; the
+#                board file records per board whether it was on.
+#   capability   Artificial Analysis. Fixed task sets with a scoring key,
+#                re-run by one third party on one harness, per reasoning
+#                effort. Reproducible, auditable, and stale the moment it
+#                leaks into training data.
+#
+# Equal halves, by the author's rule. The two answer to different people —
+# voters and a scoring key — and neither of them is allowed to be the
+# ranking on its own. So a group never argues about how much a pillar is
+# worth, only about which boards belong in it. Inside a pillar the boards
+# share its half equally unless the group writes weights out, and the
+# ranker renormalises whatever it is given over the pillar's own total.
+#
+# A pillar a variant has no measured board in is left out of its score
+# and reported: the row's pillar column reads `-` and its status says
+# `pillar missing`. A variant needs at least one measured board in BOTH
+# pillars to be ranked at all. One kind of evidence is a reading, not a
+# verdict: a model only the voters have seen is not thereby the best
+# model for writing a paper, and neither is one only a scoring key has.
+#
+# Only two sources appear here. Every board is captured by a script in
+# scripts/capture_*.py into data/boards/<source>.yaml, and re-running
+# that script reproduces the numbers. Boards that used to be here and no
+# longer are — SWE-bench, LiveBench, KiloBench, SEAL, Vellum, TokenMix,
+# VulcanBench — were hand-transcribed from pages nobody could re-pull on
+# demand. Their cells are still in data/models.yaml; nothing references
+# them, which is the point.
+#
+# Board keys resolve against data/boards/*.yaml first and data/models.yaml
+# second: where a board file carries a cell it replaces the catalogue's,
+# because the capture is reproducible and the catalogue entry is a note
+# somebody once took. Each board is scaled to 0-100 by its own median and
+# inter-quartile range over the models that have it before any weighting,
+# because the boards are not on one scale: an Arena Elo of 1486 and a
+# Terminal-Bench 31.2 cannot be averaged raw. The median lands on 50 and
+# three IQR either side of it reach the ends, so a board the pool is
+# near-flat on uses about a third of the scale rather than being
+# stretched over all of it.
+#
+# The capability-per-cost split below — list price, cost per task, raw
+# capability — is unchanged and independent of all this, and it is the
+# only place money enters the page: as the rate a lab publishes per
+# token, which anyone can check.
+
+# How much of a group a row has to have been measured on. Every score
+# on the page comes from one weighted least-squares fit per PILLAR per
+# group,
+#
+#   value(variant, board) = board_level[board] + ability[variant]
+#
+# solved over exactly the cells that exist, and the group's raw
+# capability is the mean of the pillar abilities the row has. Nothing is
+# imputed: a board a variant was never run on at its own reasoning effort
+# simply is not in the fit, and a variant under MIN_MEASURED_BOARDS
+# measured per-effort boards in a group is not scored, ranked or plotted
+# there at all — it is named under the group with the boards it does
+# have.
+#
+# Two further, higher bars guard the frontier alone. Three boards are
+# enough to be scored and not enough to anchor the one line a reader
+# traces: a cheap listing measured on a tenth of a group would otherwise
+# arrive at the cheap corner of the chart and hold it.
+#
+# frontier_min_weight — at least this share of the group's benchmark
+#   weight must be behind the row. It is a share, so it lives between 0
+#   and 1; 0 makes every scored row eligible.
+# frontier_min_boards — the row must have been measured on at least this
+#   many of the group's boards. A positive whole number; the run stops if
+#   it is not. Weight alone can be cleared by one heavy column, and one
+#   column is a reading of one thing.
+#
+# Both bars are read per ROW, per reasoning effort, off that row's OWN
+# measured boards. Nothing is inherited: a placed sibling sitting on one
+# shared board does not borrow its anchor's eligibility, and an anchor
+# that clears both bars stays eligible whatever its siblings do. Rows
+# under a bar are still scored, ranked, plotted hollow and listed among
+# the least-measured models — they just cannot define the frontier, and
+# their status says which bar they missed.
+shrinkage:
+  frontier_min_weight: 0.5
+  frontier_min_boards: 2
+
+# Three hygiene bounds on the weight maps above, checked on every run;
+# a group that breaks one stops the run rather than publishing.
+#
+# max_family_share — an evaluation FAMILY (below) may not carry more
+#   than this share of a group. Terminal-Bench once carried 0.710 of
+#   coding-experiments under three names, which made that group a
+#   Terminal-Bench ranking with a different title on it. Every Arena
+#   board is one family, so with two pillars at halves the preference
+#   pillar is one family carrying exactly 0.500 however many Arena
+#   columns a group reads: the bound can be no tighter than 0.50, and
+#   what it still catches is a family that reaches past its own pillar —
+#   the way Terminal-Bench did, from inside capability.
+# max_board_weight — no single board may carry more than this share of a
+#   group. It is 0.34, about a third: past that one column is not
+#   evidence among others either. With two pillars at halves it also
+#   means a pillar may never come down to a single board — two boards a
+#   side is the floor, and a group that drops to one stops the run
+#   instead of publishing a coin flip.
+# coverage_leverage — a board may carry at most this many times the
+#   share of the ranked pool it was actually measured on. A heavy board
+#   that most rows lack is not weight, it is a hole: the weight is
+#   renormalised away for everyone missing it, so what the board really
+#   decides is which of the measured rows come out on top.
+weight_guards:
+  max_family_share: 0.50
+  max_board_weight: 0.34
+  coverage_leverage: 3.0
+
+# Which boards are the same evaluation under different names. The
+# ranker treats a board with no entry here as its own family, so this
+# map only has to name the collisions. It is what `max_family_share`
+# above is read over, and it is the answer to "we weight eight boards,
+# but how many things did we actually measure".
+eval_families:
+  chatbot-arena:
+    - arena_hard_prompts
+    - arena_instr_follow
+    - arena_longer_query
+    - arena_coding_elo
+    - arena_creative_elo
+    - arena_expert_elo
+    - arena_math_elo
+    - arena_webdev_elo
+    - arena_search_elo
+    - arena_document_elo
+    - arena_agent_success
+    - arena_agent_net_impr
+  terminal-bench:
+    - aa_terminal_bench_4_0
+    - aa_api_terminalbench_v2_1
+  aa-index:
+    - aa_api_intelligence_index
+    - aa_api_coding_index
+
+# The cost axis needs one number per listing, so the two published rates
+# are blended into one:
+#
+#   blended $/M = (input + output_weight * output) / (1 + output_weight)
+#
+# output_weight is MEASURED per task group, from the step medians in
+# `data/pipeline_steps.yaml`: the `n`-weighted ratio of output tokens to
+# billed input tokens over that group's steps,
+#
+#   output_weight = sum(n * output_median) / sum(n * input_median)
+#
+# with cache reads left out, because they are not billed at the input
+# list price. The measurement contradicts the assumption this file used
+# to carry: agentic traffic here is input-dominated, not
+# output-dominated, by roughly an order of magnitude. A step reads a
+# large repo and writes a small patch, over and over.
+#
+# `output_weight` below is the fallback for anything scored outside a
+# group — the overall pool — and it stays the old assumption so that the
+# one number nothing measured is still labelled as such. Everything that
+# prints a blend says which of the two it used.
+price_blend:
+  output_weight: 3.0
+  basis: assumed
+  by_group:
+    coding-experiments: 0.2365
+    research-reasoning: 0.1264
+    scientific-writing: 0.2127
+    review-judging: 0.0536
+    general: 0.0860
+  by_group_basis: measured
+
+# The ranking score. Per task group a model's capability per cost is
+# the mean of three components, each min-max scaled to 0-1 over the
+# models present, higher is better: list-price cheapness, cost-per-task
+# cheapness, and the group's raw-capability score. Equal thirds by
+# The author's rule — a model has to earn its place on all three, and no
+# single axis can carry it.
+calibrated_intelligence_weights:
+  price_cheapness: 0.3334
+  cost_per_task_cheapness: 0.3333
+  task_fit: 0.3333
+
+# What each board actually measures, and the name to print for it. The
+# ranker never reads a `measures:` line as a number — it is the one-line
+# answer to "what is this score evidence OF", printed beside every weight
+# in the evidence tables so a weight can be argued with on what the board
+# tests rather than on its reputation. `trust:` is the other half of that
+# answer — what would make this board wrong: contamination, a single
+# vendor's harness, a judge's taste, a saturated ceiling. Both lines are
+# printed in the "Benchmarks used" table under every chart. A benchmark
+# key with no entry here still ranks; it just prints its raw key and no
+# description.
+benchmark_meta:
+
+  # ---- preference: Arena -------------------------------------------
+  arena_agent_success:
+    label: Arena Agent success rate
+    measures: >-
+      Share of Arena's live agentic tasks the model finished, judged by
+      the humans who set them.
+    trust: >-
+      Task mix is whatever users brought that week, and a model routed
+      to easier requests looks better than one that is not.
+  arena_agent_net_impr:
+    label: Arena Agent net improvement
+    measures: >-
+      How often an agent run left the user's repository better than it
+      found it, net of the runs that made it worse.
+    trust: >-
+      Net of self-reported harm: a user who does not notice the damage
+      does not report it.
+  arena_webdev_elo:
+    label: Arena WebDev Elo
+    measures: >-
+      Blind pairwise votes on rendered web artifacts — the only board
+      here that scores something a person looked at rather than read.
+    trust: >-
+      Published uncontrolled, so visual polish and verbosity are inside
+      the score rather than adjusted out of it.
+  arena_coding_elo:
+    label: Arena Coding Elo
+    measures: >-
+      Blind pairwise votes on coding prompts in the open text arena.
+    trust: >-
+      Correlates hard with Arena's general text Elo, so read it as the
+      coding-flavoured slice of one preference ranking, not as a second
+      opinion about code.
+  arena_hard_prompts:
+    label: Arena Hard Prompts Elo
+    measures: >-
+      Blind pairwise votes restricted to the prompts Arena's own
+      classifier calls hard.
+    trust: >-
+      "Hard" is a classifier's judgement, and the classifier was trained
+      on the same traffic the board scores.
+  arena_math_elo:
+    label: Arena Math Elo
+    measures: Blind pairwise votes on mathematical prompts.
+    trust: >-
+      Voters grade a worked answer they mostly cannot check, so
+      presentation carries further here than elsewhere.
+  arena_expert_elo:
+    label: Arena Expert Elo
+    measures: >-
+      Blind pairwise votes from the subset of users Arena classes as
+      domain experts.
+    trust: >-
+      Expertise is inferred from usage, not credentialed, and the
+      subset is small enough to move on a slow week.
+  arena_search_elo:
+    label: Arena Search Elo
+    measures: >-
+      Blind pairwise votes on prompts answered with live retrieval.
+    trust: >-
+      Scores a product, not a model: the retrieval stack behind each
+      entry differs and is not held constant.
+  arena_creative_elo:
+    label: Arena Creative Writing Elo
+    measures: Blind pairwise votes on creative-writing prompts.
+    trust: >-
+      The closest thing in the set to a prose-quality vote, and still a
+      vote about taste rather than about whether the piece is true.
+  arena_longer_query:
+    label: Arena Longer Query Elo
+    measures: >-
+      Blind pairwise votes on the long tail of long prompts — the shape
+      a drafting brief actually has.
+    trust: >-
+      Published uncontrolled on some captures, so length habit can sit
+      inside a board that is already about length.
+  arena_instr_follow:
+    label: Arena Instruction Following Elo
+    measures: >-
+      Blind pairwise votes where the prompt carried explicit
+      constraints to obey.
+    trust: >-
+      A voter checks the constraints they noticed; the ones they did
+      not are not scored.
+  arena_document_elo:
+    label: Arena Document Elo
+    measures: >-
+      Blind pairwise votes on prompts that attach a document to read
+      and work over.
+    trust: >-
+      Attachment handling is a product feature as much as a model
+      capability, and it is not held constant across entries.
+
+  # ---- capability: Artificial Analysis -------------------------------
+  aa_api_intelligence_index:
+    label: AA Intelligence Index
+    measures: >-
+      Artificial Analysis' composite of its re-run reasoning, knowledge
+      and coding evaluations, per reasoning effort.
+    trust: >-
+      A composite, so it moves when its components saturate; it shares
+      components with the coding index, which is why the two are one
+      family here.
+  aa_api_coding_index:
+    label: AA Coding Index
+    measures: >-
+      Artificial Analysis' composite of its re-run coding evaluations,
+      per reasoning effort.
+    trust: Same components, same saturation, as the intelligence index.
+  aa_api_terminalbench_v2_1:
+    label: Terminal-Bench 2.1 (AA run)
+    measures: >-
+      Long-horizon tasks in a real terminal, re-run on one harness.
+    trust: >-
+      Superseded by 4.0 and in the same family as it; a harness detail
+      moves terminal agents more than most boards.
+  aa_terminal_bench_4_0:
+    label: Terminal-Bench 4.0
+    measures: >-
+      The hardest published terminal-agent task set, re-run on one
+      harness.
+    trust: >-
+      One harness, one scaffold: it scores the pair, and a model tuned
+      to a different scaffold is under-read.
+  aa_api_scicode:
+    label: SciCode
+    measures: >-
+      Writing the code a published scientific result needs, from the
+      paper's own description.
+    trust: The papers are public, so the reference code may be too.
+  aa_api_livecodebench:
+    label: LiveCodeBench
+    measures: >-
+      Competitive-programming problems published after a cutoff, to
+      keep them out of training data.
+    trust: >-
+      The cutoff is the whole defence, and it erodes with every month
+      the board is not re-cut.
+  aa_automationbenchscore:
+    label: AutomationBench
+    measures: >-
+      Completing everyday computer-work automations end to end.
+    trust: >-
+      New board, thin published pool; read it as a signal, not a
+      ranking.
+  aa_api_hle:
+    label: Humanity's Last Exam
+    measures: >-
+      Expert-written questions chosen to be unsearchable and hard, no
+      tools.
+    trust: >-
+      Written to defeat retrieval and published anyway, so its shelf
+      life is short.
+  aa_api_gpqa:
+    label: GPQA Diamond
+    measures: >-
+      Graduate-level science questions a non-expert with a search
+      engine cannot answer.
+    trust: >-
+      Near saturation at the top of this pool, so it separates the
+      middle far better than the models anyone is choosing between.
+  aa_omniscienceindex:
+    label: AA Omniscience Index
+    measures: >-
+      Breadth of factual knowledge, scored net of confident wrong
+      answers.
+    trust: >-
+      Penalises hallucination by scoring it negative, so a cautious
+      model and a knowledgeable one are hard to tell apart.
+  aa_critpt:
+    label: CritPt
+    measures: >-
+      Research-level physics reasoning written by working physicists.
+    trust: One discipline, and a small one; a narrow read of research.
+  aa_api_lcr:
+    label: AA Long Context Reasoning
+    measures: >-
+      Holding and reasoning over a long context rather than retrieving
+      one planted needle from it.
+    trust: >-
+      Context lengths tested are below what a full paper draft would
+      use, so it under-tests the case it stands in for.
+  aa_api_ifbench:
+    label: IFBench
+    measures: >-
+      Following explicit, checkable output constraints — the thing a
+      venue template asks for.
+    trust: >-
+      Constraints are machine-checkable, which is why it is scoreable
+      and also why it says nothing about whether the prose is good.
+  aa_gdp_pdf:
+    label: AA GDP-Val (PDF)
+    measures: >-
+      Producing the document deliverables of real professional work,
+      graded against what the professional produced.
+    trust: >-
+      Graded by a model judge against one expert's artifact, so it
+      rewards matching that artifact's shape.
+
+# `requirements:` is the hard floor a model must clear to run a group's
+# steps at all. It is derived from data/pipeline_steps.yaml, not chosen:
+# that file's medians are cumulative over a step's whole tool-call loop,
+# so both floors divide by tool_calls_median to get one request.
+#
+#   min_context_tokens     = 1.5 x 2 x (input + cache_read) / tool_calls
+#   min_max_output_tokens  = 2 x output / tool_calls
+#
+# taken over the worst step in the group and rounded up to a bucket. The
+# leading 2 turns a mean request into a peak: a conversation that grows
+# by equal increments over N calls has mean = peak / 2. The 1.5 on
+# context is headroom. `tool_calling: true` because every step in every
+# group runs inside the agent harness.
+#
+# A row that fails a floor it has a value for stays in the ranking table
+# with a flag and is dropped from that group's frontier and cuts. A row
+# the capability catalogue does not list has `null` there and is not
+# excluded: unknown is not a failure.
+groups:
+  coding-experiments:
+    rationale: >-
+      Writing and running experiment code in a sandbox is tool use
+      first: the model that drives a terminal reliably beats the model
+      that writes a prettier patch it never gets to apply. So the
+      preference half is Arena's agentic boards and the two coding
+      votes, and the capability half is every re-run board that puts a
+      model in front of a terminal, a test suite or a tool loop.
+    steps:
+      - execute.experiment
+      - execute.dataset
+      - execute.evaluation
+      - gen_viz
+      - gen_demo_art
+    requirements:
+      min_context_tokens: 200000
+      min_max_output_tokens: 2048
+      tool_calling: true
+    pillars:
+      preference:
+        - arena_agent_success
+        - arena_agent_net_impr
+        - arena_webdev_elo
+        - arena_coding_elo
+      capability:
+        - aa_api_coding_index
+        - aa_api_terminalbench_v2_1
+        - aa_api_scicode
+        - aa_api_livecodebench
+        - aa_terminal_bench_4_0
+        - aa_automationbenchscore
+    pending: >-
+      Arena's two agentic boards are the only human read of agent
+      behaviour anywhere in this file, and they cover a fraction of the
+      pool; until that widens the preference half here leans on the
+      WebDev and coding Elos, which are votes about text. Nothing in
+      the capability half scores a patch against a real repository's
+      own test suite any more — SWE-bench went with the
+      hand-transcribed boards — so what is left reads terminal and tool
+      behaviour instead. A reproducible SWE-bench capture is the single
+      biggest thing this group is missing.
+
+  research-reasoning:
+    rationale: >-
+      Originating and checking a hypothesis is knowledge and reasoning
+      with retrieval on top, so the preference half is the hard,
+      mathematical, expert and search Elos, and the capability half is
+      the reasoning and knowledge boards. Retrieval itself is read
+      through Arena's search Elo, which is voted on by people who used
+      it: no re-run board in this file scores search over the live web
+      on enough of the pool to order it.
+    steps:
+      - gen_hypo
+      - review_hypo
+      - upd_hypo
+      - execute.research
+      - execute.proof
+    requirements:
+      min_context_tokens: 200000
+      min_max_output_tokens: 4096
+      tool_calling: true
+    pillars:
+      preference:
+        - arena_hard_prompts
+        - arena_math_elo
+        - arena_expert_elo
+        - arena_search_elo
+      capability:
+        - aa_api_intelligence_index
+        - aa_api_hle
+        - aa_api_gpqa
+        - aa_omniscienceindex
+        - aa_critpt
+    pending: >-
+      Nothing here reads retrieval as a re-run task: the search boards
+      that exist run on a handful of models each, which is an anecdote
+      wearing a board's clothes, so search is read through Arena's
+      search Elo alone. GPQA is close to saturated across
+      the models anyone is actually choosing between, and CritPt reads
+      one discipline.
+      Nothing here measures whether a hypothesis was any good, which is
+      the thing the step is for; the boards measure whether the model
+      knows things and can find things.
+
+  scientific-writing:
+    rationale: >-
+      Drafting a paper is long-form generation held to a brief, so the
+      preference half is the creative, long-query,
+      instruction-following and document Elos — the four places humans
+      vote on written prose — and the capability half is long-context
+      reasoning, checkable instruction following and the one board that
+      grades a produced document.
+    steps:
+      - gen_paper_text
+      - gen_full_paper
+    requirements:
+      min_context_tokens: 200000
+      min_max_output_tokens: 2048
+      tool_calling: true
+    pillars:
+      preference:
+        - arena_creative_elo
+        - arena_longer_query
+        - arena_instr_follow
+        - arena_document_elo
+      capability:
+        # GDPval-PDF is the only board here that grades a produced
+        # document, and the 2026-09-16 capture has it on seven models —
+        # a twenty-third of the ranked pool. At a full share it moved
+        # three of the top five on its own (the leave-one-board-out
+        # check in results/findings.md), so it is weighted a half: the
+        # one board that measures the artifact, kept, and kept from
+        # deciding the group by itself.
+        aa_api_intelligence_index: 1.0
+        aa_api_lcr: 1.0
+        aa_api_ifbench: 1.0
+        aa_gdp_pdf: 0.5
+    pending: >-
+      No benchmark measuring scientific or academic paper writing
+      covers this pool, so the capability half is long-context
+      reasoning and constraint-following standing in for prose quality
+      and one document-production board standing in for the artifact.
+      Nothing in the group measures claim accuracy against a source,
+      citation faithfulness or revision to reviewer comments. Read it
+      as general writing preference held to a brief until such a board
+      exists. `aa_aabriefcasetimepertask` was considered for this half
+      and left out: it is a duration, not a quality, and a model that
+      is fast at a briefcase task is not thereby better at writing a
+      paper.
+
+  review-judging:
+    rationale: >-
+      Reviewing a submission is reading something long against a brief
+      and saying where it fails, so the preference half is the hard,
+      instruction-following, document and expert Elos, and the
+      capability half is long-context reasoning, breadth of knowledge
+      net of confident error, and document work.
+    steps:
+      - review_paper
+    requirements:
+      min_context_tokens: 200000
+      min_max_output_tokens: 4096
+      tool_calling: true
+    pillars:
+      preference:
+        - arena_hard_prompts
+        - arena_instr_follow
+        - arena_document_elo
+        - arena_expert_elo
+      capability:
+        # Half shares for the two thin boards, for the reason given in
+        # scientific-writing: the Omniscience Index is on a sixteenth
+        # of the pool and GDPval-PDF on a twenty-third, and a board
+        # that thin is a tiebreaker between the rows that have it, not
+        # an eighth of what the group knows.
+        aa_api_intelligence_index: 1.0
+        aa_api_lcr: 1.0
+        aa_omniscienceindex: 0.5
+        aa_gdp_pdf: 0.5
+    pending: >-
+      Judging is the step with the least direct evidence anywhere in
+      this file: no board here scores a review against what a
+      conference's own reviewers said. The Omniscience Index is the
+      closest thing to "would it notice the claim is wrong", because it
+      scores confident error negative rather than ignoring it. Until a
+      review board exists this group is a proxy stack, and the
+      `pillar missing` marks on thin rows are the honest part of it.
+
+  general:
+    rationale: >-
+      Planning steps read every kind of work the round will do, so they
+      are scored on everything. `gen_strat` picks the strategy a round
+      will follow and each `gen_plan.*` writes the brief for one later
+      step — code, research, a dataset, an evaluation — so the evidence
+      that answers for them is not one group's slice but the union of
+      all four. The preference half is every Arena board the other four
+      groups read, the capability half is every Artificial Analysis
+      board they read, equal halves as everywhere and equal weight
+      inside each half: nothing here says planning leans on coding
+      rather than on reading, because nothing measured that.
+    steps:
+      - gen_strat
+      - gen_plan.*
+    requirements:
+      min_context_tokens: 200000
+      min_max_output_tokens: 8192
+      tool_calling: true
+    pillars:
+      preference:
+        - arena_agent_success
+        - arena_agent_net_impr
+        - arena_webdev_elo
+        - arena_coding_elo
+        - arena_hard_prompts
+        - arena_math_elo
+        - arena_expert_elo
+        - arena_search_elo
+        - arena_creative_elo
+        - arena_longer_query
+        - arena_instr_follow
+        - arena_document_elo
+      capability:
+        - aa_api_intelligence_index
+        - aa_api_coding_index
+        - aa_api_terminalbench_v2_1
+        - aa_terminal_bench_4_0
+        - aa_api_scicode
+        - aa_api_livecodebench
+        - aa_automationbenchscore
+        - aa_api_hle
+        - aa_api_gpqa
+        - aa_omniscienceindex
+        - aa_critpt
+        - aa_api_lcr
+        - aa_api_ifbench
+        - aa_gdp_pdf
+    pending: >-
+      A union is a stand-in for a measurement nobody has taken: no board
+      anywhere in this file scores whether a plan was a good plan, and
+      the steps here are the cheapest in the pipeline and the ones every
+      later step inherits. The half shares the other groups gave their
+      thinnest boards are dropped here — fourteen capability boards at
+      one fourteenth each already hold any one of them to under 4% of
+      the group — so a thin board moves this group only through the rows
+      that have it. Read the ordering as "good at everything", which is
+      what a planning step asks for and also the vaguest thing this file
+      can say.

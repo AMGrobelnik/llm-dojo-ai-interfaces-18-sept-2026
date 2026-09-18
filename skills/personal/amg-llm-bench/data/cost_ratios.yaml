@@ -1,0 +1,381 @@
+# Same-source pairwise cost-per-task ratios.
+#
+# THE RULE: a ratio may only relate two models measured on the SAME tasks
+# in the SAME published run. Nothing here mixes two sources — chaining
+# across sources is the ranker's job (scripts/rank_llms.py solves the
+# whole graph at once), not the data's.
+#
+# `ratio` is cost(model_a) / cost(model_b) as published. Every row names
+# the benchmark, the URL and the publication date it came from.
+
+# What to call each of those URLs in a report, so the evidence tables
+# can link a readable title instead of printing a bare URL. A URL not
+# listed here falls back to the `sources:` titles in models.yaml, and
+# then to the URL itself.
+source_titles:
+  https://artificialanalysis.ai/models: "Artificial Analysis models index"
+  https://artificialanalysis.ai/models/releases: "Artificial Analysis model releases, effort pricing"
+  https://kilo.ai/leaderboard: "KiloBench leaderboard"
+  https://snorkel.ai/leaderboard/terminal-bench-4-0: "Snorkel: Terminal-Bench 4.0 leaderboard"
+  https://tokenmix.ai/blog/claude-opus-5-review-pricing-benchmarks-2026: "TokenMix: Claude Opus 5 review, pricing and benchmarks"
+  https://vulcanbench.com/benchmarks/10-opus5-effort.html: "VulcanBench report 10: Opus 5 across efforts"
+  https://vulcanbench.com/benchmarks/12: "VulcanBench report 12"
+  https://vulcanbench.com/benchmarks/13: "VulcanBench report 13"
+  https://vulcanbench.com/benchmarks/swe-v4-astra-fable51-v34.html: "VulcanBench-SWE v4 report 34: Astra against Fable 5.1"
+
+cost_ratios:
+  - model_a: xiaomi/mimo-v2.5-pro
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 0.1852
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: openai/gpt-5.6-luna
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 0.6667
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: anthropic/claude-haiku-4.5
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 0.7778
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: deepseek/deepseek-v4-flash-0731
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 0.8148
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: z-ai/glm-5.3-flash
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 0.9259
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: deepseek/deepseek-v4-pro-0813
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 2.4815
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: openai/gpt-5.6-sol
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 7.3704
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: moonshotai/kimi-k3
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 7.4074
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: z-ai/glm-5.3
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 7.4444
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: openai/gpt-6-astra
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 12.0741
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: anthropic/claude-sonnet-5
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 18.8519
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: qwen/qwen3.8-max-0902
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 20.037
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: anthropic/claude-opus-5
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 21.7037
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: anthropic/claude-fable-5.1
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 28.2593
+    benchmark: AA Intelligence Index v4.3 cost-per-task
+    source: https://artificialanalysis.ai/models
+    date: 2026-09-16
+  - model_a: qwen/qwen3.8-max-0902
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 12.6783
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: anthropic/claude-sonnet-5
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 14.0271
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: moonshotai/kimi-k3
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 18.7519
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: openai/gpt-5.6-sol
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 33.8798
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: anthropic/claude-fable-5.1
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 35.4302
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: openai/gpt-6-astra
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 41.5853
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: anthropic/claude-opus-5
+    model_b: deepseek/deepseek-v4.1-flash
+    ratio: 44.0078
+    benchmark: KiloBench, $ per complete benchmark attempt
+    source: https://kilo.ai/leaderboard
+    date: 2026-09-16
+  - model_a: anthropic/claude-fable-5.1
+    model_b: openai/gpt-6-astra
+    ratio: 1.8788
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: anthropic/claude-opus-5
+    model_b: openai/gpt-6-astra
+    ratio: 1.8182
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: z-ai/glm-5.3
+    model_b: openai/gpt-6-astra
+    ratio: 0.8182
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: openai/gpt-5.6-sol
+    model_b: openai/gpt-6-astra
+    ratio: 0.7576
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: openai/gpt-5.6-luna
+    model_b: openai/gpt-6-astra
+    ratio: 0.0909
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: anthropic/claude-sonnet-5
+    model_b: openai/gpt-6-astra
+    ratio: 2.9091
+    benchmark: Terminal-Bench 4.0, 66 tasks, whole-run cost
+    source: https://snorkel.ai/leaderboard/terminal-bench-4-0
+    date: 2026-09-16
+  - model_a: anthropic/claude-fable-5.1
+    model_b: openai/gpt-6-astra
+    ratio: 5.1518
+    benchmark: VulcanBench-SWE v4 report 34, 23 tasks at five matched efforts
+    source: https://vulcanbench.com/benchmarks/swe-v4-astra-fable51-v34.html
+    date: 2026-09-09
+  - model_a: qwen/qwen3.8-max-0902
+    model_b: deepseek/deepseek-v4-flash-0731
+    ratio: 9.2831
+    benchmark: VulcanBench report 12, identical benchmark suite
+    source: https://vulcanbench.com/benchmarks/12
+    date: 2026-08-04
+  - model_a: deepseek/deepseek-v4-pro-0813
+    model_b: deepseek/deepseek-v4-flash-0731
+    ratio: 1.2948
+    benchmark: VulcanBench report 13, 69 matched runs
+    source: https://vulcanbench.com/benchmarks/13
+    date: 2026-08-09
+
+# Effort ratios: cost(effort_a) / cost(effort_b) for ONE model, and only
+# where a single source ran both levels on the same tasks. These are a
+# cost model, not a value model — VulcanBench measured Opus 5 solving
+# FEWER tasks at high effort than at low while costing three times more.
+
+effort_ratios:
+  - model: openai/gpt-6-astra
+    effort_a: low
+    effort_b: max
+    ratio: 0.25
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-6-astra
+    effort_a: medium
+    effort_b: max
+    ratio: 0.47
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-6-astra
+    effort_a: high
+    effort_b: max
+    ratio: 0.53
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-6-astra
+    effort_a: xhigh
+    effort_b: max
+    ratio: 0.71
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-fable-5.1
+    effort_a: low
+    effort_b: max
+    ratio: 0.31
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-fable-5.1
+    effort_a: medium
+    effort_b: max
+    ratio: 0.39
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-fable-5.1
+    effort_a: high
+    effort_b: max
+    ratio: 0.51
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-fable-5.1
+    effort_a: xhigh
+    effort_b: max
+    ratio: 0.78
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-opus-5
+    effort_a: low
+    effort_b: max
+    ratio: 0.19
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-opus-5
+    effort_a: medium
+    effort_b: max
+    ratio: 0.37
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-opus-5
+    effort_a: high
+    effort_b: max
+    ratio: 0.62
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-opus-5
+    effort_a: xhigh
+    effort_b: max
+    ratio: 0.83
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-sonnet-5
+    effort_a: low
+    effort_b: max
+    ratio: 0.1
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-sonnet-5
+    effort_a: medium
+    effort_b: max
+    ratio: 0.2
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-sonnet-5
+    effort_a: high
+    effort_b: max
+    ratio: 0.35
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-sonnet-5
+    effort_a: xhigh
+    effort_b: max
+    ratio: 0.56
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-5.6-sol
+    effort_a: low
+    effort_b: max
+    ratio: 0.13
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-5.6-sol
+    effort_a: medium
+    effort_b: max
+    ratio: 0.25
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-5.6-sol
+    effort_a: high
+    effort_b: max
+    ratio: 0.41
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: openai/gpt-5.6-sol
+    effort_a: xhigh
+    effort_b: max
+    ratio: 0.59
+    source: https://artificialanalysis.ai/models/releases
+    date: 2026-09-16
+  - model: anthropic/claude-opus-5
+    effort_a: low
+    effort_b: high
+    ratio: 0.3227
+    source: https://vulcanbench.com/benchmarks/10-opus5-effort.html
+    date: 2026-07-26
+  - model: anthropic/claude-opus-5
+    effort_a: medium
+    effort_b: high
+    ratio: 0.5525
+    source: https://vulcanbench.com/benchmarks/10-opus5-effort.html
+    date: 2026-07-26
+  - model: anthropic/claude-opus-5
+    effort_a: medium
+    effort_b: high
+    ratio: 0.56
+    source: https://tokenmix.ai/blog/claude-opus-5-review-pricing-benchmarks-2026
+    date: 2026-07-25
+  - model: anthropic/claude-opus-5
+    effort_a: xhigh
+    effort_b: high
+    ratio: 1.47
+    source: https://tokenmix.ai/blog/claude-opus-5-review-pricing-benchmarks-2026
+    date: 2026-07-25
+  - model: anthropic/claude-opus-5
+    effort_a: max
+    effort_b: high
+    ratio: 1.94
+    source: https://tokenmix.ai/blog/claude-opus-5-review-pricing-benchmarks-2026
+    date: 2026-07-25
+  - model: openai/gpt-6-astra
+    effort_a: low
+    effort_b: max
+    ratio: 0.6693
+    source: https://vulcanbench.com/benchmarks/swe-v4-astra-fable51-v34.html
+    date: 2026-09-09
+  - model: anthropic/claude-fable-5.1
+    effort_a: low
+    effort_b: max
+    ratio: 0.8786
+    source: https://vulcanbench.com/benchmarks/swe-v4-astra-fable51-v34.html
+    date: 2026-09-09
+  - model: anthropic/claude-fable-5.1
+    effort_a: xhigh
+    effort_b: max
+    ratio: 1.5993
+    source: https://vulcanbench.com/benchmarks/swe-v4-astra-fable51-v34.html
+    date: 2026-09-09

@@ -1,0 +1,269 @@
+# Measured difficulty of every agentic research pipeline step.
+#
+# Evidence: 359 real pipeline runs, medians per step, `n` = number of
+# task_end occurrences. This is the ground truth the three difficulty
+# levels are cut from — a step's level is an observation, not a guess.
+# `group` names the task group in data/task_groups.yaml whose capability
+# score applies to that step.
+#
+# Source: in-repo run-journal aggregation, 2026-09-18 (359 runs sampled
+# from the run history; non-LLM repo steps _1_gh_repo and _5_deploy_gh
+# are excluded because model choice does not apply to git plumbing).
+
+evidence:
+  runs_sampled: 359
+  date: 2026-09-18
+  method: >-
+    Median over task_end events per step, aggregated by
+    scripts/aggregate_steps.py directly from the DBOS run
+    journal (dbos.operation_outputs); failures counted as any
+    task_end event with status != 'done'.
+
+levels:
+  3: >-
+    Hardest. Open-ended engineering or invention with real failure
+    modes; 2-4x the resource footprint of any other tier.
+  2: >-
+    Moderate. Real judgment or synthesis over material the pipeline has
+    already produced, or a modest step with a high relative failure rate.
+  1: >-
+    Easiest. Bounded, short, near-zero observed failures.
+
+steps:
+  - step: execute.experiment
+    group: coding-experiments
+    level: 3
+    n: 87
+    tool_calls_median: 90
+    minutes_median: 24
+    cost_usd_median: 3.17
+    input_tokens_median: 17700
+    output_tokens_median: 42218
+    cache_read_tokens_median: 5200000
+    failure_rate: 0.25
+    failure_note: agent crash, no output files, schema fail
+
+  - step: execute.dataset
+    group: coding-experiments
+    level: 3
+    n: 80
+    tool_calls_median: 88
+    minutes_median: 21
+    cost_usd_median: 2.91
+    input_tokens_median: 469814
+    output_tokens_median: 34250
+    cache_read_tokens_median: 4750000
+    failure_rate: 0.09
+    failure_note: agent crash
+
+  - step: execute.evaluation
+    group: coding-experiments
+    level: 3
+    n: 23
+    tool_calls_median: 53
+    minutes_median: 13
+    cost_usd_median: 1.88
+    input_tokens_median: 6062
+    output_tokens_median: 25918
+    cache_read_tokens_median: 3000000
+    failure_rate: 0.13
+
+  - step: execute.proof
+    group: research-reasoning
+    level: 3
+    n: 3
+    tool_calls_median: 206
+    minutes_median: 19
+    cost_usd_median: 8.04
+    input_tokens_median: 1233383
+    output_tokens_median: 146421
+    cache_read_tokens_median: 10900000
+    failure_rate: 0.0
+    note: >-
+      Only 3 runs in the sample used this artifact type — still
+      thin evidence, but now measured, not analogized: the highest
+      cost, tool-call and token footprint of any step, confirming
+      level 3 rather than assuming it.
+
+  - step: execute.research
+    group: research-reasoning
+    level: 3
+    n: 91
+    tool_calls_median: 40
+    minutes_median: 10
+    cost_usd_median: 1.0
+    input_tokens_median: 153000
+    output_tokens_median: 34086
+    cache_read_tokens_median: 1400000
+    failure_rate: 0.04
+
+  - step: gen_hypo
+    group: research-reasoning
+    level: 3
+    n: 308
+    tool_calls_median: 17
+    minutes_median: 7
+    cost_usd_median: 0.68
+    input_tokens_median: 166100
+    output_tokens_median: 19000
+    cache_read_tokens_median: 470592
+    failure_rate: 0.02
+    failure_note: output_format validation
+    note: >-
+      Originating a novel, literature-grounded hypothesis with no
+      scaffold. Highest input-token spend of any non-execute step.
+
+  - step: gen_full_paper
+    group: scientific-writing
+    level: 2
+    n: 41
+    tool_calls_median: 50
+    minutes_median: 9
+    cost_usd_median: 1.14
+    input_tokens_median: 85178
+    output_tokens_median: 20321
+    cache_read_tokens_median: 2000000
+    failure_rate: 0.02
+
+  - step: gen_paper_text
+    group: scientific-writing
+    level: 2
+    n: 104
+    tool_calls_median: 30
+    minutes_median: 7
+    cost_usd_median: 0.67
+    input_tokens_median: 113650
+    output_tokens_median: 23300
+    cache_read_tokens_median: 1200000
+    failure_rate: 0.0
+
+  - step: gen_viz
+    group: coding-experiments
+    level: 2
+    n: 102
+    tool_calls_median: 19
+    minutes_median: 6
+    cost_usd_median: 0.84
+    input_tokens_median: 12394
+    output_tokens_median: 8587
+    cache_read_tokens_median: 482100
+    failure_rate: 0.11
+    failure_note: agent returned no figure
+    note: >-
+      Modest footprint but the highest failure rate outside execute.*:
+      turning real numbers into a correct chart is more failure-prone
+      than the cost suggests.
+
+  - step: gen_demo_art
+    group: coding-experiments
+    level: 2
+    n: 91
+    tool_calls_median: 38
+    minutes_median: 9
+    cost_usd_median: 0.48
+    input_tokens_median: 6600
+    output_tokens_median: 20227
+    cache_read_tokens_median: 1400000
+    failure_rate: 0.08
+
+  - step: review_paper
+    group: review-judging
+    level: 2
+    n: 100
+    tool_calls_median: 7
+    minutes_median: 3
+    cost_usd_median: 0.35
+    input_tokens_median: 139504
+    output_tokens_median: 7471
+    cache_read_tokens_median: 200578
+    failure_rate: 0.01
+    note: >-
+      Scores 2-4 of 10 across 16 sampled runs (mean 3.4) and never
+      rubber-stamps — a genuine-judgment signature, not an easy grader.
+
+  - step: review_hypo
+    group: research-reasoning
+    level: 2
+    n: 268
+    tool_calls_median: 12
+    minutes_median: 4
+    cost_usd_median: 0.52
+    input_tokens_median: 110607
+    output_tokens_median: 12172
+    cache_read_tokens_median: 286750
+    failure_rate: 0.01
+    note: >-
+      Scores 4-6 of 10 across 16 sampled runs (mean 5.0), 6-10 concrete
+      critiques every time. Shapes the idea, so it groups with research.
+
+  - step: gen_plan.experiment
+    group: general
+    level: 1
+    n: 141
+    tool_calls_median: 15
+    minutes_median: 4
+    cost_usd_median: 0.42
+    input_tokens_median: 179400
+    output_tokens_median: 15500
+    cache_read_tokens_median: 289600
+    failure_rate: 0.03
+
+  - step: gen_plan.research
+    group: general
+    level: 1
+    n: 120
+    tool_calls_median: 19
+    minutes_median: 3
+    cost_usd_median: 0.43
+    input_tokens_median: 227349
+    output_tokens_median: 15550
+    cache_read_tokens_median: 276736
+    failure_rate: 0.02
+
+  - step: gen_plan.dataset
+    group: general
+    level: 1
+    n: 99
+    tool_calls_median: 16
+    minutes_median: 3
+    cost_usd_median: 0.25
+    input_tokens_median: 198800
+    output_tokens_median: 9700
+    cache_read_tokens_median: 266322
+    failure_rate: 0.02
+
+  - step: gen_plan.evaluation
+    group: general
+    level: 1
+    n: 25
+    tool_calls_median: 10
+    minutes_median: 2
+    cost_usd_median: 0.33
+    input_tokens_median: 32794
+    output_tokens_median: 7300
+    cache_read_tokens_median: 180700
+    failure_rate: 0.0
+
+  - step: gen_strat
+    group: general
+    level: 1
+    n: 186
+    tool_calls_median: 3
+    minutes_median: 2
+    cost_usd_median: 0.14
+    input_tokens_median: 27318
+    output_tokens_median: 8216
+    cache_read_tokens_median: 105900
+    failure_rate: 0.01
+
+  - step: upd_hypo
+    group: research-reasoning
+    level: 1
+    n: 101
+    tool_calls_median: 3
+    minutes_median: 1
+    cost_usd_median: 0.26
+    input_tokens_median: 39702
+    output_tokens_median: 2919
+    cache_read_tokens_median: 150100
+    failure_rate: 0.05

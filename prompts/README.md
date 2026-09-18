@@ -11,6 +11,8 @@ are `<REDACTED>`; see `../ANONYMIZATION.md`.
   conventions.
 - `agent-presets/` — the model × effort subagent presets (`Explore`, `gen-haiku`,
   `gen-sonnet-<effort>`, `gen-opus-<effort>`): a frontmatter plus system prompt each.
+- `quick-reply-presets.md` — the eight one-tap canned prompts (Continue, Recap, Commit,
+  Safe Cron, /compact, Test, Improve?, Concise) from the phone remote-control app.
 - `slash-commands/` — custom slash-command prompts (`/amg-improve-paper`, `/amg-loop`,
   `/m`, `/sleep`, `/upd`).
 - `claude-code-hooks/` — the Python hooks wired into `settings.json`:

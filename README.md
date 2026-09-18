@@ -12,7 +12,7 @@ presets, the libraries, and the pre-commit hooks with what is switched on where.
 | [`skills/personal/`](skills/personal) | The author's own general-purpose skills (`amg-*`) |
 | [`skills/research-monorepo/`](skills/research-monorepo) | Skills for the author's research platform (`aii-*`) |
 | [`skills/third-party/`](skills/third-party) | Vendored skills by others (Anthropic document skills, Playwright, ...) |
-| [`prompts/`](prompts/README.md) | Claude Code prompts: global instructions, agent presets, slash commands, hooks, settings |
+| [`prompts/`](prompts/README.md) | Claude Code prompts: global instructions, agent presets, quick-reply presets, slash commands, hooks, settings |
 | [`libraries/`](libraries/README.md) | Libraries and tools in use, one file per language or tool class |
 | [`hooks/`](hooks/README.md) | Every pre-commit hook lane the research monorepo runs, with its rule and on/off state |
 | [`ANONYMIZATION.md`](ANONYMIZATION.md) | What was removed or replaced before publishing |
